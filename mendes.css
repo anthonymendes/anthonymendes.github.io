@@ -1,0 +1,187 @@
+/* Style from https://universitymarketing.calpoly.edu/brand-guidelines/colors/ */
+@import url('https://use.typekit.net/qha6sjw.css');
+/* html { */
+/*     /\* The image used *\/ */
+/*     background-image: url("CalPolyHills.jpg"); */
+
+/*     /\* Full height *\/ */
+/*     height: 200%; */
+
+/*     /\* Center and scale the image nicely *\/ */
+/*     background-position: center; */
+/*     background-repeat: no-repeat; */
+/*     background-size: cover; */
+/* } */
+body {
+    align: center;
+    margin: 1ex auto;
+    padding: 5ex;
+    border: 1pt solid;
+    max-width: 100ex;
+    font-size: 16px;
+    font-weight:normal;
+    font-family: source-sans-pro, Trebuchet, sans-serif;
+}
+pre {
+    font-size: 12px;}
+code {
+    font-size: 12px;}
+h1 {
+    text-align: center;
+    letter-spacing: 0.06em;
+    font-weight: 400;
+    font-size: 3em;
+    padding: 3px;
+    line-height: 1.1;
+    font-family: abolition, utopia-std-subhead, Georgia, sans-serif;}
+h2 {
+    margin-top: 2em;
+    font-weight:bold;
+    font-size:24px;
+    font-family: utopia-std-subhead, Georgia, sans-serif;}
+h3 {
+    margin-top: 1em;
+    font-weight:bold;
+    font-size:22px;
+    font-family: utopia-std-subhead, Georgia, sans-serif;}
+h4 {
+    margin-top: 1em;
+    font-weight:bold;
+    font-size:20px;
+    font-family: utopia-std-subhead, Georgia, sans-serif;}
+h5 {
+    margin-top: 1em;
+    font-weight:bold;
+    font-size:18px;
+    font-family: utopia-std-subhead, Georgia, sans-serif;}
+h6 {
+    margin-top: 1em;
+    font-weight:bold;
+    font-size:16px;
+    font-family: utopia-std-subhead, helvetica, sans-serif;}
+table {
+    border-collapse: border-collapse;
+    border-top: 0px solid;
+    border-bottom: 0px solid;
+    font-size: 16px;}
+th, td {
+    text-align: left;
+    padding: 1px 10px 1px 10px; 	/*top, right, bottom left*/
+    vertical-align: top;}
+th {
+    border-bottom: 1px solid;
+    font-weight: normal;
+    font-style: italic;
+    text-align: left;}
+img {
+    border-radius: 5%;
+    box-shadow: 2px 2px 4px;}
+a,a:active,a:visited {
+    text-decoration: none;}
+a:hover {
+    text-decoration: underline;}
+dl {
+    border: 0 0 0 3px;
+    padding: 0.5em;}
+dt {
+    float: left;
+    clear: left;
+    font-weight: bold;}
+dt::after {
+    content: ": ";
+    white-space: pre;}
+dd {
+    margin: 0 0 0 20px;
+    padding: 0 0 1em 0;}
+:root {
+    --White: #FEFEFE;
+    --Black: #010101;
+    --CalPolyGreen: #154734;
+    --CalPolyGold: #C69214;
+    --DigitalGold: #BD8B13;
+    --StadiumGold: #F8E08E;
+    --PolyCanyon: #F2C75C;
+    --DexterGreen: #A4D65E;
+    --FarmersMarket: #3A913F;
+    --SkyBlue: #B5E3D8;
+    --SurfBlue: #5CB8B2;
+    --Serenity: #D3E3F4;
+    --MorroBlue: #ABCAE9;
+    --MissionBeige: #E4E1D1;
+    --PismoSand: #CAC7A7;
+    --CoastSage: #B6CCC2;
+    --Sycamore: #789F90;
+    --KennedyGray: #8E9089;
+    --SealGray: #54585A;
+    --HeritageOrange: #FF6A39;
+    --HeritageOrange50: #FEB898;
+    --Avocado: #D0DF00;
+    --Avocado50: #EBED8A;}
+body{color: var(--CalPolyGreen)}
+body{background-color: var(--White)}
+html{background-color: var(--PismoSand);
+     /* background: repeating-linear-gradient( */
+     /* 	 90deg, */
+     /* 	 var(--KennedyGray), */
+     /* 	 var(--KennedyGray) 10px, */
+     /* 	 var(--CalPolyGreen) 10px, */
+     /* 	 var(--CalPolyGreen) 20px) */
+}
+p{color: var(--SealGray)}
+p{background-color: var(--White)}
+pre{color: var(--SealGray)}
+pre{background-color: var(--White)}
+pre.src:before{color: var(--SealGray)}
+pre.src:before{background-color: var(--White)}
+a{color: var(--CalPolyGold)}
+a:active{color: var(--CalPolyGold)}
+a:hover{color: var(--CalPolyGold)}
+a:visited{color: var(--CalPolyGold)}
+h1{color: var(--CalPolyGreen)}
+h2{color: var(--CalPolyGreen)}
+h2{background-color: var(--White)}
+h3{color: var(--FarmersMarket)}
+h3{background-color: var(--White)}
+h5{color: var(--SurfBlue)}
+h4{background-color: var(--White)}
+h4{color: var(--SurfBlue)}
+h5{background-color: var(--White)}
+h6{color: var(--SurfBlue)}
+h6{background-color: var(--White)}
+div{color: var(--SealGray)}
+div{background-color: var(--White)}
+/* span{color: var(--SealGray)} */
+/* span{background-color: var(--White)} */
+ol{color: var(--SealGray)}
+ol{background-color: var(--White)}
+ul{color: var(--SealGray)}
+ul{background-color: var(--White)}
+table{color: var(--SealGray)}
+table{background-color: var(--White)}
+table{border-color: var(--White)}
+thead{color: var(--SealGray)}
+thead{background-color: var(--White)}
+thead{border-color: var(--SealGray)}
+tbody{color: var(--SealGray)}
+tbody{background-color: var(--White)}
+tbody{border-color: var(--SealGray)}
+tr{color: var(--SealGray)}
+tr{background-color: var(--White)}
+tr{border-color: var(--SealGray)}
+td{color: var(--SealGray)}
+td{background-color: var(--White)}
+td{border-color: var(--SealGray)}
+input{color: var(--SealGray)}
+input{background-color: var(--White)}
+select{color: var(--SealGray)}
+select{background-color: var(--White)}
+option{color: var(--SealGray)}
+option{background-color: var(--White)}
+textarea{color: var(--SealGray)}
+textarea{background-color: var(--White)}
+.todo{color: var(--SkyBlue)}
+.done{color: var(--SurfBlue)}
+.priority{color: var(--PolyCanyon)}
+hr{color: var(--SealGray)}
+pre{box-shadow: 3px 3px 3px var(--SealGray)}
+.timestamp{color: var(--SealGray)}
