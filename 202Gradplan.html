@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2020-08-11 Tue 22:32 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Graduation Plan</title>
+<meta name="generator" content="Org mode">
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://anthonymendes.github.io/mendes.css">
+<style type="text/css">
+html {background-image: url("https://anthonymendes.github.io/CalPolyHills-min.jpg"); background-attachment: fixed; background-size: cover}
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Graduation Plan</h1>
+<p>
+The assignment is to create a valid graduation plan to guide your remaining
+time at Cal Poly.  This is the most important assignment in Math 202!
+</p>
+
+<div id="outline-container-org219a80d" class="outline-2">
+<h2 id="org219a80d">Creating the plan</h2>
+<div class="outline-text-2" id="text-org219a80d">
+<p>
+Creating an individually tailored graduation plan can be complicated.  Please
+ensure that
+</p>
+<ol class="org-ol">
+<li><p>
+<b>The plan meets all requirements for general education, the major, any
+concentration and any minors.</b>
+</p>
+
+<p>
+All such requirements are in the <a href="https://math.calpoly.edu/course-catalog-info">catalog</a>.
+</p>
+
+<p>
+Use the catalog corresponding to your catalog year.  This can be found in
+the Academics tab of the Cal Poly Portal, listed directly under the “Degree
+Information” subheading.
+</p>
+
+<p>
+General education, major requirements, and concentration requirements are
+all found on the curriculum sheet in the <a href="http://flowcharts.calpoly.edu/mymap.php">degree flowcharts &amp; curriculum
+displays</a> page.  Follow this closely!
+</p>
+
+<p>
+The <a href="https://registrar.calpoly.edu/ge-2020-comprehensive-guide">general education</a> comprehensive guide can help with selecting G.E.s.
+</p></li>
+<li><p>
+<b>Prerequisites are met for each course.</b>
+</p>
+
+<p>
+The <a href="https://content-calpoly-edu.s3.amazonaws.com/math/1/documents/coursesequence.pdf">suggested order</a> of mathematics courses has the prerequisites for each
+course.  This information is also found in the <a href="https://math.calpoly.edu/course-outlines">expanded course outlines</a>.
+</p>
+
+<p>
+See the <a href="http://catalog.calpoly.edu/">catalog</a> or the department homepages for prerequisites for
+non-mathematics courses.
+</p></li>
+<li><p>
+<b>Courses are offered in the quarters that you plan to take them.</b>
+</p>
+
+<p>
+The <a href="https://content-calpoly-edu.s3.amazonaws.com/math/1/documents/CourseOfferingsByQuarter.pdf">planned course offerings</a> show when courses are offered.  Most upper
+division mathematics courses are offered once or twice a year, so be
+careful!  The <a href="http://flowcharts.calpoly.edu/mymap.php">degree flowchart</a> can also help here.
+</p>
+
+<p>
+General education courses are available every quarter, although popular
+courses fill up quickly.  If completing a minor, visit the minor department
+homepage to find when classes are offered.
+</p></li>
+</ol>
+
+<p>
+It may be helpful to print and fill out the <a href="202Template.pdf">graduation plan worksheet</a> when
+working on the plan, especially in preparation of your meeting with your
+advisor.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org921bdf4" class="outline-2">
+<h2 id="org921bdf4">Checking the plan</h2>
+<div class="outline-text-2" id="text-org921bdf4">
+<p>
+You are required to review your graduation plan with your academic advisor.
+</p>
+
+<p>
+There is a mathematics faculty member who is assigned to be your department
+advisor.  This is your contact person for any issues that arise when
+completing the undergraduate degree.  If you do not know your academic
+advisor, ask our mathematics department staff (<code>math@calpoly.edu</code>).  The
+college <a href="https://csmadvising.calpoly.edu/">student services</a> department can also help review your plan.
+</p>
+
+<p>
+The mathematics faculty greatly enjoy meeting with students and helping them
+plan for the future!  However, faculty are also busy with classes and research,
+so please do not wait until the last minute get in contact.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8b3e1e1" class="outline-2">
+<h2 id="org8b3e1e1">Formatting and submitting the plan</h2>
+<div class="outline-text-2" id="text-org8b3e1e1">
+<p>
+Format the plan following the template shown in this example:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-text">Name: Musty Mustang
+Catalog: 2020-2021
+Concentration: General
+Minors: Statistics
+Checked by: Prof. Mathy Mustang
+Date checked: October 12, 2020
+Graduation Plan:
+(Fall 2018 MATH 143 PHYS 141 TH 210)
+(Winter 2019 PHYS 133 MATH 241 STAT 301 MATH 206)
+(Spring 2019 MATH 242 BIO 111 MU 101 ENGL 145)
+(Fall 2019 MATH 248 HIST 213 COMS 102)
+(Winter 2020 HIST 337 MATH 306 ASTR 324 PHIL 231)
+(Spring 2020 ENGL 251 MATH 406 MATH 202 MATH 341)
+(Summer 2020 NR 324)
+(Fall 2020 MATH 412 MATH 481 STAT 305)
+(Winter 2021 MATH 413 MATH 440 STAT 302)
+(Spring 2021 MATH 414 MATH 482 MATH 459)
+(Fall 2021 MATH 335 STAT 425 MATH 336 MATH 408)
+(Winter 2022 MATH 451 MATH 409 STAT 334)
+(Spring 2022 STAT 419 PHIL 310 MATH 483)
+</pre>
+</div>
+
+<p>
+Like above, include lines with your name, catalog year, concentration,
+minors, and who checked your plan and when.  Then, to help me run the plan
+through the software that I have written, make sure that:
+</p>
+<ol class="org-ol">
+<li>The plan is submitted as plain text (for example, not in a word document
+or .pdf file).  This can be done by copy/pasting the text into the
+submission box in Canvas.</li>
+<li>Include courses taken in previous quarters so that prerequisites can be
+checked.</li>
+<li>Format each quarter listed in your plan on a new line that
+<ul class="org-ul">
+<li>starts with a left parenthesis <code>(</code>,</li>
+<li>followed by one of <code>Fall</code>, <code>Winter</code>, <code>Spring</code>, or <code>Summer</code> and then the
+year,</li>
+<li>followed by a list of courses written using the course prefix in all
+capital letters (such as <code>MATH</code>) and then the course number.  Separate
+everything on the line with spaces (not dashes or commas).</li>
+<li>End the line using a right parenthesis <code>)</code>.</li>
+</ul></li>
+</ol>
+
+<p>
+Then submit the plan in Canvas on or before the due date.
+</p>
+
+<p>
+Disclaimer: I will do my best to find errors in your plan, but my checks are
+not exhaustive (especially for general education and minor requirements) and
+should not be considered an official guarantee that the plan is correct.
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>
