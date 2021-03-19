@@ -1,27 +1,17 @@
 /* Style from https://universitymarketing.calpoly.edu/brand-guidelines/colors/ */
 @import url('https://use.typekit.net/qha6sjw.css');
-html {
-    /* The image used */
-    background-image: url("CalPolyHills.jpg");
+/* html { */
+/*     /\* The image used *\/ */
+/*     background-image: url("CalPolyHills.jpg"); */
 
-    /* Full height */
-    height: 200%;
+/*     /\* Full height *\/ */
+/*     height: 200%; */
 
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-title {
-    display: inline;
-    text-align: center;
-    letter-spacing: 0.06em;
-    font-weight: 400;
-    font-size: 3em;
-    padding: 3px;
-    line-height: 1.1;
-    font-family: abolition, utopia-std-subhead, Georgia, sans-serif;}
-}
+/*     /\* Center and scale the image nicely *\/ */
+/*     background-position: center; */
+/*     background-repeat: no-repeat; */
+/*     background-size: cover; */
+/* } */
 body {
     align: center;
     margin: 1ex auto;
