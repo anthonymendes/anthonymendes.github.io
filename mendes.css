@@ -12,6 +12,16 @@
 /*     background-repeat: no-repeat; */
 /*     background-size: cover; */
 /* } */
+title {
+    display: inline;
+    text-align: center;
+    letter-spacing: 0.06em;
+    font-weight: 400;
+    font-size: 3em;
+    padding: 3px;
+    line-height: 1.1;
+    font-family: abolition, utopia-std-subhead, Georgia, sans-serif;}
+}
 body {
     align: center;
     margin: 1ex auto;
