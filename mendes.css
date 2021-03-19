@@ -1,17 +1,10 @@
 /* Style from https://universitymarketing.calpoly.edu/brand-guidelines/colors/ */
 @import url('https://use.typekit.net/qha6sjw.css');
-/* html { */
-/*     /\* The image used *\/ */
-/*     background-image: url("CalPolyHills.jpg"); */
-
-/*     /\* Full height *\/ */
-/*     height: 200%; */
-
-/*     /\* Center and scale the image nicely *\/ */
-/*     background-position: center; */
-/*     background-repeat: no-repeat; */
-/*     background-size: cover; */
-/* } */
+html {
+    background-image: url("https://anthonymendes.github.io/CalPolyHills-min.jpg");
+    background-attachment: fixed;
+    background-size: cover
+}
 body {
     align: center;
     margin: 1ex auto;
