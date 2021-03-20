@@ -3,7 +3,7 @@
 html {
     background-image: url("https://anthonymendes.github.io/CalPolyHills-min.jpg");
     background-attachment: fixed;
-    background-size: cover
+    background-size: cover;
 }
 body {
     align: center;
@@ -112,14 +112,7 @@ dd {
     --Avocado50: #EBED8A;}
 body{color: var(--CalPolyGreen)}
 body{background-color: var(--White)}
-html{background-color: var(--PismoSand);
-     /* background: repeating-linear-gradient( */
-     /* 	 90deg, */
-     /* 	 var(--KennedyGray), */
-     /* 	 var(--KennedyGray) 10px, */
-     /* 	 var(--CalPolyGreen) 10px, */
-     /* 	 var(--CalPolyGreen) 20px) */
-}
+html{background-color: var(--PismoSand)}
 p{color: var(--SealGray)}
 p{background-color: var(--White)}
 pre{color: var(--SealGray)}
