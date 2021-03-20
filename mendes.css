@@ -113,13 +113,6 @@ dd {
 body{color: var(--CalPolyGreen)}
 body{background-color: var(--White)}
 html{background-color: var(--PismoSand);
-     /* background: repeating-linear-gradient( */
-     /* 	 90deg, */
-     /* 	 var(--KennedyGray), */
-     /* 	 var(--KennedyGray) 10px, */
-     /* 	 var(--CalPolyGreen) 10px, */
-     /* 	 var(--CalPolyGreen) 20px) */
-}
 p{color: var(--SealGray)}
 p{background-color: var(--White)}
 pre{color: var(--SealGray)}
