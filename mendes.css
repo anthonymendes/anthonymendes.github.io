@@ -1,5 +1,6 @@
 /* Style from https://universitymarketing.calpoly.edu/brand-guidelines/colors/ */
 @import url('https://use.typekit.net/qha6sjw.css');
+
 html {
     background-image: url("https://anthonymendes.github.io/CalPolyHills-min.jpg");
     background-attachment: fixed;
@@ -66,6 +67,9 @@ th {
     font-weight: normal;
     font-style: italic;
     text-align: left;}
+td.org-right{text-align: right;}
+td.org-left{text-align: left;}
+td.org-center{text-align: center;}
 img {
     border-radius: 5%;
     box-shadow: 2px 2px 4px;}
