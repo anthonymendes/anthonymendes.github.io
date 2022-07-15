@@ -1,331 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-10-14 Wed 17:11 -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Course descriptions</title>
-<meta name="generator" content="Org mode">
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
-  .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
-  .tag    { background-color: #eee; font-family: monospace;
-            padding: 2px; font-size: 80%; font-weight: normal; }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
-  .underline { text-decoration: underline; }
-  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
-  p.verse { margin-left: 3%; }
-  pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
-    padding: 8pt;
-    font-family: monospace;
-    overflow: auto;
-    margin: 1.2em;
-  }
-  pre.src {
-    position: relative;
-    overflow: visible;
-    padding-top: 1.2em;
-  }
-  pre.src:before {
-    display: none;
-    position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
-    padding: 3px;
-    border: 1px solid black;
-  }
-  pre.src:hover:before { display: inline;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
-  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-hledger:before { content: 'hledger'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
-
-  table { border-collapse:collapse; }
-  caption.t-above { caption-side: top; }
-  caption.t-bottom { caption-side: bottom; }
-  td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
-  dt { font-weight: bold; }
-  .footpara { display: inline; }
-  .footdef  { margin-bottom: 1em; }
-  .figure { padding: 1em; }
-  .figure p { text-align: center; }
-  .inlinetask {
-    padding: 10px;
-    border: 2px solid gray;
-    margin: 10px;
-    background: #ffffcc;
-  }
-  #org-div-home-and-up
-   { text-align: right; font-size: 70%; white-space: nowrap; }
-  textarea { overflow-x: auto; }
-  .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
-  .org-info-js_info-navigation { border-style: none; }
-  #org-info-js_console-label
-    { font-size: 10px; font-weight: bold; white-space: nowrap; }
-  .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
-</style>
 <link rel="stylesheet" type="text/css" href="https://anthonymendes.github.io/mendes.css">
-<style type="text/css">
-html {background-image: url("https://anthonymendes.github.io/CalPolyHills-min.jpg"); background-attachment: fixed; background-size: cover}
-</style>
-<script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2019 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
-</script>
+<title>Course descriptions</title>
 </head>
-<body>
-<div id="content">
-<h1 class="title">Course descriptions</h1>
-<p>
-The <a href="https://math.calpoly.edu/course-outlines">mathematics department course outlines</a> describe our courses, but sometimes
+<body><div><p>The <a href="https://math.calpoly.edu/course-outlines">mathematics department course outlines</a> describe our courses, but sometimes
 with technical jargon and unfamiliar terminology.  So here we give informal
 descriptions of our amazing mathematics courses!
 </p>
 
-<dl class="org-dl">
-<dt>Math 304, 404</dt><dd><b>Vector analysis</b> continues the study of multivariable
+<dl><dt>Math 304, 404</dt><dd><strong>Vector analysis</strong> continues the study of multivariable
 calculus from Calculus IV.  Main results in the course,
 which have important physical interpretations, generalize of
 the fundamental theorem of calculus to higher dimensions.
-<b>Differential Geometry</b> is a continuation of vector analysis
+<strong>Differential Geometry</strong> is a continuation of vector analysis
 and focuses more on the theory of curves and surfaces in
 space.</dd>
-<dt>Math 306, 406</dt><dd><b>Linear algebra</b> deals with linear functions between
+<dt>Math 306, 406</dt><dd><strong>Linear algebra</strong> deals with linear functions between
 abstract vector spaces and how these functions can be
 represented with matrices.  Linear algebra is an extremely
 useful subject that finds applications in computer science,
 economics, statistics, physics and business, and more!
 Students should be ready for an abstract, proof heavy
 course.</dd>
-<dt>Math 335</dt><dd><b>Graph Theory</b> is the study of sets of objects (vertices) and the
-relations (edges) that exist between them.  Graph theory finds
-applications in many disciplines, especially computer science.</dd>
-<dt>Math 336</dt><dd><b>Combinatorics</b> is the mathematics of counting.  The techniques and
+<dt>Math 334</dt><dd><strong>Combinatorics</strong> is the mathematics of counting.  The techniques and
 ideas in combinatorics can be accessible to those with a modest
 math background.  Combinatorial ideas are used regularly in many
 other areas of mathematics.</dd>
-<dt>Math 341</dt><dd><b>Number Theory</b> considers the mathematics of the integers, giving a
+<dt>Math 335</dt><dd><strong>Graph Theory</strong> is the study of sets of objects (vertices) and the
+relations (edges) that exist between them.  Graph theory finds
+applications in many disciplines, especially computer science.</dd>
+<dt>Math 341</dt><dd><strong>Number Theory</strong> considers the mathematics of the integers, giving a
 precise foundation to some of these properties that we have known
 ("believed'' is a better word here) since elementary
 school. Prime numbers are studied.  This course provides the
 theoretical underpinnings for most modern applications of
 cryptography.</dd>
-<dt>Math 344</dt><dd><b>Linear Analysis</b> is an applied course on solving differential
+<dt>Math 344</dt><dd><strong>Linear Analysis</strong> is an applied course on solving differential
 equations with new tools such as the Laplace transform, series,
 and Fourier series.  Many of these topics are especially relevant
 to applications of mathematics to engineering.</dd>
-<dt>Math 350</dt><dd><b>Mathematical Software</b> introduces how to implement advanced
+<dt>Math 350</dt><dd><strong>Mathematical Software</strong> introduces how to implement advanced
 mathematics on the computer using a high level programming
 language, usually in Mathematica.  The ability to use software to
 investigate mathematical ideas is an indispensable tool to many
 modern mathematicians.  This course does not count towards the
 mathematics minor.</dd>
-<dt>Math 408, 409</dt><dd><b>Complex Analysis</b> explores the calculus of complex valued
+<dt>Math 410, 411</dt><dd><strong>Complex Analysis</strong> explores the calculus of complex valued
 functions.  It turns out that a complex valued function
 being differentiable implies a host of elegant geometric and
 computational properties.  These are good courses for
 students who like calculus, geometry, and visualization.</dd>
-<dt>Math 412, 413, 414</dt><dd><b>Real Analysis</b> rigorously proves theorems first
+<dt>Math 412, 413, 414</dt><dd><strong>Real Analysis</strong> rigorously proves theorems first
 introduced in Calculus, including theorems about limits, sequences,
 series, and derivatives.  Courses usually begin start with a detailed
 study of the real numbers from first principles.  As Calculus is
 fundamental to many subjects, so is Real Analysis.  This is one of the
 core courses in all of mathematics.</dd>
-<dt>Math 416, 418</dt><dd><b>Differential Equations</b> and <b>Partial Differential Equations</b>
+<dt>Math 416, 418</dt><dd><strong>Differential Equations</strong> and <strong>Partial Differential Equations</strong>
 are advanced courses on solving differential equations in
 one and many variables.  These are essential courses for
 those going into a career involving mathematical modeling.
 There is usually less emphasis on proofs in this course than
 other advanced mathematics courses, but that does not mean
 they are to be taken lightly!</dd>
-<dt>Math 419</dt><dd><b>History of Mathematics</b> follows the evolution mathematical
+<dt>Math 419</dt><dd><strong>History of Mathematics</strong> follows the evolution mathematical
 thought from early to modern times.  The contributions of great
 mathematicians are introduced.  This course does not count
 towards the mathematics minor.</dd>
-<dt>Math 435</dt><dd><b>Discrete Mathematics</b> is an advanced course on enumeration that
+<dt>Math 435</dt><dd><strong>Discrete Mathematics</strong> is an advanced course on enumeration that
 continues where combinatorics left off.  Students who enjoy
 thinking about finite sets and structures will be at home in this
 challenging but interesting course.</dd>
-<dt>Math 437</dt><dd><b>Game Theory</b> is the mathematical modeling of conflict and
+<dt>Math 437</dt><dd><strong>Game Theory</strong> is the mathematical modeling of conflict and
 cooperation.  Always a popular course, Game theory uses linear
 optimization techniques to make optimal decisions in a broad
 range of contexts.  This topic is especially useful in economics.</dd>
-<dt>Math 440</dt><dd><b>Topology</b> considers properties of spaces that are invariant under
+<dt>Math 440</dt><dd><strong>Topology</strong> considers properties of spaces that are invariant under
 continuous deformations.  For example, a square can be deformed
 into a circle without breaking it, but a figure 8 cannot.  This
 is a rigorous and interesting course on spatial geometry and its
 deformation.</dd>
-<dt>Math 451, 452, 453</dt><dd><b>Numerical Analysis</b> introduces computational algorithms
+<dt>Math 451, 452, 453</dt><dd><strong>Numerical Analysis</strong> introduces computational algorithms
 for doing mathematics on the computer.  When does the computer give
 accurate and efficient solutions to mathematical problems?  These courses
 are an excellent choice for students interested in numerical simulation
 and analysis or algorithm development.</dd>
-<dt>Math 442, 443</dt><dd><b>Euclidean Geometry</b> rigorously develops the axioms and
+<dt>Math 442, 443</dt><dd><strong>Euclidean Geometry</strong> rigorously develops the axioms and
 theorems of Euclidean geometry first introduced in high school.
-<b>Non-Euclidean Geometry</b> reexamines and changes the traditional Euclidean
+<strong>Non-Euclidean Geometry</strong> reexamines and changes the traditional Euclidean
 axioms, producing new and strange geometries.</dd>
-<dt>Math 481, 482, 483</dt><dd><b>Abstract algebra</b> is a branch of mathematics that deals
+<dt>Math 481, 482, 483</dt><dd><strong>Abstract algebra</strong> is a branch of mathematics that deals
 with how to combine mathematical objects.  The algebra sequence consists
 of three main subject areas: Group theory (the study of symmetries), ring
 theory (the study of polynomials), and field theory (the study of sets
 where we can add, subtract, multiply and divide).  This is an absolutely
 central subject in pure mathematics.</dd>
 </dl>
-</div>
-</body>
+</div></body>
 </html>
