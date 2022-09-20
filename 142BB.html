@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-09-06 Tue 20:38 -->
+<!-- 2022-09-20 Tue 16:56 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Blue Book Exercises</title>
@@ -213,6 +213,27 @@
 </script>
 <script type="text/javascript"
 	src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content" class="content">
@@ -223,7 +244,8 @@ blue books will be collected at the final exam.
 </p>
 
 <ol class="org-ol">
-<li></li>
+<li>Evaluate \(\displaystyle \int \cos^2 x \sin x \, dx\).</li>
+<li>Evaluate \(\displaystyle \int_1^2 \dfrac{x}{\sqrt{1+x^2}} \, dx\).</li>
 </ol>
 </div>
 </body>
