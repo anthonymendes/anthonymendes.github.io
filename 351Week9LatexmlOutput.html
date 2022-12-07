@@ -1,0 +1,220 @@
+<!DOCTYPE html><html prefix="dcterms: http://purl.org/dc/terms/">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>LaTeX on the Web</title>
+<!--Generated on Wed Dec  7 14:14:20 2022 by LaTeXML (version 0.8.6) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on .-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="351Week9Mendes.css" type="text/css">
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document" style="font-size:298%;">LaTeX on the Web</h1>
+
+<section id="S1" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1 </span>MathJax</h2>
+
+<div id="S1.p1" class="ltx_para">
+<p class="ltx_p">Including mathematics on web pages
+with <a href="https://www.mathjax.org/" title="" class="ltx_ref ltx_href">MathJax</a> is as easy as including the this
+code in the HTML document (usually between <code class="ltx_verbatim ltx_font_typewriter">&lt;head&gt;</code> and <code class="ltx_verbatim ltx_font_typewriter">&lt;/head&gt;</code> at
+the top of the HTML):
+</p>
+<div class="ltx_listing ltx_lstlisting ltx_framed_rectangle ltx_listing">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,PHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiCiBzcmM9Imh0dHBzOi8vY2RuanMuY2xvdWRmbGFyZS5jb20vYWpheC9saWJzL21hdGhqYXgvMi43LjUvTWF0aEpheC5qcz9jb25maWc9VGVYLUFNU19IVE1MIj4KPC9zY3JpcHQ+" download="">⬇</a></div>
+<div id="lstnumberx1" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter">&lt;</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">script</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">type</span><span class="ltx_text ltx_font_typewriter">="</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">text</span><span class="ltx_text ltx_font_typewriter">/</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">javascript</span><span class="ltx_text ltx_font_typewriter">"</span>
+</div>
+<div id="lstnumberx2" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">src</span><span class="ltx_text ltx_font_typewriter">="</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">https</span><span class="ltx_text ltx_font_typewriter">://</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">cdnjs</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">cloudflare</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">com</span><span class="ltx_text ltx_font_typewriter">/</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">ajax</span><span class="ltx_text ltx_font_typewriter">/</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">libs</span><span class="ltx_text ltx_font_typewriter">/</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">mathjax</span><span class="ltx_text ltx_font_typewriter">/2.7.5/</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">MathJax</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">js</span><span class="ltx_text ltx_font_typewriter">?</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">config</span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">TeX</span><span class="ltx_text ltx_font_typewriter">-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">AMS_HTML</span><span class="ltx_text ltx_font_typewriter">"&gt;</span>
+</div>
+<div id="lstnumberx3" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter">&lt;/</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">script</span><span class="ltx_text ltx_font_typewriter">&gt;</span>
+</div>
+</div>
+<p class="ltx_p">This code allows mathematics symbols and standard AMS environments (such as
+<code class="ltx_verbatim ltx_font_typewriter">align</code>, <code class="ltx_verbatim ltx_font_typewriter">bmatrix</code>, <code class="ltx_verbatim ltx_font_typewriter">cases</code>, etc.) can be typed directly into
+the HTML document. The default settings of MathJax do not interpret dollar
+signs as enclosing mathematics, so unless settings are changed then mathematics
+must be enclosed within <code class="ltx_verbatim ltx_font_typewriter">\(..\)</code>, <code class="ltx_verbatim ltx_font_typewriter">\[..\]</code>,
+<code class="ltx_verbatim ltx_font_typewriter">\begin{equation}..\end{equation}</code>, etc.</p>
+</div>
+<div id="S1.p2" class="ltx_para">
+<p class="ltx_p">Read the documentation at <a href="https://docs.mathjax.org/en/latest/index.html" title="" class="ltx_ref ltx_url ltx_font_typewriter">https://docs.mathjax.org/en/latest/index.html</a>
+to discover how to customize MathJax. One example of such a customization is
+the script</p>
+<div class="ltx_listing ltx_lstlisting ltx_framed_rectangle ltx_listing">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,PC9zY3JpcHQ+CjxzY3JpcHQgdHlwZT0idGV4dC94LW1hdGhqYXgtY29uZmlnIj4KICAgIE1hdGhKYXguSHViLkNvbmZpZyh7CglkaXNwbGF5QWxpZ246ICJjZW50ZXIiLAoJZGlzcGxheUluZGVudDogIjBlbSIsCgkiSFRNTC1DU1MiOiB7IHNjYWxlOiAxMDAsCgkgICAgICAgICAgICAgIGxpbmVicmVha3M6IHsgYXV0b21hdGljOiAiZmFsc2UiIH0sCgkJICAgICAgYXZhaWxhYmxlRm9udHM6IFtdLAoJCSAgICAgIHdlYkZvbnQ6ICJUZVgiIH0sCglTVkc6IHtzY2FsZTogMTAwLAoJICAgICAgbGluZWJyZWFrczogeyBhdXRvbWF0aWM6ICJmYWxzZSIgfSwKCSAgICAgIGZvbnQ6ICJUZVgifSwKCU5hdGl2ZU1NTDoge3NjYWxlOiAxMDB9LAoJVGVYOiB7IGVxdWF0aW9uTnVtYmVyczoge2F1dG9OdW1iZXI6ICJBTVMifSwKCSAgICAgICBNdWx0TGluZVdpZHRoOiAiODUlIiwKCSAgICAgICBUYWdTaWRlOiAicmlnaHQiLAoJICAgICAgIFRhZ0luZGVudDogIi44ZW0iIH19KTsKPC9zY3JpcHQ+" download="">⬇</a></div>
+<div id="lstnumberx4" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter">&lt;/</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">script</span><span class="ltx_text ltx_font_typewriter">&gt;</span>
+</div>
+<div id="lstnumberx5" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter">&lt;</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">script</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">type</span><span class="ltx_text ltx_font_typewriter">="</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">text</span><span class="ltx_text ltx_font_typewriter">/</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">x</span><span class="ltx_text ltx_font_typewriter">-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">mathjax</span><span class="ltx_text ltx_font_typewriter">-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">config</span><span class="ltx_text ltx_font_typewriter">"&gt;</span>
+</div>
+<div id="lstnumberx6" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">MathJax</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Hub</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Config</span><span class="ltx_text ltx_font_typewriter">({</span>
+</div>
+<div id="lstnumberx7" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">        </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">displayAlign</span><span class="ltx_text ltx_font_typewriter">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">"</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">center</span><span class="ltx_text ltx_font_typewriter">",</span>
+</div>
+<div id="lstnumberx8" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">        </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">displayIndent</span><span class="ltx_text ltx_font_typewriter">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">"0</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">em</span><span class="ltx_text ltx_font_typewriter">",</span>
+</div>
+<div id="lstnumberx9" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">        </span><span class="ltx_text ltx_font_typewriter">"</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">HTML</span><span class="ltx_text ltx_font_typewriter">-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">CSS</span><span class="ltx_text ltx_font_typewriter">":</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">{</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">scale</span><span class="ltx_text ltx_font_typewriter">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">100,</span>
+</div>
+<div id="lstnumberx10" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">                      </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">linebreaks</span><span class="ltx_text ltx_font_typewriter">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">{</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">automatic</span><span class="ltx_text ltx_font_typewriter">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">"</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">false</span><span class="ltx_text ltx_font_typewriter">"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">},</span>
+</div>
+<div id="lstnumberx11" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">                      </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">availableFonts</span><span class="ltx_text ltx_font_typewriter">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">[],</span>
+</div>
+<div id="lstnumberx12" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">                      </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">webFont</span><span class="ltx_text ltx_font_typewriter">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">"</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">TeX</span><span class="ltx_text ltx_font_typewriter">"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">},</span>
+</div>
+<div id="lstnumberx13" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">        </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">SVG</span><span class="ltx_text ltx_font_typewriter">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">{</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">scale</span><span class="ltx_text ltx_font_typewriter">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">100,</span>
+</div>
+<div id="lstnumberx14" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">              </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">linebreaks</span><span class="ltx_text ltx_font_typewriter">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">{</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">automatic</span><span class="ltx_text ltx_font_typewriter">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">"</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">false</span><span class="ltx_text ltx_font_typewriter">"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">},</span>
+</div>
+<div id="lstnumberx15" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">              </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">font</span><span class="ltx_text ltx_font_typewriter">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">"</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">TeX</span><span class="ltx_text ltx_font_typewriter">"},</span>
+</div>
+<div id="lstnumberx16" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">        </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">NativeMML</span><span class="ltx_text ltx_font_typewriter">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">{</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">scale</span><span class="ltx_text ltx_font_typewriter">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">100},</span>
+</div>
+<div id="lstnumberx17" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">        </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">TeX</span><span class="ltx_text ltx_font_typewriter">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">{</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">equationNumbers</span><span class="ltx_text ltx_font_typewriter">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">{</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">autoNumber</span><span class="ltx_text ltx_font_typewriter">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">"</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">AMS</span><span class="ltx_text ltx_font_typewriter">"},</span>
+</div>
+<div id="lstnumberx18" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">               </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">MultLineWidth</span><span class="ltx_text ltx_font_typewriter">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">"85%",</span>
+</div>
+<div id="lstnumberx19" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">               </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">TagSide</span><span class="ltx_text ltx_font_typewriter">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">"</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">right</span><span class="ltx_text ltx_font_typewriter">",</span>
+</div>
+<div id="lstnumberx20" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">               </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">TagIndent</span><span class="ltx_text ltx_font_typewriter">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">".8</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">em</span><span class="ltx_text ltx_font_typewriter">"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">}});</span>
+</div>
+<div id="lstnumberx21" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter">&lt;/</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">script</span><span class="ltx_text ltx_font_typewriter">&gt;</span>
+</div>
+</div>
+<p class="ltx_p">which should appear before the code calling MathJax.</p>
+</div>
+<div id="S1.p3" class="ltx_para">
+<p class="ltx_p">An alternative to MathJax is KaTeX, which claims to have some benefits over
+MathJax. Visit <a href="https://katex.org/" title="" class="ltx_ref ltx_url ltx_font_typewriter">https://katex.org/</a> for more details.</p>
+</div>
+</section>
+<section id="S2" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2 </span>Exporting to HTML</h2>
+
+<div id="S2.p1" class="ltx_para">
+<p class="ltx_p">A LaTeX file can be converted into HTML (or other file formats) using either
+Pandoc or LaTeXML.</p>
+</div>
+<div id="S2.p2" class="ltx_para">
+<p class="ltx_p">Neither one of these tools preserves the font choices called from packages like
+<code class="ltx_verbatim ltx_font_typewriter">mathspec</code> or <code class="ltx_verbatim ltx_font_typewriter">fontspec</code>, so do not load such packages. Fonts,
+colors, and the overall style in HTML is best selected using CSS files after
+converted to HTML.</p>
+</div>
+<section id="S2.SS1" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.1 </span>Pandoc</h3>
+
+<div id="S2.SS1.p1" class="ltx_para">
+<p class="ltx_p">Pandoc is software that converts one markup format to another. Please visit
+<a href="https://pandoc.org/" title="" class="ltx_ref ltx_url ltx_font_typewriter">https://pandoc.org/</a> to install. Read the documentation (or
+<code class="ltx_verbatim ltx_font_typewriter">man pandoc</code> on Linux) to learn how to run pandoc.</p>
+</div>
+<div id="S2.SS1.p2" class="ltx_para">
+<p class="ltx_p">If using Linux, a shell command such as</p>
+<div class="ltx_listing ltx_lstlisting ltx_framed_rectangle ltx_listing">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,cGFuZG9jIGZpbGUudGV4IC1mIGxhdGV4IC10IEhUTUwgPiBmaWxlLmh0bWw=" download="">⬇</a></div>
+<div id="lstnumberx22" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter">pandoc</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">file</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">tex</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">f</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">latex</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">t</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">HTML</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">&gt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">file</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">html</span>
+</div>
+</div>
+<p class="ltx_p">turns a LaTeX file into an HTML file. Any mathematics in this HTML file is
+kept as LaTeX commands which can then be converted into mathematical symbols
+using MathJax.</p>
+</div>
+<div id="S2.SS1.p3" class="ltx_para">
+<p class="ltx_p">Pandoc simply interprets the LaTeX document structure as a HTML document
+structure. It does not actually run LaTeX or load any packages. Therefore
+Pandoc does not preserve labels, numbering, and cannot generate graphics with
+TikZ. Pandoc is best for straightforward LaTeX documents.</p>
+</div>
+</section>
+<section id="S2.SS2" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.2 </span>LaTeXML</h3>
+
+<div id="S2.SS2.p1" class="ltx_para">
+<p class="ltx_p">LaTeXML is a robust LaTeX converter that attempts to faithfully recreate a
+LaTeX document as HTML. It interacts well with labels, numbering, BibTeX
+and TikZ. Please visit <a href="https://dlmf.nist.gov/LaTeXML/" title="" class="ltx_ref ltx_url ltx_font_typewriter">https://dlmf.nist.gov/LaTeXML/</a> to install. Read
+the documentation (or <code class="ltx_verbatim ltx_font_typewriter">man latexml</code> and <code class="ltx_verbatim ltx_font_typewriter">man latexmlpost</code> on Linux)
+to learn how to run LaTeXML.</p>
+</div>
+<div id="S2.SS2.p2" class="ltx_para">
+<p class="ltx_p">The LaTeXML software converts LaTeX to the XML file format. Then the XML
+file can then be converted to HTML using the latexmlpost command. For example,
+a file can be converted using the shell commands</p>
+<div class="ltx_listing ltx_lstlisting ltx_framed_rectangle ltx_listing">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,bGF0ZXhtbCBmaWxlLnRleCAtLWRlc3RpbmF0aW9uPSJmaWxlLnhtbCIKbGF0ZXhtbHBvc3QgZmlsZS54bWwgLS1kZXN0aW5hdGlvbj0iZmlsZS5odG1sIiAtLWNzcz0iZmlsZS5jc3Mi" download="">⬇</a></div>
+<div id="lstnumberx23" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter">latexml</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">file</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">tex</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">--</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">destination</span><span class="ltx_text ltx_font_typewriter">="</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">file</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">xml</span><span class="ltx_text ltx_font_typewriter">"</span>
+</div>
+<div id="lstnumberx24" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter">latexmlpost</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">file</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">xml</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">--</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">destination</span><span class="ltx_text ltx_font_typewriter">="</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">file</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">html</span><span class="ltx_text ltx_font_typewriter">"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">--</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">css</span><span class="ltx_text ltx_font_typewriter">="</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">file</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">css</span><span class="ltx_text ltx_font_typewriter">"</span>
+</div>
+</div>
+<p class="ltx_p">The optional <code class="ltx_verbatim ltx_font_typewriter">--css="file.css"</code> allows for the addition of a custom CSS
+format to be included into the auxiliary CSS files that are created when these
+two commands are run.</p>
+</div>
+<div id="S2.SS2.p3" class="ltx_para">
+<p class="ltx_p">This is how the web page you are reading was created, specifically using the commands</p>
+<div class="ltx_listing ltx_lstlisting ltx_framed_rectangle ltx_listing">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,bGF0ZXhtbCAzNTFXZWVrOUhUTUwudGV4IC0tZGVzdGluYXRpb249IjM1MVdlZWs5TGF0ZXhtbE91dHB1dC54bWwiCmxhdGV4bWxwb3N0IDM1MVdlZWs5TGF0ZXhtbE91dHB1dC54bWwKICAgLS1kZXN0aW5hdGlvbj0iMzUxV2VlazlMYXRleG1sT3V0cHV0Lmh0bWwiCiAgIC0tY3NzPSIzNTFXZWVrOU1lbmRlcy5jc3Mi" download="">⬇</a></div>
+<div id="lstnumberx25" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter">latexml</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">351</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Week9HTML</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">tex</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">--</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">destination</span><span class="ltx_text ltx_font_typewriter">="351</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Week9LatexmlOutput</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">xml</span><span class="ltx_text ltx_font_typewriter">"</span>
+</div>
+<div id="lstnumberx26" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter">latexmlpost</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">351</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Week9LatexmlOutput</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">xml</span>
+</div>
+<div id="lstnumberx27" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">   </span><span class="ltx_text ltx_font_typewriter">--</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">destination</span><span class="ltx_text ltx_font_typewriter">="351</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Week9LatexmlOutput</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">html</span><span class="ltx_text ltx_font_typewriter">"</span>
+</div>
+<div id="lstnumberx28" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">   </span><span class="ltx_text ltx_font_typewriter">--</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">css</span><span class="ltx_text ltx_font_typewriter">="351</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Week9Mendes</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">css</span><span class="ltx_text ltx_font_typewriter">"</span>
+</div>
+</div>
+<p class="ltx_p">This method can even turn tikz pictures into images for the web!:</p>
+</div>
+<div id="S2.SS2.p4" class="ltx_para ltx_align_center">
+<svg id="S2.SS2.p4.pic1" class="ltx_picture" height="354.88" overflow="visible" version="1.1" width="472.99"><g fill="#000000" stroke="#000000" transform="translate(162.68,162.68) matrix(1 0 0 -1 0 29.52)"><g color="#000000" stroke-width="0.4pt"><path d="M -162.4 0 L 309.4 0" style="fill:none"></path></g><g color="#000000" stroke-dasharray="none" stroke-dashoffset="0.0pt" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.32pt" transform="matrix(1.0 0.0 0.0 1.0 309.4 0)"><path d="M -1.66 2.21 C -1.52 1.38 0 0.14 0.42 0 C 0 -0.14 -1.52 -1.38 -1.66 -2.21" style="fill:none"></path></g><g color="#000000" stroke-width="0.4pt"><path d="M 0 -162.4 L 0 191.29" style="fill:none"></path></g><g color="#000000" stroke-dasharray="none" stroke-dashoffset="0.0pt" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.32pt" transform="matrix(0.0 1.0 -1.0 0.0 0 191.29)"><path d="M -1.66 2.21 C -1.52 1.38 0 0.14 0.42 0 C 0 -0.14 -1.52 -1.38 -1.66 -2.21" style="fill:none"></path></g><g color="#000000" stroke-width="0.4pt"><path d="M 0 0 M 147.64 0 C 147.64 81.54 81.54 147.64 0 147.64 C -81.54 147.64 -147.64 81.54 -147.64 0 C -147.64 -81.54 -81.54 -147.64 0 -147.64 C 81.54 -147.64 147.64 -81.54 147.64 0 Z M 0 0" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 9.57 6.88)"><switch><foreignObject height="9.0pt" overflow="visible" transform="matrix(1 0 0 -1 0 12.45)" width="7.5pt" y="-2.77"><math id="S2.SS2.p4.pic1.m1" class="ltx_Math" alttext="\theta" display="inline"><mi>𝜽</mi></math></foreignObject></switch></g></g><g color="#000000" stroke-width="1.6pt"><g color="#0000FF" fill="#0000FF" stroke="#0000FF"><path d="M 73.82 0 L 73.82 127.86" style="fill:none"></path></g><g fill="#0000FF" stroke="#0000FF" transform="matrix(1.0 0.0 0.0 1.0 79.54 60.47)"><switch><foreignObject height="9.0pt" overflow="visible" transform="matrix(1 0 0 -1 0 12.45)" width="30.0pt" y="-2.77"><math id="S2.SS2.p4.pic1.m2" class="ltx_Math" alttext="\sin\theta" display="inline"><mrow><mi mathcolor="#0000FF">𝐬𝐢𝐧</mi><mo mathcolor="#0000FF">⁡</mo><mi mathcolor="#0000FF">𝜽</mi></mrow></math></foreignObject></switch></g></g><g color="#000000" stroke-width="1.6pt"><g color="#FF0000" fill="#FF0000" stroke="#FF0000"><path d="M 73.82 127.86 L 295.28 0" style="fill:none"></path></g><g fill="#FF0000" stroke="#FF0000" transform="matrix(1.0 0.0 0.0 1.0 197.18 60.47)"><switch><foreignObject height="9.0pt" overflow="visible" transform="matrix(1 0 0 -1 0 12.45)" width="30.0pt" y="-2.77"><math id="S2.SS2.p4.pic1.m3" class="ltx_Math" alttext="\tan\theta" display="inline"><mrow><mi mathcolor="#FF0000">𝐭𝐚𝐧</mi><mo mathcolor="#FF0000">⁡</mo><mi mathcolor="#FF0000">𝜽</mi></mrow></math></foreignObject></switch></g></g><g color="#000000" stroke-width="1.6pt"><g color="#333333" fill="#333333" stroke="#333333"><path d="M 0 0 L 295.28 0" style="fill:none"></path></g><g fill="#333333" stroke="#333333" transform="matrix(1.0 0.0 0.0 1.0 147.64 -15.4)"><switch><foreignObject height="9.0pt" overflow="visible" transform="matrix(1 0 0 -1 0 12.45)" width="30.0pt" y="-2.77"><math id="S2.SS2.p4.pic1.m4" class="ltx_Math" alttext="\sec\theta" display="inline"><mrow><mi mathcolor="#333333">𝐬𝐞𝐜</mi><mo mathcolor="#333333">⁡</mo><mi mathcolor="#333333">𝜽</mi></mrow></math></foreignObject></switch></g></g><g color="#000000" stroke-width="1.6pt"><g color="#FF00FF" fill="#FF00FF" stroke="#FF00FF"><path d="M 0 -2.21 L 73.82 -2.21" style="fill:none"></path></g><g fill="#FF00FF" stroke="#FF00FF" transform="matrix(1.0 0.0 0.0 1.0 16.15 -17.62)"><switch><foreignObject height="9.0pt" overflow="visible" transform="matrix(1 0 0 -1 0 12.45)" width="30.0pt" y="-2.77"><math id="S2.SS2.p4.pic1.m5" class="ltx_Math" alttext="\cos\theta" display="inline"><mrow><mi mathcolor="#FF00FF">𝐜𝐨𝐬</mi><mo mathcolor="#FF00FF">⁡</mo><mi mathcolor="#FF00FF">𝜽</mi></mrow></math></foreignObject></switch></g></g><g color="#000000" stroke-width="1.6pt"><g color="#4D26B3" fill="#4D26B3" stroke="#4D26B3"><path d="M 73.82 127.86 L 0 170.52" style="fill:none"></path></g><g fill="#4D26B3" stroke="#4D26B3" transform="matrix(1.0 0.0 0.0 1.0 16.15 163.21)"><switch><foreignObject height="9.0pt" overflow="visible" transform="matrix(1 0 0 -1 0 12.45)" width="30.0pt" y="-2.77"><math id="S2.SS2.p4.pic1.m6" class="ltx_Math" alttext="\cot\theta" display="inline"><mrow><mi mathcolor="#4D26B3">𝐜𝐨𝐭</mi><mo mathcolor="#4D26B3">⁡</mo><mi mathcolor="#4D26B3">𝜽</mi></mrow></math></foreignObject></switch></g></g><g color="#000000" stroke-width="1.6pt"><g color="#4C4C4C" fill="#4C4C4C" stroke="#4C4C4C"><path d="M 0 0 L 0 170.52" style="fill:none"></path></g><g fill="#4C4C4C" stroke="#4C4C4C" transform="matrix(1.0 0.0 0.0 1.0 -47.23 81.8)"><switch><foreignObject height="9.0pt" overflow="visible" transform="matrix(1 0 0 -1 0 12.45)" width="30.0pt" y="-2.77"><math id="S2.SS2.p4.pic1.m7" class="ltx_Math" alttext="\csc\theta" display="inline"><mrow><mi mathcolor="#4C4C4C">𝐜𝐬𝐜</mi><mo mathcolor="#4C4C4C">⁡</mo><mi mathcolor="#4C4C4C">𝜽</mi></mrow></math></foreignObject></switch></g></g><g color="#000000" stroke-width="1.6pt"><path d="M 0 0 L 73.82 127.86" style="fill:none"></path><g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 20.81 60.47)"><switch><foreignObject height="9.0pt" overflow="visible" transform="matrix(1 0 0 -1 0 12.45)" width="7.5pt" y="-2.77"><math id="S2.SS2.p4.pic1.m8" class="ltx_Math" alttext="1" display="inline"><mn>𝟏</mn></math></foreignObject></switch></g></g></g></svg>
+</div>
+<div class="ltx_pagination ltx_role_newpage"></div>
+</section>
+</section><div class="ltx_rdf" about="" property="dcterms:creator" content="Tony Mendes"></div>
+
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Wed Dec  7 14:14:20 2022 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

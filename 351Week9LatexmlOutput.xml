@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?latexml searchpaths="/home/tony/Courses/Math351/Winter2023/Website"?>
+<?latexml class="article"?>
+<?latexml package="geometry" options="margin=2.5cm"?>
+<?latexml package="hyperref" options="pdfauthor = Tony Mendes,
+colorlinks = true,
+urlcolor = blue,
+linkcolor = blue,
+citecolor = blue"?>
+<?latexml package="listings, tikz"?>
+<?latexml RelaxNGSchema="LaTeXML"?>
+<document xmlns="http://dlmf.nist.gov/LaTeXML" xmlns:svg="http://www.w3.org/2000/svg" class="ltx_authors_1line" prefix="dcterms: http://purl.org/dc/terms/">
+  <resource src="LaTeXML.css" type="text/css"/>
+  <resource src="ltx-article.css" type="text/css"/>
+  <resource src="ltx-listings.css" type="text/css"/>
+  <title fontsize="298%">LaTeX on the Web</title>
+  <date role="creation"/>
+  <section inlist="toc" xml:id="S1">
+    <tags>
+      <tag>1</tag>
+      <tag role="autoref">section 1</tag>
+      <tag role="refnum">1</tag>
+      <tag role="typerefnum">§1</tag>
+    </tags>
+    <title><tag close=" ">1</tag>MathJax</title>
+    <para xml:id="S1.p1">
+      <p>Including mathematics on web pages
+with <ref class="ltx_href" href="https://www.mathjax.org/">MathJax</ref> is as easy as including the this
+code in the HTML document (usually between <verbatim font="typewriter">&lt;head&gt;</verbatim> and <verbatim font="typewriter">&lt;/head&gt;</verbatim> at
+the top of the HTML):
+<!--  %**** 351Week9HTML.tex Line 25 **** --></p>
+      <listing class="ltx_lstlisting" data="PHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiCiBzcmM9Imh0dHBzOi8vY2RuanMuY2xvdWRmbGFyZS5jb20vYWpheC9saWJzL21hdGhqYXgvMi43LjUvTWF0aEpheC5qcz9jb25maWc9VGVYLUFNU19IVE1MIj4KPC9zY3JpcHQ+" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+        <listingline xml:id="lstnumberx1"><text font="typewriter">&lt;</text><text class="ltx_lst_identifier" font="typewriter">script</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">type</text><text font="typewriter">="</text><text class="ltx_lst_identifier" font="typewriter">text</text><text font="typewriter">/</text><text class="ltx_lst_identifier" font="typewriter">javascript</text><text font="typewriter">"</text></listingline>
+        <listingline xml:id="lstnumberx2"><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">src</text><text font="typewriter">="</text><text class="ltx_lst_identifier" font="typewriter">https</text><text font="typewriter">://</text><text class="ltx_lst_identifier" font="typewriter">cdnjs</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">cloudflare</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">com</text><text font="typewriter">/</text><text class="ltx_lst_identifier" font="typewriter">ajax</text><text font="typewriter">/</text><text class="ltx_lst_identifier" font="typewriter">libs</text><text font="typewriter">/</text><text class="ltx_lst_identifier" font="typewriter">mathjax</text><text font="typewriter">/2.7.5/</text><text class="ltx_lst_identifier" font="typewriter">MathJax</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">js</text><text font="typewriter">?</text><text class="ltx_lst_identifier" font="typewriter">config</text><text font="typewriter">=</text><text class="ltx_lst_identifier" font="typewriter">TeX</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">AMS_HTML</text><text font="typewriter">"&gt;</text></listingline>
+        <listingline xml:id="lstnumberx3"><text font="typewriter">&lt;/</text><text class="ltx_lst_identifier" font="typewriter">script</text><text font="typewriter">&gt;</text></listingline>
+      </listing>
+      <p>This code allows mathematics symbols and standard AMS environments (such as
+<verbatim font="typewriter">align</verbatim>, <verbatim font="typewriter">bmatrix</verbatim>, <verbatim font="typewriter">cases</verbatim>, etc.) can be typed directly into
+the HTML document. The default settings of MathJax do not interpret dollar
+signs as enclosing mathematics, so unless settings are changed then mathematics
+must be enclosed within <verbatim font="typewriter">\(..\)</verbatim>, <verbatim font="typewriter">\[..\]</verbatim>,
+<verbatim font="typewriter">\begin{equation}..\end{equation}</verbatim>, etc.</p>
+    </para>
+    <para xml:id="S1.p2">
+      <p>Read the documentation at <ref class="ltx_url" font="typewriter" href="https://docs.mathjax.org/en/latest/index.html">https://docs.mathjax.org/en/latest/index.html</ref>
+to discover how to customize MathJax. One example of such a customization is
+the script</p>
+      <listing class="ltx_lstlisting" data="PC9zY3JpcHQ+CjxzY3JpcHQgdHlwZT0idGV4dC94LW1hdGhqYXgtY29uZmlnIj4KICAgIE1hdGhKYXguSHViLkNvbmZpZyh7CglkaXNwbGF5QWxpZ246ICJjZW50ZXIiLAoJZGlzcGxheUluZGVudDogIjBlbSIsCgkiSFRNTC1DU1MiOiB7IHNjYWxlOiAxMDAsCgkgICAgICAgICAgICAgIGxpbmVicmVha3M6IHsgYXV0b21hdGljOiAiZmFsc2UiIH0sCgkJICAgICAgYXZhaWxhYmxlRm9udHM6IFtdLAoJCSAgICAgIHdlYkZvbnQ6ICJUZVgiIH0sCglTVkc6IHtzY2FsZTogMTAwLAoJICAgICAgbGluZWJyZWFrczogeyBhdXRvbWF0aWM6ICJmYWxzZSIgfSwKCSAgICAgIGZvbnQ6ICJUZVgifSwKCU5hdGl2ZU1NTDoge3NjYWxlOiAxMDB9LAoJVGVYOiB7IGVxdWF0aW9uTnVtYmVyczoge2F1dG9OdW1iZXI6ICJBTVMifSwKCSAgICAgICBNdWx0TGluZVdpZHRoOiAiODUlIiwKCSAgICAgICBUYWdTaWRlOiAicmlnaHQiLAoJICAgICAgIFRhZ0luZGVudDogIi44ZW0iIH19KTsKPC9zY3JpcHQ+" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+        <listingline xml:id="lstnumberx4"><text font="typewriter">&lt;/</text><text class="ltx_lst_identifier" font="typewriter">script</text><text font="typewriter">&gt;</text></listingline>
+        <listingline xml:id="lstnumberx5"><text font="typewriter">&lt;</text><text class="ltx_lst_identifier" font="typewriter">script</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">type</text><text font="typewriter">="</text><text class="ltx_lst_identifier" font="typewriter">text</text><text font="typewriter">/</text><text class="ltx_lst_identifier" font="typewriter">x</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">mathjax</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">config</text><text font="typewriter">"&gt;</text></listingline>
+        <listingline xml:id="lstnumberx6"><text class="ltx_lst_space" font="typewriter">    </text><text class="ltx_lst_identifier" font="typewriter">MathJax</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">Hub</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">Config</text><text font="typewriter">({</text></listingline>
+        <listingline xml:id="lstnumberx7"><text class="ltx_lst_space" font="typewriter">        </text><text class="ltx_lst_identifier" font="typewriter">displayAlign</text><text font="typewriter">:</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">"</text><text class="ltx_lst_identifier" font="typewriter">center</text><text font="typewriter">",</text></listingline>
+        <listingline xml:id="lstnumberx8"><text class="ltx_lst_space" font="typewriter">        </text><text class="ltx_lst_identifier" font="typewriter">displayIndent</text><text font="typewriter">:</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">"0</text><text class="ltx_lst_identifier" font="typewriter">em</text><text font="typewriter">",</text></listingline>
+        <listingline xml:id="lstnumberx9"><text class="ltx_lst_space" font="typewriter">        </text><text font="typewriter">"</text><text class="ltx_lst_identifier" font="typewriter">HTML</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">CSS</text><text font="typewriter">":</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">{</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">scale</text><text font="typewriter">:</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">100,</text></listingline>
+        <listingline xml:id="lstnumberx10"><text class="ltx_lst_space" font="typewriter">                      </text><text class="ltx_lst_identifier" font="typewriter">linebreaks</text><text font="typewriter">:</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">{</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">automatic</text><text font="typewriter">:</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">"</text><text class="ltx_lst_identifier" font="typewriter">false</text><text font="typewriter">"</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">},</text></listingline>
+        <listingline xml:id="lstnumberx11"><text class="ltx_lst_space" font="typewriter">                      </text><text class="ltx_lst_identifier" font="typewriter">availableFonts</text><text font="typewriter">:</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">[],</text></listingline>
+        <listingline xml:id="lstnumberx12"><text class="ltx_lst_space" font="typewriter">                      </text><text class="ltx_lst_identifier" font="typewriter">webFont</text><text font="typewriter">:</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">"</text><text class="ltx_lst_identifier" font="typewriter">TeX</text><text font="typewriter">"</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">},</text></listingline>
+        <listingline xml:id="lstnumberx13"><text class="ltx_lst_space" font="typewriter">        </text><text class="ltx_lst_identifier" font="typewriter">SVG</text><text font="typewriter">:</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">{</text><text class="ltx_lst_identifier" font="typewriter">scale</text><text font="typewriter">:</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">100,</text></listingline>
+        <listingline xml:id="lstnumberx14"><text class="ltx_lst_space" font="typewriter">              </text><text class="ltx_lst_identifier" font="typewriter">linebreaks</text><text font="typewriter">:</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">{</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">automatic</text><text font="typewriter">:</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">"</text><text class="ltx_lst_identifier" font="typewriter">false</text><text font="typewriter">"</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">},</text></listingline>
+        <listingline xml:id="lstnumberx15"><text class="ltx_lst_space" font="typewriter">              </text><text class="ltx_lst_identifier" font="typewriter">font</text><text font="typewriter">:</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">"</text><text class="ltx_lst_identifier" font="typewriter">TeX</text><text font="typewriter">"},</text></listingline>
+        <listingline xml:id="lstnumberx16"><text class="ltx_lst_space" font="typewriter">        </text><text class="ltx_lst_identifier" font="typewriter">NativeMML</text><text font="typewriter">:</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">{</text><text class="ltx_lst_identifier" font="typewriter">scale</text><text font="typewriter">:</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">100},</text></listingline>
+        <listingline xml:id="lstnumberx17"><text class="ltx_lst_space" font="typewriter">        </text><text class="ltx_lst_identifier" font="typewriter">TeX</text><text font="typewriter">:</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">{</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">equationNumbers</text><text font="typewriter">:</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">{</text><text class="ltx_lst_identifier" font="typewriter">autoNumber</text><text font="typewriter">:</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">"</text><text class="ltx_lst_identifier" font="typewriter">AMS</text><text font="typewriter">"},</text></listingline>
+        <listingline xml:id="lstnumberx18"><text class="ltx_lst_space" font="typewriter">               </text><text class="ltx_lst_identifier" font="typewriter">MultLineWidth</text><text font="typewriter">:</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">"85%",</text></listingline>
+        <listingline xml:id="lstnumberx19"><text class="ltx_lst_space" font="typewriter">               </text><text class="ltx_lst_identifier" font="typewriter">TagSide</text><text font="typewriter">:</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">"</text><text class="ltx_lst_identifier" font="typewriter">right</text><text font="typewriter">",</text></listingline>
+        <listingline xml:id="lstnumberx20"><text class="ltx_lst_space" font="typewriter">               </text><text class="ltx_lst_identifier" font="typewriter">TagIndent</text><text font="typewriter">:</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">".8</text><text class="ltx_lst_identifier" font="typewriter">em</text><text font="typewriter">"</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">}});</text></listingline>
+        <listingline xml:id="lstnumberx21"><text font="typewriter">&lt;/</text><text class="ltx_lst_identifier" font="typewriter">script</text><text font="typewriter">&gt;</text></listingline>
+      </listing>
+      <p>which should appear before the code calling MathJax.</p>
+    </para>
+    <para xml:id="S1.p3">
+      <p>An alternative to MathJax is KaTeX, which claims to have some benefits over
+MathJax. Visit <ref class="ltx_url" font="typewriter" href="https://katex.org/">https://katex.org/</ref> for more details.</p>
+    </para>
+  </section>
+  <section inlist="toc" xml:id="S2">
+    <tags>
+      <tag>2</tag>
+      <tag role="autoref">section 2</tag>
+      <tag role="refnum">2</tag>
+      <tag role="typerefnum">§2</tag>
+    </tags>
+    <title><tag close=" ">2</tag>Exporting to HTML</title>
+    <para xml:id="S2.p1">
+      <p>A LaTeX file can be converted into HTML (or other file formats) using either
+Pandoc or LaTeXML.</p>
+    </para>
+    <para xml:id="S2.p2">
+      <p>Neither one of these tools preserves the font choices called from packages like
+<verbatim font="typewriter">mathspec</verbatim> or <verbatim font="typewriter">fontspec</verbatim>, so do not load such packages. Fonts,
+colors, and the overall style in HTML is best selected using CSS files after
+converted to HTML.</p>
+    </para>
+<!--  %**** 351Week9HTML.tex Line 75 **** -->    <subsection inlist="toc" xml:id="S2.SS1">
+      <tags>
+        <tag>2.1</tag>
+        <tag role="autoref">subsection 2.1</tag>
+        <tag role="refnum">2.1</tag>
+        <tag role="typerefnum">§2.1</tag>
+      </tags>
+      <title><tag close=" ">2.1</tag>Pandoc</title>
+      <para xml:id="S2.SS1.p1">
+        <p>Pandoc is software that converts one markup format to another. Please visit
+<ref class="ltx_url" font="typewriter" href="https://pandoc.org/">https://pandoc.org/</ref> to install. Read the documentation (or
+<verbatim font="typewriter">man pandoc</verbatim> on Linux) to learn how to run pandoc.</p>
+      </para>
+      <para xml:id="S2.SS1.p2">
+        <p>If using Linux, a shell command such as</p>
+        <listing class="ltx_lstlisting" data="cGFuZG9jIGZpbGUudGV4IC1mIGxhdGV4IC10IEhUTUwgPiBmaWxlLmh0bWw=" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+          <listingline xml:id="lstnumberx22"><text class="ltx_lst_identifier" font="typewriter">pandoc</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">file</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">tex</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">f</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">latex</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">t</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">HTML</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">&gt;</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">file</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">html</text></listingline>
+        </listing>
+        <p>turns a LaTeX file into an HTML file. Any mathematics in this HTML file is
+kept as LaTeX commands which can then be converted into mathematical symbols
+using MathJax.</p>
+      </para>
+      <para xml:id="S2.SS1.p3">
+        <p>Pandoc simply interprets the LaTeX document structure as a HTML document
+structure. It does not actually run LaTeX or load any packages. Therefore
+Pandoc does not preserve labels, numbering, and cannot generate graphics with
+TikZ. Pandoc is best for straightforward LaTeX documents.</p>
+      </para>
+    </subsection>
+    <subsection inlist="toc" xml:id="S2.SS2">
+      <tags>
+        <tag>2.2</tag>
+        <tag role="autoref">subsection 2.2</tag>
+        <tag role="refnum">2.2</tag>
+        <tag role="typerefnum">§2.2</tag>
+      </tags>
+      <title><tag close=" ">2.2</tag>LaTeXML</title>
+      <para xml:id="S2.SS2.p1">
+        <p>LaTeXML is a robust LaTeX converter that attempts to faithfully recreate a
+LaTeX document as HTML. It interacts well with labels, numbering, BibTeX
+and TikZ. Please visit <ref class="ltx_url" font="typewriter" href="https://dlmf.nist.gov/LaTeXML/">https://dlmf.nist.gov/LaTeXML/</ref> to install. Read
+the documentation (or <verbatim font="typewriter">man latexml</verbatim> and <verbatim font="typewriter">man latexmlpost</verbatim> on Linux)
+<!--  %**** 351Week9HTML.tex Line 100 **** -->to learn how to run LaTeXML.</p>
+      </para>
+      <para xml:id="S2.SS2.p2">
+        <p>The LaTeXML software converts LaTeX to the XML file format. Then the XML
+file can then be converted to HTML using the latexmlpost command. For example,
+a file can be converted using the shell commands</p>
+        <listing class="ltx_lstlisting" data="bGF0ZXhtbCBmaWxlLnRleCAtLWRlc3RpbmF0aW9uPSJmaWxlLnhtbCIKbGF0ZXhtbHBvc3QgZmlsZS54bWwgLS1kZXN0aW5hdGlvbj0iZmlsZS5odG1sIiAtLWNzcz0iZmlsZS5jc3Mi" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+          <listingline xml:id="lstnumberx23"><text class="ltx_lst_identifier" font="typewriter">latexml</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">file</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">tex</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">--</text><text class="ltx_lst_identifier" font="typewriter">destination</text><text font="typewriter">="</text><text class="ltx_lst_identifier" font="typewriter">file</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">xml</text><text font="typewriter">"</text></listingline>
+          <listingline xml:id="lstnumberx24"><text class="ltx_lst_identifier" font="typewriter">latexmlpost</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">file</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">xml</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">--</text><text class="ltx_lst_identifier" font="typewriter">destination</text><text font="typewriter">="</text><text class="ltx_lst_identifier" font="typewriter">file</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">html</text><text font="typewriter">"</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">--</text><text class="ltx_lst_identifier" font="typewriter">css</text><text font="typewriter">="</text><text class="ltx_lst_identifier" font="typewriter">file</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">css</text><text font="typewriter">"</text></listingline>
+        </listing>
+        <p>The optional <verbatim font="typewriter">--css="file.css"</verbatim> allows for the addition of a custom CSS
+format to be included into the auxiliary CSS files that are created when these
+two commands are run.</p>
+      </para>
+      <para xml:id="S2.SS2.p3">
+        <p>This is how the web page you are reading was created, specifically using the commands</p>
+        <listing class="ltx_lstlisting" data="bGF0ZXhtbCAzNTFXZWVrOUhUTUwudGV4IC0tZGVzdGluYXRpb249IjM1MVdlZWs5TGF0ZXhtbE91dHB1dC54bWwiCmxhdGV4bWxwb3N0IDM1MVdlZWs5TGF0ZXhtbE91dHB1dC54bWwKICAgLS1kZXN0aW5hdGlvbj0iMzUxV2VlazlMYXRleG1sT3V0cHV0Lmh0bWwiCiAgIC0tY3NzPSIzNTFXZWVrOU1lbmRlcy5jc3Mi" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+          <listingline xml:id="lstnumberx25"><text class="ltx_lst_identifier" font="typewriter">latexml</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">351</text><text class="ltx_lst_identifier" font="typewriter">Week9HTML</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">tex</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">--</text><text class="ltx_lst_identifier" font="typewriter">destination</text><text font="typewriter">="351</text><text class="ltx_lst_identifier" font="typewriter">Week9LatexmlOutput</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">xml</text><text font="typewriter">"</text></listingline>
+          <listingline xml:id="lstnumberx26"><text class="ltx_lst_identifier" font="typewriter">latexmlpost</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">351</text><text class="ltx_lst_identifier" font="typewriter">Week9LatexmlOutput</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">xml</text></listingline>
+          <listingline xml:id="lstnumberx27"><text class="ltx_lst_space" font="typewriter">   </text><text font="typewriter">--</text><text class="ltx_lst_identifier" font="typewriter">destination</text><text font="typewriter">="351</text><text class="ltx_lst_identifier" font="typewriter">Week9LatexmlOutput</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">html</text><text font="typewriter">"</text></listingline>
+          <listingline xml:id="lstnumberx28"><text class="ltx_lst_space" font="typewriter">   </text><text font="typewriter">--</text><text class="ltx_lst_identifier" font="typewriter">css</text><text font="typewriter">="351</text><text class="ltx_lst_identifier" font="typewriter">Week9Mendes</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">css</text><text font="typewriter">"</text></listingline>
+        </listing>
+        <p>This method can even turn tikz pictures into images for the web!:</p>
+      </para>
+      <para align="center" xml:id="S2.SS2.p4">
+        <picture height="354.88" tex="\hbox to341.83pt{\vbox to256.47pt{\pgfpicture\makeatletter\raise 0.0pt\hbox{%&#10;\hskip 117.567619pt\lower-117.567619pt\hbox to 0.0pt{\pgfsys@beginscope%&#10;\pgfsys@invoke{ }\definecolor{pgfstrokecolor}{rgb}{0,0,0}%&#10;\pgfsys@color@rgb@stroke{0}{0}{0}\pgfsys@invoke{ }\pgfsys@color@rgb@fill{0}{0}%&#10;{0}\pgfsys@invoke{ }\pgfsys@setlinewidth{0.4pt}\pgfsys@invoke{ }\nullfont\hbox&#10;to%&#10; 0.0pt{\pgfsys@beginscope\pgfsys@invoke{ }{{}}&#10;{}{{}}{}&#10;{}{}\pgfsys@beginscope\pgfsys@invoke{ }\pgfsys@setlinewidth{0.4pt}%&#10;\pgfsys@invoke{ }{}{{&#10;{\pgfsys@beginscope\pgfsys@setlinewidth{0.32pt}\pgfsys@setdash{}{0.0pt}%&#10;\pgfsys@roundcap\pgfsys@roundjoin{}&#10;{}{}{}&#10;{}{}{}&#10;\pgfsys@moveto{-1.2pt}{1.6pt}\pgfsys@curveto{-1.1pt}{1.0pt}{0.0pt}{0.1pt}{0.3%&#10;pt}{0.0pt}\pgfsys@curveto{0.0pt}{-0.1pt}{-1.1pt}{-1.0pt}{-1.2pt}{-1.6pt}%&#10;\pgfsys@stroke\pgfsys@endscope}}&#10;}{}{}{{}}\pgfsys@moveto{-117.367619pt}{0.0pt}\pgfsys@lineto{223.605454pt}{0.0%&#10;pt}\pgfsys@stroke\pgfsys@invoke{ }{{}{{}}{}{}{{}}{{{}}{{{}}{\pgfsys@beginscope%&#10;\pgfsys@invoke{ }\pgfsys@transformcm{1.0}{0.0}{0.0}{1.0}{223.605454pt}{0.0pt}%&#10;\pgfsys@invoke{ }\pgfsys@invoke{      \lxSVG@closescope  }\pgfsys@invoke{%&#10;\lxSVG@closescope }\pgfsys@endscope}}{{}}}}&#10;\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope{}{{}}{}&#10;{}{}\pgfsys@beginscope\pgfsys@invoke{ }\pgfsys@setlinewidth{0.4pt}%&#10;\pgfsys@invoke{ }{}{}{}{}{{}}\pgfsys@moveto{0.0pt}{-117.367619pt}%&#10;\pgfsys@lineto{0.0pt}{138.247186pt}\pgfsys@stroke\pgfsys@invoke{ }{{}{{}}{}{}{%&#10;{}}{{{}}{{{}}{\pgfsys@beginscope\pgfsys@invoke{ }\pgfsys@transformcm{0.0}{1.0}%&#10;{-1.0}{0.0}{0.0pt}{138.247186pt}\pgfsys@invoke{ }\pgfsys@invoke{      %&#10;\lxSVG@closescope  }\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope}}{{}}}}&#10;\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope{}{{}}{}{{{}}{}{}{}{}{}{}{}{%&#10;}}{}\pgfsys@moveto{0.0pt}{0.0pt}\pgfsys@moveto{106.697835pt}{0.0pt}%&#10;\pgfsys@curveto{106.697835pt}{58.927587pt}{58.927587pt}{106.697835pt}{0.0pt}{1%&#10;06.697835pt}\pgfsys@curveto{-58.927587pt}{106.697835pt}{-106.697835pt}{58.9275%&#10;87pt}{-106.697835pt}{0.0pt}\pgfsys@curveto{-106.697835pt}{-58.927587pt}{-58.92%&#10;7587pt}{-106.697835pt}{0.0pt}{-106.697835pt}\pgfsys@curveto{58.927587pt}{-106.%&#10;697835pt}{106.697835pt}{-58.927587pt}{106.697835pt}{0.0pt}\pgfsys@closepath%&#10;\pgfsys@moveto{0.0pt}{0.0pt}\pgfsys@stroke\pgfsys@invoke{ }&#10;{}{{}}\hbox{\hbox{{\pgfsys@beginscope\pgfsys@invoke{ }{{}{{}}{}{}}&#10;\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope}}}&#10;\boldmath{{}}\hbox{\hbox{{\pgfsys@beginscope\pgfsys@invoke{ }{{}{}{{&#10;{}{}}}{&#10;{}{}}&#10;{{}{{}}}{{}{}}{}{{}{}}&#10;{&#10;}{{{{}}\pgfsys@beginscope\pgfsys@invoke{ }\pgfsys@transformcm{1.0}{0.0}{0.0}{1%&#10;.0}{6.919841pt}{4.968886pt}\pgfsys@invoke{ }\hbox{{\definecolor{pgfstrokecolor%&#10;}{rgb}{0,0,0}\pgfsys@color@rgb@stroke{0}{0}{0}\pgfsys@invoke{ }%&#10;\pgfsys@color@rgb@fill{0}{0}{0}\pgfsys@invoke{ }\hbox{{$\theta$}}&#10;}}\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope}}}&#10;\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope}}}&#10;{}{{}}{}{{}}&#10;{}{}{}{}{{{}{}}}\pgfsys@beginscope\pgfsys@invoke{ }\pgfsys@setlinewidth{1.6pt}%&#10;\pgfsys@invoke{ }\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{%&#10;0,0,1}\pgfsys@color@rgb@stroke{0}{0}{1}\pgfsys@invoke{ }\pgfsys@color@rgb@fill%&#10;{0}{0}{1}\pgfsys@invoke{ }\definecolor[named]{pgffillcolor}{rgb}{0,0,1}{}%&#10;\pgfsys@moveto{53.348917pt}{0.0pt}\pgfsys@lineto{53.348985pt}{92.403109pt}%&#10;\pgfsys@stroke\pgfsys@invoke{ }\hbox{\hbox{{\pgfsys@beginscope\pgfsys@invoke{ %&#10;}{{}{}{{&#10;{}{}}}{&#10;{}{}}&#10;{{}{{}}}{{}{}}{}{{}{}}&#10;{&#10;}{{{{}}\pgfsys@beginscope\pgfsys@invoke{ }\pgfsys@transformcm{1.0}{0.0}{0.0}{1%&#10;.0}{57.481951pt}{43.701592pt}\pgfsys@invoke{ }\hbox{{\definecolor[named]{.}{%&#10;rgb}{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}%&#10;\pgfsys@color@rgb@stroke{0}{0}{1}\pgfsys@invoke{ }\pgfsys@color@rgb@fill{0}{0}%&#10;{1}\pgfsys@invoke{ }\hbox{{\definecolor[named]{.}{rgb}{0,0,1}\color[rgb]{0,0,1%&#10;}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}\pgfsys@color@rgb@stroke{0}{0}%&#10;{1}\pgfsys@color@rgb@fill{0}{0}{1}$\sin\theta$}}&#10;}}\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope}}}&#10;\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope}}}&#10;\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope{{}}{}{{}}{}&#10;{}{}{}{}{{{}{}}}{{}}\pgfsys@beginscope\pgfsys@invoke{ }\pgfsys@setlinewidth{1.%&#10;6pt}\pgfsys@invoke{ }\color[rgb]{1,0,0}\definecolor[named]{pgfstrokecolor}{rgb%&#10;}{1,0,0}\pgfsys@color@rgb@stroke{1}{0}{0}\pgfsys@invoke{ }%&#10;\pgfsys@color@rgb@fill{1}{0}{0}\pgfsys@invoke{ }\definecolor[named]{%&#10;pgffillcolor}{rgb}{1,0,0}{}\pgfsys@moveto{53.348985pt}{92.403109pt}%&#10;\pgfsys@lineto{213.39567pt}{0.0pt}\pgfsys@stroke\pgfsys@invoke{ }\hbox{\hbox{{%&#10;\pgfsys@beginscope\pgfsys@invoke{ }{{}{}{{&#10;{}{}}}{&#10;{}{}}&#10;{{}{{}}}{{}{}}{}{{}{}}&#10;{&#10;}{{{{}}\pgfsys@beginscope\pgfsys@invoke{ }\pgfsys@transformcm{1.0}{0.0}{0.0}{1%&#10;.0}{142.505327pt}{43.701592pt}\pgfsys@invoke{ }\hbox{{\definecolor[named]{.}{%&#10;rgb}{1,0,0}\definecolor[named]{pgfstrokecolor}{rgb}{1,0,0}%&#10;\pgfsys@color@rgb@stroke{1}{0}{0}\pgfsys@invoke{ }\pgfsys@color@rgb@fill{1}{0}%&#10;{0}\pgfsys@invoke{ }\hbox{{\definecolor[named]{.}{rgb}{1,0,0}\color[rgb]{1,0,0%&#10;}\definecolor[named]{pgfstrokecolor}{rgb}{1,0,0}\pgfsys@color@rgb@stroke{1}{0}%&#10;{0}\pgfsys@color@rgb@fill{1}{0}{0}$\tan\theta$}}&#10;}}\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope}}}&#10;\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope}}}&#10;\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope{}{{}}{}&#10;{}{}{}{}{{{}{}}}{{}}\pgfsys@beginscope\pgfsys@invoke{ }\pgfsys@setlinewidth{1.%&#10;6pt}\pgfsys@invoke{ }\color[rgb]{0.2006,0.2006,0.2006}\definecolor[named]{%&#10;pgfstrokecolor}{rgb}{0.2006,0.2006,0.2006}\pgfsys@color@gray@stroke{0.2006}%&#10;\pgfsys@invoke{ }\pgfsys@color@gray@fill{0.2006}\pgfsys@invoke{ }\definecolor{%&#10;pgffillcolor}{rgb}{0.2006,0.2006,0.2006}{}\pgfsys@moveto{0.0pt}{0.0pt}%&#10;\pgfsys@lineto{213.39567pt}{0.0pt}\pgfsys@stroke\pgfsys@invoke{ }\hbox{\hbox{{%&#10;\pgfsys@beginscope\pgfsys@invoke{ }{{}{}{{&#10;{}{}}}{&#10;{}{}}&#10;{{}{{}}}{{}{}}{}{{}{}}&#10;{&#10;}{{{{}}\pgfsys@beginscope\pgfsys@invoke{ }\pgfsys@transformcm{1.0}{0.0}{0.0}{1%&#10;.0}{106.698064pt}{-11.132893pt}\pgfsys@invoke{ }\hbox{{\definecolor{.}{rgb}{%&#10;0.2006,0.2006,0.2006}\definecolor[named]{pgfstrokecolor}{rgb}{%&#10;0.2006,0.2006,0.2006}\pgfsys@color@gray@stroke{0.2006}\pgfsys@invoke{ }%&#10;\pgfsys@color@gray@fill{0.2006}\pgfsys@invoke{ }\hbox{{\definecolor{.}{rgb}{%&#10;0.2006,0.2006,0.2006}\color[rgb]{0.2006,0.2006,0.2006}\definecolor[named]{%&#10;pgfstrokecolor}{rgb}{0.2006,0.2006,0.2006}\pgfsys@color@gray@stroke{0.2006}%&#10;\pgfsys@color@gray@fill{0.2006}$\sec\theta$}}&#10;}}\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope}}}&#10;\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope}}}&#10;\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope{}{{}}{}&#10;{}{}{}{}{{{}{}}}\pgfsys@beginscope\pgfsys@invoke{ }\pgfsys@setlinewidth{1.6pt}%&#10;\pgfsys@invoke{ }\color[rgb]{1,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{%&#10;1,0,1}\pgfsys@color@cmyk@stroke{0}{1}{0}{0}\pgfsys@invoke{ }%&#10;\pgfsys@color@cmyk@fill{0}{1}{0}{0}\pgfsys@invoke{ }\definecolor[named]{%&#10;pgffillcolor}{rgb}{1,0,1}{}\pgfsys@moveto{0.0pt}{-1.600468pt}\pgfsys@lineto{53%&#10;.348917pt}{-1.600468pt}\pgfsys@stroke\pgfsys@invoke{ }\hbox{\hbox{{%&#10;\pgfsys@beginscope\pgfsys@invoke{ }{{}{}{{&#10;{}{}}}{&#10;{}{}}&#10;{{}{{}}}{{}{}}{}{{}{}}&#10;{&#10;}{{{{}}\pgfsys@beginscope\pgfsys@invoke{ }\pgfsys@transformcm{1.0}{0.0}{0.0}{1%&#10;.0}{11.674688pt}{-12.733359pt}\pgfsys@invoke{ }\hbox{{\definecolor[named]{.}{%&#10;rgb}{1,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{1,0,1}%&#10;\pgfsys@color@cmyk@stroke{0}{1}{0}{0}\pgfsys@invoke{ }\pgfsys@color@cmyk@fill{%&#10;0}{1}{0}{0}\pgfsys@invoke{ }\hbox{{\definecolor[named]{.}{rgb}{1,0,1}\color[%&#10;rgb]{1,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{1,0,1}%&#10;\pgfsys@color@cmyk@stroke{0}{1}{0}{0}\pgfsys@color@cmyk@fill{0}{1}{0}{0}$\cos%&#10;\theta$}}&#10;}}\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope}}}&#10;\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope}}}&#10;\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope{{}}{}{{}}{}&#10;{}{}{}{}{{{}{}}}{{}}\pgfsys@beginscope\pgfsys@invoke{ }\pgfsys@setlinewidth{1.%&#10;6pt}\pgfsys@invoke{ }\color[rgb]{0.3,0.15,0.7}\definecolor[named]{%&#10;pgfstrokecolor}{rgb}{0.3,0.15,0.7}\pgfsys@color@rgb@stroke{0.3}{0.15}{0.7}%&#10;\pgfsys@invoke{ }\pgfsys@color@rgb@fill{0.3}{0.15}{0.7}\pgfsys@invoke{ }%&#10;\definecolor{pgffillcolor}{rgb}{0.3,0.15,0.7}{}\pgfsys@moveto{53.348985pt}{92.%&#10;403109pt}\pgfsys@lineto{0.0pt}{123.235999pt}\pgfsys@stroke\pgfsys@invoke{ }%&#10;\hbox{\hbox{{\pgfsys@beginscope\pgfsys@invoke{ }{{}{}{{&#10;{}{}}}{&#10;{}{}}&#10;{{}{{}}}{{}{}}{}{{}{}}&#10;{&#10;}{{{{}}\pgfsys@beginscope\pgfsys@invoke{ }\pgfsys@transformcm{1.0}{0.0}{0.0}{1%&#10;.0}{11.674721pt}{117.952523pt}\pgfsys@invoke{ }\hbox{{\definecolor{.}{rgb}{%&#10;0.3,0.15,0.7}\definecolor[named]{pgfstrokecolor}{rgb}{0.3,0.15,0.7}%&#10;\pgfsys@color@rgb@stroke{0.3}{0.15}{0.7}\pgfsys@invoke{ }%&#10;\pgfsys@color@rgb@fill{0.3}{0.15}{0.7}\pgfsys@invoke{ }\hbox{{\definecolor{.}{%&#10;rgb}{0.3,0.15,0.7}\color[rgb]{0.3,0.15,0.7}\definecolor[named]{pgfstrokecolor}%&#10;{rgb}{0.3,0.15,0.7}\pgfsys@color@rgb@stroke{0.3}{0.15}{0.7}%&#10;\pgfsys@color@rgb@fill{0.3}{0.15}{0.7}$\cot\theta$}}&#10;}}\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope}}}&#10;\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope}}}&#10;\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope{}{{}}{}&#10;{}{}{}{}{{{}{}}}\pgfsys@beginscope\pgfsys@invoke{ }\pgfsys@setlinewidth{1.6pt}%&#10;\pgfsys@invoke{ }\color[rgb]{0.2975,0.2975,0.2975}\definecolor[named]{%&#10;pgfstrokecolor}{rgb}{0.2975,0.2975,0.2975}\pgfsys@color@gray@stroke{0.2975}%&#10;\pgfsys@invoke{ }\pgfsys@color@gray@fill{0.2975}\pgfsys@invoke{ }\definecolor{%&#10;pgffillcolor}{rgb}{0.2975,0.2975,0.2975}{}\pgfsys@moveto{0.0pt}{0.0pt}%&#10;\pgfsys@lineto{0.0pt}{123.235999pt}\pgfsys@stroke\pgfsys@invoke{ }\hbox{\hbox{%&#10;{\pgfsys@beginscope\pgfsys@invoke{ }{{}{}{{{}{}}}{{}{}}&#10;{{}{{}}}{{}{}}{}{{}{}}&#10;{&#10;}{{{{}}\pgfsys@beginscope\pgfsys@invoke{ }\pgfsys@transformcm{1.0}{0.0}{0.0}{1%&#10;.0}{-34.132542pt}{59.118037pt}\pgfsys@invoke{ }\hbox{{\definecolor{.}{rgb}{%&#10;0.2975,0.2975,0.2975}\definecolor[named]{pgfstrokecolor}{rgb}{%&#10;0.2975,0.2975,0.2975}\pgfsys@color@gray@stroke{0.2975}\pgfsys@invoke{ }%&#10;\pgfsys@color@gray@fill{0.2975}\pgfsys@invoke{ }\hbox{{\definecolor{.}{rgb}{%&#10;0.2975,0.2975,0.2975}\color[rgb]{0.2975,0.2975,0.2975}\definecolor[named]{%&#10;pgfstrokecolor}{rgb}{0.2975,0.2975,0.2975}\pgfsys@color@gray@stroke{0.2975}%&#10;\pgfsys@color@gray@fill{0.2975}$\csc\theta$}}&#10;}}\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope}}}&#10;\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope}}}&#10;\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope{}{{}}{}{{}}&#10;{}{}{}{}{{{}{}}}\pgfsys@beginscope\pgfsys@invoke{ }\pgfsys@setlinewidth{1.6pt}%&#10;\pgfsys@invoke{ }{}\pgfsys@moveto{0.0pt}{0.0pt}\pgfsys@lineto{53.348985pt}{92.%&#10;403109pt}\pgfsys@stroke\pgfsys@invoke{ }\hbox{\hbox{{\pgfsys@beginscope%&#10;\pgfsys@invoke{ }{{}{}{{{}{}}}{{}{}}&#10;{{}{{}}}{{}{}}{}{{}{}}&#10;{&#10;}{{{{}}\pgfsys@beginscope\pgfsys@invoke{ }\pgfsys@transformcm{1.0}{0.0}{0.0}{1%&#10;.0}{15.041607pt}{43.701592pt}\pgfsys@invoke{ }\hbox{{\definecolor{%&#10;pgfstrokecolor}{rgb}{0,0,0}\pgfsys@color@rgb@stroke{0}{0}{0}\pgfsys@invoke{ }%&#10;\pgfsys@color@rgb@fill{0}{0}{0}\pgfsys@invoke{ }\hbox{{$1$}}&#10;}}\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope}}}&#10;\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope}}}&#10;\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope\unboldmath&#10;\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope{}{}{}\hss}%&#10;\pgfsys@discardpath\pgfsys@invoke{\lxSVG@closescope }\pgfsys@endscope\hss}}%&#10;\lxSVG@closescope\endpgfpicture}}" width="472.99" xml:id="S2.SS2.p4.pic1">
+          <svg:svg height="354.88" overflow="visible" version="1.1" width="472.99">
+            <svg:g fill="#000000" stroke="#000000" transform="translate(162.68,162.68) matrix(1 0 0 -1 0 29.52)">
+              <svg:g color="#000000" stroke-width="0.4pt">
+                <svg:path d="M -162.4 0 L 309.4 0" style="fill:none"/>
+              </svg:g>
+              <svg:g color="#000000" stroke-dasharray="none" stroke-dashoffset="0.0pt" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.32pt" transform="matrix(1.0 0.0 0.0 1.0 309.4 0)">
+                <svg:path d="M -1.66 2.21 C -1.52 1.38 0 0.14 0.42 0 C 0 -0.14 -1.52 -1.38 -1.66 -2.21" style="fill:none"/>
+              </svg:g>
+              <svg:g color="#000000" stroke-width="0.4pt">
+                <svg:path d="M 0 -162.4 L 0 191.29" style="fill:none"/>
+              </svg:g>
+              <svg:g color="#000000" stroke-dasharray="none" stroke-dashoffset="0.0pt" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.32pt" transform="matrix(0.0 1.0 -1.0 0.0 0 191.29)">
+                <svg:path d="M -1.66 2.21 C -1.52 1.38 0 0.14 0.42 0 C 0 -0.14 -1.52 -1.38 -1.66 -2.21" style="fill:none"/>
+              </svg:g>
+              <svg:g color="#000000" stroke-width="0.4pt">
+<!--  %**** 351Week9HTML.tex Line 125 **** -->                <svg:path d="M 0 0 M 147.64 0 C 147.64 81.54 81.54 147.64 0 147.64 C -81.54 147.64 -147.64 81.54 -147.64 0 C -147.64 -81.54 -81.54 -147.64 0 -147.64 C 81.54 -147.64 147.64 -81.54 147.64 0 Z M 0 0" style="fill:none"/>
+                <svg:g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 9.57 6.88)">
+                  <svg:switch>
+                    <svg:foreignObject height="9.0pt" overflow="visible" transform="matrix(1 0 0 -1 0 12.45)" width="7.5pt" y="-2.77"><Math mode="inline" tex="\theta" text="theta" xml:id="S2.SS2.p4.pic1.m1">
+                        <XMath>
+                          <XMTok font="bold italic" name="theta" role="UNKNOWN">θ</XMTok>
+                        </XMath>
+                      </Math></svg:foreignObject>
+                  </svg:switch>
+                </svg:g>
+              </svg:g>
+              <svg:g color="#000000" stroke-width="1.6pt">
+                <svg:g color="#0000FF" fill="#0000FF" stroke="#0000FF">
+                  <svg:path d="M 73.82 0 L 73.82 127.86" style="fill:none"/>
+                </svg:g>
+                <svg:g fill="#0000FF" stroke="#0000FF" transform="matrix(1.0 0.0 0.0 1.0 79.54 60.47)">
+                  <svg:switch>
+                    <svg:foreignObject height="9.0pt" overflow="visible" transform="matrix(1 0 0 -1 0 12.45)" width="30.0pt" y="-2.77"><Math mode="inline" tex="\sin\theta" text="sine@(theta)" xml:id="S2.SS2.p4.pic1.m2">
+                        <XMath>
+                          <XMApp color="#0000FF">
+                            <XMTok font="bold" meaning="sine" role="TRIGFUNCTION">sin</XMTok>
+                            <XMTok font="bold italic" name="theta" role="UNKNOWN">θ</XMTok>
+                          </XMApp>
+                        </XMath>
+                      </Math></svg:foreignObject>
+                  </svg:switch>
+                </svg:g>
+              </svg:g>
+              <svg:g color="#000000" stroke-width="1.6pt">
+                <svg:g color="#FF0000" fill="#FF0000" stroke="#FF0000">
+                  <svg:path d="M 73.82 127.86 L 295.28 0" style="fill:none"/>
+                </svg:g>
+                <svg:g fill="#FF0000" stroke="#FF0000" transform="matrix(1.0 0.0 0.0 1.0 197.18 60.47)">
+                  <svg:switch>
+                    <svg:foreignObject height="9.0pt" overflow="visible" transform="matrix(1 0 0 -1 0 12.45)" width="30.0pt" y="-2.77"><Math mode="inline" tex="\tan\theta" text="tangent@(theta)" xml:id="S2.SS2.p4.pic1.m3">
+                        <XMath>
+                          <XMApp color="#FF0000">
+                            <XMTok font="bold" meaning="tangent" role="TRIGFUNCTION">tan</XMTok>
+                            <XMTok font="bold italic" name="theta" role="UNKNOWN">θ</XMTok>
+                          </XMApp>
+                        </XMath>
+                      </Math></svg:foreignObject>
+                  </svg:switch>
+                </svg:g>
+              </svg:g>
+              <svg:g color="#000000" stroke-width="1.6pt">
+                <svg:g color="#333333" fill="#333333" stroke="#333333">
+                  <svg:path d="M 0 0 L 295.28 0" style="fill:none"/>
+                </svg:g>
+                <svg:g fill="#333333" stroke="#333333" transform="matrix(1.0 0.0 0.0 1.0 147.64 -15.4)">
+                  <svg:switch>
+                    <svg:foreignObject height="9.0pt" overflow="visible" transform="matrix(1 0 0 -1 0 12.45)" width="30.0pt" y="-2.77"><Math mode="inline" tex="\sec\theta" text="secant@(theta)" xml:id="S2.SS2.p4.pic1.m4">
+                        <XMath>
+                          <XMApp color="#333333">
+                            <XMTok font="bold" meaning="secant" role="TRIGFUNCTION">sec</XMTok>
+                            <XMTok font="bold italic" name="theta" role="UNKNOWN">θ</XMTok>
+                          </XMApp>
+                        </XMath>
+                      </Math></svg:foreignObject>
+                  </svg:switch>
+                </svg:g>
+              </svg:g>
+              <svg:g color="#000000" stroke-width="1.6pt">
+                <svg:g color="#FF00FF" fill="#FF00FF" stroke="#FF00FF">
+                  <svg:path d="M 0 -2.21 L 73.82 -2.21" style="fill:none"/>
+                </svg:g>
+                <svg:g fill="#FF00FF" stroke="#FF00FF" transform="matrix(1.0 0.0 0.0 1.0 16.15 -17.62)">
+                  <svg:switch>
+                    <svg:foreignObject height="9.0pt" overflow="visible" transform="matrix(1 0 0 -1 0 12.45)" width="30.0pt" y="-2.77"><Math mode="inline" tex="\cos\theta" text="cosine@(theta)" xml:id="S2.SS2.p4.pic1.m5">
+                        <XMath>
+                          <XMApp color="#FF00FF">
+                            <XMTok font="bold" meaning="cosine" role="TRIGFUNCTION">cos</XMTok>
+                            <XMTok font="bold italic" name="theta" role="UNKNOWN">θ</XMTok>
+                          </XMApp>
+                        </XMath>
+                      </Math></svg:foreignObject>
+                  </svg:switch>
+                </svg:g>
+              </svg:g>
+              <svg:g color="#000000" stroke-width="1.6pt">
+                <svg:g color="#4D26B3" fill="#4D26B3" stroke="#4D26B3">
+                  <svg:path d="M 73.82 127.86 L 0 170.52" style="fill:none"/>
+                </svg:g>
+                <svg:g fill="#4D26B3" stroke="#4D26B3" transform="matrix(1.0 0.0 0.0 1.0 16.15 163.21)">
+                  <svg:switch>
+                    <svg:foreignObject height="9.0pt" overflow="visible" transform="matrix(1 0 0 -1 0 12.45)" width="30.0pt" y="-2.77"><Math mode="inline" tex="\cot\theta" text="cotangent@(theta)" xml:id="S2.SS2.p4.pic1.m6">
+                        <XMath>
+                          <XMApp color="#4D26B3">
+                            <XMTok font="bold" meaning="cotangent" role="TRIGFUNCTION">cot</XMTok>
+                            <XMTok font="bold italic" name="theta" role="UNKNOWN">θ</XMTok>
+                          </XMApp>
+                        </XMath>
+                      </Math></svg:foreignObject>
+                  </svg:switch>
+                </svg:g>
+              </svg:g>
+              <svg:g color="#000000" stroke-width="1.6pt">
+                <svg:g color="#4C4C4C" fill="#4C4C4C" stroke="#4C4C4C">
+                  <svg:path d="M 0 0 L 0 170.52" style="fill:none"/>
+                </svg:g>
+                <svg:g fill="#4C4C4C" stroke="#4C4C4C" transform="matrix(1.0 0.0 0.0 1.0 -47.23 81.8)">
+                  <svg:switch>
+                    <svg:foreignObject height="9.0pt" overflow="visible" transform="matrix(1 0 0 -1 0 12.45)" width="30.0pt" y="-2.77"><Math mode="inline" tex="\csc\theta" text="cosecant@(theta)" xml:id="S2.SS2.p4.pic1.m7">
+                        <XMath>
+                          <XMApp color="#4C4C4C">
+                            <XMTok font="bold" meaning="cosecant" role="TRIGFUNCTION">csc</XMTok>
+                            <XMTok font="bold italic" name="theta" role="UNKNOWN">θ</XMTok>
+                          </XMApp>
+                        </XMath>
+                      </Math></svg:foreignObject>
+                  </svg:switch>
+                </svg:g>
+              </svg:g>
+              <svg:g color="#000000" stroke-width="1.6pt">
+                <svg:path d="M 0 0 L 73.82 127.86" style="fill:none"/>
+                <svg:g fill="#000000" stroke="#000000" transform="matrix(1.0 0.0 0.0 1.0 20.81 60.47)">
+                  <svg:switch>
+                    <svg:foreignObject height="9.0pt" overflow="visible" transform="matrix(1 0 0 -1 0 12.45)" width="7.5pt" y="-2.77"><Math mode="inline" tex="1" text="1" xml:id="S2.SS2.p4.pic1.m8">
+                        <XMath>
+                          <XMTok font="bold" meaning="1" role="NUMBER">1</XMTok>
+                        </XMath>
+                      </Math></svg:foreignObject>
+                  </svg:switch>
+                </svg:g>
+              </svg:g>
+            </svg:g>
+          </svg:svg>
+        </picture>
+      </para>
+      <pagination role="newpage"/>
+    </subsection>
+  </section>
+  <rdf about="" content="Tony Mendes" property="dcterms:creator"/>
+</document>

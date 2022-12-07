@@ -1,0 +1,23 @@
+\ProvidesPackage{351Week5Package}
+
+\usepackage{amssymb, amsthm, amsmath, booktabs, enumitem}
+\usepackage[margin=1.5in]{geometry}
+
+\usepackage[pdftitle = {Cal Poly Math 351},
+  pdfauthor = {Tony Mendes},
+  pdfsubject = {Typesetting},
+  colorlinks = true,
+  urlcolor = blue,
+  linkcolor = blue,
+  citecolor = blue]{hyperref}
+
+\usepackage[procnames]{listings}
+\lstset{basicstyle=\ttfamily, language=TeX, keepspaces=true}
+
+\DeclareMathOperator{\dimension}{dim}
+
+\newcommand{\integral}[2]{$\int_{\mathbb{R}} #1 \, d#2$}
+\newcommand{\ctan}[1]{\href{https://www.ctan.org/pkg/#1}{\texttt{#1}}}
+
+\renewcommand{\phi}{\varphi}
+\renewcommand{\qed}{\hfill \( \blacksquare \)}

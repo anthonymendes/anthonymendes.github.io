@@ -1,0 +1,180 @@
+\documentclass[11pt]{paper}
+
+\usepackage{351Week5Package}
+
+\title{Packages and Classes}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Newcommands}
+
+Almost everything in \LaTeX{} can be customized, including \LaTeX{} commands
+themselves.  To create a new command, place
+\begin{lstlisting}
+\newcommand{\name}{definition}
+\end{lstlisting}
+in the preamble.  Then, to call the command, use \verb~\name~ in the document.
+The compiler will complain if \verb~\name~ is a predefined \LaTeX{} command.
+The \verb~\newcommand~ command has an optional parameter to include input.  For
+instance,
+\begin{lstlisting}
+\newcommand{\integral}[2]{$\int_{\mathbb{R}} #1 \, d#2$}
+\end{lstlisting}
+defines the command \verb~\integral~ which takes in 2 inputs, placed where the
+\verb~#1~ and \verb~#2~ appear in the definition.  Calling
+\verb~\integral{\sin x}{x}~ now produces \integral{\sin x}{x}.
+
+For function names in math mode which are not predefined (such as $\ln x$,
+$\sin x$, $\arctan x$), use a command such as
+\verb~\DeclareMathOperator{\dimension}{dim}~ to define a command
+\verb~\dimension~.  This produces ``$\dimension$'', a math mode symbol.
+
+To redefine a previously defined \LaTeX{} command, use the syntax
+\begin{verbatim}
+\renewcommand{\old}{\new}
+\end{verbatim}
+For instance, \verb~\renewcommand{\phi}{\varphi}~ changes the appearance of
+$\phi$ throughout the document.  As another example, this command can be used to
+change the end-of-proof symbol in the \verb~amsthm~ proof environment into
+creating a black square pushed to the right of the line by placing this into
+the preamble:
+\begin{lstlisting}
+\renewcommand{\qed}{\hfill \( \blacksquare \)}
+\end{lstlisting}
+
+Analogous to \verb~\newcommand~, there is a \verb~\newenvironment~ command to
+create custom environments.  The syntax to be placed in the preamble is
+\begin{lstlisting}
+\newenvironment{name}{before}{after}
+\end{lstlisting}
+To call the command, use \verb~\begin{name} .. \end{name}~.  Then, commands in
+\verb~before~ are run before \verb~..~ and commands in \verb~after~ are run
+after \verb~..~.  Just like \verb~\newcommand~, there is an option for up to
+$9$ input variables.
+
+Especially when reusing the same preamble for multiple documents, it may be
+convenient to store the preamble in a file with the \verb~.sty~ extension (the
+\verb~.sty~ stands for ``style file'').  In the first line of the style file,
+place the command
+\begin{lstlisting}
+\ProvidesPackage{351Week5Package}
+\end{lstlisting}
+and then call the package just like any other package with the
+\verb~\usepackage~ command in the preamble of the main document.
+
+\section{Packages}
+
+Packages can also be used to extend the functionality of \LaTeX{} in some way.
+The packages we have introduced in our course so far, listed below, are among
+the most frequently used \LaTeX{} packages.
+
+\begin{center}
+  \begin{tabular}{ll}
+    \toprule
+    Package          & Purpose                            \\
+    \midrule
+    \ctan{amsmath}   & Typesetting mathematics            \\
+    \ctan{amssymb}   & Math symbols and fonts             \\
+    \ctan{amsthm}    & Theorem and proof environments     \\
+    \ctan{geometry}  & Control page margins               \\
+    \ctan{makeindex} & Create and index                   \\
+    \ctan{mathspec}  & For including fonts (with XeLaTeX) \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+There are over 5000 more \LaTeX{} packages!  Other widely used packages include:
+
+\begin{center}
+  \begin{tabular}{l l}
+    \toprule
+    Package              & Purpose                                            \\
+    \midrule
+    \ctan{hyperref}      & Hyperlinks and clickable references                \\
+    \ctan{enumitem}      & Improved enumerate and itemize environment         \\
+    \ctan{booktabs}      & Improved tabular environment                       \\
+    \ctan{IEEEtrantools} & Improved multiline math (see page 64 of the text)  \\
+    \ctan{fancyhdr}      & Improved headers and footers                       \\
+    \ctan{babel}         & Support for other languages                        \\
+    \ctan{listings}      & For typesetting computer code                      \\
+    \ctan{graphicx}      & To include outside graphics                        \\
+    \ctan{pgf}           & To create graphics (TikZ)                          \\
+    \ctan{natbib}        & An alternative to BibTeX                           \\
+    \ctan{microtype}     & Micro-typographic extensions (only with pdfLaTeX)  \\
+    \ctan{textpos}       & Absolute positioning of text                       \\
+    \ctan{pgfornament}   & Ornamental flourishes                              \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+Most of the packages listed here are shipped with many versions of \LaTeX{} and
+probably can be accessed using \verb~\usepackage{name}~ in the preamble.  If
+they are not already installed, these and many other packages can be downloaded
+from the ``Comprehensive \TeX{} Archive Network'', online at
+\url{https://www.ctan.org}.  This is also where you can find the documentation
+for the packages listed above.  \textbf{The first step in using any of the
+  above packages is to actually read the documentation!}
+
+How to use a package that is not already installed:
+% These are options allowed by the enumitem package
+\begin{enumerate}[labelindent = \parindent, leftmargin = *, label={\arabic*.}]
+\item Find the package at \url{https://www.ctan.org} or elsewhere.
+\item \textbf{Read the readme or the documentation.}
+\item See pages 89--90 of the text on how to install.  Another good resource on
+  how to install an extra package is at
+  \url{https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages}.  As a
+  shortcut, if all that is needed is a \verb~.sty~ file, then you can try
+  copying the \verb~.sty~ files into the folder which contains the \verb~.tex~
+  file.
+\item Use by including \verb~\usepackage{name}~ in the preamble.
+\end{enumerate}
+Some third party software packages automate this procedure, possibly doing it
+automatically as soon as a package is loaded with \verb~\usepackage~ in the
+preamble.
+
+It is considered bad form to load many packages and then not use them.  Loading
+obscure packages makes the \verb~.tex~ less portable and increases the chance
+that packages will conflict with one another.  Packages also tend to become
+obsolete.  As a general rule, use a minimum number of packages.
+
+\section{Classes}
+
+Class files are loaded by placing the \verb~\documentclass{class}~ command in
+the first line of the \verb~.tex~ file.  Classes tend to have their own
+specialized commands; for example, the familiar \verb~article~ class provides
+commands such as \verb~\section~, \verb~\tableofcontents~, and \verb~\author~.
+
+Although so far we have only used the \ctan{article} class, there are many
+other class files.  Some of the more popular packages are:
+\begin{center}
+  \begin{tabular}{l l}
+    \toprule
+    Class             & Purpose                                                      \\
+    \midrule
+    \ctan{amsart}     & \texttt{article} alternative                                 \\
+    \ctan{paper}      & \texttt{article} alternative (used in this document)         \\
+    \ctan{book}       & Books                                                        \\
+    \ctan{memoir}     & \texttt{book} alternative; a great choice for books/theses   \\
+    \ctan{letter}     & Formal letters                                               \\
+    \ctan{scrlttr2}   & \texttt{letter} alternative; one of many Koma-Script classes \\
+    \ctan{moderncv}   & Curriculum vitae                                             \\
+    \ctan{beamer}     & Presentation slides                                          \\
+    \ctan{tikzposter} & Conference posters                                           \\
+    \ctan{exam}       & Exams                                                        \\
+    \ctan{standalone} & cropped \texttt{.pdf} output (good for TikZ)                 \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+If not already present on your system, class files can be found on
+\url{https://www.ctan.org} and installed in a similar way that packages are
+installed.  Sometimes it is possible to simply place the desired \verb~.cls~
+file in the folder containing the \verb~.tex~ file.
+
+Of course one should \textbf{read the documentation} and look at example files
+to learn how to use any particular class!
+
+\end{document}

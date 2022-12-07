@@ -1,0 +1,145 @@
+\documentclass{article}
+
+\usepackage{amssymb,enumitem,xcolor,mathspec,titlesec}
+\usepackage[margin=1in]{geometry}
+
+% Color palette and fonts are specified at
+% https://universitymarketing.calpoly.edu/brand-guidelines/the-cal-poly-name/
+
+\definecolor{White}{HTML}{FEFEFE}
+\definecolor{Black}{HTML}{010101}
+\definecolor{CalPolyGreen}{HTML}{154734}
+\definecolor{CalPolyGold}{HTML}{C69214}
+\definecolor{DigitalGold}{HTML}{BD8B13}
+\definecolor{StadiumGold}{HTML}{F8E08E}
+\definecolor{PolyCanyon}{HTML}{F2C75C}
+\definecolor{DexterGreen}{HTML}{A4D65E}
+\definecolor{FarmersMarket}{HTML}{3A913F}
+\definecolor{SkyBlue}{HTML}{B5E3D8}
+\definecolor{SurfBlue}{HTML}{5CB8B2}
+\definecolor{Serenity}{HTML}{D3E3F4}
+\definecolor{MorroBlue}{HTML}{ABCAE9}
+\definecolor{MissionBeige}{HTML}{E4E1D1}
+\definecolor{PismoSand}{HTML}{CAC7A7}
+\definecolor{CoastSage}{HTML}{B6CCC2}
+\definecolor{Sycamore}{HTML}{789F90}
+\definecolor{KennedyGray}{HTML}{8E9089}
+\definecolor{SealGray}{HTML}{54585A}
+\definecolor{HeritageOrange}{HTML}{FF6A39}
+\definecolor{HeritageOrange50}{HTML}{FEB898}
+\definecolor{Avocado}{HTML}{D0DF00}
+\definecolor{Avocado50}{HTML}{EBED8A}
+
+\usepackage[colorlinks = true,
+urlcolor = DigitalGold,
+linkcolor = DigitalGold,
+citecolor = DigitalGold]{hyperref}
+
+% Be sure to change this if the following fonts are not on your machine
+\setmathsfont(Digits,Latin,Greek)[Numbers={Lining,Proportional}]{Source Sans Pro}
+\setmainfont{Source Sans Pro}
+\setmonofont{Source Code Pro}
+
+\color{SealGray}
+
+\setlist[itemize]{itemsep=-1ex,topsep=0.5ex,parsep=1ex}
+\setlength{\parindent}{0ex}
+\setlength{\parskip}{0ex}
+
+\def\labelitemi{\color{CalPolyGreen}$\cdot$}
+
+\titleformat*{\section}{% \fontspec{Utopia} \selectfont
+  \large \bfseries \color{CalPolyGreen}}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+  {\fontsize{1.5cm}{1.5cm}
+    \color{CalPolyGreen}
+    \fontspec{Alte DIN 1451 Mittelschrift}
+    \selectfont
+    \textbf{Musty Mustang}}
+
+  \bigskip
+
+  \textsf{mmustang@calpoly.edu}
+  \qquad
+  \href{https://mmustang.github.io/}{\textsf{https://mmustang.github.io/}}
+  \qquad
+  \textsf{\begin{small}(805)756-1699\end{small}}
+\end{center}
+
+\section*{Objective}
+
+Secure a data scientist position with an innovative organization in the San
+Francisco bay area.
+
+\section*{Education}
+
+\begin{description}
+\item[Bachelor of Science in Mathematics] Cal Poly, San Luis Obispo, CA.
+  Spring 2025 (expected).
+
+Relevant course work includes advanced coursework in
+
+\begin{itemize}
+\item Data Science
+\item Numerical Analysis
+\item Matrix and Linear Algebra
+\item Nonparametric and Parametric Statistics
+\item Design and Analysis of Algorithms
+\end{itemize}
+
+Senior project analyzed Neilsen television ratings data from the Tennis Channel
+to determine which tennis matches would yield the highest ratings.  The project
+involved significant data processing, computer programming, various regression
+models, and the singular value decomposition.
+\end{description}
+
+\section*{Employment}
+
+\begin{description}
+\item[Intern Software Developer]
+
+  Amazon-SLO, San Luis Obispo, CA.  Summer 2022.
+
+  Responsible for preparing data acquired from user shipping addresses in order
+  to decide the optimal locations for new shipping centers.
+
+\item[Research Assistant]
+
+  Mathematics Department, Cal Poly, San Luis Obispo, CA.  Summer 2021.
+
+  Hand selected to work in a paid summer research position under the direction
+  of Professor Anthony Mendes.  Our project was to investigate the relationship
+  between the Robinson Schensted algorithm and a theorem concerning permutation
+  inversions.
+
+\item[Workshop Leader]
+
+  Mathematics Department, Cal Poly, San Luis Obispo, CA.  2020--2023.
+
+  Led discussion sections for students in Calculus I, II, and III.  Consistently
+  rated by students as excellent with clear communication skills.
+\end{description}
+
+\section*{Technical Skills}
+\begin{itemize}
+\item Python with pandas and scikit-learn
+\item \LaTeX{} typesetting
+\item Significant formal training in mathematics
+\item Some experience with Java, C++
+\end{itemize}
+
+\section*{Activities}
+\begin{itemize}
+\item Society of Women Engineers, 2020--2024
+\item Math Club, 2020--2024
+\item Cal Poly Active Minds club, 2020--2024
+\item Dorm resident advisor, 2021--2022
+\item Piano enthusiast
+\end{itemize}
+
+\end{document}

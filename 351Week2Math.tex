@@ -1,0 +1,166 @@
+\documentclass{article}
+
+\usepackage{amssymb,amsmath,amsthm}
+
+\title{Typing Mathematics}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Entering mathematics}
+
+Mathematics can be typeset using the packages \texttt{amssymb},
+\texttt{amsmath} and \texttt{amsthm}.  These packages are maintained by the
+American Mathematical Society.
+
+To produce inline ``textstyle'' mathematics, place mathematics between the
+symbols \verb`\(` and \verb`\)` or between the symbols \verb`$` and \verb`$`.
+To produce ``displaystyle'' mathematics on its own centered line, similar to
+\begin{equation*}
+  \frac{d}{dx} \arcsin x = \frac{1}{\sqrt{1 - x^2}},
+\end{equation*}
+place mathematics between \verb`\[` and \verb`\]` or between
+\verb`\begin{equation*}` and \verb`\end{equation*}`.  This is known as
+``displaystyle''.  Inline mathematics can appear as displaystyle using the
+\verb!{\displaystyle .. }! command and displayed mathematics can appear as
+textstyle using \verb`{\textstyle .. }`.
+
+Taller inline text increases the vertical space between lines.  For example,
+consider \(2^{3^{4^5}}\).  To not increase this vertical space, enclose
+mathematics within \verb~\smash{..math..}~ like this: \smash{\(2^{3^{4^5}}\)}.
+
+Mathematics symbols are typeset using commands such as \verb~\(\Xi\)~,
+producing \(\Xi\).  \LaTeX{} will complain if such a mathematics symbol is not
+called in math mode.  A list of mathematics symbols can be found on pages 75--82
+of our text.  The web site
+\begin{center}
+  \texttt{http://detexify.kirelabs.org/classify.html}
+\end{center}
+can also help in finding symbols.  \emph{Use standard AMS packages whenever
+  possible!}
+
+The most frequently encountered functions and operators in mathematics have
+pre-defined command names.  For example:
+\[
+  \sin x, \cos x, \tan x, \arcsin x, \ln x
+\]
+Use \verb~\operatorname{..}~ if a function or operator does not have a
+predefined command, like this: \(\operatorname{erf}x\).
+
+Binomial coefficients:
+\({\displaystyle 1 + 2 + \cdots + n = \binom{n+1}{2}}\), and matrices:
+\begin{equation*}
+  \begin{bmatrix}
+    a & b \\
+    c & d \\
+  \end{bmatrix}
+  \qquad
+  \begin{vmatrix}
+    a & b \\
+    c & d
+  \end{vmatrix}
+  \qquad
+  \begin{pmatrix}
+    a & b \\
+    c & d
+  \end{pmatrix}
+  \qquad
+  \begin{matrix}
+    a & b \\
+    c & d
+  \end{matrix}
+  \qquad
+  \begin{smallmatrix}
+    a & b \\
+    c & d \\
+  \end{smallmatrix}
+  \qquad
+  \left[
+  \begin{smallmatrix}
+    a & b \\
+    c & d \\
+  \end{smallmatrix}
+  \right]
+  \qquad
+  \begin{Vmatrix}
+    a & b \\
+    c & d
+  \end{Vmatrix}
+\end{equation*}
+By convention, matrices are not written in boldface but vectors such as
+\(\mathbf{x}\) are.  To typeset a transpose, use the \verb~\intercal~ symbol, such as
+\(\mathbf{x}^\intercal\).
+
+\section{Spacing}
+
+Sometimes the spacing between mathematics symbols should be adjusted.  The
+spacing commands to be used in math mode, in order of longest space to smallest
+space, are:
+\[
+  \verb~\qquad~ \qquad
+  \verb~\quad~  \qquad
+  \verb~\~      \qquad
+  \verb~\;~     \qquad
+  \verb~\:~     \qquad
+  \verb~\,~     \qquad
+  \verb~\!~     \qquad
+\]
+These produce spaces equal to the width of two eMs, one eM (one quad), the
+width of inter-word spacing, \(\frac{5}{18}\) quad, \(\frac{4}{18}\) quad,
+\(\frac{3}{18}\) quad, and \(-\frac{3}{18}\) quad.  It is proper form to use
+\verb~\,~ before differentials in integrals, like this
+\[
+  \int_{-\infty}^\infty \int_{-\infty}^\infty e^{-(x^2+y^2)} \, dx \, dy
+  = \int_0^{2 \pi} \int_0^\infty e^{-r^2} r \, dr \, d\theta.
+\]
+Here is the incorrect typesetting, without the proper spacing:
+\[
+  \int_{-\infty}^\infty \int_{-\infty}^\infty e^{-(x^2+y^2)}  dx  dy
+  = \int_0^{2 \pi} \int_0^\infty e^{-r^2} r dr d\theta.
+\]
+
+In rare cases spacing can be adjusted using \verb~\phantom{stuff}~ which
+creates a space of the same length as the typeset length of \verb~stuff~.
+Using \verb~\phantom~ frequently is a sign of poor typesetting.
+
+Parentheses of the correct size are given by \verb~\left( .. \right)~.  The
+parentheses do not have to be the same type.  To suppress a parentheses,
+replace the parenthesis with a period.  For example,
+\[ \left\{ x \in \mathbb{R} : \int_0^x \sin t \, dt \leq 1
+  \right \}. \]
+
+\section{Multi-line mathematics}
+
+To display multi-line math example, use \verb~\begin{align*}..\end{align*}~,
+where the \verb~&~ symbol controls where the alignment occurs and \verb~\\~
+gives a new line.  For instance, consider
+\begin{align}
+  \int_a^b x^n \, dx
+ & = \left. \frac{x^{n+1}}{n+1} \right|_a^b   \\
+ & = \frac{b^{n+1}}{n+1} -\frac{a^{n+1}}{n+1} \nonumber \\
+ & = \frac{1}{n+1}(b^{n+1}-a^{n+1}).
+\end{align}
+
+For long expressions that don't fit on one line, use
+\verb~\begin{multline*}~, with \verb~\\~ denoting a new line:
+
+\begin{multline*}
+  \alpha + \beta + \gamma + \delta + \varepsilon + \zeta + \eta + \theta   \\
+  + \iota + \kappa + \lambda + \mu + \nu + \xi + \pi + \rho \\
+  + \sigma + \tau + \upsilon + \varphi + \chi + \psi + \omega.
+\end{multline*}
+
+Fractions can be displayed a couple of ways: \(\frac{1}{2}\) versus \(\dfrac{1}{2}\).
+
+Lastly, to typeset a function defined by cases, use \verb~\begin{cases}~, do this:
+\[
+  |x| =
+  \begin{cases}
+    -x & \text{if \(x < 0\)}, \\
+    x  & \text{otherwise}.
+  \end{cases}
+\]
+
+\end{document}

@@ -1,0 +1,220 @@
+\documentclass{article}
+
+\usepackage{amssymb, amsmath, amsthm, makeidx}
+
+\makeindex
+
+\newtheorem{theorem}{Theorem}
+
+\title{Automatic labels}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+  This is an example of a abstract.  \index{abstract} An abstract is a short
+  description of the contents of the document.  As a general rule, abstracts
+  should be no more than a few sentences for papers and a few paragraphs for
+  books.  This document describes how to use \LaTeX{'s} self numbering and
+  labeling features.
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction}
+
+This document is designed to illustrate \LaTeX{'s} ability to number and
+reference sections, subsections, theorems, equations, and so on.  We will also
+illustrate appendices, bibliographies, indices, and footnotes.\footnote{Yes,
+  even footnotes!  Oh, lucky day!}  Footnotes \index{footnotes} are created
+using \verb~\footnote{text}~ and, if appearing at the end of a sentence, should
+appear after the period.
+
+\subsection{Compile more than once}
+
+Auxiliary files that store information about labels and page numbers are
+created the first time the \LaTeX{} source is compiled.  The next time \LaTeX{}
+is compiled, those files are referenced to create the table of contents,
+section numbers, and theorem numbers.  Because of this, \LaTeX{} must be
+compiled two or three times in order to properly display the labels.  The
+output shown by the compiler may warn you if it appears that \LaTeX{} should be
+run again.
+
+Sections \index{sections} are created with
+\verb~\section[TOC name]{Section Name}~, where the optional \verb~[TOC name]~
+string changes the name of the section in the table of contents.  There is also
+a similar \index{subsections} \verb~\subsection~ command.  To print a section
+without a number (which will also not show up in the table of contents), use
+\verb~\section*{Section Name}~.  The table of contents is created with the
+\verb~\tableofcontents~ command.
+
+\subsection[BibTeX]{Bibliographies using BibTeX}
+
+Bibliographies can created with BibTeX.  \label{bibliographies} \index{BibTeX}
+To do this, follow these instructions (which have been auto-magically numbered
+using \index{enumerate} the \verb~enumerate~ environment):
+\begin{enumerate}
+\item create a new file called \verb~file.bib~.
+\item In that new file, create or copy and paste bibliography entries in the
+  BibTeX format.  Examples of the format can be found in the sample .bib file
+  on our web site.
+
+  BibTeX formatted citations can be copy and pasted from paper indexing
+  services such as MathSciNet or Google Scholar.
+\item Cite authors or works using \verb~\cite{name1, name2}~.  For example,
+  some of Euler's \index{Euler} works include
+  \cite{euler1741solutio,euler1759force}.  Later, Euler published
+  \cite{euler1775meditationes}.  To include in the bibliography without citing,
+  use \verb~\nocite~.
+\item Place these two lines in the \LaTeX{} file (usually towards the end of
+  the file) before the \verb~\end{document}~ command:
+\begin{verbatim}
+\bibliography{file}
+\bibliographystyle{alpha}
+\end{verbatim}
+Other choices for the bibliography styles are:
+\verb~abbrv~, \verb~acm~, \verb~alpha~, \verb~apalike~, \verb~ieeetr~, \verb~plain~, and
+\verb~siam~.
+\item Compile the \LaTeX{} file, compile the bibliography with BibTeX by either
+  \begin{enumerate}
+  \item entering \texttt{bibtex file} at the command line (the \verb~.bib~
+    extension is not included after \verb~file~), or
+  \item finding the bibtex command in a drop down menu (look for a command such
+    as \verb~pdflatex+bibtex~),
+  \end{enumerate}
+  and then compile the \LaTeX{} file two more times (unless this has been done
+  automatically by the software).
+\end{enumerate}
+
+\subsection{Creating an index}
+
+To create an \index{index} index, place these \index{two} two lines before the
+\verb!\begin{document}! command:
+\begin{verbatim}
+\usepackage{makeidx}
+\makeindex
+\end{verbatim}
+
+  Mark words for inclusion in an index using the \verb~\index{word}~ command.
+  The page reference will appear on the same page that the \verb~\index{word}~
+  command is located.  There are variations on the \verb~\index~ command which
+  can be used to change how the entries appear in the index; such options are
+  found on page 87 of the text.
+
+Similar to BibTeX, the index must be compiled with its own command.  To compile
+an index, compile the \LaTeX{} file, enter \texttt{makeindex file} at the
+command line or use a drop down menu command, then compile the \LaTeX{} file
+two more times if necessary.
+
+\section{Referencing other parts of the text}
+
+To mark a location in the text for future reference, insert
+\verb~\label{name}~.  The names for each of the labels in the document must be
+unique.  To reference this label, use the command \verb~\ref{name}~ to
+reference the section (or subsection) and use the \verb~\pageref{name}~ to
+reference the page.  For example, we showed how to include bibliographies in
+Section \ref{bibliographies} on page \pageref{bibliographies}.
+
+\subsection{Referencing in math mode}
+
+Cross-referencing is \index{cross-referencing} enhanced by the standard
+\verb~amssymb~, \verb~amsmath~, and \verb~amsthm~ packages.  To create a
+numbered displayed equation in mathematics mode, use
+\verb~\begin{equation}..\end{equation}~ instead of the usual \verb`\[..\]`.
+The \verb~\label{name}~ command must appear between the \verb~\begin{equation}~
+  and the \verb~\end{equation}~ commands.  When later referring to an equation,
+the command \verb~\eqref{name}~ produces parentheses around the equation
+number.
+
+For example, the following identity can be proved using polar coordinates:
+\begin{equation}
+\label{Gauss}
+\int_{-\infty}^\infty e^{-x^2} \, dx = \sqrt{\pi}.
+\end{equation}
+The integral in \eqref{Gauss} is known as the Gaussian integral.
+
+Differently named \verb~\label~ commands can be placed in each line in either
+the \verb~align~ or \verb~multline~ environments.  To suppress a line number
+when using these environments, place the \verb~\nonumber~ command somewhere on
+that line.  Instead of a line number, a word or symbol can be placed in
+parenthesis on the side of an \verb~align~ or \verb~multline~ command using
+\verb~\tag{word}~.\footnote{Use this sparingly!}
+
+For an example of this, we have
+\begin{align}
+  \left( \int_{-\infty}^\infty e^{-x^2} \, dx \right)^2
+  & = \iint_{\mathbb{R}^2} e^{-(x^2+y^2)} \, d(x,y) \tag{$\star$} \label{over the plane} \\
+  & = \int_0^{2 \pi} \int_0^\infty e^{-r^2} r \, dr \, d\theta \label{polar} \\
+  & = 2 \pi \int_{-\infty}^0 \frac{1}{2} e^u \, du \tag{$u = -r^2$} \\
+  & = \pi, \nonumber
+\end{align}
+where we integrated over the plane $\mathbb{R}^2$ in \eqref{over the plane} and switched
+into polar coordinates in \eqref{polar}.
+
+Whenever you have a equation number in the document, you are telling the reader
+``remember where this line is!'', and so it is polite to suppress equation
+numbers unless those equations are actually referenced in the document.
+
+\subsection{Theorems and proofs}
+
+Theorems, lemmas, exercises, and the like can be created using these steps.
+\begin{enumerate}
+\item Place \verb~\newtheorem{name1}{Name2}~ before the
+  \verb~\begin{document}~.  The first name, \verb~name1~, is the environment
+    name and will only used internally in the \LaTeX{} document.  The section
+    name, \verb~name2~, is what will be shown to the reader along with a
+    number.
+  \item  Create a theorem-like statement using the syntax
+\begin{center}
+  \verb~\begin{name1}[optional] ..text.. \end{name1}~.
+\end{center}
+\end{enumerate}
+For example, we display Theorem \ref{E} next.
+\begin{theorem}[Euler]
+  \label{E}
+If $t$ is a real number, then $e^{i t} = \cos t + i \sin t$.  \index{Cosine}
+\index{Sine}
+\end{theorem}
+
+Those wanting more control over the appearance of the theorem environment are
+referred to page 72 in the text.
+
+The proof of this theorem can be written between \verb~\begin{proof}~ and
+  \verb~\end{proof}~ statements.  This will automatically generate an end of
+proof symbol.  The placement of the end of proof symbol can be manipulated
+using \verb~\qedhere~.\footnote{See page 72 of the text.}  Here is an example
+of the proof environment, which serves as a proof of Euler's \index{Euler}
+Theorem, our Theorem \ref{E}.
+
+\begin{proof}
+  Using the power series \index{power series} for $e^{i t}$, \index{Exponential
+    function}
+\begin{align*}
+  e^{i t} & = 1 + \frac{(i t)^1}{1!} + \frac{(i t)^2}{2!}
+  + \frac{(i t)^3}{3!} + \frac{(i t)^4}{4!} + \cdots \\
+  & = 1 + i \frac{t^1}{1!} - \frac{t^2}{2!} - i \frac{t^3}{3!} + \frac{t^4}{4!} + \cdots \\
+  & = \left( 1 - \frac{t^2}{2!} + \frac{t^4}{4!} - \cdots \right)
+  + i \left( t - \frac{t^3}{3!} + \frac{t^5}{5!} - \cdots \right),
+\end{align*}
+which, using the power series for $\cos t$ and $\sin t$, is equal to
+$\cos t + i \sin t$.
+\end{proof}
+
+\appendix
+
+\section{Appendix}
+
+All appendix \index{appendix} material must appear between a \verb~\appendix~
+command but before the \verb~\end{document}~ command.  After that, include any
+appendix sections with the usual \verb~\section{Section Name}~ command.
+
+\nocite{SelfPromotion}
+
+\bibliography{351Week3Labels}
+\bibliographystyle{alpha}
+
+\printindex
+
+\end{document}

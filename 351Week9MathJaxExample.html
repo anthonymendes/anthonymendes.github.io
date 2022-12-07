@@ -1,0 +1,72 @@
+<script
+ type="text/javascript"
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+This web page provides an example of how MathJax can be used to easily typeset
+mathematics in HTML.
+
+Binomial coefficients can be typeset like this:
+\({\displaystyle 1 + 2 + \cdots + n = \binom{n+1}{2}}\)
+and matrices can be typeset like this:
+\begin{equation*}
+  \begin{bmatrix}
+    a & b \\
+    c & d
+  \end{bmatrix}
+  \qquad
+  \begin{vmatrix}
+    a & b \\
+    c & d
+  \end{vmatrix}
+  \qquad
+  \begin{pmatrix}
+    a & b \\
+    c & d
+  \end{pmatrix}
+  \qquad
+  \begin{matrix}
+    a & b \\
+    c & d
+  \end{matrix}
+  \qquad
+  \begin{Vmatrix}
+    a & b \\
+    c & d
+  \end{Vmatrix}
+\end{equation*}
+
+By convention, matrices are not written in boldface but vectors such as
+\(\mathbf{x}\) are.
+
+<p>
+
+The correct spacing of integrals...
+\[
+  \int_{-\infty}^\infty \int_{-\infty}^\infty e^{-(x^2+y^2)} \, dx \, dy
+  = \int_0^{2 \pi} \int_0^\infty e^{-r^2} r \, dr \, d\theta.
+\]
+An incorrect spacing of integrals...
+\[
+  \int_{-\infty}^\infty \int_{-\infty}^\infty e^{-(x^2+y^2)}  dx  dy
+  = \int_0^{2 \pi} \int_0^\infty e^{-r^2} r dr d\theta.
+\]
+
+An example of multiline mathematics...
+
+\begin{align*}
+  \int_a^b x^n \, dx
+ & = \left. \frac{x^{n+1}}{n+1} \right|_a^b   \\
+ & = \frac{b^{n+1}}{n+1} -\frac{a^{n+1}}{n+1} \\
+ & = \frac{1}{n+1}(b^{n+1}-a^{n+1}).
+\end{align*}
+
+An example of cases...
+
+\[
+  |x| =
+  \begin{cases}
+    -x & \text{if \(x < 0\)}, \\
+    x  & \text{otherwise}.
+  \end{cases}
+\]

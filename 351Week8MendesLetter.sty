@@ -1,0 +1,79 @@
+\ProvidesPackage{351Week8MendesLetter}
+
+\usepackage{tikz,enumitem,mathspec,graphicx}
+\usepackage[margin=1in]{geometry}
+
+\setlength{\parindent}{0ex}
+\setlength{\parskip}{1.5ex}
+\setlist[enumerate]{topsep=0pt,itemsep=0ex,partopsep=1ex,parsep=1ex}
+\setlist[itemize]{topsep=0pt,itemsep=0ex,partopsep=1ex,parsep=1ex}
+
+\usepackage[absolute, overlay]{textpos}
+
+\definecolor{CalPolyGreen}{HTML}{154734}
+\definecolor{CalPolyGold}{HTML}{C69214}
+\definecolor{SealGray}{HTML}{54585A}
+
+\usepackage[colorlinks = true,
+urlcolor = CalPolyGreen,
+linkcolor = CalPolyGreen,
+citecolor = CalPolyGreen]{hyperref}
+
+% Change to fonts that may be on your machine
+\setmainfont{Source Sans Pro}
+\setmonofont{Source Code Pro}
+
+\color{SealGray}
+
+\newcommand{\therecipient}{}
+\newcommand{\thetitle}{}
+\newcommand{\thedate}{\today}
+\newcommand{\recipient}[1]{\renewcommand{\therecipient}{#1}}
+\renewcommand{\title}[1]{\renewcommand{\thetitle}{#1}}
+\renewcommand{\date}[1]{\renewcommand{\thedate}{#1}}
+
+\setlength{\TPHorizModule}{1in}
+\setlength{\TPVertModule}{1in}
+
+\newcommand{\header}
+{\begin{textblock}{7.5}(.5,.625)
+    \noindent {\color{CalPolyGold} \rule{\linewidth}{.15ex}}
+  \end{textblock}
+  \begin{textblock}{1}(.625,.75)
+  \includegraphics[height=.5in]{351Week8CPLogo}
+\end{textblock}
+\begin{textblock}{7.5}(.5,.5)
+  \begin{flushright}
+    \small
+    \href{https://math.calpoly.edu}{\fontspec{Source Sans Pro}
+      \textbf{Mathematics Department}} \\
+    \href{https://cosam.calpoly.edu}{\fontspec{Source Sans Pro}
+      \textsl{College of Science and Mathematics}} \\[1ex]
+    {\color{CalPolyGreen} \fontspec{Source Sans Pro}
+      aamendes@calpoly.edu} \\
+    \href{https://anthonymendes.github.io}{\fontspec{Source Sans Pro}
+      https://anthonymendes.github.io}
+  \end{flushright}
+\end{textblock}
+\vspace*{8ex}
+\thedate \\[2ex]
+\therecipient}
+
+\newcommand{\footer}
+{\begin{textblock}{7.5}(.5,10.25)
+    \noindent {\color{CalPolyGold} \rule{\linewidth}{.15ex}}
+  \end{textblock}
+  \begin{textblock}{7.5}(.5,10.25)
+    \small
+    {\fontspec{Source Sans Pro} \color{CalPolyGreen} 1 Grand Avenue
+      \, $\bullet$ \, San Luis Obispo \, $\bullet$ \, California \, $\bullet$ \, 93407}
+  \end{textblock}}
+
+\renewcommand{\maketitle}{\begin{center}
+  \Large {\fontspec{Source Sans Pro} \textbf \thetitle}
+\end{center}}
+
+\newcommand{\signature}{\hspace*{-1.25eM}
+\includegraphics[height=1cm]{351Week8MendesSignature} \\[-1.5ex] Anthony Mendes \\ Professor}
+
+\pagestyle{empty}

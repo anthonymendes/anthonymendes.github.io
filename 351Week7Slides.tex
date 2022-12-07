@@ -1,0 +1,276 @@
+\documentclass[aspectratio=169,10pt]{beamer}
+% Beamer automatically loads amsmath, amssymb, amsthm, hyperref, graphicx
+
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{mathpazo, mathspec, tikz}
+
+\definecolor{White}{HTML}{FEFEFE}
+\definecolor{Black}{HTML}{010101}
+\definecolor{CalPolyGreen}{HTML}{154734}
+\definecolor{CalPolyGold}{HTML}{C69214}
+\definecolor{DigitalGold}{HTML}{BD8B13}
+\definecolor{StadiumGold}{HTML}{F8E08E}
+\definecolor{PolyCanyon}{HTML}{F2C75C}
+\definecolor{DexterGreen}{HTML}{A4D65E}
+\definecolor{FarmersMarket}{HTML}{3A913F}
+\definecolor{SkyBlue}{HTML}{B5E3D8}
+\definecolor{SurfBlue}{HTML}{5CB8B2}
+\definecolor{Serenity}{HTML}{D3E3F4}
+\definecolor{MorroBlue}{HTML}{ABCAE9}
+\definecolor{MissionBeige}{HTML}{E4E1D1}
+\definecolor{PismoSand}{HTML}{CAC7A7}
+\definecolor{CoastSage}{HTML}{B6CCC2}
+\definecolor{Sycamore}{HTML}{789F90}
+\definecolor{KennedyGray}{HTML}{8E9089}
+\definecolor{SealGray}{HTML}{54585A}
+\definecolor{HeritageOrange}{HTML}{FF6A39}
+\definecolor{HeritageOrange50}{HTML}{FEB898}
+\definecolor{Avocado}{HTML}{D0DF00}
+\definecolor{Avocado50}{HTML}{EBED8A}
+
+\setbeamercolor{structure}{fg=CalPolyGreen} % itemize, enumerate, etc
+\setbeamercolor{section in toc}{fg=CalPolyGreen} % TOC sections
+\setbeamercolor{normal text}{bg=white,fg=CalPolyGreen}
+
+\usefonttheme{serif}
+\setmathsfont(Digits,Latin,Greek)[Numbers={Lining,Proportional}]{Source Sans Pro}
+\setmainfont{Source Sans Pro}
+\setmonofont{Source Code Pro}
+
+\hypersetup{colorlinks = true,
+  urlcolor = CalPolyGold,
+  linkcolor = CalPolyGold,
+  citecolor = CalPolyGold}
+
+\usepackage[absolute,overlay]{textpos}
+\setlength{\TPHorizModule}{\paperwidth}
+\setlength{\TPVertModule}{\paperheight}
+
+\newenvironment{background}[1]
+{\usebackgroundtemplate{\includegraphics[width=\paperwidth]{#1}}}
+{\usebackgroundtemplate{}}
+
+\newcommand{\topstripe}{
+  \begin{textblock}{1}(0,0)
+    {\color{DigitalGold} \rule{\linewidth}{.025\paperheight}}
+  \end{textblock}}
+
+\newenvironment{cpframe}[1]
+{\begin{frame}[fragile, environment=cpframe, t]
+    \topstripe
+    \vspace{3ex}
+    \begin{minipage}{.85\paperwidth}
+      \begin{center}
+        {\fontsize{3.5ex}{1ex} \selectfont #1} \par
+        {\color{MissionBeige} \rule{\linewidth}{.01ex}} \\
+      \end{center}}
+    {\end{minipage}
+    \begin{textblock}{.95}(.025,.9)
+      {\color{MissionBeige} \rule{\linewidth}{.01ex}} \\
+      \tikz[baseline]{\node at (0,0) {\includegraphics[height=.2in]{351Week7CPLogo}}}
+      {\color{KennedyGray} \hfill {\tiny \insertframenumber}}
+    \end{textblock}
+  \end{frame}}
+
+\newenvironment{cphalfframe}[1]
+{\begin{frame}[fragile, environment=cphalfframe,t]
+    \begin{textblock}{.5}(.05,0)
+      {\color{White} \rule{\linewidth}{\paperheight}}
+    \end{textblock}
+    \begin{textblock}{.5}(.05,0)
+      {\color{DigitalGold} \rule{\linewidth}{.025\paperheight}}
+    \end{textblock}
+    \begin{textblock}{.4}(.1,.05)
+      \begin{center}
+        {\fontsize{4ex}{1ex} \selectfont #1} \par
+        {\color{MissionBeige} \rule{\linewidth}{.01ex}}
+      \end{center}}
+    {\end{textblock}
+  \end{frame}}
+
+\title{Presentations}
+\author{Tony Mendes}
+
+\begin{document}
+
+\begin{background}{351Week7CalPolyAbove}
+  \begin{frame}
+    \topstripe
+    \begin{textblock}{1}(.05,.1)
+      \tikz{\draw [CalPolyGold, very thin, fill=White, opacity = .8]
+        (0,0) rectangle (9.5,4.5)}
+    \end{textblock}
+    \begin{textblock}{1}(.1,.1825)
+      {\fontsize{8ex}{1ex} \selectfont \inserttitle} \\[3ex]
+      {\fontsize{4ex}{1ex} \selectfont \insertauthor} \\[3ex]
+      {\fontsize{3ex}{1ex} \selectfont Cal Poly, San Luis Obispo}
+    \end{textblock}
+  \end{frame}
+\end{background}
+
+\begin{cpframe}{Tips for good design}
+  \begin{enumerate}
+  \item Include a title in each frame. \\[3ex]
+  \item Do not use small fonts \\[3ex]
+  \item Use \verb~\uncover<n-m>~ to reveal content on slides \verb~n~--\verb~m~. \\[3ex]
+    \uncover<2->{\item Use uncover sparingly.}
+    \uncover<3->{Do not overuse it!}
+    \uncover<4->{Please!}
+  \end{enumerate}
+\end{cpframe}
+
+\begin{background}{351Week7CalPolyHills}
+  \begin{cphalfframe}{Common Mistakes}
+    \begin{itemize} \setlength\itemsep{1.5em}
+    \item Too much content!
+    \item Lots of text/math on a slide
+    \item Rapid speech without pauses
+    \item No images
+    \item Lots of uncovering (a striptease)
+    \end{itemize}
+  \end{cphalfframe}
+\end{background}
+
+\begin{cpframe}{The Fundamental Theorem of Algebra}
+
+  \vspace{2ex}
+
+  \textbf{Theorem:} Every polynomial $f(x) = a_n x^n + \cdots + a_0$ has a root in $\mathbb{C}$.
+
+  \vspace{5ex}
+
+  \textbf{Proof:} If $r \approx 0$, then \( f(r e^{i t}) \approx a_0 \), so
+  $f(r e^{i t})$ is approximately one
+  point. \\[2ex]
+
+  If $r \approx \infty$, then $f(r e^{i t}) \approx a_n r^n e^{i n t}$, so
+  $f(r e^{i t})$ is approximately a big circle that encircles the origin.
+  \\[2ex]
+
+  So as $r$ changes from $0$ to $\infty$, there are values $r, t$ such that
+  $f(r e^{i t})$ crosses the origin.
+  \hfill $\square$
+
+  \vspace{5ex}
+
+\end{cpframe}
+
+\begin{cpframe}{An example when $f(x) = x^3 - x + 1$}
+
+  \vspace{3ex}
+
+  $f(r e^{i t})$ for $t \in [0,2 \pi)$ shown on the complex plane:
+
+  \vspace{6ex}
+
+  \begin{tikzpicture}[scale = .5, baseline]
+    \draw [fill = Serenity, color = Serenity] (-3,2.5) rectangle (3,3.5);
+    \node at (0,3) {\begin{scriptsize}$r = .1$\end{scriptsize}};
+    \draw [->, thin] (-2.5,0) -- (2.5,0);
+    \draw [->, thin] (0,-2) -- (0,2);
+    \draw (1, .05) -- (1, -.05) node [below] {\begin{scriptsize}$1$\end{scriptsize}};
+    \draw [domain=0:2*pi, samples = 100, smooth, very thick, CalPolyGreen]
+    plot ({1 - 0.1*cos(\x r) + 0.001*cos(3*\x r)},
+    {-0.1*sin(\x r) + 0.001*sin(3*\x r)});
+  \end{tikzpicture}
+  \hfill
+  \begin{tikzpicture}[scale = .5, baseline]
+    \draw [fill = Serenity, color = Serenity] (-3,2.5) rectangle (3,3.5);
+    \node at (0,3) {\begin{scriptsize}$r = .5$\end{scriptsize}};
+    \draw [->, thin] (-1.5,0) -- (2.5,0);
+    \draw [->, thin] (0,-2) -- (0,2);
+    \draw (1, .05) -- (1, -.05) node [below] {\begin{scriptsize}$1$\end{scriptsize}};
+    \draw [domain=0:2*pi, samples = 100, smooth, very thick, CalPolyGreen]
+    plot ({1 - 0.5*cos(\x r) + 0.125*cos(3*\x r)},
+    {-0.5*sin(\x r) + 0.125*sin(3*\x r)});
+  \end{tikzpicture}
+  \hfill
+  \begin{tikzpicture}[scale = .5, baseline]
+    \draw [fill = Serenity, color = Serenity] (-3,2.5) rectangle (3,3.5);
+    \node at (0,3) {\begin{scriptsize}$r \approx 0.868837\dots$\end{scriptsize}};
+    \draw [->, thin] (-1.5,0) -- (2.5,0);
+    \draw [->, thin] (0,-2) -- (0,2);
+    \draw (1, .05) -- (1, -.05) node [below] {\begin{scriptsize}$1$\end{scriptsize}};
+    \draw [domain=0:2*pi, samples = 100, smooth, very thick, CalPolyGreen]
+    plot ({1 - 0.868837*cos(\x r) + 0.655866*cos(3*\x r)},
+    {-0.868837*sin(\x r) + 0.655866*sin(3*\x r)});
+  \end{tikzpicture}
+  \hfill
+  \begin{tikzpicture}[scale = .5, baseline]
+    \draw [fill = Serenity, color = Serenity] (-3,2.5) rectangle (3,3.5);
+    \node at (0,3) {\begin{scriptsize}$r = 2$\end{scriptsize}};
+    \draw [->, thin] (-1.5,0) -- (2.5,0);
+    \draw [->, thin] (0,-2) -- (0,2);
+    \draw (1, .05) -- (1, -.05) node [below] {\begin{scriptsize}$1$\end{scriptsize}};
+    \draw [scale = .35] [domain=0:2*pi, samples = 100, smooth, very thick, CalPolyGreen]
+    plot ({1 - 2*cos(\x r) + 8*cos(3*\x r)},
+    {-2*sin(\x r) + 8*sin(3*\x r)});
+  \end{tikzpicture}
+
+\end{cpframe}
+
+\begin{cpframe}{Cal Poly Colors}
+  \vspace*{5ex}
+  \fbox{
+    \begin{columns}
+      \column{.25\textwidth}
+      \begin{tabular}{rl}
+        \tikz{\draw [fill=White] (0,0) rectangle (.25,.25)}
+        & {\color{White} White} \\
+        \tikz{\draw [fill=Black] (0,0) rectangle (.25,.25)}
+        & {\color{Black} Black} \\
+        \tikz{\draw [fill=CalPolyGreen] (0,0) rectangle (.25,.25)}
+        & {\color{CalPolyGreen} CalPolyGreen} \\
+        \tikz{\draw [fill=CalPolyGold] (0,0) rectangle (.25,.25)}
+        & {\color{CalPolyGold} CalPolyGold} \\
+        \tikz{\draw [fill=DigitalGold] (0,0) rectangle (.25,.25)}
+        & {\color{DigitalGold} DigitalGold} \\
+        \tikz{\draw [fill=StadiumGold] (0,0) rectangle (.25,.25)}
+        & {\color{StadiumGold} StadiumGold} \\
+        \tikz{\draw [fill=PolyCanyon] (0,0) rectangle (.25,.25)}
+        & {\color{PolyCanyon} PolyCanyon} \\
+        \tikz{\draw [fill=DexterGreen] (0,0) rectangle (.25,.25)}
+        & {\color{DexterGreen} DexterGreen}
+      \end{tabular}
+      \column{.25\textwidth}
+      \begin{tabular}{rl}
+        \tikz{\draw [fill=FarmersMarket] (0,0) rectangle (.25,.25)}
+        & {\color{FarmersMarket} FarmersMarket} \\
+        \tikz{\draw [fill=SkyBlue] (0,0) rectangle (.25,.25)}
+        & {\color{SkyBlue} SkyBlue} \\
+        \tikz{\draw [fill=SurfBlue] (0,0) rectangle (.25,.25)}
+        & {\color{SurfBlue} SurfBlue} \\
+        \tikz{\draw [fill=Serenity] (0,0) rectangle (.25,.25)}
+        & {\color{Serenity} Serenity} \\
+        \tikz{\draw [fill=MorroBlue] (0,0) rectangle (.25,.25)}
+        & {\color{MorroBlue} MorroBlue} \\
+        \tikz{\draw [fill=MissionBeige] (0,0) rectangle (.25,.25)}
+        & {\color{MissionBeige} MissionBeige} \\
+        \tikz{\draw [fill=PismoSand] (0,0) rectangle (.25,.25)}
+        & {\color{PismoSand} PismoSand} \\
+        \tikz{\draw [fill=CoastSage] (0,0) rectangle (.25,.25)}
+        & {\color{CoastSage} CoastSage}
+      \end{tabular}
+      \column{.25\textwidth}
+      \begin{tabular}{rl}
+        \tikz{\draw [fill=Sycamore] (0,0) rectangle (.25,.25)}
+        & {\color{Sycamore} Sycamore} \\
+        \tikz{\draw [fill=KennedyGray] (0,0) rectangle (.25,.25)}
+        & {\color{KennedyGray} KennedyGray} \\
+        \tikz{\draw [fill=SealGray] (0,0) rectangle (.25,.25)}
+        & {\color{SealGray} SealGray} \\
+        \tikz{\draw [fill=HeritageOrange] (0,0) rectangle (.25,.25)}
+        & {\color{HeritageOrange} HeritageOrange} \\
+        \tikz{\draw [fill=HeritageOrange50] (0,0) rectangle (.25,.25)}
+        & {\color{HeritageOrange50} HeritageOrange50} \\
+        \tikz{\draw [fill=Avocado] (0,0) rectangle (.25,.25)}
+        & {\color{Avocado} Avocado} \\
+        \tikz{\draw [fill=Avocado50] (0,0) rectangle (.25,.25)}
+        & {\color{Avocado50} Avocado50}
+      \end{tabular}
+    \end{columns}
+  }
+\end{cpframe}
+
+\end{document}
