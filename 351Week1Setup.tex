@@ -1,41 +1,37 @@
 \documentclass[11pt]{article}
 
 \title{How to compile \LaTeX{} files}
-\author{}
 \date{}
 
 \begin{document}
 
 \maketitle
 
-\LaTeX{} files can be edited and compiled locally on your personal computer.
-This is the preferred option for serious projects such as books, research
-publications and presentations.  There are many free options for downloading
-and installing \LaTeX{} on each operating system.
+\LaTeX{} files can be edited and compiled locally on your personal computer.  This is the
+preferred option for serious projects such as books, research publications and
+presentations.  There are many free options for downloading and installing \LaTeX{} on
+each operating system.
 \begin{itemize}
 \item Windows users can use MikTeX.  See \texttt{miktex.org/}.
 
 \item Apple users can use MacTex.  See \texttt{www.tug.org/mactex/}.
 
-\item Linux users may find \LaTeX{} is already installed on their machine.  If
-  not, Debian or Ubuntu users can enter \texttt{sudo apt-get install
-    texlive-full} in a terminal.
+\item Linux users may find \LaTeX{} is already installed on their machine.  If not, Debian
+  or Ubuntu users can enter \texttt{sudo apt-get install texlive-full} in a terminal.
 \end{itemize}
-\LaTeX{} files can also be edited and compiled on a third party web site such
-as \texttt{www.overleaf.com}.  This is a fine option to get up and running
-quickly.
+\LaTeX{} files can also be edited and compiled on a third party web site such as
+\texttt{www.overleaf.com}.  This is a fine option to get up and running quickly.
 
-Use \LaTeX{} by first opening and editing a plain text file.  Save the file
-with the \texttt{.tex} extension.  The \texttt{.tex} file can be compiled to
-produce a \texttt{.pdf} file using either \texttt{pdflatex} or
-\texttt{xelatex}.  The choice of compiler is usually an option in a drop down
-menu in \LaTeX{} software packages or, if using the command line, can be
-invoked by entering \texttt{pdflatex filename.tex} or \texttt{xelatex
-  filename.tex} in a terminal.  The \texttt{pdflatex} option is faster and more
-established, but the \texttt{xelatex} option is better at handling fonts.
+Use \LaTeX{} by first opening and editing a plain text file.  Save the file with the
+\texttt{.tex} extension.  The \texttt{.tex} file can be compiled to produce a
+\texttt{.pdf} file using either \texttt{pdflatex} or \texttt{xelatex}.  The choice of
+compiler is usually an option in a drop down menu in \LaTeX{} software packages or, if
+using the command line, can be invoked by entering \texttt{pdflatex filename.tex} or
+\texttt{xelatex filename.tex} in a terminal.  The \texttt{pdflatex} option is faster and
+more established, but the \texttt{xelatex} option is better at handling fonts.
 
-I use Emacs with the Auctex package to edit \texttt{.tex} files and compile
-with \texttt{xelatex}.  This is probably the best way to write \LaTeX{} code,
-but requires knowledge of Emacs and is not for beginners.
+I use Emacs with the Auctex package to edit \texttt{.tex} files and compile with
+\texttt{xelatex}.  This is probably the best way to write \LaTeX{} code, but requires
+knowledge of Emacs and is not for beginners.
 
 \end{document}
