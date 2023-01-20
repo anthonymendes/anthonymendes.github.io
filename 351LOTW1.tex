@@ -1,0 +1,41 @@
+\documentclass[11pt,oneside,letterpaper]{article}
+
+\setlength{\parindent}{2eM}
+\setlength{\parskip}{0ex}
+
+\title{\LaTeX{} Assignment 1}
+\date{January 13, 2023}
+\author{Surina Marwaha}
+
+\begin{document}
+
+\pagestyle{plain}
+\maketitle
+
+\begin{center}
+	\rule{33eM}{0.2ex}
+\end{center}
+
+\noindent\textbf{Exercise 1}
+\newline\newline
+As shown on page 5 of the textbook, special characters such as \$, \{, \~, and \% are produced with a preceding backslash. Another way to produce these characters is to use the \verb+\verb#stuff#+command, which typesets ``stuff'' verbatim (including spaces and special characters) in a typewriter font. The beginning and ending \# delimiters can be replaced with other non-letter characters such as \^, \textbackslash, 4, or !.
+
+Only use \verb+\verb+ verb to display short strings verbatim. Do not use \verb+\verb+ to change the font. For that purpose there is the command \verb+\textt{text}+ which prints ``text'' in a typewriter font.
+
+There are other commands which change the font: \textbf{bold}, \textsf{sans serif}, \textsl{slanted}, \textit{italicized}, and \textsc{small caps} are produced by \verb+\textbf{}+, \verb+\textsf{}+, \verb+\textsl{}+,
+\verb+\textit{}+, and \verb+\textsc{}+. Within any of these fonts, words can be \emph{emphasized}
+using \verb+\emph{}+. For instance, \textbf{this is \textit{special} bold text}. Text can also be
+\underline{underlined} with \verb+\underline{}+. Use special fonts sparingly, if at all!
+
+The compiler tries to align the first and last characters in consecutive lines in a paragraph. As a result, the space between words can vary from line to line. Naïve \LaTeX{}ers sometimes try to change this spacing by forcing breaks
+with commands such as \verb+\newline+ or \verb+\\+. Don’t do this! 
+
+Some users may try to change the spacing between paragraphs using commands such as \verb+\\[4cm]+ or \verb+\vspace{1.1in}+. These last commands produce vertical spaces of 4 centimeters and 1.1 inches, respectively. Using these commands frequently is the hallmark of poor \LaTeX{}er.
+
+\newpage
+
+\noindent\textbf{Exercise 2}
+\newline\newline
+Sometimes I worry when I reach in to take tofu out of the oven, that the midnight kitchen gremlins will shut me inside, and my last words will be something like ``\^a\"a\H a\t aa\'a\d a\=a\u a\aa ---'' and I'll melt into the 300\textdegree{}F and then the gremlins will eat all my tofu after midnight and kill my roommates in their sleep \ldots
+
+\end{document}
