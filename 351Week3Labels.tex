@@ -14,47 +14,43 @@
 \maketitle
 
 \begin{abstract}
-  This is an example of a abstract.  \index{abstract} An abstract is a short
-  description of the contents of the document.  As a general rule, abstracts
-  should be no more than a few sentences for papers and a few paragraphs for
-  books.  This document describes how to use \LaTeX{'s} self numbering and
-  labeling features.
+  This is an example of a abstract.  \index{abstract} An abstract is a short description
+  of the contents of the document.  As a general rule, abstracts should be no more than a
+  few sentences for papers and a few paragraphs for books.  This document describes how to
+  use \LaTeX{'s} self numbering and labeling features.
 \end{abstract}
 
 \tableofcontents
 
 \section{Introduction}
 
-This document is designed to illustrate \LaTeX{'s} ability to number and
-reference sections, subsections, theorems, equations, and so on.  We will also
-illustrate appendices, bibliographies, indices, and footnotes.\footnote{Yes,
-  even footnotes!  Oh, lucky day!}  Footnotes \index{footnotes} are created
-using \verb~\footnote{text}~ and, if appearing at the end of a sentence, should
-appear after the period.
+This document is designed to illustrate \LaTeX{'s} ability to number and reference
+sections, subsections, theorems, equations, and so on.  We will also illustrate
+appendices, bibliographies, indices, and footnotes.\footnote{Yes, even footnotes!  Oh,
+  lucky day!}  Footnotes \index{footnotes} are created using \verb~\footnote{text}~ and,
+if appearing at the end of a sentence, should appear after the period.
 
 \subsection{Compile more than once}
 
-Auxiliary files that store information about labels and page numbers are
-created the first time the \LaTeX{} source is compiled.  The next time \LaTeX{}
-is compiled, those files are referenced to create the table of contents,
-section numbers, and theorem numbers.  Because of this, \LaTeX{} must be
-compiled two or three times in order to properly display the labels.  The
-output shown by the compiler may warn you if it appears that \LaTeX{} should be
-run again.
+Auxiliary files that store information about labels and page numbers are created the first
+time the \LaTeX{} source is compiled.  The next time \LaTeX{} is compiled, those files are
+referenced to create the table of contents, section numbers, and theorem numbers.  Because
+of this, \LaTeX{} must be compiled two or three times in order to properly display the
+labels.  The output shown by the compiler may warn you if it appears that \LaTeX{} should
+be run again.
 
-Sections \index{sections} are created with
-\verb~\section[TOC name]{Section Name}~, where the optional \verb~[TOC name]~
-string changes the name of the section in the table of contents.  There is also
-a similar \index{subsections} \verb~\subsection~ command.  To print a section
-without a number (which will also not show up in the table of contents), use
-\verb~\section*{Section Name}~.  The table of contents is created with the
+Sections \index{sections} are created with \verb~\section[TOC name]{Section Name}~, where
+the optional \verb~[TOC name]~ string changes the name of the section in the table of
+contents.  There is also a similar \index{subsections} \verb~\subsection~ command.  To
+print a section without a number (which will also not show up in the table of contents),
+use \verb~\section*{Section Name}~.  The table of contents is created with the
 \verb~\tableofcontents~ command.
 
 \subsection[BibTeX]{Bibliographies using BibTeX}
 
-Bibliographies can created with BibTeX.  \label{bibliographies} \index{BibTeX}
-To do this, follow these instructions (which have been auto-magically numbered
-using \index{enumerate} the \verb~enumerate~ environment):
+Bibliographies can created with BibTeX.  \label{bibliographies} \index{BibTeX} To do this,
+follow these instructions (which have been auto-magically numbered using \index{enumerate}
+the \verb~enumerate~ environment):
 \begin{enumerate}
 \item create a new file called \verb~file.bib~.
 \item In that new file, create or copy and paste bibliography entries in the
@@ -97,11 +93,10 @@ To create an \index{index} index, place these \index{two} two lines before the
 \makeindex
 \end{verbatim}
 
-  Mark words for inclusion in an index using the \verb~\index{word}~ command.
-  The page reference will appear on the same page that the \verb~\index{word}~
-  command is located.  There are variations on the \verb~\index~ command which
-  can be used to change how the entries appear in the index; such options are
-  found on page 87 of the text.
+  Mark words for inclusion in an index using the \verb~\index{word}~ command.  The page
+  reference will appear on the same page that the \verb~\index{word}~ command is located.
+  There are variations on the \verb~\index~ command which can be used to change how the
+  entries appear in the index; such options are found on page 87 of the text.
 
 Similar to BibTeX, the index must be compiled with its own command.  To compile
 an index, compile the \LaTeX{} file, enter \texttt{makeindex file} at the
