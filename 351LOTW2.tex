@@ -1,0 +1,75 @@
+\documentclass{report}
+\usepackage{amsmath,amsthm,amssymb}
+\setlength{\parindent}{0eM}
+\begin{document}
+
+\textbf{Exercise 1.}
+
+\quad Every mathematical statement, such as $\sum^{\infty}_{n=1} 1/n^{2} = \pi^{2}/6$, should be part of a sentence. Even equations need punctuation!
+
+\quad The notation $\displaystyle{\lim_{x \to a}f(x) = L}$ means that for every $\varepsilon{} > 0$ there is a $\delta{} > 0$ such that $|x - a| < \delta$ implies $|f(x) - L|$. An incorrect way to typeset this definition is
+
+\[ \forall(\varepsilon > 0)\exists(\sigma{} > 0) \ni{} (|x - a| < \varepsilon{} \implies{} |f(x) - L| < \varepsilon) \text{.}\]
+
+The symbols $\forall$, $\exists$, $\ni$, and $\implies{}$ should be used only in the context of the mathematical subject of formal logic and should not replace the words ``for all'', ``there exists'', and ``such that'', and ``implies''.
+
+One of your instructor's favorite mathematical statements is
+
+\[ n! \approx{} \sqrt{2\pi n}\left ( \frac{n}{e} \right )^{n} \text{,}\]
+
+otherwise known as Stirling's formula. As an example, $100!$ is approximately equal to $\sqrt{200\pi}(100/e)^{100} \approx{} 9.32 \times{} 10^{157}$.
+
+\quad The following is true:
+
+\begin{align*}
+	\left | \int_{1}^{a} \frac{\sin{x}}{x}\,dx \right |
+	& \leq{} \int_{1}^{a} \left | \frac{\sin{x}}{x} \right | \, dx \\
+	& \leq \int_{1}^{a}\frac{1}{x}\,dx \\
+	& = \ln a\text{.}
+\end{align*}
+
+\quad After first simplifying using the exponential and the natural log functions, L'H\^{o}pital's rule can be used to evaluate $\displaystyle{\lim_{x \to 2 -}(4 - x)^{1/(2-x)}}$.
+
+Take $\mathbf{x, y} \in{} \mathbb{R}^{n}$. The inner product of $\mathbf{x}$ and $\mathbf{y}$ is defined by $\langle \mathbf{x}, \mathbf{x} \rangle = \mathbf{x^{T}x}$. It follows that
+
+\[ \langle \mathbf{x}, \mathbf{x}\rangle = \mathbf{x^{T}x} = \|x\|^{2} \]
+
+Which is always a non-negative real number.
+
+\rule{\textwidth}{0.01ex}
+
+\textbf{Exercise 2.} Identify some of the many typesetting errors that occur between the lines:
+
+\rule{\textwidth}{0.01ex}
+
+$det(A)$ should be $\det(A)$ in two cases.
+
+In the third line, the ``-2'' is not written in math mode. It should look like $-2$ instead.
+
+The long right arrow should not be used in place of the word ``implies''.
+
+A ``\verb#\,#'' should be used before the dx in all three integrals.
+
+The left and right parentheses in the equation on the separate line should be preceded by \verb#\left# or \verb#\right# in each case.
+
+\rule{\textwidth}{0.01ex}
+
+\textbf{Exercise 3.} One of my favorite mathematical statements is the Pythagorean Identity:
+
+\[ \sin^{2} \theta{} + \cos^{2} \theta{} = 1 \].
+
+It states that given any angle $\theta{}$, the sum of the squares of the sine and cosine of $\theta$ is 1.
+
+Another of my favorite mathematical statements is the Binomial Theorem:
+
+\[ \left ( x + 1 \right )^{n} = \binom{n}{1} + \binom{n}{2}x + \ldots{} + \binom{n}{n}x^{n} \]
+
+In other words, $x + 1$ raised to the $n$th power is the polynomial in x of degree n, where the coefficient, $a_{m}$, for each term, $a_{m}x^{m}$, is the number of permutations of $m$ objects chosen from a set of $n$, read ``$n$ choose $m$''.
+
+Another mathematical statement that I really like is the formula for the $n$th Fibonacci Number:
+
+\[ F_{n} = \frac{1}{\sqrt{5}}\left ( \left ( \frac{1 + \sqrt{5}}{2} \right )^{n}-\left (\frac{1-\sqrt{5}}{2} \right )^{n} \right )\text{.} \]
+
+It says that the $n$th Fibonacci number can be expressed as the difference of the $n$th powers of $1 + \sqrt(5)$ and $1 - \sqrt{5}$, divided by $2^{n}\sqrt{5}$, which I just think is neat and unexpected.
+
+\end{document}
