@@ -12,7 +12,7 @@
 % have the font file in the compile folder
 \setmainfont{Lato-Light.ttf}
 \setmathsfont(Digits,Latin,Greek)[Numbers={Lining,Proportional}]{Lato-Light.ttf}
-\setsansfont{LDFComicSans.ttf}
+\setsansfont{351Week4LDFComicSans.ttf}
 \setmonofont{AnonymousPro-Regular.ttf}
 
 \title{Tables, Fonts and Spacing}
@@ -24,8 +24,7 @@
 
 \section{Tables}
 
-For simple and short tables there is the handy tabular environment.  The syntax
-is
+For simple and short tables there is the handy tabular environment.  The syntax is
 \begin{verbatim}
 \begin{tabular}{column specification}
   .. & .. & .. \\
@@ -42,29 +41,28 @@ where \verb~column specification~ is a string containing these characters:
     \verb~p{width}~ & for a column with wraparound text of length \verb~width~.
   \end{tabular}
 \end{center}
-The syntax for moving to the next column and starting a new line is the same
-syntax as when using the \verb~\begin{matrix}..\end{matrix}~ command in math
-mode.  Placing the optional commands
+The syntax for moving to the next column and starting a new line is the same syntax as
+when using the \verb~\begin{matrix}..\end{matrix}~ command in math mode.  Placing the
+optional commands
 \begin{verbatim}
 \setlength{\tabcolsep}{12pt}
 \renewcommand{\arraystretch}{2}
 \end{verbatim}
-before a table redefines the spacing between columns and rows.  The defaults
-are \verb!6pt! and a scaling factor of \verb!1!.
+before a table redefines the spacing between columns and rows.  The defaults are
+\verb!6pt! and a scaling factor of \verb!1!.
 
-The \verb~\hline~ command creates a horizontal line in the \verb~tabular~
-environment.  There are more examples of tables in this document and there are
-many more examples of tables of varying complexity on pages 45--48 of the text.
+The \verb~\hline~ command creates a horizontal line in the \verb~tabular~ environment.
+There are more examples of tables in this document and there are many more examples of
+tables of varying complexity on pages 45--48 of the text.
 
 \section{Fonts}
 
 \subsection{Size}
 
 The font size for the entire document is set by the \verb~[11pt]~ option in the
-\verb~\documentclass~ command.  This document is typed in 11pt font.  The font
-size can also be 10pt (the default option) or 12pt.  Another option in the
-\verb~\documentclass~ command is \verb~twocolumn~, which has the effect of
-producing two columns per page.
+\verb~\documentclass~ command.  This document is typed in 11pt font.  The font size can
+also be 10pt (the default option) or 12pt.  Another option in the \verb~\documentclass~
+command is \verb~twocolumn~, which has the effect of producing two columns per page.
 
 These commands can be used to change the font size:
 
@@ -89,21 +87,20 @@ These commands can be used to change the font size:
 The \verb~anyfontsize~ package (not needed if using XeLaTeX) has the
 \[\verb~\fontsize{font size}{base line stretch}~\]
 command which can be used in conjunction with the \verb~\selectfont~ command to
-select size {\fontsize{1in}{1in}\selectfont arbitrarily}.
+select size {\fontsize{20mm}{11pt}\selectfont arbitrarily}.
 
 \subsection{Face}
 
 \subsubsection{Selecting the face when using pdfLaTeX}
 
-Font faces are best chosen when compiling with XeLaTeX.  There are a few
-options for faces when compiling with pdfLaTeX, some of which carry through to
-the case of compiling with XeLaTeX.
+Font faces are best chosen when compiling with XeLaTeX.  There are a few options for faces
+when compiling with pdfLaTeX, some of which carry through to the case of compiling with
+XeLaTeX.
 
 Four fonts are needed in any document: Roman (the default font), Math (used for
-mathematics), \textsf{Sans serif} (invoked by \verb~\textsf{..}~), and
-\texttt{Typewriter font} (as seen in \verb~verb~ statements).  The standard
-options for fonts when compiling with pdfLaTeX can be found when calling these
-packages:
+mathematics), \textsf{Sans serif} (invoked by \verb~\textsf{..}~), and \texttt{Typewriter
+  font} (as seen in \verb~verb~ statements).  The standard options for fonts when
+compiling with pdfLaTeX can be found when calling these packages:
 
 \setlength{\tabcolsep}{6pt}
 \renewcommand{\arraystretch}{1}
@@ -131,9 +128,9 @@ packages:
   \end{tabular}
 \end{center}
 
-An empty entry indicates that a package does not have an effect on a given font face.
-The last two font selections are listed separately because they are not usually found
-in the basic version of \LaTeX{}, but are given by the ``texlive-full'' version.
+An empty entry indicates that a package does not have an effect on a given font face.  The
+last two font selections are listed separately because they are not usually found in the
+basic version of \LaTeX{}, but are given by the ``texlive-full'' version.
 
 To select the roman font, math font, sans serif font, and typewriter font separately,
 include consecutive \verb~\usepackages~ in a correct order.  For example, the commands
@@ -142,40 +139,37 @@ include consecutive \verb~\usepackages~ in a correct order.  For example, the co
 \usepackage{charter}
 \usepackage{helvet}
 \end{verbatim}
-uses the Palatino math font, Charter roman font, Helvetica sans serif font,
-and Computer Modern Typewriter font.
+uses the Palatino math font, Charter roman font, Helvetica sans serif font, and Computer
+Modern Typewriter font.
 
 \subsubsection{Selecting the face when using XeLaTeX}
 
-Any font installed on your computer can be used when compiling with XeLaTeX.
-Use commands similar to these commands before the appearance of
-\verb~\begin{document}~:
+Any font installed on your computer can be used when compiling with XeLaTeX.  Use commands
+similar to these commands before the appearance of \verb~\begin{document}~:
 
 \begin{verbatim}
-\usepackage{mathspec}
+  \usepackage{mathspec}
 
-\setmainfont{Lato-Light.ttf}
-\setmathsfont(Digits,Latin,Greek)[Numbers={Lining,Proportional}]{Lato-Light.ttf}
-\setsansfont{LDFComicSans.ttf}
-\setmonofont{AnonymousPro-Regular.ttf}
+  \setmainfont{Lato-Light.ttf}
+  \setmathsfont(Digits,Latin,Greek)[Numbers={Lining,Proportional}]{Lato-Light.ttf}
+  \setsansfont{351Week4LDFComicSans.ttf}
+  \setmonofont{AnonymousPro-Regular.ttf}
 \end{verbatim}
 
-These commands change the four required fonts.  To change the mathematics
-symbols, such as \(\displaystyle \Sigma, \int, \partial,\) and so on, load the corresponding
-math package in the above table before the \verb~mathspec~ package is called.
-For example, to use the symbols that come from \verb~mathpazo~, load
-\verb~mathpazo~ before \verb~mathspec~.
+These commands change the four required fonts.  To change the mathematics symbols, such
+as \(\displaystyle \Sigma, \int, \partial,\) and so on, load the corresponding math package in the
+above table before the \verb~mathspec~ package is called.  For example, to use the
+symbols that come from \verb~mathpazo~, load \verb~mathpazo~ before \verb~mathspec~.
 
-{\fontsize{1.5ex}{4ex} \fontspec{LDFComicSans.ttf}Fonts can also be changed
+{\fontsize{4.5ex}{1ex} \fontspec{351Week4LDFComicSans.ttf}Fonts can also be changed
   mid-document.}
 
 \section{Margins and spacing}
 
 \subsection{Margins}
 
-The margins of the document can be controlled with the \verb~geometry~ package.  To
-set the left, top, right, and bottom margins to specific values, place a command such
-as
+The margins of the document can be controlled with the \verb~geometry~ package.  To set
+the left, top, right, and bottom margins to specific values, place a command such as
 \begin{verbatim}
 \usepackage[left=35mm,top=2cm,right=35mm,bottom=2cm]{geometry}
 \end{verbatim}
@@ -188,21 +182,20 @@ changes all margins to be 2 inches and prints in landscape mode.
 
 \subsection{Creating Whitespace}
 
-It usually bad form to manually adjust the vertical or horizontal spacing inside the
-body of the document when writing an article or book, but it might be appropriate to
-manually force white space when creating documents such as syllabi, exams, or resumes.
+It usually bad form to manually adjust the vertical or horizontal spacing inside the body
+of the document when writing an article or book, but it might be appropriate to manually
+force white space when creating documents such as syllabi, exams, or resumes.
 
-The line break command \verb~\\~ has an option to add extra space; to add an
-extra \verb~1cm~, use \verb~\\[1cm]~.  Alternatively, to force an extra vertical space
-of \verb~1cm~ between two paragraphs, the \verb~\vspace{1cm}~ command can be used.
-Sometimes \LaTeX{} will think adding a vertical space using \verb~\vspace~ is a bad
-idea and won't cooperate; such a vertical space can be demanded with the
-command \verb~\vspace*{1cm}~.
+The line break command \verb~\\~ has an option to add extra space; to add an extra
+\verb~1cm~, use \verb~\\[1cm]~.  Alternatively, to force an extra vertical space of
+\verb~1cm~ between two paragraphs, the \verb~\vspace{1cm}~ command can be used.  Sometimes
+\LaTeX{} will think adding a vertical space using \verb~\vspace~ is a bad idea and won't
+cooperate; such a vertical space can be demanded with the command \verb~\vspace*{1cm}~.
 
 The \verb~\vfill~ command produces a length which can stretch or shrink vertically,
-pushing the text after the \verb~\vfill~ command as far down the page as possible.
-This command can be used in tandem with the \verb~\newpage~ command, which forces a
-new page to begin.  For instance, if writing a mathematics exam, the \LaTeX{} commands
+pushing the text after the \verb~\vfill~ command as far down the page as possible.  This
+command can be used in tandem with the \verb~\newpage~ command, which forces a new page to
+begin.  For instance, if writing a mathematics exam, the \LaTeX{} commands
 \begin{verbatim}
 \begin{problem} Evaluate \( \int \ln x \, dx \). \end{problem}
 \vfill
@@ -210,12 +203,11 @@ new page to begin.  For instance, if writing a mathematics exam, the \LaTeX{} co
 \vfill
 \newpage
 \end{verbatim}
-will produce the next page in the document (provided the \verb~amsthm~ package
-is loaded and \verb~\theoremstyle{definition}~ and
-\verb~\newtheorem{problem}{}~ both appear in the preamble).  Analogous to
-\verb~\vspace~, \verb~\vspace*~ and \verb~\vfill~, there are \verb~\hspace~,
-\verb~\hspace*~, and \verb~\hfill~ commands, which produce horizontal space, a
-forced horizontal space, and a rubber horizontal fill.
+will produce the next page in the document (provided the \verb~amsthm~ package is loaded
+and \verb~\theoremstyle{definition}~ and \verb~\newtheorem{problem}{}~ both appear in the
+preamble).  Analogous to \verb~\vspace~, \verb~\vspace*~ and \verb~\vfill~, there are
+\verb~\hspace~, \verb~\hspace*~, and \verb~\hfill~ commands, which produce horizontal
+space, a forced horizontal space, and a rubber horizontal fill.
 
 \newpage
 
@@ -249,25 +241,22 @@ by side type:
 
 \subsection{Unbreakable text}
 
-The compiler makes typesetting decisions by placing boxes around letters, parts
-of words, mathematics, and figures, and then appropriately arranging the boxes.
-Force unbreakable type by using
-\verb~\mbox{unbreakable text}~.  Create a frame around a box using
+The compiler makes typesetting decisions by placing boxes around letters, parts of words,
+mathematics, and figures, and then appropriately arranging the boxes.  Force unbreakable
+type by using \verb~\mbox{unbreakable text}~.  Create a frame around a box using
 \verb~\fbox{.}~ and an unbreakable paragraph using \verb~\parbox{width}{.}~.
 
-Sometimes when using commands such as \verb~\hfill~, an empty box is needed to
-get spacing just right; create such an empty box with \verb~\mbox{}~.
+Sometimes when using commands such as \verb~\hfill~, an empty box is needed to get spacing
+just right; create such an empty box with \verb~\mbox{}~.
 
-On a similar note, \verb!~! is a non-breaking space character, used when a
-space between two words or characters should appear but those words cannot be
-on different lines.
+On a similar note, \verb!~! is a non-breaking space character, used when a space between
+two words or characters should appear but those words cannot be on different lines.
 
 \subsection{Tab Stops}
 
-Most of us are familiar with tabs from our frequent use of physical
-typewriters.  Tabs can be kept and used with the \verb~tabbing~ environment.
-Set tabs using \verb~\=~, create a new line using \verb~\\~, and move to the
-next tab using \verb~\>~.  For example,
+Most of us are familiar with tabs from our frequent use of physical typewriters.  Tabs can
+be kept and used with the \verb~tabbing~ environment.  Set tabs using \verb~\=~, create a
+new line using \verb~\\~, and move to the next tab using \verb~\>~.  For example,
 \begin{tabbing}
   The first tab appears right here,
   \= this is text after the first tab,
@@ -276,7 +265,6 @@ next tab using \verb~\>~.  For example,
   \>  middle of second row,
   \> and the end.
 \end{tabbing}
-Tabbing environments are treated as one box and thus cannot be split across two
-pages.
+Tabbing environments are treated as one box and thus cannot be split across two pages.
 
 \end{document}
