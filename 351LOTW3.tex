@@ -1,0 +1,71 @@
+\documentclass[10pt]{article}
+
+\usepackage{amssymb,amsmath,amsthm,makeidx}
+
+\makeindex
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\title{\LaTeX{} Assignment 3}
+\author{Samuel Sehnert}
+\date{2023/02/02}
+
+\setlength{\parindent}{0eM}
+\setlength{\parskip}{1ex}
+
+\begin{document}
+    \maketitle
+    \tableofcontents
+    \section{Instructions}
+        There are two exercises (which were typeset using the theorem environment).
+
+        \textbf{Exercise 1.} \textit{Recreate this entire document.\footnote{How Meta}}
+
+        \textbf{Exercise 2.} \textit{Create a new document containing a short description of three
+            of your favorite books, papers, or other publications. Be sure to include a
+            bibliography, created using BibTeX.}
+
+        \setlength{\parindent}{2eM}
+        An assignment which completes Exercise 2 in an interesting way or makes
+        amusing use of mathematical typesetting will earn the coveted \LaTeX{}er of the
+        week distinction
+    \subsection[Due Date]{When to turn it in}
+        Please upload the \verb|.tex| and \verb|.bib| source files and the \verb|.pdf| output files to your
+        solutions to Assignment 3 on or before Sunday, January 26.
+    \section{Euler was smart}
+        Euler proved many statements, such as
+        \begin{equation}
+            \label{Euler_Pent_Num}
+            \prod_{m=1}^{\infty}\left(1-q^m\right)=\sum_{n=-\infty}^{\infty}\left(-1\right)^n q^{\left(2n^2-n\right)/2},
+        \end{equation}
+        where q is an indeterminate. Equation \eqref{Euler_Pent_Num} is known as Euler's pentagonal number theorem.
+        Euler also proved Theorem 1 below.
+        \begin{theorem}[The Basel Problem]
+            we have $\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{\pi^2}{6}.$
+        \end{theorem}
+        Euler’s original proof of Theorem 1 makes unjustified assumptions that infinite
+        products and sums behave like finite products and sums, but is interesting
+        nonetheless and worth displaying.
+        \begin{proof}
+            Using the power series for $\sin{x}$, we have
+            \begin{align*}
+                \frac{\sin x}{x} & = \frac{1}{x}\left(x - \frac{x^3}{3!}+\frac{x^5}{5!}-\ldots\right) \\
+                                 & = 1 - \frac{x^2}{3!}+\frac{x^4}{5!}-\ldots \\
+                                 \label{proof_0}
+                                 \tag{2}
+                                 & = \left(1-\frac{x}{\pi}\right) \left(1+\frac{x}{\pi}\right) \left(1-\frac{x}{2\pi}\right)\left(1+\frac{x}{2\pi}\right)\ldots
+            \end{align*}
+            where te reasoning \footnote{This reasoning is actually true, but needs further justification.}
+            behind \eqref{proof_0} is that a polynomial can be factored if its roots
+            are known, and the roots of $\sin x/x$ are $\pm\pi, \pm2\pi$,\ldots. Multiplying each pair
+            of consecutive terms in this product gives
+            \begin{equation*}
+                \label{proof_1}
+                \tag{3}
+                \left(1-\frac{x^2}{\pi^2}\right) \left(1-\frac{x^2}{4\pi^2}\right) \left(1-\frac{x^2}{9\pi^2}\right)\ldots
+            \end{equation*}
+            The coefficient of $x^2$ in \eqref{proof_1} is $\displaystyle -\frac{1}{\pi^2}-\frac{1}{4\pi^2}-\ldots=-\frac{1}{\pi^2}\sum_{n=1}^{\infty}\frac{1}{n^2}$ and the
+            coefficient of $x^2$ is $\sin x/x$ is $-1/3!$, so equating these two expressions proves the theoem.
+        \end{proof}
+\end{document}
