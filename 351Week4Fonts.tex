@@ -8,8 +8,8 @@
 \newtheorem{problem}{}
 \newtheorem{definition}{Definition}
 
-% You may also call fonts that are installed on your machine without needing to
-% have the font file in the compile folder
+% You may also call fonts that are installed on your machine
+% without needing to have the font file in the compile folder
 \setmainfont{Lato-Light.ttf}
 \setmathsfont(Digits,Latin,Greek)[Numbers={Lining,Proportional}]{Lato-Light.ttf}
 \setsansfont{351Week4LDFComicSans.ttf}
@@ -24,14 +24,16 @@
 
 \section{Tables}
 
-For simple and short tables there is the handy tabular environment.  The syntax is
+For simple and short tables there is the handy tabular
+environment.  The syntax is
 \begin{verbatim}
 \begin{tabular}{column specification}
   .. & .. & .. \\
   .. & .. & .. \\
 \end{tabular}
 \end{verbatim}
-where \verb~column specification~ is a string containing these characters:
+where \verb~column specification~ is a string containing these
+characters:
 \begin{center}
   \begin{tabular}{cl}
     \verb~l~        & for a column of left aligned text,  \\
@@ -41,28 +43,32 @@ where \verb~column specification~ is a string containing these characters:
     \verb~p{width}~ & for a column with wraparound text of length \verb~width~.
   \end{tabular}
 \end{center}
-The syntax for moving to the next column and starting a new line is the same syntax as
-when using the \verb~\begin{matrix}..\end{matrix}~ command in math mode.  Placing the
-optional commands
+The syntax for moving to the next column and starting a new line
+is the same syntax as when using the
+\verb~\begin{matrix}..\end{matrix}~ command in math mode.  Placing
+the optional commands
 \begin{verbatim}
 \setlength{\tabcolsep}{12pt}
 \renewcommand{\arraystretch}{2}
 \end{verbatim}
-before a table redefines the spacing between columns and rows.  The defaults are
-\verb!6pt! and a scaling factor of \verb!1!.
+before a table redefines the spacing between columns and rows.
+The defaults are \verb!6pt! and a scaling factor of \verb!1!.
 
-The \verb~\hline~ command creates a horizontal line in the \verb~tabular~ environment.
-There are more examples of tables in this document and there are many more examples of
-tables of varying complexity on pages 45--48 of the text.
+The \verb~\hline~ command creates a horizontal line in the
+\verb~tabular~ environment.  There are more examples of tables in
+this document and there are many more examples of tables of
+varying complexity on pages 45--48 of the text.
 
 \section{Fonts}
 
 \subsection{Size}
 
-The font size for the entire document is set by the \verb~[11pt]~ option in the
-\verb~\documentclass~ command.  This document is typed in 11pt font.  The font size can
-also be 10pt (the default option) or 12pt.  Another option in the \verb~\documentclass~
-command is \verb~twocolumn~, which has the effect of producing two columns per page.
+The font size for the entire document is set by the \verb~[11pt]~
+option in the \verb~\documentclass~ command.  This document is
+typed in 11pt font.  The font size can also be 10pt (the default
+option) or 12pt.  Another option in the \verb~\documentclass~
+command is \verb~twocolumn~, which has the effect of producing two
+columns per page.
 
 These commands can be used to change the font size:
 
@@ -84,18 +90,20 @@ These commands can be used to change the font size:
   \end{tabular}
 \end{center}
 
-The \verb~anyfontsize~ package (not needed if using XeLaTeX) has the
+The \verb~anyfontsize~ package (not needed if using XeLaTeX) has
+the
 \[\verb~\fontsize{font size}{base line stretch}~\]
-command which can be used in conjunction with the \verb~\selectfont~ command to
-select size {\fontsize{20mm}{11pt}\selectfont arbitrarily}.
+command which can be used in conjunction with the
+\verb~\selectfont~ command to select size
+{\fontsize{30mm}{11pt}\selectfont arbitrarily}.
 
 \subsection{Face}
 
 \subsubsection{Selecting the face when using pdfLaTeX}
 
-Font faces are best chosen when compiling with XeLaTeX.  There are a few options for faces
-when compiling with pdfLaTeX, some of which carry through to the case of compiling with
-XeLaTeX.
+Font faces are best chosen when compiling with XeLaTeX.  There are
+a few options for faces when compiling with pdfLaTeX, some of
+which carry through to the case of compiling with XeLaTeX.
 
 Four fonts are needed in any document: Roman (the default font), Math (used for
 mathematics), \textsf{Sans serif} (invoked by \verb~\textsf{..}~), and \texttt{Typewriter
@@ -161,15 +169,16 @@ as \(\displaystyle \Sigma, \int, \partial,\) and so on, load the corresponding m
 above table before the \verb~mathspec~ package is called.  For example, to use the
 symbols that come from \verb~mathpazo~, load \verb~mathpazo~ before \verb~mathspec~.
 
-{\fontsize{4.5ex}{1ex} \fontspec{351Week4LDFComicSans.ttf}Fonts can also be changed
-  mid-document.}
+{\fontsize{4.5ex}{1ex} \fontspec{351Week4LDFComicSans.ttf}Fonts
+  can also be changed mid-document.}
 
 \section{Margins and spacing}
 
 \subsection{Margins}
 
-The margins of the document can be controlled with the \verb~geometry~ package.  To set
-the left, top, right, and bottom margins to specific values, place a command such as
+The margins of the document can be controlled with the
+\verb~geometry~ package.  To set the left, top, right, and bottom
+margins to specific values, place a command such as
 \begin{verbatim}
 \usepackage[left=35mm,top=2cm,right=35mm,bottom=2cm]{geometry}
 \end{verbatim}
