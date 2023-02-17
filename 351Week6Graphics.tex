@@ -14,16 +14,17 @@
 
 \maketitle
 
-There is no substitute for high quality graphics.  If a technical topic is
-visual in nature, much time and attention should be paid to creating powerful
-images.  A good image communicates information more easily than the printed
-word.
+There is no substitute for high quality graphics.  If a technical
+topic is visual in nature, much time and attention should be paid
+to creating powerful images.  A good image communicates
+information more easily than the printed word.
 
 \section{Including outside images}
 
-Images can be included using the \verb~graphicx~ package (loaded in the
-preamble).  Include an image using \verb~\includegraphics[options]{file}~ where
-\verb~file~ can be a file in \verb~.pdf~, \verb~.jpg~, or \verb~.png~ format.
+Images can be included using the \verb~graphicx~ package (loaded
+in the preamble).  Include an image using
+\verb~\includegraphics[options]{file}~ where \verb~file~ can be a
+file in \verb~.pdf~, \verb~.jpg~, or \verb~.png~ format.
 Available \verb~options~ are
 \begin{center}
   \begin{tabular}{r l}
@@ -37,25 +38,29 @@ For example, the image
 \begin{center}
   \includegraphics[scale = 1.25]{351Week6HolyCube}
 \end{center}
-was created in Mathematica by plotting the set of $x,y,z$ coordinates in
-$\mathbb{R}^3$ which satisfy \(x^4+y^4+z^4 + 3/8 = x^2+y^2+z^2 \).  It was
-saved as \verb~351Week6HolyCube.pdf~ and then shown here using
+was created in Mathematica by plotting the set of $x,y,z$
+coordinates in $\mathbb{R}^3$ which satisfy
+\(x^4+y^4+z^4 + 3/8 = x^2+y^2+z^2 \).  It was saved as
+\verb~351Week6HolyCube.pdf~ and then shown here using
 \verb~\includegraphics[scale = 1.25]{351Week6HolyCube}~.
 
 \section{TikZ}
 
-TikZ can produce graphics of excellent quality.  It can do lots of things, but
-there is an initial time investment necessary to understand TikZ code.
+TikZ can produce graphics of excellent quality.  It can do lots of
+things, but there is an initial time investment necessary to
+understand TikZ code.
 
-This document does not attempt to give a good description---or even a coherent
-introduction---to creating graphics with TikZ.  For those purposes, refer to the
-short ``Minimal introduction to TikZ'' and the long ``PGF manual'' found at
-\url{https://www.ctan.org/pkg/pgf}.  Instead, this document will display some
-of TikZ's abilities with a few well chosen examples.  Many more interesting
-examples are available at \url{http://www.texample.net/tikz/examples/}.
+This document does not attempt to give a good description---or even
+a coherent introduction---to creating graphics with TikZ.  For those
+purposes, refer to the short ``Minimal introduction to TikZ'' and
+the long ``PGF manual'' found
+at \url{https://www.ctan.org/pkg/pgf}.  Instead, this document
+will display some of TikZ's abilities with a few well chosen
+examples.  Many more interesting examples are available
+at \url{http://www.texample.net/tikz/examples/}.
 
-To use TikZ, load the package \verb~tikz~ in the preamble and then place TikZ
-code in the \verb~tikzpicture~ environment.
+To use TikZ, load the package \verb~tikz~ in the preamble and then
+place TikZ code in the \verb~tikzpicture~ environment.
 
 Think about TikZ code as doing two things:
 \begin{enumerate}
@@ -63,10 +68,11 @@ Think about TikZ code as doing two things:
 \item describing how to connect those points.
 \end{enumerate}
 
-The \verb~\draw~ command draws lines connecting a list of $(x,y)$ coordinates
-separated by the \verb~--~ delimiter.  The \verb~\draw~ command and all other
-TikZ commands must end with a semicolon.  Optional commands to \verb~\draw~ are
-called using brackets.  One of the many such options is \verb~rounded corners~,
+The \verb~\draw~ command draws lines connecting a list of $(x,y)$
+coordinates separated by the \verb~--~ delimiter.  The
+\verb~\draw~ command and all other TikZ commands must end with a
+semicolon.  Optional commands to \verb~\draw~ are called using
+brackets.  One of the many such options is \verb~rounded corners~,
 which gives rounded corners.
 
 \begin{lstlisting}
@@ -112,7 +118,7 @@ this:
   \begin{tikzpicture}[scale = .9]
     \draw [domain=0:2*pi,
     samples = 150,
-    smooth,
+
     fill = orange]
     plot ({cos(4*\x r) + cos(\x r)},
     {sin(4*\x r) + sin(\x r)});
@@ -122,7 +128,8 @@ this:
 \begin{center}
   \begin{tikzpicture}[scale = .9]
     \draw [domain=0:2*pi,
-    samples = 100, smooth,
+    samples = 13,
+    smooth,
     fill = orange]
     plot ({cos(4*\x r) + cos(\x r)},
     {sin(4*\x r) + sin(\x r)});
@@ -158,12 +165,14 @@ command, in this way:
   \end{tikzpicture}
 \end{center}
 
-This last example used a slightly different syntax in the \verb~\draw~ command;
-instead of using a \verb~--~ delimiter, the command \verb~to~ was used, which
-contains the option of specifying the outgoing and incoming angles in degrees.
+This last example used a slightly different syntax in the
+\verb~\draw~ command; instead of using a \verb~--~ delimiter, the
+command \verb~to~ was used, which contains the option of
+specifying the outgoing and incoming angles in degrees.
 
-The remainder of this document displays good examples of TikZ figures.  The
-generating code can be found in the \LaTeX{} \verb~.tex~ file.
+The remainder of this document displays good examples of TikZ
+figures.  The generating code can be found in the \LaTeX{}
+\verb~.tex~ file.
 
 \begin{center}
   \begin{tikzpicture}[scale=1.25]
@@ -247,8 +256,8 @@ generating code can be found in the \LaTeX{} \verb~.tex~ file.
 
 \begin{center}
   \begin{tikzpicture}[scale = 3.75]
-    \draw [->, thin] (-1.1,0) -- (2.1,0);
-    \draw [->, thin] (0,-1.1) -- (0,1.3);
+    \draw [->, ultra thin] (-1.1,0) -- (2.1,0);
+    \draw [->, ultra thick] (0,-1.1) -- (0,1.3);
     \draw (0,0) circle (1);
     \coordinate (A) at (0.5,0.86602540378);
     \boldmath
