@@ -1,0 +1,130 @@
+\documentclass[landscape]{tikzposter}
+% tikzposter automatically loads tikz, graphicx
+
+% Themes: Rays, Basic, Simple, Envelope, Wave, Board, Autumn, Desert
+\usetheme{Desert}
+
+% Color styles: Default, Australia, Britain, Sweden, Spain, Russia, Denmark, Germany
+\usecolorstyle{Spain}
+
+% Background styles: Default, Rays, VerticalGradation, BottomVerticalGradation, Empty
+\usebackgroundstyle{VerticalGradation}
+
+% Title styles: Default, Basic, Envelope, Wave, VerticalShading, Filled, Empty
+\usetitlestyle{Wave}
+
+% Block styles: Default, Basic, Minimal, Envelope, Corner, Slide, TornOut
+\useblockstyle{Slide}
+
+% To removes logo in bottom right corner
+\tikzposterlatexaffectionproofoff
+
+% See the tikzposter manual for more custom colors and styles
+
+\usepackage{amsmath,amssymb, mathspec}
+
+\usepackage[pdftitle = {Assignment 7},
+pdfauthor = {Joshua Smith},
+pdfsubject = {Miscellaneous},
+colorlinks = true,
+urlcolor = blue,
+linkcolor = blue,
+citecolor = blue]{hyperref}
+
+% \textup disables the default small caps in title
+% Change font to a font on your system or do not select font
+\title{\fontspec{TeX Gyre Bonum} \selectfont
+  \fontsize{1.5in}{1ex} \textup{\textbf{Pedro Pascal}}}
+\author{Joshua Smith}
+\institute{Cal Poly}
+
+\begin{document}
+
+\maketitle
+
+\begin{columns}
+  \column{0.66}
+  \block{Very Interesting Trivia}{
+    \vspace{1ex}
+    \begin{itemize}
+    \item Pedro was a \textbf{competitive swimmer} as a child, even competing in the Texas state championships as an 11-year-old! \\[1ex]
+    \item I've seen him in \\[1ex]
+        \textit{The Mandalorian} (2019 -- 2023) \\
+        \textit{Wonder Woman 1984} (2020) \\
+        \textit{The Book of Boba Fett} (2022) \\
+        \textit{Triple Frontier} (2019) \\
+        ... \\
+        \textit{and more!} \\[1ex]
+    \item Pedro uses his \textbf{mother's name professionally} rather than his father's to honor her impact on his life. \\[1ex]
+    \item Pedro Pascal and fellow actor Oscar Isaac met \textbf{way back in 2005} working on an off-broadway production \\ making just a couple hundred of dollars each week, and they are \textbf{still friends today}! \\[2ex]
+    \end{itemize}}
+  \note[width = 13cm, angle = 10, radius = 30cm, rotate = -15]{
+    A great video on YouTube from LADbible showed me lots of Pedro's favorite Chilean snacks! 10/10 excellent watch.
+    \begin{center}
+        \includegraphics[height = 3in]{351LOTW7a.jpg}
+    \end{center}
+    }
+
+  \column{.34}
+  \block{My Pedro Watch-list}{
+    \begin{itemize}
+    \item \textit{The Unbearable Weight of Massive Talent}
+    (2022, with Nick Cage!) \\[1ex]
+    \item \textit{Narcos} (2015 --- I loved \textit{Breaking Bad}, I think I will enjoy this also) \\[1ex]
+    \item \textit{The Last of Us} (2023). I normally would never purchase HBO Max, but the clips I see online have got me seriously considering dropping \$150 annually\ldots
+    \end{itemize}}
+\end{columns}
+
+\begin{columns}
+  \column{0.33}
+  \block{Great Social Media Presence}
+  {While he tragically recently deactivated his twitter account, \\
+  Pedro's internet thought wall was a constant supply of fun. \\[2ex]
+
+        \includegraphics[height = 5in]{351LOTW7b.jpg}
+    }
+
+  \column{0.67}
+  \block{My Favorite Graphs}{
+    \begin{center}
+      It may seem off topic, but secretly I know Pedro loves graphing different functions as much as me\ldots \\[2ex]
+      \begin{tikzpicture}[scale = 2.5]
+        \node at (0,-3) {A classic parabola};
+        \draw [->, thin] (-1.5,0) -- (2.5,0);
+        \draw [->, thin] (0,-2) -- (0,2);
+        \draw (1, .05) -- (1, -.05) node [below] {$1$};
+        \draw [domain=-1:2, samples = 100, smooth, ultra thick, blue]
+        plot (\x, {-1*pow(\x, 2) + \x + 1});
+      \end{tikzpicture}
+      \hspace{5ex}
+      \begin{tikzpicture}[scale = 2.5]
+        \node at (0,-3) {A simple sine wave};
+        \draw [->, thin] (-1.5,0) -- (6.5,0);
+        \draw [->, thin] (0,-2) -- (0,2);
+        \draw (1, .05) -- (1, -.05) node [below] {$1$};
+        \draw [domain=-1:2*pi, samples = 100, smooth, ultra thick, blue]
+        plot (\x, {sin(\x r)});
+      \end{tikzpicture}
+      \hspace{5ex}
+      \begin{tikzpicture}[scale = 2.5]
+        \node at (0,-3) {Super silly polynomial!};
+        \draw [->, thin] (-1.5,0) -- (2.5,0);
+        \draw [->, thin] (0,-2) -- (0,2);
+        \draw (1, .05) -- (1, -.05) node [below] {$1$};
+        \draw [domain=-1.1:2.1, samples = 100, smooth, ultra thick, blue]
+        plot (\x, {(\x - 1) * (\x) * (\x + 1) * (\x - 2)});
+      \end{tikzpicture}
+      \hspace{5ex}
+      \begin{tikzpicture}[scale = 2.5]
+        \node at (0,-3) {Not a function, but circles are cool!};
+        \draw [->, thin] (-1.5,0) -- (1.5,0);
+        \draw [->, thin] (0,-1.5) -- (0,1.5);
+        \draw (1, .05) -- (1, -.05) node [below] {$1$};
+        \draw [domain=0:2*pi, samples = 100, smooth, ultra thick, blue]
+        plot ({cos(\x r)},
+        {sin(\x r)});
+      \end{tikzpicture}
+    \end{center}}
+\end{columns}
+
+\end{document}
