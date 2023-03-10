@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2023-03-09 Thu 19:02 -->
+<!-- 2023-03-09 Thu 19:23 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Latex Typesetting</title>
+<title>Markup can generate LaTeX</title>
 <meta name="generator" content="Org Mode" />
 <style>
   #content { max-width: 60em; margin: auto; }
@@ -213,23 +213,105 @@
 </script>
 <script type="text/javascript"
 	src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content" class="content">
-<h1 class="title">Latex Typesetting</h1>
+<h1 class="title">Markup can generate LaTeX</h1>
+
+<div id="outline-container-org15059e3" class="outline-2">
+<h2 id="org15059e3">Introduction</h2>
+<div class="outline-text-2" id="text-org15059e3">
 <p>
-Welcome fellow typesetting enthusiasts!
+Markup language is a text-encoding system consisting of a set of symbols inserted in a
+text document to control its structure, formatting, or the relationship between its parts.
+</p>
+
+<p>
+This file is an example of the markup language known as <a href="https://en.wikipedia.org/wiki/Org-mode">org mode</a>, which comes with the
+text editor emacs.  Such documents can easily be converted to other file formats,
+including LaTeX.
+</p>
+</div>
+
+<div id="outline-container-org32a2b03" class="outline-3">
+<h3 id="org32a2b03">Including mathematics</h3>
+<div class="outline-text-3" id="text-org32a2b03">
+<p>
+Mathematics can be easily inserted, using inline \(\int_a^b x^2 \, dx\) or displayed
+equations
+\[\int_a^b x^2 \, dx.\]
+</p>
+
+<p>
+Unfortunately only simple LaTeX formatting is accepted (no packages, tikz, etc.).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2022c51" class="outline-3">
+<h3 id="org2022c51">Including lists, tables, and code</h3>
+<div class="outline-text-3" id="text-org2022c51">
+<p>
+Unordered lists can be entered with dashes
 </p>
 
 <ul class="org-ul">
-<li>Our <a href="351Syllabus.pdf">syllabus</a> (<a href="351Syllabus.tex">.tex</a>)</li>
-<li>Our text is <a href="lshort.pdf">The Not So Short Introduction to Latex2e</a>.</li>
+<li>like</li>
+<li>this</li>
+<li>list.</li>
 </ul>
 
-<div id="outline-container-orga783ac7" class="outline-2">
-<h2 id="orga783ac7">Files</h2>
-<div class="outline-text-2" id="text-orga783ac7">
-<table align="center" width="100%">
+<p>
+Ordered lists can be entered with numbers
+</p>
+
+<ol class="org-ol">
+<li>like</li>
+<li>this</li>
+<li>list.</li>
+</ol>
+
+<p>
+Code snippets
+</p>
+
+<div class="org-src-container">
+<pre class="src src-LaTeX"><span style="color: #99cc99;">\begin</span>{<span style="color: #f99157;">equation</span>}
+<span style="color: #cc99cc;">  </span><span style="color: #99cc99;">\begin</span><span style="color: #cc99cc;">{</span><span style="color: #f99157;">multline*</span><span style="color: #cc99cc;">}</span>
+<span style="color: #cc99cc;">    </span><span style="color: #cc99cc;">\alpha</span><span style="color: #cc99cc;"> + </span><span style="color: #cc99cc;">\beta</span><span style="color: #cc99cc;"> + </span><span style="color: #cc99cc;">\gamma</span><span style="color: #cc99cc;"> + </span><span style="color: #cc99cc;">\delta</span><span style="color: #cc99cc;"> + </span><span style="color: #cc99cc;">\varepsilon</span><span style="color: #cc99cc;"> + </span><span style="color: #cc99cc;">\zeta</span><span style="color: #cc99cc;"> + </span><span style="color: #cc99cc;">\eta</span><span style="color: #cc99cc;"> + </span><span style="color: #cc99cc;">\theta</span><span style="color: #cc99cc;">   </span><span style="color: #f99157;">\\</span>
+<span style="color: #cc99cc;">    + </span><span style="color: #cc99cc;">\iota</span><span style="color: #cc99cc;"> + </span><span style="color: #cc99cc;">\kappa</span><span style="color: #cc99cc;"> + </span><span style="color: #cc99cc;">\lambda</span><span style="color: #cc99cc;"> + </span><span style="color: #cc99cc;">\mu</span><span style="color: #cc99cc;"> + </span><span style="color: #cc99cc;">\nu</span><span style="color: #cc99cc;"> + </span><span style="color: #cc99cc;">\xi</span><span style="color: #cc99cc;"> + </span><span style="color: #cc99cc;">\pi</span><span style="color: #cc99cc;"> + </span><span style="color: #cc99cc;">\rho</span><span style="color: #cc99cc;"> </span><span style="color: #f99157;">\\</span>
+<span style="color: #cc99cc;">    + </span><span style="color: #cc99cc;">\sigma</span><span style="color: #cc99cc;"> + </span><span style="color: #cc99cc;">\tau</span><span style="color: #cc99cc;"> + </span><span style="color: #cc99cc;">\upsilon</span><span style="color: #cc99cc;"> + </span><span style="color: #cc99cc;">\varphi</span><span style="color: #cc99cc;"> + </span><span style="color: #cc99cc;">\chi</span><span style="color: #cc99cc;"> + </span><span style="color: #cc99cc;">\psi</span><span style="color: #cc99cc;"> + </span><span style="color: #cc99cc;">\omega</span><span style="color: #cc99cc;">.</span>
+<span style="color: #cc99cc;">  </span><span style="color: #99cc99;">\end</span><span style="color: #cc99cc;">{</span><span style="color: #f99157;">multline*</span><span style="color: #cc99cc;">}</span>
+<span style="color: #99cc99;">\end</span>{<span style="color: #f99157;">equation</span>}
+</pre>
+</div>
+
+<p>
+and tables also each have their own syntax.
+</p>
+
+<table>
 
 
 <colgroup>
@@ -237,90 +319,36 @@ Welcome fellow typesetting enthusiasts!
 
 <col  class="org-left">
 
-<col  class="org-left">
-
-<col  class="org-left">
+<col  class="org-right">
 </colgroup>
 <thead>
 
-<th>Class date</th>
-<th>Topic</th>
-<th>Assignments</th>
-<th>LaTeX'er of the Week</th>
+<th>name</th>
+<th>date</th>
+<th>Score</th>
 </tr>
 </thead>
 <tbody>
 
-<td class="org-left">January 13</td>
-<td class="org-left"><a href="351Week1Setup.pdf">Setting up LaTeX</a> (<a href="351Week1Setup.tex">.tex</a>)</td>
-<td class="org-left"><a href="351Assignment1.pdf">Assignment 1</a></td>
-<td class="org-left"><a href="351LOTW1.pdf">Surina Marwaha</a> (<a href="351LOTW1.tex">.tex</a>)</td>
+<td class="org-left">John</td>
+<td class="org-left">March 13</td>
+<td class="org-right">3</td>
 </tr>
 
 
-<td class="org-left">January 20</td>
-<td class="org-left"><a href="351Week2Math.pdf">Mathematics</a> (<a href="351Week2Math.tex">.tex</a>)</td>
-<td class="org-left"><a href="351Assignment2.pdf">Assignment 2</a></td>
-<td class="org-left"><a href="351LOTW2.pdf">Alison Watson</a> (<a href="351LOTW2.tex">.tex</a>)</td>
+<td class="org-left">Mary</td>
+<td class="org-left">March 13</td>
+<td class="org-right">6</td>
 </tr>
 
 
-<td class="org-left">January 27</td>
-<td class="org-left"><a href="351Week3Labels.pdf">Automatic Labels</a> (<a href="351Week3Labels.tex">.tex</a> <a href="351Week3Labels.bib">.bib</a>)</td>
-<td class="org-left"><a href="351Assignment3.pdf">Assignment 3</a></td>
-<td class="org-left"><a href="351LOTW3.pdf">Samuel Sehnert</a> (<a href="351LOTW3.tex">.tex</a> <a href="351LOTW3_2.tex">.tex</a> <a href="351LOTW3.bib">.bib</a>)</td>
-</tr>
-
-
-<td class="org-left">February  3</td>
-<td class="org-left"><a href="351Week4Fonts.pdf">Tables, Fonts, Spacing</a> (<a href="351Week4Fonts.tex">.tex</a> <a href="351Week4AnonymousPro-Regular.ttf">.ttf</a> <a href="351Week4Lato-Light.ttf">.ttf</a> <a href="351Week4LDFComicSans.ttf">.ttf</a>)</td>
-<td class="org-left"><a href="351Assignment4.pdf">Assignment 4</a></td>
-<td class="org-left"><a href="351LOTW4.pdf">Steven Sharp</a> (<a href="351LOTW4.tex">.tex</a>)</td>
-</tr>
-
-
-<td class="org-left">February 10</td>
-<td class="org-left"><a href="351Week5Packages.pdf">Packages</a> (<a href="351Week5Packages.tex">.tex</a> <a href="351Week5Package.sty">.sty</a>)</td>
-<td class="org-left"><a href="351Assignment5.pdf">Assignment 5</a></td>
-<td class="org-left"><a href="351LOTW5.pdf">Ryan Marangattu</a> (<a href="351LOTW5.tex">.tex</a> <a href="351LOTW5.sty">.sty</a>)</td>
-</tr>
-
-
-<td class="org-left">February 17</td>
-<td class="org-left"><a href="351Week6Graphics.pdf">Graphics</a> (<a href="351Week6Graphics.tex">.tex</a> <a href="351Week6HolyCube.pdf">.pdf</a>)</td>
-<td class="org-left"><a href="351Assignment6.pdf">Assignment 6</a></td>
-<td class="org-left"><a href="351LOTW6.pdf">Grace Garmire</a> (<a href="351LOTW6.tex">.tex</a>)</td>
-</tr>
-
-
-<td class="org-left">February 24</td>
-<td class="org-left"><a href="351Week7Slides.pdf">Slides</a> (<a href="351Week7Slides.tex">.tex</a> <a href="351Week7CalPolyAbove.jpg">.jpg</a> <a href="351Week7CalPolyHills.jpg">.jpg</a> <a href="351Week7CPLogo.pdf">.pdf</a>), <a href="351Week7Poster.pdf">Posters</a> (<a href="351Week7Poster.tex">.tex</a> <a href="351Week7puppy.jpg">.jpg</a> <a href="351Week7puppy2.jpg">.jpg</a>)</td>
-<td class="org-left"><a href="351Assignment7.pdf">Assignment 7</a></td>
-<td class="org-left"><a href="351LOTW7.pdf">Joshua Smith</a> (<a href="351LOTW7.tex">.tex</a> <a href="351LOTW7a.jpg">.jpg</a> <a href="351LOTW7b.jpg">.jpg</a>)</td>
-</tr>
-
-
-<td class="org-left">March  3</td>
-<td class="org-left"><a href="351Week8CV.pdf">CVs</a> (<a href="351Week8CV.tex">.tex</a>) and <a href="351Week8Letter.pdf">Letters</a> (<a href="351Week8Letter.tex">.tex</a> <a href="351Week8CPLogo.pdf">.pdf</a> <a href="351Week8MendesSignature.pdf">.pdf</a> <a href="351Week8MendesLetter.sty">.sty</a>)</td>
-<td class="org-left"><a href="351Assignment8.pdf">Assignment 8</a></td>
-<td class="org-left"><a href="351LOTW8a.pdf">Charlotte</a> <a href="351LOTW8b.pdf">MacMillan</a> (<a href="351LOTW8.zip">.zip</a>)</td>
-</tr>
-
-
-<td class="org-left">March 10</td>
-<td class="org-left"><a href="351Week9LatexmlOutput.html">LaTeXML</a> (<a href="351Week9HTML.tex">.tex</a> <a href="351Week9Mendes.css">.css</a>) and <a href="351Week9MathJaxExample.html">MathJax</a></td>
-<td class="org-left"><a href="./351Assignment9.html">Assignment 9</a></td>
-<td class="org-left">?</td>
-</tr>
-
-
-<td class="org-left">March 17</td>
-<td class="org-left">No class</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
+<td class="org-left">Keenan</td>
+<td class="org-left">May  7</td>
+<td class="org-right">1</td>
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 </div>

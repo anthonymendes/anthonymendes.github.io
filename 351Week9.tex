@@ -1,0 +1,84 @@
+% Created 2023-03-09 Thu 19:23
+% Intended LaTeX compiler: xelatex
+\documentclass[11pt]{article}
+
+
+
+\usepackage{/home/tony/Misc/MendesLaTeXStyle}
+\setlist{nolistsep}
+\date{}
+\title{Markup can generate \LaTeX{}}
+\hypersetup{
+ pdfauthor={Tony Mendes},
+ pdftitle={Markup can generate \LaTeX{}},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 28.2 (Org mode 9.5.5)},
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+
+\section*{Introduction}
+\label{sec:org4bc4c4b}
+
+Markup language is a text-encoding system consisting of a set of symbols inserted in a
+text document to control its structure, formatting, or the relationship between its parts.
+
+This file is an example of the markup language known as \href{https://en.wikipedia.org/wiki/Org-mode}{org mode}, which comes with the
+text editor emacs.  Such documents can easily be converted to other file formats,
+including \LaTeX{}.
+
+\subsection*{Including mathematics}
+\label{sec:org1761421}
+
+Mathematics can be easily inserted, using inline \(\int_a^b x^2 \, dx\) or displayed
+equations
+\[\int_a^b x^2 \, dx.\]
+
+Unfortunately only simple \LaTeX{} formatting is accepted (no packages, tikz, etc.).
+
+\subsection*{Including lists, tables, and code}
+\label{sec:org32b382f}
+
+Unordered lists can be entered with dashes
+
+\begin{itemize}
+\item like
+\item this
+\item list.
+\end{itemize}
+
+Ordered lists can be entered with numbers
+
+\begin{enumerate}
+\item like
+\item this
+\item list.
+\end{enumerate}
+
+Code snippets
+
+\lstset{language=LaTeX,label= ,caption= ,captionpos=b,numbers=none}
+\begin{lstlisting}
+\begin{equation}
+  \begin{multline*}
+    \alpha + \beta + \gamma + \delta + \varepsilon + \zeta + \eta + \theta   \\
+    + \iota + \kappa + \lambda + \mu + \nu + \xi + \pi + \rho \\
+    + \sigma + \tau + \upsilon + \varphi + \chi + \psi + \omega.
+  \end{multline*}
+\end{equation}
+\end{lstlisting}
+
+and tables also each have their own syntax.
+
+\begin{center}
+\begin{tabular}{llr}
+name & date & Score\\
+\hline
+John & \textit{2023-03-13 Mon} & 3\\
+Mary & \textit{2023-03-13 Mon} & 6\\
+Keenan & \textit{2023-05-07 Sun} & 1\\
+\end{tabular}
+\end{center}
+\end{document}
