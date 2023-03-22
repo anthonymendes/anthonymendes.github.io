@@ -200,11 +200,11 @@ function checkMessage() {
 	message += `Select courses by clicking on them.`
     }
 
-    message += `<p>Core requirements`;
+    message += `<p>The Core `;
     if (coreToGo != 0) {
-	message += `: ${coreToGo} Core courses needed.`;
+	message += ` requires ${coreToGo} more courses.`;
     } else {
-	message += ` are satisfied.`;
+	message += ` requirements are satisfied.`;
     }
     message += `</p><ul><li>`
 
@@ -212,7 +212,7 @@ function checkMessage() {
     if (generalSuccess) {
 	message += ` requirements are satisfied.`;
     } else {
-	message += `: ${generalListA} from List A needed. ${above4000} at 4000+ level. ${mathPrefix} with MATH prefix.`;
+	message += ` requires ${generalListA} more from List A, ${above4000} at 4000+ level, and ${mathPrefix} with MATH prefix.`;
     }
     message += `</li><li>`
 
@@ -220,7 +220,7 @@ function checkMessage() {
     if (appliedSuccess) {
 	message += ` requirements are satisfied.`;
     } else {
-	message += `: ${generalListA} from List A and ${appliedListB} from List B needed. ${above4000} at 4000+ level. ${mathPrefix} with MATH prefix.`;
+	message += ` requires ${generalListA} more from List A, ${appliedListB} from List B, ${above4000} at 4000+ level, and ${mathPrefix} with MATH prefix.`;
     }
     message += `</li><li>`
 
@@ -228,7 +228,7 @@ function checkMessage() {
     if (teachingSuccess) {
 	message += ` requirements are satisfied.`;
     } else {
-	message += `: ${teachingListA} from List A and ${teachingListC} from List C needed. ${above4000} at 4000+ level. ${mathPrefix} with MATH prefix.`;
+	message += ` requires ${teachingListA} more from List A, ${teachingListC} from List C, ${above4000} at 4000+ level, and ${mathPrefix} with MATH prefix.`;
     }
     message += `</li></ul>`
 
