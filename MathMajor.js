@@ -199,15 +199,14 @@ function checkMessage() {
     } else {
 	message += `Select courses by clicking on them.`
     }
-    message += `</p>`;
 
-    message += `Core requirements`;
+    message += `<p>Core requirements`;
     if (coreToGo != 0) {
 	message += `: ${coreToGo} Core courses needed.`;
     } else {
 	message += ` are satisfied.`;
     }
-    message += `<br>`
+    message += `</p><ul><li>`
 
     message += `General track`;
     if (generalSuccess) {
@@ -215,7 +214,7 @@ function checkMessage() {
     } else {
 	message += `: ${generalListA} from List A needed. ${above4000} at 4000+ level. ${mathPrefix} with MATH prefix.`;
     }
-    message += `<br>`
+    message += `</li><li>`
 
     message += `Applied track`;
     if (appliedSuccess) {
@@ -223,7 +222,7 @@ function checkMessage() {
     } else {
 	message += `: ${generalListA} from List A and ${appliedListB} from List B needed. ${above4000} at 4000+ level. ${mathPrefix} with MATH prefix.`;
     }
-    message += `<br>`
+    message += `</li><li>`
 
     message += `Teaching track`;
     if (teachingSuccess) {
@@ -231,7 +230,7 @@ function checkMessage() {
     } else {
 	message += `: ${teachingListA} from List A and ${teachingListC} from List C needed. ${above4000} at 4000+ level. ${mathPrefix} with MATH prefix.`;
     }
-    message += `<br>`
+    message += `</li></ul>`
 
     courseCheckerContainer.insertAdjacentHTML('beforeend',`<div>${message}</div>`);
 }
