@@ -234,7 +234,7 @@ function checkMessage() {
     } else {
 	message += ` requires ${teachingListA} more from List A, ${teachingListC} from List C, ${above4000teaching} at 4000+ level, and ${mathPrefixteaching} with MATH prefix.`;
     }
-    message += `</li></ul>`
+    message += `</li></ul>A total of ${unitCount()} units is selected.`
 
     courseCheckerContainer.insertAdjacentHTML('beforeend',`<div>${message}</div>`);
 }
