@@ -3,17 +3,56 @@
   <head>
     <title>Mathematics Major</title>
     <style>
-      body {
-	  font-size: 100%;
+      @import url('https://use.typekit.net/qha6sjw.css');
+      :root {
+	  --White: #FEFEFE;
+	  --Black: #010101;
+	  --CalPolyGreen: #154734;
+	  --CalPolyGold: #C69214;
+	  --DigitalGold: #BD8B13;
+	  --StadiumGold: #F8E08E;
+	  --PolyCanyon: #F2C75C;
+	  --DexterGreen: #A4D65E;
+	  --FarmersMarket: #3A913F;
+	  --SkyBlue: #B5E3D8;
+	  --SurfBlue: #5CB8B2;
+	  --Serenity: #D3E3F4;
+	  --MorroBlue: #ABCAE9;
+	  --MissionBeige: #E4E1D1;
+	  --PismoSand: #CAC7A7;
+	  --CoastSage: #B6CCC2;
+	  --Sycamore: #789F90;
+	  --KennedyGray: #8E9089;
+	  --SealGray: #54585A;
+	  --HeritageOrange: #FF6A39;
+	  --HeritageOrange50: #FEB898;
+	  --Avocado: #D0DF00;
+	  --Avocado50: #EBED8A;}
+      body{
+	  color: var(--SealGray);
+	  font-weight:normal;
+	  font-family: source-sans-pro, Trebuchet, sans-serif;
       }
       .selected-course {
-	  color: red;
+	  color: var(--CalPolyGold);
       }
       .clickable-word:hover {
 	  cursor: pointer;
       }
-      .clickable-word{
-	  font-size: 90%;
+      h1{
+	  color: var(--CalPolyGreen);
+      }
+      h2{
+	  color: var(--CalPolyGreen);
+      }
+      h3{
+	  color: var(--CalPolyGreen);
+      }
+      b{
+	  color: var(--CalPolyGreen);
+      }
+      i{
+	  color: var(--CalPolyGreen);
       }
     </style>
   </head>
@@ -43,22 +82,22 @@
     </table>
 
     <hr>
-    <b style="font-size: 85%;">Major requirements</b>
+    <b style="font-size: 95;">Major requirements</b>
     <br>
 
-    <p style="font-size: 85%;">
-    The Mathematics Major is achieved when all Core requirements are satisfied and one of
-    the following tracks is satisfied:
+    <p style="font-size: 95;">
+      The Mathematics Major is achieved when all Core requirements are satisfied and one of
+      the following tracks is satisfied:
     </p>
-    <ul style="font-size: 85%;">
+    <ul style="font-size: 95;">
       <li> General Track: 7 classes from List A.</li>
       <li> Applied Track: 3 classes from List B and 4 classes from List A.</li>
       <li> Teaching Track: 4 classes from List C and 3 classes from List A.</li>
     </ul>
-    <p style="font-size: 85%;">
-    Classes in tracks must contain at 3 classes at the 4000+ level, 5 classes with a MATH
-    prefix, and courses cannot appear elsewhere in the major.
-</p>
+    <p style="font-size: 95;">
+      Classes in tracks must contain at 3 classes at the 4000+ level, 5 classes with a MATH
+      prefix, and courses cannot appear elsewhere in the major.
+    </p>
     <script src="MathMajor.js"></script>
   </body>
 </html>

@@ -244,28 +244,28 @@ core.forEach(course => {
 })
 
 renderCourse('MATH 4202', courses['MATH 4202'], coreContainer)
-coreContainer.insertAdjacentHTML('beforeend', '<br>&emsp;<i>or</i> ');
+coreContainer.insertAdjacentHTML('beforeend', '<br>&emsp;<b>or</b> ');
 renderCourse('MATH 4265', courses['MATH 4265'], coreContainer)
 coreContainer.insertAdjacentHTML('beforeend', '<br>');
 
 renderCourse('MATH 3051', courses['MATH 3051'], coreContainer)
-coreContainer.insertAdjacentHTML('beforeend', '<br>&emsp;<i>or</i> ');
+coreContainer.insertAdjacentHTML('beforeend', '<br>&emsp;<b>or</b> ');
 renderCourse('MATH 3111', courses['MATH 3111'], coreContainer)
-coreContainer.insertAdjacentHTML('beforeend', '<br>&emsp;<i>or</i> ');
+coreContainer.insertAdjacentHTML('beforeend', '<br>&emsp;<b>or</b> ');
 renderCourse('MATH 3301', courses['MATH 3301'], coreContainer)
 coreContainer.insertAdjacentHTML('beforeend', '<br>');
 
 renderCourse('CSC 2202', courses['CSC 2202'], coreContainer)
-coreContainer.insertAdjacentHTML('beforeend', '<br>&emsp;<i>or</i> ');
+coreContainer.insertAdjacentHTML('beforeend', '<br>&emsp;<b>or</b> ');
 renderCourse('STAT 2610', courses['STAT 2610'], coreContainer)
-coreContainer.insertAdjacentHTML('beforeend', '<br>&emsp;<i>or</i> ');
+coreContainer.insertAdjacentHTML('beforeend', '<br>&emsp;<b>or</b> ');
 renderCourse('MATH 3681', courses['MATH 3681'], coreContainer)
 coreContainer.insertAdjacentHTML('beforeend', '<br>');
 
 renderCourse('MATH 4991', courses['MATH 4991'], coreContainer)
-coreContainer.insertAdjacentHTML('beforeend', '<br>&emsp;<i>or</i> ');
+coreContainer.insertAdjacentHTML('beforeend', '<br>&emsp;<b>or</b> ');
 renderCourse('MATH 4992', courses['MATH 4992'], coreContainer)
-coreContainer.insertAdjacentHTML('beforeend', '<br>&emsp;<i>or</i> ');
+coreContainer.insertAdjacentHTML('beforeend', '<br>&emsp;<b>or</b> ');
 renderCourse('MATH 4461/4462', courses['MATH 4461/4462'], coreContainer)
 coreContainer.insertAdjacentHTML('beforeend', '<br>');
 
