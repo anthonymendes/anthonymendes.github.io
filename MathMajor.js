@@ -161,11 +161,12 @@ function trackCheck() {
     });
     const CnotA = C.filter(c => !(A.includes(c)));
 
-    const above4000 = A.filter(c => courseNumber(c) >= 4000).length
-	  + CnotA.filter(c => courseNumber(c) >= 4000).length
+    const above4000 = A.filter(c => courseNumber(c) >= 4000).length;
+    const above4000teaching = A.filter(c => courseNumber(c) >= 4000).length
+	      + CnotA.filter(c => courseNumber(c) >= 4000).length
     const mathPrefix = A.filter(c => coursePrefix(c) == 'MATH').length
 	  + CnotA.filter(c => coursePrefix(c) == 'MATH').length
-    return [A.length, above4000, mathPrefix, B.length, C.length]
+    return [A.length, above4000, mathPrefix, B.length, C.length, above4000teaching]
 }
 
 function checkMessage() {
@@ -174,6 +175,7 @@ function checkMessage() {
     const coreToGo = Math.max(16 - coreRemaining(), 0);
     const generalListA = Math.max(7 - trackCheck()[0], 0);
     const above4000 = Math.max(3 - trackCheck()[1], 0);
+    const above4000teaching = Math.max(3 - trackCheck()[5], 0);
     const mathPrefix = Math.max(5 - trackCheck()[2], 0);
     const generalSuccess = (generalListA == 0)
 	  && (above4000 == 0)
@@ -228,7 +230,7 @@ function checkMessage() {
     if (teachingSuccess) {
 	message += ` requirements are satisfied.`;
     } else {
-	message += ` requires ${teachingListA} more from List A, ${teachingListC} from List C, ${above4000} at 4000+ level, and ${mathPrefix} with MATH prefix.`;
+	message += ` requires ${teachingListA} more from List A, ${teachingListC} from List C, ${above4000teaching} at 4000+ level, and ${mathPrefix} with MATH prefix.`;
     }
     message += `</li></ul>`
 
