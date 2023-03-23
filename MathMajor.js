@@ -55,19 +55,19 @@ const courses = {
 };
 
 const core = ['MATH 1261', 'MATH 1262', 'MATH 2001', 'MATH 2031', 'MATH 2263', 'MATH 2151',
-	      'MATH 3152', 'MATH 4201', 'MATH 4264', 'CSC 1101', 'PHYS 1141', 'STAT 1510']
+	      'MATH 3152', 'MATH 4201', 'MATH 4264', 'CSC 1101', 'PHYS 1141', 'STAT 1510'];
 const coreTracks = [['MATH 4202', 'MATH 4265'],
 		    ['MATH 3051', 'MATH 3111', 'MATH 3301'],
 		    ['CSC 2202', 'STAT 2610', 'MATH 3681'],
-		    ['MATH 4991', 'MATH 4992', 'MATH 4461/4462']]
+		    ['MATH 4991', 'MATH 4992', 'MATH 4461/4462']];
 const listA = ['MATH 3011', 'MATH 3051', 'MATH 3055', 'MATH 3111', 'MATH 3301', 'MATH 3351',
 	       'MATH 3511', 'MATH 3622', 'MATH 3651', 'MATH 3681', 'MATH 4052', 'MATH 4202',
 	       'MATH 4265', 'MATH 4342', 'MATH 4352', 'MATH 4461/4462', 'MATH 4512',
 	       'MATH 4531', 'MATH 4541', 'MATH 4652', 'MATH 4653', 'MATH 4911', 'MATH 4981',
 	       'MATH 4982', 'MATH 5053', 'MATH 5203', 'MATH 5204', 'MATH 5266', 'MATH 5302',
-	       'MATH 5371', 'MATH 5542', 'MATH 5651']
-const listB = ['MATH 3055', 'MATH 4342', 'MATH 4352', 'MATH 4652', 'MATH 4653', 'MATH 4911']
-const listC = ['MATH 3971', 'MATH 3511', 'MATH 4512', 'MATH 4972']
+	       'MATH 5371', 'MATH 5542', 'MATH 5651'];
+const listB = ['MATH 3055', 'MATH 4342', 'MATH 4352', 'MATH 4652', 'MATH 4653', 'MATH 4911'];
+const listC = ['MATH 3971', 'MATH 3511', 'MATH 4512', 'MATH 4972'];
 
 const coreContainer = document.getElementById('core-text');
 const listAContainer = document.getElementById('listA-text');
@@ -82,7 +82,7 @@ function renderCourse(courseCode, place, trailingHTML) {
     const template = `<span class="clickable-word" data-course-code="${courseCode}">
       ${courseCode} ${title} (${units})</span> ${trailingHTML}`;
     place.insertAdjacentHTML('beforeend', template);
-}
+};
 
 function toggleCourseSelection(courseCode, course) {
     const elements = document.querySelectorAll(`[data-course-code="${courseCode}"]`);
@@ -91,49 +91,39 @@ function toggleCourseSelection(courseCode, course) {
 	delete selectedCourses[courseCode];
     } else {
 	selectedCourses[courseCode] = course;
-    }
-}
+    };
+    return Object.keys(selectedCourses);
+};
 
 function handleClick(event) {
     const courseCode = event.target.dataset.courseCode;
     const course = courses[courseCode];
     if (course) {
-	toggleCourseSelection(courseCode, course);
-	unitCount();
-	coreRemaining();
-	trackCheck();
-	courseCheckerContainer.innerHTML = '';
-	checkMessage();
-    }
-}
+	const selected = toggleCourseSelection(courseCode, course);
+	checkMessage(selected);
+    };
+};
 
-function unitCount() {
-    let units = 0;
-    Object.values(selectedCourses).forEach((course) => {units += course.units;})
-    return units;
-}
-
-function coreRemaining() {
-    const selected = Object.keys(selectedCourses);
+function coreRemaining(selected) {
     let count = core.filter(c => selected.includes(c)).length;
-    coreTracks.forEach((track) => {
-	if (track.some(c => selected.includes(c))) {
-	    count += 1;
-	}
-    });
-    return count;
-}
-
-function coursePrefix(course) {return course.split(' ')[0]}
+    coreTracks.forEach((track) => {if (track.some(c => selected.includes(c))) {count += 1}});
+    return Math.max(16 - count, 0);
+};
 
 function courseNumber(course) {
     const c = course.split(' ');
     if (c[1] == '4461/4462') {
-	return 4462
+	return 4462;
     } else {
 	return Number(c[1]);
-    }
-}
+    };
+};
+function coursePrefix(course) {return course.split(' ')[0]};
+function above4000(selected) {return selected.filter(c => courseNumber(c) >= 4000).length;};
+function mathPrefix(selected) {return selected.filter(c => coursePrefix(c) == 'MATH').length;}
+function unitCount(selected) {return selected.reduce((sum, c) => sum + courses[c].units, 0)};
+function remaining(n) {return Math.max(n,0)};
+function pos(arr) {return arr.map(n => Math.max(n,0))};
 
 function removeTrackCourse(A, track) {
     if (!(track.some(c => !(A.includes(c)))) && (track.some(c => A.includes(c)))) {
@@ -141,89 +131,97 @@ function removeTrackCourse(A, track) {
 	return A.filter(c => c !== shared);
     } else {
 	return A;
-    }
+    };
 }
 
-function trackCheck() {
-    const selected = Object.keys(selectedCourses);
+function listACourses(selected) {
     let A = selected.filter(c => listA.includes(c));
-    let B = selected.filter(c => listB.includes(c));
-    let C = selected.filter(c => listC.includes(c));
     coreTracks.forEach((track) => {
 	const trackSelected = selected.filter(c => track.includes(c));
 	A = removeTrackCourse(A, trackSelected);
     });
-    const CnotA = C.filter(c => !(A.includes(c)));
-    const above4000 = A.filter(c => courseNumber(c) >= 4000).length;
-    const above4000teaching = A.filter(c => courseNumber(c) >= 4000).length
-	  + CnotA.filter(c => courseNumber(c) >= 4000).length
-    const mathPrefix = A.filter(c => coursePrefix(c) == 'MATH').length;
-    const mathPrefixteaching = A.filter(c => coursePrefix(c) == 'MATH').length
-	  + CnotA.filter(c => coursePrefix(c) == 'MATH').length;
-    return [A.length, above4000, mathPrefix, B.length, C.length, above4000teaching, mathPrefixteaching]
+    return A;
 }
 
-function checkMessage() {
-    let message = "";
-    const coreToGo = Math.max(16 - coreRemaining(), 0);
-    const generalListA = Math.max(7 - trackCheck()[0], 0);
-    const above4000 = Math.max(3 - trackCheck()[1], 0);
-    const above4000teaching = Math.max(3 - trackCheck()[5], 0);
-    const mathPrefix = Math.max(5 - trackCheck()[2], 0);
-    const mathPrefixteaching = Math.max(5 - trackCheck()[6], 0);
-    const generalSuccess = (generalListA == 0) && (above4000 == 0) && (mathPrefix == 0);
-    const appliedListB = Math.max(3 - trackCheck()[3], 0);
-    const appliedSuccess = (generalListA == 0) && (appliedListB == 0) && (above4000 == 0) && (mathPrefix == 0);
-    const teachingListA = Math.max(5 - trackCheck()[0], 0);
-    const teachingListC = Math.max(4 - trackCheck()[4], 0);
-    const teachingSuccess = (teachingListA == 0) && (teachingListC == 0) && (above4000 == 0) && (mathPrefix == 0);
+function generalRemaining(selected) {
+    const A = listACourses(selected);
+    return pos([7 - A.length, 3 - above4000(A), 5 - mathPrefix(A)]);
+};
 
-    if (unitCount()) {
-	if ((coreToGo == 0) && (generalSuccess || appliedSuccess || teachingSuccess)) {
+function appliedRemaining(selected) {
+    const A = listACourses(selected);
+    const B = selected.filter(c => listB.includes(c));
+    return pos([7 - A.length, 3 - B.length, 3 - above4000(A), 5 - mathPrefix(A)]);
+};
+
+function teachingRemaining(selected) {
+    const A = listACourses(selected);
+    const C = selected.filter(c => listC.includes(c));
+    const CnotA = C.filter(c => !(A.includes(c)));
+    return pos([5 - A.length,
+		4 - C.length,
+		3 - above4000(A) - above4000(CnotA),
+		5 - mathPrefix(A) - mathPrefix(CnotA)]);
+};
+
+function checkMessage(selected) {
+    const core = coreRemaining(selected);
+    const general = generalRemaining(selected);
+    const applied = appliedRemaining(selected);
+    const teaching = teachingRemaining(selected);
+    const units = unitCount(selected);
+    const generalSuccess = Math.max(...general) == 0;
+    const appliedSuccess = Math.max(...applied) == 0;
+    const teachingSuccess = Math.max(...teaching) == 0;
+    let message = "";
+
+    if (units != 0) {
+	if ((core == 0) && (generalSuccess || appliedSuccess || teachingSuccess)) {
 	    message += `<b>The mathematics major is acheived!</b>`;
 	} else {
 	    message += `The mathematics major is not satisfied.`;
-	}
+	};
     } else {
 	message += `Select courses by clicking on them.`
-    }
+    };
 
     message += `<p>The Core `;
-    if (coreToGo != 0) {
-	message += ` requires ${coreToGo} more courses.`;
+    if (core != 0) {
+	message += ` requires ${core} more courses.`;
     } else {
 	message += ` requirements are satisfied.`;
-    }
+    };
     message += `</p><ul><li>`
 
     message += `General track`;
     if (generalSuccess) {
 	message += ` requirements are satisfied.`;
     } else {
-	message += ` requires ${generalListA} more from List A, ${above4000} at 4000+ level, and ${mathPrefix} with MATH prefix.`;
+	message += ` requires ${general[0]} more from List A, ${general[1]} at 4000+ level, and ${general[2]} with MATH prefix.`;
     }
-    message += `</li><li>`
+    message += `</li><li>`;
 
     message += `Applied track`;
     if (appliedSuccess) {
 	message += ` requirements are satisfied.`;
     } else {
-	message += ` requires ${generalListA} more from List A, ${appliedListB} from List B, ${above4000} at 4000+ level, and ${mathPrefix} with MATH prefix.`;
-    }
-    message += `</li><li>`
+	message += ` requires ${applied[0]} more from List A, ${applied[1]} from List B, ${applied[2]} at 4000+ level, and ${applied[3]} with MATH prefix.`;
+    };
+    message += `</li><li>`;
 
     message += `Teaching track`;
     if (teachingSuccess) {
 	message += ` requirements are satisfied.`;
     } else {
-	message += ` requires ${teachingListA} more from List A, ${teachingListC} from List C, ${above4000teaching} at 4000+ level, and ${mathPrefixteaching} with MATH prefix.`;
-    }
-    message += `</li></ul><p>Selected courses total ${unitCount()} units.</p>`
+	message += ` requires ${teaching[0]} more from List A, ${teaching[1]} from List C, ${teaching[2]} at 4000+ level, and ${teaching[3]} with MATH prefix.`;
+    };
+    message += `</li></ul><p>Selected courses total ${units} units.</p>`;
 
+    courseCheckerContainer.innerHTML = '';
     courseCheckerContainer.insertAdjacentHTML('beforeend',`<div>${message}</div>`);
-}
+};
 
-checkMessage()
+checkMessage([])
 
 core.forEach(c => {renderCourse(c, coreContainer, '<br>');})
 coreTracks.forEach(track => {
