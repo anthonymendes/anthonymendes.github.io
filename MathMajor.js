@@ -56,10 +56,10 @@ const courses = {
 
 const core = ['MATH 1261', 'MATH 1262', 'MATH 2001', 'MATH 2031', 'MATH 2263', 'MATH 2151',
 	      'MATH 3152', 'MATH 4201', 'MATH 4264', 'CSC 1101', 'PHYS 1141', 'STAT 1510']
-const coreTrack1 = ['MATH 4202', 'MATH 4265']
-const coreTrack2 = ['MATH 3051', 'MATH 3111', 'MATH 3301']
-const coreTrack3 = ['CSC 2202', 'STAT 2610', 'MATH 3681']
-const coreTrack4 = ['MATH 4991', 'MATH 4992', 'MATH 4461/4462']
+const coreTracks = [['MATH 4202', 'MATH 4265'],
+		    ['MATH 3051', 'MATH 3111', 'MATH 3301'],
+		    ['CSC 2202', 'STAT 2610', 'MATH 3681'],
+		    ['MATH 4991', 'MATH 4992', 'MATH 4461/4462']]
 const listA = ['MATH 3011', 'MATH 3051', 'MATH 3055', 'MATH 3111', 'MATH 3301', 'MATH 3351',
 	       'MATH 3511', 'MATH 3622', 'MATH 3651', 'MATH 3681', 'MATH 4052', 'MATH 4202',
 	       'MATH 4265', 'MATH 4342', 'MATH 4352', 'MATH 4461/4462', 'MATH 4512',
@@ -76,18 +76,17 @@ const listCContainer = document.getElementById('listC-text');
 const courseCheckerContainer = document.getElementById('major-check');
 let selectedCourses = {};
 
-function renderCourse(courseCode, course, place) {
+function renderCourse(courseCode, place, trailingHTML) {
+    const title = courses[courseCode].title;
+    const units = courses[courseCode].units;
     const template = `<span class="clickable-word" data-course-code="${courseCode}">
-      ${courseCode} ${course.title} (${course.units})
-    </span>`;
+      ${courseCode} ${title} (${units})</span> ${trailingHTML}`;
     place.insertAdjacentHTML('beforeend', template);
 }
 
 function toggleCourseSelection(courseCode, course) {
     const elements = document.querySelectorAll(`[data-course-code="${courseCode}"]`);
-    elements.forEach((element) => {
-	element.classList.toggle('selected-course');
-    });
+    elements.forEach((element) => {element.classList.toggle('selected-course');});
     if (selectedCourses[courseCode]) {
 	delete selectedCourses[courseCode];
     } else {
@@ -103,23 +102,21 @@ function handleClick(event) {
 	unitCount();
 	coreRemaining();
 	trackCheck();
+	courseCheckerContainer.innerHTML = '';
 	checkMessage();
     }
 }
 
 function unitCount() {
-    courseCheckerContainer.innerHTML = '';
     let units = 0;
-    Object.values(selectedCourses).forEach((course) => {
-	units += course.units;
-    })
+    Object.values(selectedCourses).forEach((course) => {units += course.units;})
     return units;
 }
 
 function coreRemaining() {
     const selected = Object.keys(selectedCourses);
     let count = core.filter(c => selected.includes(c)).length;
-    [coreTrack1, coreTrack2, coreTrack3, coreTrack4].forEach((track) => {
+    coreTracks.forEach((track) => {
 	if (track.some(c => selected.includes(c))) {
 	    count += 1;
 	}
@@ -127,10 +124,7 @@ function coreRemaining() {
     return count;
 }
 
-function coursePrefix(course) {
-    const c = course.split(' ');
-    return c[0];
-}
+function coursePrefix(course) {return course.split(' ')[0]}
 
 function courseNumber(course) {
     const c = course.split(' ');
@@ -155,12 +149,11 @@ function trackCheck() {
     let A = selected.filter(c => listA.includes(c));
     let B = selected.filter(c => listB.includes(c));
     let C = selected.filter(c => listC.includes(c));
-    [coreTrack1, coreTrack2, coreTrack3, coreTrack4].forEach((track) => {
+    coreTracks.forEach((track) => {
 	const trackSelected = selected.filter(c => track.includes(c));
 	A = removeTrackCourse(A, trackSelected);
     });
     const CnotA = C.filter(c => !(A.includes(c)));
-
     const above4000 = A.filter(c => courseNumber(c) >= 4000).length;
     const above4000teaching = A.filter(c => courseNumber(c) >= 4000).length
 	  + CnotA.filter(c => courseNumber(c) >= 4000).length
@@ -171,28 +164,19 @@ function trackCheck() {
 }
 
 function checkMessage() {
-    let message = "<p>";
-
+    let message = "";
     const coreToGo = Math.max(16 - coreRemaining(), 0);
     const generalListA = Math.max(7 - trackCheck()[0], 0);
     const above4000 = Math.max(3 - trackCheck()[1], 0);
     const above4000teaching = Math.max(3 - trackCheck()[5], 0);
     const mathPrefix = Math.max(5 - trackCheck()[2], 0);
     const mathPrefixteaching = Math.max(5 - trackCheck()[6], 0);
-    const generalSuccess = (generalListA == 0)
-	  && (above4000 == 0)
-	  && (mathPrefix == 0);
+    const generalSuccess = (generalListA == 0) && (above4000 == 0) && (mathPrefix == 0);
     const appliedListB = Math.max(3 - trackCheck()[3], 0);
-    const appliedSuccess = (generalListA == 0)
-	  && (appliedListB == 0)
-	  && (above4000 == 0)
-	  && (mathPrefix == 0);
+    const appliedSuccess = (generalListA == 0) && (appliedListB == 0) && (above4000 == 0) && (mathPrefix == 0);
     const teachingListA = Math.max(5 - trackCheck()[0], 0);
     const teachingListC = Math.max(4 - trackCheck()[4], 0);
-    const teachingSuccess = (teachingListA == 0)
-	  && (teachingListC == 0)
-	  && (above4000 == 0)
-	  && (mathPrefix == 0);
+    const teachingSuccess = (teachingListA == 0) && (teachingListC == 0) && (above4000 == 0) && (mathPrefix == 0);
 
     if (unitCount()) {
 	if ((coreToGo == 0) && (generalSuccess || appliedSuccess || teachingSuccess)) {
@@ -241,53 +225,18 @@ function checkMessage() {
 
 checkMessage()
 
-core.forEach(course => {
-    renderCourse(course, courses[course], coreContainer);
-    coreContainer.insertAdjacentHTML('beforeend', '<br>');
+core.forEach(c => {renderCourse(c, coreContainer, '<br>');})
+coreTracks.forEach(track => {
+    track.slice(0,-1).forEach(c => {renderCourse(c, coreContainer, '<br>&emsp;<b>or</b> ');})
+    renderCourse(track[track.length - 1], coreContainer, '<br>')
 })
-
-renderCourse('MATH 4202', courses['MATH 4202'], coreContainer)
-coreContainer.insertAdjacentHTML('beforeend', '<br>&emsp;<b>or</b> ');
-renderCourse('MATH 4265', courses['MATH 4265'], coreContainer)
-coreContainer.insertAdjacentHTML('beforeend', '<br>');
-
-renderCourse('MATH 3051', courses['MATH 3051'], coreContainer)
-coreContainer.insertAdjacentHTML('beforeend', '<br>&emsp;<b>or</b> ');
-renderCourse('MATH 3111', courses['MATH 3111'], coreContainer)
-coreContainer.insertAdjacentHTML('beforeend', '<br>&emsp;<b>or</b> ');
-renderCourse('MATH 3301', courses['MATH 3301'], coreContainer)
-coreContainer.insertAdjacentHTML('beforeend', '<br>');
-
-renderCourse('CSC 2202', courses['CSC 2202'], coreContainer)
-coreContainer.insertAdjacentHTML('beforeend', '<br>&emsp;<b>or</b> ');
-renderCourse('STAT 2610', courses['STAT 2610'], coreContainer)
-coreContainer.insertAdjacentHTML('beforeend', '<br>&emsp;<b>or</b> ');
-renderCourse('MATH 3681', courses['MATH 3681'], coreContainer)
-coreContainer.insertAdjacentHTML('beforeend', '<br>');
-
-renderCourse('MATH 4991', courses['MATH 4991'], coreContainer)
-coreContainer.insertAdjacentHTML('beforeend', '<br>&emsp;<b>or</b> ');
-renderCourse('MATH 4992', courses['MATH 4992'], coreContainer)
-coreContainer.insertAdjacentHTML('beforeend', '<br>&emsp;<b>or</b> ');
-renderCourse('MATH 4461/4462', courses['MATH 4461/4462'], coreContainer)
-coreContainer.insertAdjacentHTML('beforeend', '<br>');
-
-listA.forEach(course => {
-    renderCourse(course, courses[course], listAContainer);
-    listAContainer.insertAdjacentHTML('beforeend', '<br>');
-})
-
-listB.forEach(course => {
-    renderCourse(course, courses[course], listBContainer);
-    listBContainer.insertAdjacentHTML('beforeend', '<br>');
-})
-
-listC.forEach(course => {
-    renderCourse(course, courses[course], listCContainer);
-    listCContainer.insertAdjacentHTML('beforeend', '<br>');
-})
-
 coreContainer.addEventListener('click', handleClick);
+
+listA.forEach(course => {renderCourse(course, listAContainer, '<br>');})
 listAContainer.addEventListener('click', handleClick);
+
+listB.forEach(course => {renderCourse(course, listBContainer, '<br>');})
 listBContainer.addEventListener('click', handleClick);
+
+listC.forEach(course => {renderCourse(course, listCContainer, '<br>');})
 listCContainer.addEventListener('click', handleClick);
