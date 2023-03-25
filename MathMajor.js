@@ -84,23 +84,21 @@ function renderCourse(courseCode, place, trailingHTML) {
     place.insertAdjacentHTML('beforeend', template);
 };
 
-function toggleCourseSelection(courseCode, course) {
-    const elements = document.querySelectorAll(`[data-course-code="${courseCode}"]`);
+function toggleCourseSelection(course) {
+    const elements = document.querySelectorAll(`[data-course-code="${course}"]`);
     elements.forEach((element) => {element.classList.toggle('selected-course');});
-    if (selectedCourses[courseCode]) {
-	delete selectedCourses[courseCode];
+    if (selectedCourses[course]) {
+	delete selectedCourses[course];
     } else {
-	selectedCourses[courseCode] = course;
+	selectedCourses[course] = course;
     };
-    return Object.keys(selectedCourses);
 };
 
 function handleClick(event) {
-    const courseCode = event.target.dataset.courseCode;
-    const course = courses[courseCode];
+    const course = event.target.dataset.courseCode;
     if (course) {
-	const selected = toggleCourseSelection(courseCode, course);
-	checkMessage(selected);
+	toggleCourseSelection(course);
+	checkMessage(Object.keys(selectedCourses));
     };
 };
 
