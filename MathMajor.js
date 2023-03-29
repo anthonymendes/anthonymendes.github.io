@@ -11,7 +11,7 @@ const courses = {
     'MATH 2151': {title: 'Linear Algebra & Differential Equations', units: 4},
     'MATH 2263': {title: 'Calculus III', units: 3},
     'MATH 3011': {title: 'History of Mathematics', units: 3},
-    'MATH 3051': {title: 'Combinatorics', units: 3, prereq: ['MATH 2031', 'MATH 2151']},
+    'MATH 3051': {title: 'Combinatorics', units: 3},
     'MATH 3055': {title: 'Graph Theory', units: 3},
     'MATH 3111': {title: 'Number Theory', units: 3},
     'MATH 3152': {title: 'Advanced Linear Algebra', units: 4},
