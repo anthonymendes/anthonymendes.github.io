@@ -22,11 +22,11 @@ const courses = {
     'MATH 3651': {title: 'Introduction to Numerical Analysis', units: 3},
     'MATH 3681': {title: 'Mathematical Programming', units: 3},
     'MATH 3971': {title: 'Technology in Mathematics Education', units : 3},
-    'MATH 4052': {title: 'Discrete Mathematics', units: 3, prereq: ['MATH 3051']},
+    'MATH 4052': {title: 'Discrete Mathematics', units: 3},
     'MATH 4201': {title: 'Algebra I', units: 4},
     'MATH 4202': {title: 'Algebra II', units: 3},
-    'MATH 4264': {title: 'Real Analysis I', units: 4, prereq: ['MATH 3152']},
-    'MATH 4265': {title: 'Real Analysis II', units: 4, prereq: ['MATH 4264']},
+    'MATH 4264': {title: 'Real Analysis I', units: 4},
+    'MATH 4265': {title: 'Real Analysis II', units: 4},
     'MATH 4342': {title: 'Dynamical Systems', units: 3},
     'MATH 4352': {title: 'Partial Differential Equations', units: 3},
     'MATH 4461/4462': {title: 'Senior Project I/II', units: 3},
@@ -41,7 +41,7 @@ const courses = {
     'MATH 4982': {title: 'Advanced Topics in Applied Mathematics', units: 3},
     'MATH 4991': {title: 'Senior Project Seminar', units: 3},
     'MATH 4992': {title: 'Senior Project Applied Seminar', units: 3},
-    'MATH 5053': {title: 'Graduate Discrete Mathematics', units: 3, prereq: ['MATH 4052']},
+    'MATH 5053': {title: 'Graduate Discrete Mathematics', units: 3},
     'MATH 5203': {title: 'Graduate Algebra I', units: 3},
     'MATH 5204': {title: 'Graduate Algebra II', units: 3},
     'MATH 5266': {title: 'Graduate Real Analysis', units: 3},
@@ -183,35 +183,31 @@ function checkMessage(selected) {
 	message += `Select courses by clicking on them.`
     };
 
-    message += `<p>The Core `;
     if (core != 0) {
-	message += ` requires ${core} more courses.`;
+	message += `<p>The Core requires ${core} more courses.</p>`;
     } else {
-	message += ` requirements are satisfied.`;
+	message += `<p><b>Core requirements are satisfied!</b></p>`;
     };
-    message += `</p><ul><li>`
+    message += `<ul><li>`
 
-    message += `General track`;
     if (generalSuccess) {
-	message += ` requirements are satisfied.`;
+	message += `<b>General track requirements are satisfied.</b>`;
     } else {
-	message += ` requires ${general[0]} more from List A, ${general[1]} at 4000+ level, and ${general[2]} with MATH prefix.`;
+	message += `General track requires ${general[0]} more from List A, ${general[1]} at 4000+ level, and ${general[2]} with MATH prefix.`;
     }
     message += `</li><li>`;
 
-    message += `Applied track`;
     if (appliedSuccess) {
-	message += ` requirements are satisfied.`;
+	message += `<b>Applied track requirements are satisfied.</b>`;
     } else {
-	message += ` requires ${applied[0]} more from List A, ${applied[1]} from List B, ${applied[2]} at 4000+ level, and ${applied[3]} with MATH prefix.`;
+	message += `Applied track requires ${applied[0]} more from List A, ${applied[1]} from List B, ${applied[2]} at 4000+ level, and ${applied[3]} with MATH prefix.`;
     };
     message += `</li><li>`;
 
-    message += `Teaching track`;
     if (teachingSuccess) {
-	message += ` requirements are satisfied.`;
+	message += `<b>Teaching track requirements are satisfied.</b>`;
     } else {
-	message += ` requires ${teaching[0]} more from List A, ${teaching[1]} from List C, ${teaching[2]} at 4000+ level, and ${teaching[3]} with MATH prefix.`;
+	message += `Teaching track requires ${teaching[0]} more from List A, ${teaching[1]} from List C, ${teaching[2]} at 4000+ level, and ${teaching[3]} with MATH prefix.`;
     };
     message += `</li></ul><p>Selected courses total ${units} units.</p>`;
 
