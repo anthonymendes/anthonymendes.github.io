@@ -188,28 +188,40 @@ function checkMessage(selected) {
     } else {
 	message += `<p><b>Core requirements are satisfied!</b></p>`;
     };
-    message += `<ul><li>`
+    message += `<table style="margin-left: 10px;">`
 
     if (generalSuccess) {
-	message += `<b>General track requirements are satisfied.</b>`;
+	message += `<tr><td colspan="4">&bull; &nbsp;<b>The General Track requirements are satisfied.</b></td></tr>`;
     } else {
-	message += `General track requires ${general[0]} more from List A, ${general[1]} at 4000+ level, and ${general[2]} with MATH prefix.`;
+	message += `<tr><td>&bull; &nbsp;The General Track requires</td>
+<td>${general[0]} more from List A, </td>
+<td>&nbsp;</td>
+<td>${general[1]} at 4000+ level, </td>
+<td>and ${general[2]} with a MATH prefix.</td></tr>`;
     }
-    message += `</li><li>`;
 
     if (appliedSuccess) {
-	message += `<b>Applied track requirements are satisfied.</b>`;
+	message += `<tr><td colspan="4">&bull; &nbsp;<b>The Applied Track requirements are satisfied.</b></td></tr>`;
     } else {
-	message += `Applied track requires ${applied[0]} more from List A, ${applied[1]} from List B, ${applied[2]} at 4000+ level, and ${applied[3]} with MATH prefix.`;
+	message += `<tr><td>&bull; &nbsp;The Applied Track requires</td>
+<td>${applied[0]} more from List A, </td>
+<td>${applied[1]} more from List B,</td>
+<td>${applied[2]} at 4000+ level, </td>
+<td>and ${applied[3]} with a MATH prefix.</td></tr>`;
     };
-    message += `</li><li>`;
+
 
     if (teachingSuccess) {
-	message += `<b>Teaching track requirements are satisfied.</b>`;
+	message += `<tr><td colspan="4">&bull; &nbsp;<b>The Teaching Track requirements are satisfied.</b></td></tr>`;
     } else {
-	message += `Teaching track requires ${teaching[0]} more from List A, ${teaching[1]} from List C, ${teaching[2]} at 4000+ level, and ${teaching[3]} with MATH prefix.`;
+	message += `<tr><td>&bull; &nbsp;The Teaching Track requires</td>
+<td>${teaching[0]} more from List A, </td>
+<td>${teaching[1]} more from List C,</td>
+<td>${teaching[2]} at 4000+ level, </td>
+<td>and ${teaching[3]} with a MATH prefix.</td></tr>`;
     };
-    message += `</li></ul><p>Selected courses total ${units} units.</p>`;
+    message += `</table>`;
+    message += `<p>Selected courses total ${units} units.</p>`;
 
     courseCheckerContainer.innerHTML = '';
     courseCheckerContainer.insertAdjacentHTML('beforeend',`<div>${message}</div>`);
