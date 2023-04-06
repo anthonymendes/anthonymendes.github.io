@@ -188,7 +188,7 @@ function checkMessage(selected) {
     } else {
 	message += `<p><b>Core requirements are satisfied!</b></p>`;
     };
-    message += `<table style="margin-left: 10px;">`
+    message += `<table style="margin-left: 10px; border-spacing: 0px;">`
 
     if (generalSuccess) {
 	message += `<tr><td colspan="4">&bull; &nbsp;<b>The General Track requirements are satisfied.</b></td></tr>`;
