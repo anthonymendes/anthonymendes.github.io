@@ -1,15 +1,27 @@
 // Javascript to check if a selection of mathematics courses satisfies the major.
 // Author: Tony Mendes (aamendes@calpoly.edu)
 
+// I still need to implement the 'at most 1 course below 3000 level' condition
+
 const courses = {
-    'CSC 1101': {title: 'Fundamentals of Computer Science', units: 4},
-    'CSC 2202': {title: 'Data Structures', units: 4},
+    'CSC 1001/1002': {title: 'Fundamentals of Computer Science', units: 4},
+    'CSC 2001': {title: 'Data Structures', units: 4},
+    'CSC 2600': {title: 'Computing with Data', units: 4},
+    'CSC 3449': {title: "Algorithms and Complexity", units: 4},
+    'CSC 3665': {title: "Introduction to Database Management Systems", units: 4},
+    'DATA 4610': {title: "Machine Learning I", units: 4},
+    'DATA 4620': {title: "Machine Learning II", units: 4},
+    'ECON 3030': {title: "Intermediate Microeconomics", units: 4},
+    'ECON 4010': {title: "Mathematical Economics", units: 3},
+    'ECON 4012': {title: "Probability Models for Economic Decisions", units: 3},
+    'ENGR 2211': {title: "Introduction to Mechanics", units: 4},
+    'MATH 1151': {title: 'Linear Algebra', units: 3},
     'MATH 1261': {title: 'Calculus I', units: 4},
     'MATH 1262': {title: 'Calculus II', units: 4},
     'MATH 2001': {title: 'Mathematics Orientation', units: 1},
     'MATH 2031': {title: 'Introduction to Abstract Mathematics', units: 3},
-    'MATH 2151': {title: 'Linear Algebra & Differential Equations', units: 4},
     'MATH 2263': {title: 'Calculus III', units: 3},
+    'MATH 2343': {title: 'Differential Equations', units: 3},
     'MATH 3011': {title: 'History of Mathematics', units: 3},
     'MATH 3051': {title: 'Combinatorics', units: 3},
     'MATH 3055': {title: 'Graph Theory', units: 3},
@@ -49,23 +61,48 @@ const courses = {
     'MATH 5371': {title: 'Methods of Applied Mathematics', units: 3},
     'MATH 5542': {title: 'Graduate Topology', units: 3},
     'MATH 5651': {title: 'Numerical Analysis', units: 3},
+    'ME 3302': {title: "Thermodynamics", units: 3},
+    'ME 3318': {title: "Mechanical Vibrations", units: 4},
+    'ME 3341': {title: "Fluid Mechanics", units: 3},
     'PHYS 1141': {title: 'General Physics I', units: 4},
+    'PHYS 1143': {title: "General Physics II", units: 4},
+    'PHYS 3301': {title: "Statistical Mechanics I", units: 3},
+    'PHYS 3305': {title: "Classical Mechanics I", units: 3},
+    'PHYS 3306': {title: "Classical Mechanics II", units: 3},
+    'PHYS 3314': {title: "Ocean Dynamics", units: 3},
+    'PHYS 3323': {title: "Optics", units: 4},
+    'PHYS 4202': {title: 'Computational Physics', units: 4},
+    'PHYS 4408': {title: "Electromagnetic Fields and Waves I", units: 3},
+    'PHYS 4425': {title: "Solid State Physics", units: 4},
+    'PHYS/CPE 3345': {title: "Quantum Computing", units: 3},
     'STAT 1510': {title: 'Statistics I', units: 3},
-    'STAT 2610': {title: 'Introduction to Probability and Simulation', units: 3}
+    'STAT 2610': {title: 'Introduction to Probability and Simulation', units: 3},
+    'STAT 3520': {title: "Statistics II", units: 3},
+    'STAT 3530': {title: "Statistics III", units: 4},
+    'STAT 4610': {title: "Mathematical Statistics I", units: 3},
+    'STAT 4620': {title: "Mathematical Statistics II", units: 3},
+    'STAT 4770': {title: "Survival Analysis Methods", units: 3},
+    'STAT 4790': {title: "Applied Multivariate Statistics", units: 3}
 };
 
-const core = ['MATH 1261', 'MATH 1262', 'MATH 2001', 'MATH 2031', 'MATH 2263', 'MATH 2151',
-	      'MATH 3152', 'MATH 4201', 'MATH 4264', 'CSC 1101', 'PHYS 1141', 'STAT 1510'];
+const core = ['MATH 1151', 'MATH 1261', 'MATH 1262', 'MATH 2001', 'MATH 2031', 'MATH 2343',
+	      'MATH 2263', 'MATH 3152', 'MATH 4201', 'MATH 4264',
+	      'CSC 1001/1002', 'PHYS 1141', 'STAT 1510'];
 const coreTracks = [['MATH 4202', 'MATH 4265'],
 		    ['MATH 3051', 'MATH 3111', 'MATH 3301'],
-		    ['CSC 2202', 'STAT 2610', 'MATH 3681'],
+		    ['CSC 2001', 'CSC 2600', 'STAT 2610', 'MATH 3681', 'PHYS 4202'],
 		    ['MATH 4991', 'MATH 4992', 'MATH 4461/4462']];
 const listA = ['MATH 3011', 'MATH 3051', 'MATH 3055', 'MATH 3111', 'MATH 3301', 'MATH 3351',
 	       'MATH 3511', 'MATH 3622', 'MATH 3651', 'MATH 3681', 'MATH 4052', 'MATH 4202',
 	       'MATH 4265', 'MATH 4342', 'MATH 4352', 'MATH 4461/4462', 'MATH 4512',
 	       'MATH 4531', 'MATH 4541', 'MATH 4652', 'MATH 4653', 'MATH 4911', 'MATH 4981',
 	       'MATH 4982', 'MATH 5053', 'MATH 5203', 'MATH 5204', 'MATH 5266', 'MATH 5302',
-	       'MATH 5371', 'MATH 5542', 'MATH 5651'];
+	       'MATH 5371', 'MATH 5542', 'MATH 5651', 'CSC 3449', 'CSC 3665', 'DATA 4610',
+	       'DATA 4620', 'ECON 3030', 'ECON 4010', 'ECON 4012', 'ENGR 2211', 'ME 3302',
+	       'ME 3318', 'ME 3341', 'PHYS 1143', 'PHYS 3301', 'PHYS 3305', 'PHYS 3306',
+	       'PHYS 3314', 'PHYS 3323', 'PHYS/CPE 3345', 'PHYS 4408', 'PHYS 4425',
+	       'STAT 3520', 'STAT 3530', 'STAT 4770', 'STAT 4790', 'STAT 4610', 'STAT 4620'
+	      ];
 const listB = ['MATH 3055', 'MATH 4342', 'MATH 4352', 'MATH 4652', 'MATH 4653', 'MATH 4911'];
 const listC = ['MATH 3971', 'MATH 3511', 'MATH 4512', 'MATH 4972'];
 
@@ -105,7 +142,7 @@ function handleClick(event) {
 function coreRemaining(selected) {
     let count = core.filter(c => selected.includes(c)).length;
     coreTracks.forEach((track) => {if (track.some(c => selected.includes(c))) {count += 1}});
-    return Math.max(16 - count, 0);
+    return Math.max(17 - count, 0);
 };
 
 function courseNumber(course) {
