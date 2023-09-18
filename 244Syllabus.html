@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2023-09-18 Mon 10:59 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Math 244 Syllabus</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="https://anthonymendes.github.io/mendes.css" />
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+	displayAlign: "center",
+	displayIndent: "0em",
+	"HTML-CSS": { scale: 100,
+			linebreaks: { automatic: "false" },
+			availableFonts: [],
+			webFont: "TeX"
+		       },
+	SVG: {scale: 100,
+	      linebreaks: { automatic: "false" },
+	      font: "TeX"},
+	NativeMML: {scale: 100},
+	TeX: { equationNumbers: {autoNumber: "AMS"},
+	       MultLineWidth: "85%",
+	       TagSide: "right",
+	       TagIndent: ".8em"
+	     }
+});
+</script>
+<script type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Math 244 Syllabus</h1>
+
+<div id="outline-container-orgfbb3272" class="outline-2">
+<h2 id="orgfbb3272">Instructor</h2>
+<div class="outline-text-2" id="text-orgfbb3272">
+<table>
+
+
+<colgroup>
+<col  class="org-right">
+
+<col  class="org-left">
+</colgroup>
+<tbody>
+
+<td class="org-right">Name:</td>
+<td class="org-left"><a href="./index.html">Dr. Anthony (Tony) Mendes</a></td>
+</tr>
+
+
+<td class="org-right">Email:</td>
+<td class="org-left"><a href="mailto:aamendes@calpoly.edu">aamendes@calpoly.edu</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgcbd2a67" class="outline-2">
+<h2 id="orgcbd2a67">Web site</h2>
+<div class="outline-text-2" id="text-orgcbd2a67">
+<p>
+The course web site is <a href="https://anthonymendes.github.io/244.html">https://anthonymendes.github.io/244.html</a>. Assignments will be
+turned in on <a href="https://canvas.calpoly.edu">Canvas</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0622e6e" class="outline-2">
+<h2 id="org0622e6e">Workshop</h2>
+<div class="outline-text-2" id="text-org0622e6e">
+<p>
+A <a href="https://asc.calpoly.edu/sw">supplemental workshop</a> tailored to our specific course will be lead by Colin Lucio.  The
+supplemental workshop section is be held TR 6:10&#x2013;7:30pm in Business 205.  Enrolling and
+attending a supplemental is the easiest and best way to ensure your success in our course!
+</p>
+
+<p>
+Another opportunity for collaborative learning is with <a href="https://asc.calpoly.edu/study-session">study sessions</a>.  These are groups
+of students who sign up to learn mathematics together.  This is not a course (so no course
+credit is given and therefore there is no cost for out-of-state students).  It is not
+necessarily tailored specifically to this section.
+</p>
+
+<p>
+Additionally, free tutoring is available from the <a href="https://calpoly.mywconline.com/">Writing and Learning Center</a>.  Graduate
+and undergraduate math tutors are available for both one-to-one and small-group sessions.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge1ade2d" class="outline-2">
+<h2 id="orge1ade2d">Office hours</h2>
+<div class="outline-text-2" id="text-orge1ade2d">
+<p>
+Office hours are held in Building 25 Room 202.
+</p>
+
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+
+<th>Day</th>
+<th>Time</th>
+</tr>
+</thead>
+<tbody>
+
+<td class="org-left">Mondays</td>
+<td class="org-left">2:05&#x2013;2:45</td>
+</tr>
+
+
+<td class="org-left">Tuesday</td>
+<td class="org-left">2:05&#x2013;2:45</td>
+</tr>
+
+
+<td class="org-left">Thursday</td>
+<td class="org-left">8:20&#x2013;9:00</td>
+</tr>
+
+
+<td class="org-left">Fridays</td>
+<td class="org-left">11:10&#x2013;12:30</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+I would greatly enjoy meeting you, getting to know you, and answering your questions, no
+matter how trivial they may seem!
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb452bb8" class="outline-2">
+<h2 id="orgb452bb8">Textbook</h2>
+<div class="outline-text-2" id="text-orgb452bb8">
+<p>
+The Cal Poly MATH 244 text is <i>Differential equations and linear algebra, 4th ed.</i> by
+Goode and Annin.
+</p>
+
+<p>
+The text will be used as a reference to augment the lectures and exercises.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcb57a10" class="outline-2">
+<h2 id="orgcb57a10">Course content</h2>
+<div class="outline-text-2" id="text-orgcb57a10">
+<p>
+I have been greatly looking forward to sharing the ideas in this course with you!
+</p>
+
+<p>
+We are going to discuss first and second order linear differential equations, systems of
+linear differential equations, and elementary matrix algebra.  Throughout the quarter we
+will see applications of these subjects to real world situations.
+</p>
+
+<p>
+Topics in this course are found in Chapters 1,2,3,4,7,8 and 9 of the textbook.  The
+<a href="https://math.calpoly.edu/course-outlines">official department course outline</a> contains more details.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org081c945" class="outline-2">
+<h2 id="org081c945">Grading</h2>
+<div class="outline-text-2" id="text-org081c945">
+<p>
+Letter grades are based on in class blue book exercises, group quizzes, homework
+exercises, two midterms, and a final exam.  The proportions of the total grade given to
+each activity are:
+</p>
+
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-center">
+</colgroup>
+<tbody>
+
+<td class="org-left">Blue Book exercises</td>
+<td class="org-center">5%</td>
+</tr>
+
+
+<td class="org-left">Group quizzes</td>
+<td class="org-center">5%</td>
+</tr>
+
+
+<td class="org-left">Homework exercises</td>
+<td class="org-center">20%</td>
+</tr>
+
+
+<td class="org-left">Midterm exams</td>
+<td class="org-center">45%</td>
+</tr>
+
+
+<td class="org-left">Final exam</td>
+<td class="org-center">25%</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The minimum percentages needed to earn each letter grade are:
+</p>
+
+<table>
+
+
+<colgroup>
+<col  class="org-center">
+
+<col  class="org-center">
+
+<col  class="org-center">
+
+<col  class="org-center">
+
+<col  class="org-center">
+
+<col  class="org-center">
+
+<col  class="org-center">
+
+<col  class="org-center">
+
+<col  class="org-center">
+
+<col  class="org-center">
+
+<col  class="org-center">
+</colgroup>
+<tbody>
+
+<td class="org-center">A</td>
+<td class="org-center">A-</td>
+<td class="org-center">B+</td>
+<td class="org-center">B</td>
+<td class="org-center">B-</td>
+<td class="org-center">C+</td>
+<td class="org-center">C</td>
+<td class="org-center">C-</td>
+<td class="org-center">D+</td>
+<td class="org-center">D</td>
+<td class="org-center">D-</td>
+</tr>
+
+
+<td class="org-center">93%</td>
+<td class="org-center">90%</td>
+<td class="org-center">88%</td>
+<td class="org-center">83%</td>
+<td class="org-center">80%</td>
+<td class="org-center">78%</td>
+<td class="org-center">73%</td>
+<td class="org-center">70%</td>
+<td class="org-center">68%</td>
+<td class="org-center">63%</td>
+<td class="org-center">60%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org9f5751d" class="outline-2">
+<h2 id="org9f5751d">Exercise Sets</h2>
+<div class="outline-text-2" id="text-org9f5751d">
+<p>
+The exercise sets are important and high quality work is expected.  You will not receive
+credit for an exercise unless work is included.  Please turn in assignments of a quality
+appropriate for a professional workplace.
+</p>
+
+<p>
+Please get started on the exercises early!  To keep everyone on track, late assignments
+will be penalized 20% per day late.  If life issues get in the way, please let me know
+before the assignment is due so that we can make special arrangements.
+</p>
+
+<p>
+Follow these steps when turning in the assignments and exams:
+</p>
+<ol class="org-ol">
+<li>Neatly and clearly write out the solutions by hand.  This may require writing rough
+drafts; please do not submit messy scratch work.  If you are using a tablet to write
+out solutions or know mathematical typesetting (LaTeX) or have any other method of
+creating legible solutions in a <code>.pdf</code> file, then of course this can be used instead of
+handwritten solutions.</li>
+<li>It is difficult to read and grade <code>.jpg</code> image files, so please create a single <code>.pdf</code>
+file from your exercise sets using a document scanner phone application.</li>
+<li>Upload the file to in our Canvas site before the due date.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org81bff80" class="outline-2">
+<h2 id="org81bff80">Exams</h2>
+<div class="outline-text-2" id="text-org81bff80">
+<p>
+There are two midterm exams and one final exam.  Midterm topics will be announced in
+class.  The final exam is cumulative.
+</p>
+
+<p>
+The midterm exams are on October 20  and November 17 
+during class time.
+</p>
+
+<p>
+The final exam for the 9am section is on December 13  at 8:10am
+in our classroom.
+</p>
+
+<p>
+The final exam for the 10am section is on December 13  at
+10:10am in our classroom.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1eabe4d" class="outline-2">
+<h2 id="org1eabe4d">Quizzes</h2>
+<div class="outline-text-2" id="text-org1eabe4d">
+<p>
+Group quizzes are given in class on September 29, October 10, October 31,
+November  9, December  5.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3b334f1" class="outline-2">
+<h2 id="org3b334f1">Academic honesty</h2>
+<div class="outline-text-2" id="text-org3b334f1">
+<p>
+The table below clarifies which resources are available for use on exercise sets and
+exams.  A "No" means the resource is not permitted and a "Yes" means that it is permitted.
+</p>
+
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-center">
+
+<col  class="org-center">
+</colgroup>
+<thead>
+
+<th>Resource</th>
+<th>Exercises</th>
+<th>Exams</th>
+</tr>
+</thead>
+<tbody>
+
+<td class="org-left">Calculators</td>
+<td class="org-center">Yes</td>
+<td class="org-center">No</td>
+</tr>
+
+
+<td class="org-left">Computer algebra systems (Mathematica, Matlab, WolframAlpha.com, etc.)</td>
+<td class="org-center">Yes</td>
+<td class="org-center">No</td>
+</tr>
+
+
+<td class="org-left">Course materials (notes, files)</td>
+<td class="org-center">Yes</td>
+<td class="org-center">No</td>
+</tr>
+
+
+<td class="org-left">Collaboration with classmates, workshop leaders, tutors, etc.</td>
+<td class="org-center">Yes</td>
+<td class="org-center">No</td>
+</tr>
+
+
+<td class="org-left">Websites related to topics in general (Wikipedia, youtube, Mathworld, etc.)</td>
+<td class="org-center">Yes</td>
+<td class="org-center">No</td>
+</tr>
+
+
+<td class="org-left">Copying solutions to specific exercises (chegg, stackexchange, AI bots, etc.)</td>
+<td class="org-center">No</td>
+<td class="org-center">No</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org378cc86" class="outline-2">
+<h2 id="org378cc86">Diversity</h2>
+<div class="outline-text-2" id="text-org378cc86">
+<p>
+I am committed to providing an atmosphere that is welcoming to everyone.  It is my intent
+that students from diverse backgrounds and perspectives will be well served by this
+course.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb4de678" class="outline-2">
+<h2 id="orgb4de678">Accessibility</h2>
+<div class="outline-text-2" id="text-orgb4de678">
+<p>
+Students registered with the Disability Resource Center should contact me early in the
+course with their approved accommodations so that we can make the necessary arrangements.
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>
