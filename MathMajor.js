@@ -18,7 +18,7 @@ const courses = {
     'MATH 1151': {title: 'Linear Algebra', units: 3},
     'MATH 1261': {title: 'Calculus I', units: 4},
     'MATH 1262': {title: 'Calculus II', units: 4},
-    'MATH 2001': {title: 'Mathematics Orientation', units: 1},
+    'MATH 2001': {title: 'Mathematics Orientation', units: 0},
     'MATH 2031': {title: 'Introduction to Abstract Mathematics', units: 3},
     'MATH 2263': {title: 'Calculus III', units: 3},
     'MATH 2343': {title: 'Differential Equations', units: 3},
