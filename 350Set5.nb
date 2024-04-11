@@ -1,0 +1,200 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7121,        192]
+NotebookOptionsPosition[      5770,        159]
+NotebookOutlinePosition[      6158,        175]
+CellTagsIndexPosition[      6115,        172]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ StyleBox[
+  RowBox[{
+   RowBox[{"Set", " ", "5"}], ":", " ", "Substitutions"}], "Title"]], "Input",\
+
+ CellChangeTimes->{{3.919807936189116*^9, 3.919807953895212*^9}, {
+   3.919808208848558*^9, 3.9198082318120193`*^9}, {3.919809333380814*^9, 
+   3.919809336570117*^9}, {3.92024054647309*^9, 3.9202405477719917`*^9}, {
+   3.920302506608282*^9, 3.9203025169780607`*^9}, 3.920306369934359*^9, {
+   3.920306712763356*^9, 3.920306727132897*^9}, {3.9210746494841633`*^9, 
+   3.921074664356082*^9}, {3.921077141851111*^9, 3.921077147147793*^9}, 
+   3.921249311007926*^9, {3.921249902145979*^9, 3.9212499052452097`*^9}, {
+   3.921249953487451*^9, 3.921249954051772*^9}, {3.921250806366598*^9, 
+   3.9212508154574957`*^9}, {3.921674311686713*^9, 3.921674313315612*^9}, {
+   3.9216775934050617`*^9, 3.921677596207581*^9}, {3.921678032673489*^9, 
+   3.9216780535002937`*^9}, {3.921846675839086*^9, 
+   3.92184667935646*^9}},ExpressionUUID->"4c432c03-a1d3-4acb-afb9-\
+34168f462ca5"],
+
+Cell[CellGroupData[{
+
+Cell["Substitutions and Rules", "Section",
+ CellChangeTimes->{{3.9198104003845463`*^9, 3.919810448327971*^9}, 
+   3.91985472520175*^9, {3.920306736292746*^9, 3.9203067381339493`*^9}, {
+   3.921182579157118*^9, 3.921182579907123*^9}, {3.921356393763701*^9, 
+   3.921356396053357*^9}, {3.921360867913472*^9, 3.9213608689356413`*^9}, {
+   3.921361605407935*^9, 
+   3.921361620705611*^9}},ExpressionUUID->"356aced8-2386-48ed-9f22-\
+af747db9db5c"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"a5bacfbe-b4cd-4470-8965-\
+0cb02892f857"],
+
+Cell[TextData[{
+ "The Thue-Morse sequence is a sequence of lists that begins with the list ",
+ StyleBox["{0}", "Input"],
+ " and then subsequent terms in the sequence are found by replacing each ",
+ StyleBox["0", "Input"],
+ " in the previous list with ",
+ StyleBox["0,1", "Input"],
+ " and each ",
+ StyleBox["1", "Input"],
+ " with ",
+ StyleBox["1,0", "Input"],
+ ".  Use ",
+ StyleBox["Nest", "Input"],
+ " and ",
+ StyleBox["ReplaceAll", "Input"],
+ " to find the 10th term in the Thue-Morse sequence."
+}], "Text",
+ CellChangeTimes->{{3.9214099385723333`*^9, 3.921409961402977*^9}, {
+  3.921410001882532*^9, 3.921410051655164*^9}, {3.921410302118504*^9, 
+  3.921410331420492*^9}},ExpressionUUID->"58ae763c-749a-4f46-ba6c-\
+248796dc453f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"c0aa4d79-b069-454a-a81d-\
+2604ead28f72"],
+
+Cell["\<\
+The following code creates a word guessing game.  Describe the game and play \
+it a few times, it is kinda fun!\
+\>", "Text",
+ CellChangeTimes->{{3.921425775453226*^9, 3.9214258045794363`*^9}, {
+  3.9214259996464453`*^9, 3.921426001804422*^9}, {3.921426283926413*^9, 
+  3.9214262903101273`*^9}},ExpressionUUID->"14d5a053-6cbd-401a-8e2c-\
+be6fc4d3125f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"rules", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"#", "->", "\"\<_\>\""}], "&"}], "/@", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<a\>\"", ",", "\"\<e\>\"", ",", "\"\<i\>\"", ",", "\"\<o\>\"", ",", 
+      "\"\<u\>\""}], "}"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"word", "=", 
+   RowBox[{"RandomChoice", "[", 
+    RowBox[{"WordList", "[", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"StringReplace", "[", 
+  RowBox[{"word", ",", "rules"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.921425426285379*^9, 3.92142573077932*^9}, {
+  3.921426096973055*^9, 3.921426098638938*^9}, {3.921426176099469*^9, 
+  3.921426180819643*^9}},
+ CellLabel->
+  "In[1047]:=",ExpressionUUID->"79709dd2-f935-4ed9-961c-57765f7bafb0"],
+
+Cell[BoxData["\<\"c_mpl_c_nc_\"\>"], "Output",
+ CellChangeTimes->{{3.921425451790731*^9, 3.9214255262668324`*^9}, {
+  3.9214255723751583`*^9, 3.921425665616469*^9}, {3.92142570991602*^9, 
+  3.921425761101927*^9}, {3.921425815694446*^9, 3.921425843388996*^9}, {
+  3.92142590657425*^9, 3.921425946307033*^9}, {3.9214260992973137`*^9, 
+  3.921426180967373*^9}, {3.9214262978215227`*^9, 3.921426307358841*^9}, {
+  3.9214341709187098`*^9, 3.9214342541956863`*^9}, {3.92144375584448*^9, 
+  3.921443799396023*^9}},
+ CellLabel->
+  "Out[1049]=",ExpressionUUID->"32eafa3e-2169-4d27-a767-d49bb3501b9d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["word"], "Input",
+ CellChangeTimes->{{3.9214261080479927`*^9, 3.9214261083339243`*^9}},
+ CellLabel->
+  "In[1050]:=",ExpressionUUID->"1e55c330-95f0-4ba0-9938-918bad6cbaae"],
+
+Cell[BoxData["\<\"complacence\"\>"], "Output",
+ CellChangeTimes->{{3.921426108407084*^9, 3.921426184274233*^9}, {
+  3.921426299891932*^9, 3.921426308408766*^9}, {3.9214341725444813`*^9, 
+  3.9214342582755947`*^9}, {3.921443758196321*^9, 3.9214438004511414`*^9}},
+ CellLabel->
+  "Out[1050]=",ExpressionUUID->"4fc3bda7-58df-40e5-8007-4166bf84de3b"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{720, 864},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.1 for Linux x86 (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"64ffb58e-0541-4f2c-90fc-b03f514e375c"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 985, 17, 72, "Input",ExpressionUUID->"4c432c03-a1d3-4acb-afb9-34168f462ca5"],
+Cell[CellGroupData[{
+Cell[1568, 41, 442, 7, 68, "Section",ExpressionUUID->"356aced8-2386-48ed-9f22-af747db9db5c"],
+Cell[CellGroupData[{
+Cell[2035, 52, 298, 8, 54, "Subsection",ExpressionUUID->"a5bacfbe-b4cd-4470-8965-0cb02892f857"],
+Cell[2336, 62, 731, 20, 104, "Text",ExpressionUUID->"58ae763c-749a-4f46-ba6c-248796dc453f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3104, 87, 298, 8, 54, "Subsection",ExpressionUUID->"c0aa4d79-b069-454a-a81d-2604ead28f72"],
+Cell[3405, 97, 362, 7, 58, "Text",ExpressionUUID->"14d5a053-6cbd-401a-8e2c-be6fc4d3125f"],
+Cell[CellGroupData[{
+Cell[3792, 108, 774, 20, 71, "Input",ExpressionUUID->"79709dd2-f935-4ed9-961c-57765f7bafb0"],
+Cell[4569, 130, 591, 9, 33, "Output",ExpressionUUID->"32eafa3e-2169-4d27-a767-d49bb3501b9d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5197, 144, 184, 3, 29, "Input",ExpressionUUID->"1e55c330-95f0-4ba0-9938-918bad6cbaae"],
+Cell[5384, 149, 346, 5, 33, "Output",ExpressionUUID->"4fc3bda7-58df-40e5-8007-4166bf84de3b"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
