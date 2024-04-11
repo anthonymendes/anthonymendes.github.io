@@ -426,7 +426,7 @@ b. Create a list of all Gaussian integers with complex magnitude bigger than \
    3.9211677556668167`*^9, {3.921336840503228*^9, 
    3.9213368408763103`*^9}},ExpressionUUID->"d483ef91-8345-406f-8afe-\
 edd849c5edc7"]
-}, Closed]]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -745,7 +745,7 @@ Cell[15710, 354, 1819, 30, 35, "Text",ExpressionUUID->"b8fb4f3f-748d-4388-987b-e
 Cell[CellGroupData[{
 Cell[17566, 389, 298, 8, 38, "Subsection",ExpressionUUID->"8777f527-1da8-4e17-9c07-0a466635dc7d"],
 Cell[17867, 399, 1818, 28, 81, "Text",ExpressionUUID->"d483ef91-8345-406f-8afe-edd849c5edc7"]
-}, Closed]]
+}, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[19734, 433, 398, 6, 68, "Section",ExpressionUUID->"d99d01dd-4209-4751-9d39-709ab7c3effe"],
