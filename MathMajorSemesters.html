@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mathematics Major</title>
+    <style>
+      @import url('https://use.typekit.net/qha6sjw.css');
+      :root {
+	  --CalPolyGreen: #154734;
+	  --DigitalGold: #BD8B13;
+	  --SealGray: #54585A;
+      }
+      body{
+	  color: var(--SealGray);
+	  font-weight:normal;
+	  font-family: source-sans-pro, Trebuchet, sans-serif;
+      }
+      .selected-course {color: var(--DigitalGold);}
+      .clickable-word:hover {cursor: pointer;}
+      h1{color: var(--CalPolyGreen);}
+      h2{color: var(--CalPolyGreen);}
+      h3{color: var(--CalPolyGreen);}
+      b{color: var(--CalPolyGreen);}
+      i{color: var(--CalPolyGreen);}
+      ul {
+	  margin-top: 5px;
+	  margin-bottom: 5px;
+	  padding-left: 30px;
+	  list-style-type: circle;
+      }
+      p {
+	  margin-top: 5px;
+	  margin-bottom: 0px;
+      }
+      table {margin-top: 0px;}
+    </style>
+  </head>
+  <body>
+    <h2>Mathematics major check</h2>
+
+    <div id="major-check"></div>
+    <br>
+
+    <table>
+      <tr>
+	<td style="vertical-align: top;">
+	  <b>Core requirements</b> <br>
+	  <div id="core-text"></div>
+	  <br>
+	  <b>List B</b><br>
+	  <div id="listB-text"></div>
+	  <br>
+	  <b>List C</b><br>
+	  <div id="listC-text"></div>
+	</td>
+	<td style="vertical-align: top;">
+	  <b>List A</b><br>
+	  <div id="listA-text"></div>
+	</td>
+    </table>
+
+    <script src="MathMajor.js"></script>
+  </body>
+</html>
