@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     17820,        488]
-NotebookOptionsPosition[     15196,        432]
-NotebookOutlinePosition[     15584,        448]
-CellTagsIndexPosition[     15541,        445]
+NotebookDataLength[     17881,        490]
+NotebookOptionsPosition[     15257,        434]
+NotebookOutlinePosition[     15645,        450]
+CellTagsIndexPosition[     15602,        447]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -124,10 +124,12 @@ elements, and then recursively sorts the sublists.   Here are the steps \
 involved in the quicksort algorithm: \n\n1. Pick an element, called a pivot, \
 randomly from the list . \n2. Of the remaining non-pivot elements, create two \
 new sublists, a list of numbers smaller than the pivot element and a list of \
-numbers greater than the pivot element. \n3. Recursively apply the above \
-steps to the sublists described above separately and return the list obtained \
-by joining the outputs of the the recursive calls with the pivot element in \
-the correct order. \n\nCreate a recursive function called ",
+numbers greater than the pivot element. \n3. ",
+ StyleBox["Join", "Input"],
+ " the Quicksorted list of the small elements, the list containing the pivot \
+element repeated the number of times it appears in the list, and the \
+Quicksorted list of the big elements.\n\nCreate a recursive function called \
+",
  StyleBox["Quicksort[L_List]", "Input"],
  " using ",
  StyleBox["Module", "Input"],
@@ -141,10 +143,10 @@ any built-in sorting operations."
    3.9219397084359617`*^9, 3.921939727795681*^9}, {3.921939786255602*^9, 
    3.9219397865483923`*^9}, {3.921940578264155*^9, 3.9219405799129467`*^9}, {
    3.9219483950840397`*^9, 3.921948408897677*^9}, 3.92194855312766*^9, {
-   3.9219486335163517`*^9, 
-   3.921948666024378*^9}},ExpressionUUID->"03f1c9fb-d9fb-4547-bf98-\
+   3.9219486335163517`*^9, 3.921948666024378*^9}, {3.922582982087594*^9, 
+   3.9225831736286793`*^9}},ExpressionUUID->"03f1c9fb-d9fb-4547-bf98-\
 56937181c5b9"]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -431,7 +433,7 @@ f7f47b435b88"]
 }, Open  ]]
 },
 WindowSize->{720, 864},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
 FrontEndVersion->"13.1 for Linux x86 (64-bit) (June 16, 2022)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"9963ee81-f8f6-4f47-aa95-7ff83ad56c4d"
@@ -460,34 +462,34 @@ Cell[3301, 89, 516, 14, 81, "Text",ExpressionUUID->"e2507f6d-c149-4cad-aba3-2e93
 }, Closed]],
 Cell[CellGroupData[{
 Cell[3854, 108, 298, 8, 38, "Subsection",ExpressionUUID->"711871e3-bfba-48a4-b561-7a89a7413e4b"],
-Cell[4155, 118, 1585, 27, 357, "Text",ExpressionUUID->"03f1c9fb-d9fb-4547-bf98-56937181c5b9"]
+Cell[4155, 118, 1646, 29, 334, "Text",ExpressionUUID->"03f1c9fb-d9fb-4547-bf98-56937181c5b9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5838, 152, 298, 8, 54, "Subsection",ExpressionUUID->"2a647d65-d7e2-4ccf-bb6a-7921440f0be9"],
+Cell[6139, 162, 787, 21, 150, "Text",ExpressionUUID->"d5f0cf82-5f9a-4848-a46d-3da280ae32dd"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[5777, 150, 298, 8, 38, "Subsection",ExpressionUUID->"2a647d65-d7e2-4ccf-bb6a-7921440f0be9"],
-Cell[6078, 160, 787, 21, 150, "Text",ExpressionUUID->"d5f0cf82-5f9a-4848-a46d-3da280ae32dd"]
-}, Closed]],
-Cell[CellGroupData[{
-Cell[6902, 186, 298, 8, 38, "Subsection",ExpressionUUID->"c3f16a0d-7bf8-49a4-8298-b59eb44b2ab8"],
-Cell[7203, 196, 2005, 53, 380, "Text",ExpressionUUID->"48779dfd-8d79-4a9a-9856-46e3b6476a5e"]
+Cell[6963, 188, 298, 8, 38, "Subsection",ExpressionUUID->"c3f16a0d-7bf8-49a4-8298-b59eb44b2ab8"],
+Cell[7264, 198, 2005, 53, 380, "Text",ExpressionUUID->"48779dfd-8d79-4a9a-9856-46e3b6476a5e"]
 }, Closed]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[9257, 255, 476, 7, 68, "Section",ExpressionUUID->"10ce8cd1-d617-47cb-936c-5eed4c405b41"],
+Cell[9318, 257, 476, 7, 68, "Section",ExpressionUUID->"10ce8cd1-d617-47cb-936c-5eed4c405b41"],
 Cell[CellGroupData[{
-Cell[9758, 266, 298, 8, 54, "Subsection",ExpressionUUID->"a4aea993-1605-4ad7-b0e6-eaa06462d8b6"],
-Cell[10059, 276, 1359, 30, 239, "Text",ExpressionUUID->"c35b6e5b-0ca2-4e67-aeb9-4563de5b2ad1"]
+Cell[9819, 268, 298, 8, 54, "Subsection",ExpressionUUID->"a4aea993-1605-4ad7-b0e6-eaa06462d8b6"],
+Cell[10120, 278, 1359, 30, 239, "Text",ExpressionUUID->"c35b6e5b-0ca2-4e67-aeb9-4563de5b2ad1"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[11455, 311, 298, 8, 38, "Subsection",ExpressionUUID->"8644f81b-a4ce-46bd-a77b-f1c21f06fef9"],
-Cell[11756, 321, 1100, 28, 196, "Text",ExpressionUUID->"0b5eb134-4bbd-4c5c-87e3-a1a2fd6c1e11"]
+Cell[11516, 313, 298, 8, 38, "Subsection",ExpressionUUID->"8644f81b-a4ce-46bd-a77b-f1c21f06fef9"],
+Cell[11817, 323, 1100, 28, 196, "Text",ExpressionUUID->"0b5eb134-4bbd-4c5c-87e3-a1a2fd6c1e11"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[12893, 354, 298, 8, 38, "Subsection",ExpressionUUID->"35ded0af-32a6-4e87-8b27-0893b7f56d2a"],
-Cell[13194, 364, 680, 22, 81, "Text",ExpressionUUID->"b7a11978-0099-481b-9806-9af3671c564c"]
+Cell[12954, 356, 298, 8, 38, "Subsection",ExpressionUUID->"35ded0af-32a6-4e87-8b27-0893b7f56d2a"],
+Cell[13255, 366, 680, 22, 81, "Text",ExpressionUUID->"b7a11978-0099-481b-9806-9af3671c564c"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[13911, 391, 298, 8, 38, "Subsection",ExpressionUUID->"d0925c9a-7edd-4d06-a8bc-7f22e8a83bc4"],
-Cell[14212, 401, 956, 27, 150, "Text",ExpressionUUID->"286878f7-ea79-49b5-b394-f7f47b435b88"]
+Cell[13972, 393, 298, 8, 38, "Subsection",ExpressionUUID->"d0925c9a-7edd-4d06-a8bc-7f22e8a83bc4"],
+Cell[14273, 403, 956, 27, 150, "Text",ExpressionUUID->"286878f7-ea79-49b5-b394-f7f47b435b88"]
 }, Closed]]
 }, Open  ]]
 }
