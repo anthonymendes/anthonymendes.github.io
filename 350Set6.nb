@@ -146,7 +146,7 @@ any built-in sorting operations."
    3.9219486335163517`*^9, 3.921948666024378*^9}, {3.922582982087594*^9, 
    3.9225831736286793`*^9}},ExpressionUUID->"03f1c9fb-d9fb-4547-bf98-\
 56937181c5b9"]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -463,9 +463,9 @@ Cell[3301, 89, 516, 14, 81, "Text",ExpressionUUID->"e2507f6d-c149-4cad-aba3-2e93
 Cell[CellGroupData[{
 Cell[3854, 108, 298, 8, 38, "Subsection",ExpressionUUID->"711871e3-bfba-48a4-b561-7a89a7413e4b"],
 Cell[4155, 118, 1646, 29, 334, "Text",ExpressionUUID->"03f1c9fb-d9fb-4547-bf98-56937181c5b9"]
-}, Open  ]],
+}, Closed]],
 Cell[CellGroupData[{
-Cell[5838, 152, 298, 8, 54, "Subsection",ExpressionUUID->"2a647d65-d7e2-4ccf-bb6a-7921440f0be9"],
+Cell[5838, 152, 298, 8, 38, "Subsection",ExpressionUUID->"2a647d65-d7e2-4ccf-bb6a-7921440f0be9"],
 Cell[6139, 162, 787, 21, 150, "Text",ExpressionUUID->"d5f0cf82-5f9a-4848-a46d-3da280ae32dd"]
 }, Closed]],
 Cell[CellGroupData[{
