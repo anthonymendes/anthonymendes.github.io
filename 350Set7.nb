@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    284507,       4931]
-NotebookOptionsPosition[    280866,       4858]
-NotebookOutlinePosition[    281255,       4874]
-CellTagsIndexPosition[    281212,       4871]
+NotebookDataLength[    284559,       4932]
+NotebookOptionsPosition[    280919,       4859]
+NotebookOutlinePosition[    281308,       4875]
+CellTagsIndexPosition[    281265,       4872]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -339,12 +339,13 @@ Cell[TextData[{
  "Use ",
  StyleBox["ParametricPlot3D", "Input"],
  " to show a graphic in 3D containing two nonintersecting interlocking tori, \
-both of inner radius 1 and outer radius 1, similar to the graphic depicted \
+both of inner radius 1 and outer radius 4, similar to the graphic depicted \
 below: "
 }], "Text",
  CellChangeTimes->{{3.922716510884178*^9, 3.922716579442309*^9}, {
   3.922716636151309*^9, 3.9227166671509867`*^9}, {3.922716832069558*^9, 
-  3.9227168327452393`*^9}},ExpressionUUID->"545fa26e-a0dc-4667-b6e6-\
+  3.9227168327452393`*^9}, {3.9228917361297398`*^9, 
+  3.9228917361840487`*^9}},ExpressionUUID->"545fa26e-a0dc-4667-b6e6-\
 803a2c00f50a"],
 
 Cell[BoxData[
@@ -4910,27 +4911,27 @@ Cell[CellGroupData[{
 Cell[9807, 281, 374, 9, 54, "Subsection",ExpressionUUID->"83702662-d7b4-4bd0-a569-22fc5edd9e56"],
 Cell[10184, 292, 520, 14, 35, "Text",ExpressionUUID->"0b53d2f4-6a7a-4b68-b0e3-a300a61b15c2"],
 Cell[10707, 308, 902, 27, 73, "Input",ExpressionUUID->"1f036875-ff9e-4d5a-b9fc-365d8a365340"],
-Cell[11612, 337, 466, 10, 35, "Text",ExpressionUUID->"545fa26e-a0dc-4667-b6e6-803a2c00f50a"],
-Cell[12081, 349, 254284, 4134, 252, "Output",ExpressionUUID->"8305f9a4-29a5-4b86-b759-0a75b9fa47dd"]
+Cell[11612, 337, 519, 11, 35, "Text",ExpressionUUID->"545fa26e-a0dc-4667-b6e6-803a2c00f50a"],
+Cell[12134, 350, 254284, 4134, 252, "Output",ExpressionUUID->"8305f9a4-29a5-4b86-b759-0a75b9fa47dd"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[266414, 4489, 629, 9, 68, "Section",ExpressionUUID->"e50b2161-852d-40d8-b3bc-261b1144621c"],
+Cell[266467, 4490, 629, 9, 68, "Section",ExpressionUUID->"e50b2161-852d-40d8-b3bc-261b1144621c"],
 Cell[CellGroupData[{
-Cell[267068, 4502, 298, 8, 54, "Subsection",ExpressionUUID->"c7083a2c-413e-4f36-af0c-4f0a5b5b3581"],
-Cell[267369, 4512, 2029, 60, 196, "Text",ExpressionUUID->"061cc034-91ad-4f2d-b9cb-5a65714b6516"]
+Cell[267121, 4503, 298, 8, 54, "Subsection",ExpressionUUID->"c7083a2c-413e-4f36-af0c-4f0a5b5b3581"],
+Cell[267422, 4513, 2029, 60, 196, "Text",ExpressionUUID->"061cc034-91ad-4f2d-b9cb-5a65714b6516"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[269435, 4577, 298, 8, 54, "Subsection",ExpressionUUID->"a9fcd776-05eb-4f6a-b2d1-e062658e7549"],
-Cell[269736, 4587, 1033, 30, 104, "Text",ExpressionUUID->"4550e30f-9d22-4431-9a74-590ca42dab29"]
+Cell[269488, 4578, 298, 8, 54, "Subsection",ExpressionUUID->"a9fcd776-05eb-4f6a-b2d1-e062658e7549"],
+Cell[269789, 4588, 1033, 30, 58, "Text",ExpressionUUID->"4550e30f-9d22-4431-9a74-590ca42dab29"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[270818, 4623, 531, 8, 68, "Section",ExpressionUUID->"95dc162a-b787-4643-9dfe-d77528ba15cd"],
+Cell[270871, 4624, 531, 8, 68, "Section",ExpressionUUID->"95dc162a-b787-4643-9dfe-d77528ba15cd"],
 Cell[CellGroupData[{
-Cell[271374, 4635, 298, 8, 54, "Subsection",ExpressionUUID->"1410da90-ce70-4e58-8b5f-e1b2d205b29f"],
-Cell[271675, 4645, 2999, 88, 472, "Text",ExpressionUUID->"9b8e1533-29a1-4360-83f9-a79bd310b9a6"],
-Cell[274677, 4735, 6161, 119, 422, "Input",ExpressionUUID->"3f801a44-2060-4236-aede-81ea60c62bbb"]
+Cell[271427, 4636, 298, 8, 54, "Subsection",ExpressionUUID->"1410da90-ce70-4e58-8b5f-e1b2d205b29f"],
+Cell[271728, 4646, 2999, 88, 403, "Text",ExpressionUUID->"9b8e1533-29a1-4360-83f9-a79bd310b9a6"],
+Cell[274730, 4736, 6161, 119, 422, "Input",ExpressionUUID->"3f801a44-2060-4236-aede-81ea60c62bbb"]
 }, Open  ]]
 }, Open  ]]
 }
