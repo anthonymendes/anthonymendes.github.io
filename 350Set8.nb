@@ -1,0 +1,336 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12436,        328]
+NotebookOptionsPosition[     11101,        297]
+NotebookOutlinePosition[     11489,        313]
+CellTagsIndexPosition[     11446,        310]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ StyleBox[
+  RowBox[{
+   RowBox[{"Set", " ", "8"}], ":", " ", 
+   RowBox[{"Linear", " ", "Algebra"}]}], "Title"]], "Input",
+ CellChangeTimes->{{3.919807936189116*^9, 3.919807953895212*^9}, {
+   3.919808208848558*^9, 3.9198082318120193`*^9}, {3.919809333380814*^9, 
+   3.919809336570117*^9}, {3.92024054647309*^9, 3.9202405477719917`*^9}, {
+   3.920302506608282*^9, 3.9203025169780607`*^9}, 3.920306369934359*^9, {
+   3.920306712763356*^9, 3.920306727132897*^9}, {3.9210746546570387`*^9, 
+   3.9210746580834618`*^9}, {3.921075196084837*^9, 3.921075207080585*^9}, {
+   3.921076386745256*^9, 3.921076386849423*^9}, {3.92116580248526*^9, 
+   3.921165812071307*^9}, {3.921182556628333*^9, 3.92118257012987*^9}, {
+   3.921413143772915*^9, 3.921413144157531*^9}, {3.921499154499137*^9, 
+   3.921499182060101*^9}, {3.9218533916685*^9, 3.921853396060192*^9}, {
+   3.921869112243034*^9, 3.921869113241489*^9}, {3.921869182203751*^9, 
+   3.921869184628964*^9}, {3.921878236116894*^9, 3.921878240250746*^9}, {
+   3.922196356449726*^9, 3.922196357749195*^9}, 3.9221964015295563`*^9, {
+   3.92271765166505*^9, 3.922717653875639*^9}, {3.922834029116836*^9, 
+   3.922834032614249*^9}, {3.922835625522875*^9, 3.922835637722274*^9}, {
+   3.92283608335926*^9, 3.922836085173115*^9}, {3.923145759624695*^9, 
+   3.923145759904626*^9}},ExpressionUUID->"16409c7f-ec68-4e16-9aee-\
+dddb4c664f06"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"9488f536-a6d6-4534-adfa-\
+364c993364c2"],
+
+Cell[TextData[{
+ "Define a function called ",
+ StyleBox["LinearlyIndependentQ[v__]", "Input"],
+ " that has input any number of vectors of the same dimension (the double \
+blank input ",
+ StyleBox["v__", "Input"],
+ " allows one or more vectors as input to the function because the double \
+blank pattern matches one or more expressions) and outputs ",
+ StyleBox["True", "Input"],
+ " if the vectors are linearly independent and ",
+ StyleBox["False", "Input"],
+ " otherwise."
+}], "Text",
+ CellChangeTimes->{{3.9230483099669237`*^9, 3.92304836045747*^9}, {
+   3.923048411914337*^9, 3.9230486262411537`*^9}, 
+   3.923048717334968*^9},ExpressionUUID->"32fc1b47-f141-456f-83e2-\
+4be00b46aa51"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"f3704d56-98a2-49c4-b2fb-\
+070af8ae94db"],
+
+Cell[TextData[{
+ "The Monte Carlo method (see \
+https://en.wikipedia.org/wiki/Monte_Carlo_method ) can be used to estimate \
+the probability that a function will output ",
+ StyleBox["True", "Input"],
+ " or ",
+ StyleBox["False", "Input"],
+ ".  The idea is to randomly generate ",
+ StyleBox["k", "Input"],
+ " inputs (where ",
+ StyleBox["k", "Input"],
+ " is a large number) to the function,  count the number of times a ",
+ StyleBox["True", "Input"],
+ " is seen, and then divide by ",
+ StyleBox["k", "Input"],
+ " to find a probability. \n\nUse the Monte Carlo method to estimate the \
+probability that an 10x10 matrix with entries either ",
+ StyleBox["0", "Input"],
+ " or ",
+ StyleBox["1", "Input"],
+ " will have a nonzero determinant. "
+}], "Text",
+ CellChangeTimes->{{3.922968453171543*^9, 3.922968501633892*^9}, {
+   3.922968603620631*^9, 3.922968642204762*^9}, {3.922968722354045*^9, 
+   3.922968828410966*^9}, {3.922968902990952*^9, 3.922969037533914*^9}, {
+   3.922969279697299*^9, 3.922969280664589*^9}, 
+   3.922971744242113*^9},ExpressionUUID->"f4b71eb0-074f-402e-b085-\
+94f622f618e2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"3a54ccf8-6272-489c-b134-\
+5634b38c8384"],
+
+Cell[TextData[{
+ "a. A probability vector is a vector that has nonnegative entries that sum \
+to ",
+ StyleBox["1", "Input"],
+ ".  Define a function ",
+ StyleBox["ProbabilityVector", "Input"],
+ " that takes as input a nonzero vector that has all entries ",
+ StyleBox[">=0", "Input"],
+ " or all entries ",
+ StyleBox["<=0", "Input"],
+ " and has output the vector scaled to be a probability vector. \n\nb. The \
+Perron-Frobenius theorem (see  \
+https://en.wikipedia.org/wiki/Perron%E2%80%93Frobenius_theorem ) says that a \
+square matrix with positive real entries has a unique eigenvector that is \
+also a probability vector.  Define a function ",
+ StyleBox["PerronVector", "Input"],
+ " that inputs a square matrix with positive real entries and outputs this \
+special vector."
+}], "Text",
+ CellChangeTimes->{{3.922973007396353*^9, 3.922973248600052*^9}, {
+   3.922975265502055*^9, 3.922975272000648*^9}, {3.922978626339406*^9, 
+   3.922978695010395*^9}, {3.92297876287827*^9, 3.922978813578145*^9}, {
+   3.922978896677506*^9, 3.922978963306411*^9}, 3.922978997358754*^9, {
+   3.922979030627768*^9, 3.9229790605329313`*^9}, {3.922980233875711*^9, 
+   3.9229802352977743`*^9}, {3.9229813709804564`*^9, 
+   3.9229813717207737`*^9}},ExpressionUUID->"6ba4b587-db03-46be-9f13-\
+5b6517875306"],
+
+Cell[TextData[{
+ "c. Define a sequence of vectors such ",
+ StyleBox["p[matrix_,n_]", "Input"],
+ " where ",
+ StyleBox["matrix", "Input"],
+ " is a square ",
+ StyleBox["k x k", "Input"],
+ " matrix with positive entries and ",
+ StyleBox["n", "Input"],
+ " an integer such that ",
+ StyleBox["p[0]", "Input"],
+ " is any vector in R^k with positive entries and ",
+ StyleBox["p[n]", "Input"],
+ " is the numerical result (meaning apply the function ",
+ StyleBox["N", "Input"],
+ ") of the probability vector in the direction of ",
+ StyleBox["matrix.p[matrix,n-1]", "Input"],
+ ".  Create a 100x100 matrix with random entries in ",
+ StyleBox["Range@20", "Input"],
+ " and compare terms in the sequence ",
+ StyleBox["p", "Input"],
+ " with the ",
+ StyleBox["PerronVector", "Input"],
+ ".\n\nd. Let ",
+ StyleBox["matrix", "Input"],
+ " be a fixed 5x5 matrix with random entries in ",
+ StyleBox["Range@10", "Input"],
+ ".  Let ",
+ StyleBox["m", "Input"],
+ " be the maximum eigenvalue for ",
+ StyleBox["matrix", "Input"],
+ ", let ",
+ StyleBox["R", "Input"],
+ " be the PerronVector for ",
+ StyleBox["matrix,", "Input"],
+ " and let ",
+ StyleBox["L", "Input"],
+ " be the PerronVector for the transpose of ",
+ StyleBox["matrix", "Input"],
+ ".  Show that ",
+ Cell[BoxData[
+  FractionBox[
+   RowBox[{
+    RowBox[{"Partition", "[", 
+     RowBox[{"R", ",", "1"}], "]"}], ".", 
+    RowBox[{"{", 
+     RowBox[{"Transpose", "[", "L", "]"}], "}"}]}], 
+   RowBox[{"R", ".", "L"}]]], "Input",
+  CellChangeTimes->{{3.922985331108753*^9, 3.922985470175617*^9}},
+  ExpressionUUID->"e12b611f-f10e-4da0-840e-9de7f9bb70a2"],
+ " and ",
+ StyleBox["MatrixPower[matrix/m,k]", "Input"],
+ " are nearly the same for large enough ",
+ StyleBox["k", "Input"],
+ ".\n\ne. Define a function ",
+ StyleBox["MinRandomTest[matrix_]", "Input"],
+ " with input a ",
+ StyleBox["k x k", "Input"],
+ " square matrix with positive entries.  The function should do the \
+following: \n1. Uses ",
+ StyleBox["Module", "Input"],
+ " to define a local variable ",
+ StyleBox["x", "Input"],
+ " such that ",
+ StyleBox["x", "Input"],
+ " is a vector in R^k with entries that are random real numbers between 0 and \
+1.\n2. Outputs the minimum value of the vector (",
+ StyleBox["matrix.x)/x", "Input"],
+ " (Mathematica performs this division of vectors componentwise).\nThen let \
+",
+ StyleBox["mat", "Input"],
+ " be a 5x5 fixed matrix with random entries in ",
+ StyleBox["Range@10", "Input"],
+ ".  Compare the maximum eigenvalue of ",
+ StyleBox["mat", "Input"],
+ " with the output of ",
+ StyleBox["Max@Table[MinRandomTest[mat],10^6]", "Input"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.922974342228777*^9, 3.922974372120201*^9}, {
+   3.922975211633644*^9, 3.922975222920183*^9}, {3.922975255662381*^9, 
+   3.922975322325811*^9}, {3.922975432655979*^9, 3.922975503340238*^9}, {
+   3.922975561515563*^9, 3.922975643394143*^9}, {3.922977842180006*^9, 
+   3.922977936359164*^9}, {3.922977966850985*^9, 3.922977987215415*^9}, {
+   3.922978036345046*^9, 3.922978039809607*^9}, {3.922978211208498*^9, 
+   3.922978212265493*^9}, {3.92297825460423*^9, 3.922978413101407*^9}, {
+   3.922979072779744*^9, 3.9229791396626873`*^9}, {3.922979169792058*^9, 
+   3.922979172300393*^9}, {3.9229792353525677`*^9, 3.9229793097514963`*^9}, 
+   3.922979711460252*^9, {3.922979799429249*^9, 3.922979843295353*^9}, {
+   3.9229799056296787`*^9, 3.9229799782760983`*^9}, {3.922980214697987*^9, 
+   3.922980218876123*^9}, {3.922980798913048*^9, 3.922980890618126*^9}, {
+   3.922980922529952*^9, 3.922980940216104*^9}, {3.922980981271923*^9, 
+   3.922981029444976*^9}, {3.9229813876891623`*^9, 3.92298139121205*^9}, 
+   3.92298165424242*^9, {3.922985482764698*^9, 3.9229855622522*^9}, {
+   3.922987149347598*^9, 3.92298733966212*^9}, {3.92298738892225*^9, 
+   3.922987416459832*^9}, {3.922987472982929*^9, 3.9229875838956537`*^9}, {
+   3.92298770778574*^9, 3.9229878100808363`*^9}, {3.92298869157095*^9, 
+   3.922988713681204*^9}},ExpressionUUID->"f6a087e7-21cd-47dc-b3f9-\
+2de1b7fb4fab"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"d330ebeb-3e78-4de6-b615-\
+7e4e78cfc74c"],
+
+Cell[TextData[{
+ "Define a function ",
+ StyleBox["PlotMatrixEffect3D[matrix_]", "Input"],
+ " where the input ",
+ StyleBox["matrix", "Input"],
+ " is a 3x3 matrix.  The output should be a 3D graphic that illustrates the \
+effect of matrix multiplication by ",
+ StyleBox["matrix", "Input"],
+ " on the unit circle in the ",
+ StyleBox["x,y", "Input"],
+ " plane, the unit circle in the ",
+ StyleBox["x,z", "Input"],
+ " plane, the unit circle in the ",
+ StyleBox["y,z", "Input"],
+ " plane, and the vectors ",
+ StyleBox["{1,0,0}", "Input"],
+ ", ",
+ StyleBox["{0,1,0}", "Input"],
+ ", ",
+ StyleBox["{0,0,1}", "Input"],
+ " in R^3. "
+}], "Text",
+ CellChangeTimes->{{3.9229671652160683`*^9, 
+  3.922967268249433*^9}},ExpressionUUID->"a737bcf8-9718-42c2-9702-\
+67c3ff8443b4"]
+}, Open  ]]
+},
+WindowSize->{720, 864},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.1 for Linux x86 (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"76b008e6-ea82-4bd3-a88d-5c5fcf151a8f"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1385, 22, 72, "Input",ExpressionUUID->"16409c7f-ec68-4e16-9aee-dddb4c664f06"],
+Cell[CellGroupData[{
+Cell[1968, 46, 298, 8, 54, "Subsection",ExpressionUUID->"9488f536-a6d6-4534-adfa-364c993364c2"],
+Cell[2269, 56, 686, 16, 104, "Text",ExpressionUUID->"32fc1b47-f141-456f-83e2-4be00b46aa51"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2992, 77, 298, 8, 54, "Subsection",ExpressionUUID->"f3704d56-98a2-49c4-b2fb-070af8ae94db"],
+Cell[3293, 87, 1091, 27, 173, "Text",ExpressionUUID->"f4b71eb0-074f-402e-b085-94f622f618e2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4421, 119, 298, 8, 54, "Subsection",ExpressionUUID->"3a54ccf8-6272-489c-b134-5634b38c8384"],
+Cell[4722, 129, 1284, 26, 219, "Text",ExpressionUUID->"6ba4b587-db03-46be-9f13-5b6517875306"],
+Cell[6009, 157, 3977, 98, 452, "Text",ExpressionUUID->"f6a087e7-21cd-47dc-b3f9-2de1b7fb4fab"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10023, 260, 298, 8, 54, "Subsection",ExpressionUUID->"d330ebeb-3e78-4de6-b615-7e4e78cfc74c"],
+Cell[10324, 270, 761, 24, 104, "Text",ExpressionUUID->"a737bcf8-9718-42c2-9702-67c3ff8443b4"]
+}, Open  ]]
+}
+]
+*)
+

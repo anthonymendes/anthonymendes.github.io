@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      9354,        268]
-NotebookOptionsPosition[      7668,        231]
-NotebookOutlinePosition[      8099,        248]
-CellTagsIndexPosition[      8056,        245]
+NotebookDataLength[      9398,        268]
+NotebookOptionsPosition[      7713,        231]
+NotebookOutlinePosition[      8143,        248]
+CellTagsIndexPosition[      8100,        245]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -53,15 +53,15 @@ Cell[TextData[{
 Cell[TextData[{
  "What is the probability that one of the first ",
  StyleBox["10^6", "Input"],
- " primes have remainder ",
+ " primes has remainder ",
  StyleBox["2", "Input"],
  " when divided by ",
  StyleBox["3", "Input"],
  "? "
 }], "Text",
  CellChangeTimes->{{3.92272222731851*^9, 3.922722328111082*^9}, {
-  3.922835090917935*^9, 
-  3.922835091013113*^9}},ExpressionUUID->"779c5cf2-a78d-4f29-b198-\
+  3.922835090917935*^9, 3.922835091013113*^9}, {3.923054196170761*^9, 
+  3.923054196305588*^9}},ExpressionUUID->"779c5cf2-a78d-4f29-b198-\
 0b9caef9ee2b"]
 }, Open  ]],
 
@@ -229,7 +229,7 @@ Cell[TextData[{
 241c3a115fa7"]
 }, Open  ]]
 },
-WindowSize->{1440, 864},
+WindowSize->{720, 864},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 TaggingRules-><|"TryRealOnly" -> False|>,
 FrontEndVersion->"13.1 for Linux x86 (64-bit) (June 16, 2022)",
@@ -250,25 +250,25 @@ Notebook[{
 Cell[558, 20, 1159, 18, 72, "Input",ExpressionUUID->"3f7eec7e-abba-4c8a-af1c-feed854edf26"],
 Cell[CellGroupData[{
 Cell[1742, 42, 298, 8, 54, "Subsection",ExpressionUUID->"50d73330-f88d-4cbb-80ce-307a595a2757"],
-Cell[2043, 52, 386, 12, 35, "Text",ExpressionUUID->"779c5cf2-a78d-4f29-b198-0b9caef9ee2b"]
+Cell[2043, 52, 431, 12, 35, "Text",ExpressionUUID->"779c5cf2-a78d-4f29-b198-0b9caef9ee2b"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2466, 69, 298, 8, 54, "Subsection",ExpressionUUID->"76296b36-cbd3-4940-91a1-7ea4afcedec8"],
-Cell[2767, 79, 524, 14, 35, "Text",ExpressionUUID->"f5b0a113-b1b0-4c88-bf84-d70e574503a3"]
+Cell[2511, 69, 298, 8, 54, "Subsection",ExpressionUUID->"76296b36-cbd3-4940-91a1-7ea4afcedec8"],
+Cell[2812, 79, 524, 14, 35, "Text",ExpressionUUID->"f5b0a113-b1b0-4c88-bf84-d70e574503a3"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3328, 98, 298, 8, 54, "Subsection",ExpressionUUID->"22c0379b-13bc-4efa-a2a4-0e2b2e313716"],
-Cell[3629, 108, 683, 13, 35, "Text",ExpressionUUID->"5ec06074-f188-424e-8c6b-8653bcd3735a"]
+Cell[3373, 98, 298, 8, 54, "Subsection",ExpressionUUID->"22c0379b-13bc-4efa-a2a4-0e2b2e313716"],
+Cell[3674, 108, 683, 13, 58, "Text",ExpressionUUID->"5ec06074-f188-424e-8c6b-8653bcd3735a"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4349, 126, 298, 8, 54, "Subsection",ExpressionUUID->"853fd631-35ff-467b-988c-7604291fee27"],
-Cell[4650, 136, 544, 11, 35, "Text",ExpressionUUID->"3e46f180-4ab7-45d4-bb36-63db3ea01875"],
-Cell[5197, 149, 818, 26, 33, "Input",ExpressionUUID->"701de469-aae3-49a2-83a1-393c3affcbc6"],
-Cell[6018, 177, 280, 9, 35, "Text",ExpressionUUID->"54bc96e3-ca96-4e74-a681-df058dec13fa"]
+Cell[4394, 126, 298, 8, 54, "Subsection",ExpressionUUID->"853fd631-35ff-467b-988c-7604291fee27"],
+Cell[4695, 136, 544, 11, 35, "Text",ExpressionUUID->"3e46f180-4ab7-45d4-bb36-63db3ea01875"],
+Cell[5242, 149, 818, 26, 33, "Input",ExpressionUUID->"701de469-aae3-49a2-83a1-393c3affcbc6"],
+Cell[6063, 177, 280, 9, 35, "Text",ExpressionUUID->"54bc96e3-ca96-4e74-a681-df058dec13fa"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6335, 191, 298, 8, 54, "Subsection",ExpressionUUID->"eab37a70-2acf-4332-8456-4ff629e00c13"],
-Cell[6636, 201, 1016, 27, 127, "Text",ExpressionUUID->"727fd6e9-ad1b-4335-b48f-241c3a115fa7"]
+Cell[6380, 191, 298, 8, 54, "Subsection",ExpressionUUID->"eab37a70-2acf-4332-8456-4ff629e00c13"],
+Cell[6681, 201, 1016, 27, 150, "Text",ExpressionUUID->"727fd6e9-ad1b-4335-b48f-241c3a115fa7"]
 }, Open  ]]
 }
 ]
