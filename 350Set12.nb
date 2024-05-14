@@ -363,7 +363,7 @@ Cell[TextData[{
   3.9243708313957043`*^9}},ExpressionUUID->"fa65d264-9ca5-4d5e-ab1f-\
 8507254b05d2"]
 }, Open  ]]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -632,9 +632,9 @@ Cell[CellGroupData[{
 Cell[11111, 337, 298, 8, 54, "Subsection",ExpressionUUID->"dddefbde-d9a4-454e-a0d9-004348f8f770"],
 Cell[11412, 347, 677, 16, 58, "Text",ExpressionUUID->"fa65d264-9ca5-4d5e-ab1f-8507254b05d2"]
 }, Open  ]]
-}, Open  ]],
+}, Closed]],
 Cell[CellGroupData[{
-Cell[12138, 369, 564, 8, 68, "Section",ExpressionUUID->"81e598f9-5e3f-48fb-b24c-fadf96584788"],
+Cell[12138, 369, 564, 8, 54, "Section",ExpressionUUID->"81e598f9-5e3f-48fb-b24c-fadf96584788"],
 Cell[CellGroupData[{
 Cell[12727, 381, 298, 8, 54, "Subsection",ExpressionUUID->"33f8b365-167b-41e5-beba-72af99936ce8"],
 Cell[13028, 391, 625, 18, 81, "Text",ExpressionUUID->"8d21d1aa-1b80-463c-b88e-0b64354bc2af"],
