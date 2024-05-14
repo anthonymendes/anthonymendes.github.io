@@ -1,0 +1,824 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     28563,        816]
+NotebookOptionsPosition[     24036,        738]
+NotebookOutlinePosition[     24424,        754]
+CellTagsIndexPosition[     24381,        751]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ StyleBox[
+  RowBox[{
+   RowBox[{"Set", " ", "13"}], ":", " ", "Combinatorics"}], "Title"]], "Input",\
+
+ CellChangeTimes->{{3.919807936189116*^9, 3.919807953895212*^9}, {
+   3.919808208848558*^9, 3.9198082318120193`*^9}, {3.919809333380814*^9, 
+   3.919809336570117*^9}, {3.92024054647309*^9, 3.9202405477719917`*^9}, {
+   3.920302506608282*^9, 3.9203025169780607`*^9}, 3.920306369934359*^9, {
+   3.920306712763356*^9, 3.920306727132897*^9}, {3.9210746546570387`*^9, 
+   3.9210746580834618`*^9}, {3.921075196084837*^9, 3.921075207080585*^9}, {
+   3.921076386745256*^9, 3.921076386849423*^9}, {3.92116580248526*^9, 
+   3.921165812071307*^9}, {3.921182556628333*^9, 3.92118257012987*^9}, {
+   3.921413143772915*^9, 3.921413144157531*^9}, {3.921499154499137*^9, 
+   3.921499182060101*^9}, {3.9218533916685*^9, 3.921853396060192*^9}, {
+   3.921869112243034*^9, 3.921869113241489*^9}, {3.921869182203751*^9, 
+   3.921869184628964*^9}, {3.921878236116894*^9, 3.921878240250746*^9}, {
+   3.922196356449726*^9, 3.922196357749195*^9}, 3.9221964015295563`*^9, {
+   3.92271765166505*^9, 3.922717653875639*^9}, {3.922834029116836*^9, 
+   3.922834032614249*^9}, {3.922835625522875*^9, 3.922835637722274*^9}, {
+   3.92283608335926*^9, 3.922836085173115*^9}, {3.92314642656995*^9, 
+   3.923146427546648*^9}, 3.923146468643402*^9, {3.9234020748606367`*^9, 
+   3.9234021020736647`*^9}, {3.923405041346549*^9, 3.923405044482031*^9}, {
+   3.923405135885439*^9, 3.923405135994376*^9}, {3.923668778727644*^9, 
+   3.923668786005205*^9}, {3.924279393098461*^9, 3.924279399553339*^9}, {
+   3.9244633087401114`*^9, 3.924463309002322*^9}, {3.924519001067925*^9, 
+   3.924519003146964*^9}, {3.924519051254304*^9, 3.924519055035244*^9}, {
+   3.924715141547956*^9, 
+   3.924715141806542*^9}},ExpressionUUID->"11d9fb26-6bbf-4f5c-8404-\
+615a168c1c58"],
+
+Cell[CellGroupData[{
+
+Cell["Words", "Section",
+ CellChangeTimes->{{3.923511911101522*^9, 3.9235119163007402`*^9}, {
+  3.9236750028049707`*^9, 3.923675037070533*^9}, {3.92376109691994*^9, 
+  3.923761098856876*^9}, {3.92394971034903*^9, 3.923949716585335*^9}, {
+  3.924279426504402*^9, 3.9242794437710657`*^9}, {3.9242863385828876`*^9, 
+  3.924286339595612*^9}, {3.924519021495878*^9, 3.9245190239954844`*^9}, {
+  3.92461377564571*^9, 3.924613778342867*^9}, {3.924615710751094*^9, 
+  3.924615711285304*^9}},ExpressionUUID->"a43f6413-a025-4464-a786-\
+273b6d00f6fc"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"c1a67481-cf94-44f0-aba4-\
+a2770195a67c"],
+
+Cell[TextData[{
+ "How many positive integers less than ",
+ StyleBox["10^5", "Input"],
+ " use the digit ",
+ StyleBox["4", "Input"],
+ " at least once and the digit ",
+ StyleBox["5", "Input"],
+ " exactly once? "
+}], "Text",
+ CellChangeTimes->{{3.9246344447874517`*^9, 
+  3.924634471847602*^9}},ExpressionUUID->"2e9b25a2-295a-4513-b186-\
+7e14a3657c77"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"2cf9e6e0-a0fe-4e56-add3-\
+54b81cc28bf0"],
+
+Cell["\<\
+How many permutations of the letters in the word \
+\[OpenCurlyDoubleQuote]Mississippi\[CloseCurlyDoubleQuote] have a \
+\[OpenCurlyDoubleQuote]p\[CloseCurlyDoubleQuote] in either the first, second, \
+or third position? \
+\>", "Text",
+ CellChangeTimes->{{3.924648589183585*^9, 
+  3.9246486175812817`*^9}},ExpressionUUID->"f4e96d95-f734-46f1-a165-\
+3948c6993e70"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"5a80f6c3-6892-43d4-846a-\
+58c8fe7d19b9"],
+
+Cell[TextData[{
+ "How many ways can ",
+ StyleBox["1", "Input"],
+ ",",
+ StyleBox["1", "Input"],
+ ",",
+ StyleBox["1", "Input"],
+ ",",
+ StyleBox["2", "Input"],
+ ",",
+ StyleBox["2", "Input"],
+ ",",
+ StyleBox["2", "Input"],
+ ",",
+ StyleBox["3", "Input"],
+ ",",
+ StyleBox["3", "Input"],
+ ",",
+ StyleBox["3", "Input"],
+ " be permuted such that 2 ",
+ StyleBox["2", "Input"],
+ "\[CloseCurlyQuote]s appear consecutively? "
+}], "Text",
+ CellChangeTimes->{{3.924634752289913*^9, 3.924634819970459*^9}, {
+  3.924636805862962*^9, 3.924636837852828*^9}, {3.9246368682891397`*^9, 
+  3.924636878228489*^9}},ExpressionUUID->"d7949805-31db-4be2-8ad9-\
+85158ffcffa4"]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Permutations", "Section",
+ CellChangeTimes->{{3.923511911101522*^9, 3.9235119163007402`*^9}, {
+  3.9236750028049707`*^9, 3.923675037070533*^9}, {3.92376109691994*^9, 
+  3.923761098856876*^9}, {3.92394971034903*^9, 3.923949716585335*^9}, {
+  3.924279426504402*^9, 3.9242794437710657`*^9}, {3.9242863385828876`*^9, 
+  3.924286339595612*^9}, {3.924519021495878*^9, 3.9245190239954844`*^9}, {
+  3.92461377564571*^9, 
+  3.924613778342867*^9}},ExpressionUUID->"a2a10c1c-ba25-4359-984f-\
+ca496940d7c8"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"bcac0a37-6db7-4f6d-80ee-\
+dc7398045945"],
+
+Cell[TextData[{
+ "A derangement of ",
+ StyleBox["n", "Input"],
+ " is a permutation of ",
+ StyleBox["1,2,...,n", "Input"],
+ " such that ",
+ StyleBox["i", "Input"],
+ " is never in position ",
+ StyleBox["i", "Input"],
+ " for any ",
+ StyleBox["i", "Input"],
+ ".  \n\na. Write a function called ",
+ StyleBox["DerangementQ[p]", "Input"],
+ " that has input a permutation ",
+ StyleBox["p", "Input"],
+ " and outputs ",
+ StyleBox["True", "Input"],
+ " if ",
+ StyleBox["p", "Input"],
+ "  is a derangement and ",
+ StyleBox["False", "Input"],
+ " otherwise."
+}], "Text",
+ CellChangeTimes->{{3.9246110833016033`*^9, 3.924611118293182*^9}, {
+   3.924611159855143*^9, 3.924611282708736*^9}, 3.9246114138052673`*^9, {
+   3.924611504011682*^9, 3.92461158552277*^9}, {3.924611649213111*^9, 
+   3.924611662671657*^9}},ExpressionUUID->"f51e1182-491a-4a29-9ee5-\
+efe899842e2f"],
+
+Cell[TextData[{
+ "b. Use the Monte-Carlo method to estimate the probability that a random \
+permutation of ",
+ StyleBox["100", "Input"],
+ " is a derangement (see ",
+ StyleBox["RandomSample", "Input"],
+ "). "
+}], "Text",
+ CellChangeTimes->{{3.9246132296550407`*^9, 3.924613270294487*^9}, {
+  3.924613342622563*^9, 
+  3.924613372571931*^9}},ExpressionUUID->"bba8f944-da48-439f-b969-\
+1697c4689884"],
+
+Cell[TextData[{
+ "c. Define a function named ",
+ StyleBox["Derangements[n]", "Input"],
+ " that has input an integer ",
+ StyleBox["n", "Input"],
+ " and output the number of derangements of ",
+ StyleBox["n", "Input"],
+ ". Create a list of the first ",
+ StyleBox["9", "Input"],
+ " values of ",
+ StyleBox["Derangements", "Input"],
+ ", then look this sequence up in the OEIS (see https://oeis.org/ )."
+}], "Text",
+ CellChangeTimes->{{3.9246110833016033`*^9, 3.924611118293182*^9}, {
+   3.924611159855143*^9, 3.924611282708736*^9}, 3.9246114138052673`*^9, {
+   3.924611504011682*^9, 3.924611590830472*^9}, 
+   3.924613271632025*^9},ExpressionUUID->"fed707c1-2cbd-46af-9cf5-\
+1810a9ce920a"],
+
+Cell[TextData[{
+ "d. Define a recursion by ",
+ StyleBox["a[0] = 1", "Input"],
+ " and ",
+ StyleBox["a[n] = n a[n-1]+(-1)^n", "Input"],
+ ".  Show that this recursion gives the same value as ",
+ StyleBox["Derangements", "Input"],
+ " for values of ",
+ StyleBox["n", "Input"],
+ " between ",
+ StyleBox["0", "Input"],
+ " and ",
+ StyleBox["9", "Input"],
+ ".  (They are actually the same for all ",
+ StyleBox["n", "Input"],
+ ")."
+}], "Text",
+ CellChangeTimes->{{3.924613037750732*^9, 3.924613113286138*^9}, 
+   3.9246132726715813`*^9, {3.92461373012009*^9, 
+   3.9246137311838017`*^9}},ExpressionUUID->"1695b67d-0b38-4ccc-ac68-\
+f25d8a7d0eef"],
+
+Cell[TextData[{
+ "d. Define a recursion by ",
+ StyleBox["b[0]=1", "Input"],
+ ", ",
+ StyleBox["b[1]=0,", "Input"],
+ " and b",
+ StyleBox["[n] = (n-1)(b[n-1]+b[n-2])", "Input"],
+ ".  Show that this recursion gives the same value as ",
+ StyleBox["Derangements", "Input"],
+ " for values of ",
+ StyleBox["n", "Input"],
+ " between ",
+ StyleBox["0", "Input"],
+ " and ",
+ StyleBox["9", "Input"],
+ ".  (They are actually the same for all ",
+ StyleBox["n", "Input"],
+ ")."
+}], "Text",
+ CellChangeTimes->{{3.924613037750732*^9, 3.924613113286138*^9}, 
+   3.9246132726715813`*^9, {3.92461373012009*^9, 3.9246137311838017`*^9}, {
+   3.9246163075683126`*^9, 
+   3.924616362654996*^9}},ExpressionUUID->"46088fc8-871d-41c8-a2ed-\
+529c22f54417"],
+
+Cell[TextData[{
+ "e. Use ",
+ StyleBox["DSolve", "Input"],
+ " to solve the differential equation in the next cell: "
+}], "Text",
+ CellChangeTimes->{{3.9246164083258123`*^9, 
+  3.9246164400195103`*^9}},ExpressionUUID->"6a9a5c58-929a-493d-b126-\
+66fe668b98e3"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"1", "-", "x"}], ")"}], 
+     RowBox[{
+      RowBox[{"y", "'"}], "[", "x", "]"}]}], "==", 
+    RowBox[{"x", " ", 
+     RowBox[{"y", "[", "x", "]"}]}]}], ",", 
+   RowBox[{
+    RowBox[{"y", "[", "0", "]"}], "==", "1"}]}], "}"}]], "Input",ExpressionUUI\
+D->"743b2b77-d45f-46ee-9aa4-d79d3174f216"],
+
+Cell[TextData[{
+ "Then use ",
+ StyleBox["Table", "Input"],
+ " together with ",
+ StyleBox["SeriesCoefficient", "Input"],
+ " to create a list of the coefficient of ",
+ StyleBox["x^n", "Input"],
+ " in the series centered at ",
+ StyleBox["x = 0", "Input"],
+ " for the solution to this differential equation as ",
+ StyleBox["n", "Input"],
+ " ranges from ",
+ StyleBox["0", "Input"],
+ " to ",
+ StyleBox["10", "Input"],
+ " .  Show that multiplying the coefficient of ",
+ StyleBox["x^n", "Input"],
+ " by ",
+ StyleBox["n!", "Input"],
+ " gives the number of derangements of ",
+ StyleBox["n", "Input"],
+ " for ",
+ StyleBox["n = 1,...,8", "Input"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.924615444011675*^9, 3.9246154569141817`*^9}, {
+  3.9246155074806547`*^9, 3.924615560513753*^9}, {3.9246164473738823`*^9, 
+  3.924616460522615*^9}, {3.9246165171541986`*^9, 3.924616517863304*^9}, {
+  3.924622471708619*^9, 
+  3.924622475192925*^9}},ExpressionUUID->"762bc748-f755-4da6-8fad-\
+9a4eeb66180c"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"5e71de95-d2bf-40f5-86f0-\
+03ea028ff28a"],
+
+Cell[TextData[{
+ "a. Write a function named ",
+ StyleBox["RowInsert[L_,x_]", "Input"],
+ " with input a list of nondecreasing lists ",
+ StyleBox["L", "Input"],
+ " and an integer ",
+ StyleBox["x", "Input"],
+ " and does the following: \n\n1. If ",
+ StyleBox["L", "Input"],
+ " is empty, then output ",
+ StyleBox["{{x}}", "Input"],
+ "\n2. If ",
+ StyleBox["x", "Input"],
+ " is larger than every element in ",
+ StyleBox["First@L", "Input"],
+ ", then return the list created by appending ",
+ StyleBox["x", "Input"],
+ " to the first list in ",
+ StyleBox["L", "Input"],
+ ". \n3. If there is a ",
+ StyleBox["y", "Input"],
+ " in ",
+ StyleBox["First@L", "Input"],
+ " such that ",
+ StyleBox["y > x", "Input"],
+ ", choose the smallest such ",
+ StyleBox["y", "Input"],
+ ".  Output the list ",
+ StyleBox["L", "Input"],
+ " found by replacing ",
+ StyleBox["y", "Input"],
+ " with ",
+ StyleBox["x", "Input"],
+ " in the first row of ",
+ StyleBox["L", "Input"],
+ " and then row inserting ",
+ StyleBox["y", "Input"],
+ " into ",
+ StyleBox["Rest@L", "Input"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.924617052896309*^9, 3.924617162719952*^9}, {
+  3.924617217229434*^9, 3.9246172730580807`*^9}, {3.924617790449115*^9, 
+  3.924617948891527*^9}, {3.924617983396319*^9, 3.9246180761092033`*^9}, {
+  3.924618507225449*^9, 3.9246187440793867`*^9}, {3.924618818867571*^9, 
+  3.92461885329739*^9}},ExpressionUUID->"a92c81d4-a976-4310-b8ea-\
+199a6180634c"],
+
+Cell[TextData[{
+ "b. The Schensted algorithm has input a permutation of ",
+ StyleBox["1,2,...,n", "Input"],
+ " and output \na list of lists with union ",
+ StyleBox["1,2,...,n", "Input"],
+ " such that when the lists are stacked on top of one another, the lists \
+would be increasing in both rows and columns.  The algorithm starts with the \
+empty list ",
+ StyleBox["L", "Input"],
+ " and then successively uses ",
+ StyleBox["RowInsert", "Input"],
+ " to place each element in the permutation (in order) into ",
+ StyleBox["L", "Input"],
+ ".  For example, the algorithm turns the permutation ",
+ StyleBox["{2, 1, 3, 6, 5, 7, 10, 8, 9, 4}", "Input"],
+ " into  ",
+ StyleBox["{{1, 3, 4, 7, 8, 9}, {2, 5, 10}, {6}}", "Input"],
+ ".  To see the increasing rows and columns, we can use ",
+ StyleBox["TableForm", "Input"],
+ ", as shown below:"
+}], "Text",
+ CellChangeTimes->{{3.924617052896309*^9, 3.924617162719952*^9}, {
+  3.924617217229434*^9, 3.9246172730580807`*^9}, {3.924617790449115*^9, 
+  3.924617948891527*^9}, {3.924617983396319*^9, 3.9246180761092033`*^9}, {
+  3.924618507225449*^9, 3.9246187440793867`*^9}, {3.924618818867571*^9, 
+  3.924618839438306*^9}, {3.924618872064787*^9, 3.924618976830702*^9}, {
+  3.924619335407702*^9, 
+  3.9246193374989357`*^9}},ExpressionUUID->"c84bff65-1e1c-4d82-be5f-\
+23fc7ceb4911"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "1", ",", " ", "3", ",", " ", "4", ",", " ", "7", ",", " ", "8", ",", 
+       " ", "9"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", " ", "5", ",", " ", "10"}], "}"}], ",", " ", 
+     RowBox[{"{", "6", "}"}]}], "}"}], "Input"], 
+  StyleBox["//", "Input"], "TableForm"}]], "Input",
+ CellChangeTimes->{{3.924618089142323*^9, 3.924618091155016*^9}},
+ CellLabel->
+  "In[268]:=",ExpressionUUID->"014db069-f115-4436-a559-572ff95a50a6"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {"1", "3", "4", "7", "8", "9"},
+    {"2", "5", "10", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"6", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"}
+   },
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}}],
+  TableForm[{{1, 3, 4, 7, 8, 9}, {2, 5, 10}, {6}}]]], "Output",
+ CellChangeTimes->{3.924618091334897*^9},
+ CellLabel->
+  "Out[268]//TableForm=",ExpressionUUID->"ade1ce6c-0794-4667-a018-\
+5cb192b46dd7"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Write a function called ",
+ StyleBox["Schensted", "Input"],
+ " that inputs a permutation and outputs the result of the above algorithm."
+}], "Text",
+ CellChangeTimes->{{3.924618110526659*^9, 3.924618210928877*^9}, {
+   3.9246184800016937`*^9, 3.924618504768545*^9}, 
+   3.92471528558418*^9},ExpressionUUID->"725586be-4231-4306-ad1e-\
+d3edb353557b"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"4a0a8d1b-c492-4ba9-b256-\
+89b6e59c8210"],
+
+Cell["\<\
+Motzkin sequence of lists is defined recursively in the next cell.\
+\>", "Text",
+ CellChangeTimes->{{3.9245573721382637`*^9, 3.924557378303694*^9}, {
+  3.924557413337566*^9, 
+  3.924557413930434*^9}},ExpressionUUID->"960ea670-11f1-4ea5-aa89-\
+cafcc608c640"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Motzkin", "[", "n_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Motzkin", "[", "n", "]"}], "=", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"n", "==", "0"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "}"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Join", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"Prepend", "[", 
+          RowBox[{"#", ",", "0"}], "]"}], "&"}], "/@", 
+        RowBox[{"Motzkin", "[", 
+         RowBox[{"n", "-", "1"}], "]"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Flatten", "[", 
+        RowBox[{
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"Flatten", "@", 
+            RowBox[{"{", 
+             RowBox[{"1", ",", "a", ",", 
+              RowBox[{"-", "1"}], ",", "b"}], "}"}]}], ",", 
+           RowBox[{"{", 
+            RowBox[{"i", ",", "0", ",", 
+             RowBox[{"n", "-", "2"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"a", ",", 
+             RowBox[{"Motzkin", "[", "i", "]"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"b", ",", 
+             RowBox[{"Motzkin", "[", 
+              RowBox[{"n", "-", "i", "-", "2"}], "]"}]}], "}"}]}], "]"}], ",",
+          "2"}], "]"}]}], "]"}]}], "]"}]}]}]], "Input",ExpressionUUID->\
+"40952842-4d72-4cbc-b200-c0bf32598702"],
+
+Cell[TextData[{
+ "a. Modify this code to define a function named ",
+ StyleBox["Cata[n]", "Input"],
+ " that outputs all lists of length ",
+ StyleBox["n", "Input"],
+ " that contain exactly ",
+ StyleBox["n/2", "Input"],
+ " occurrences of ",
+ StyleBox["1", "Input"],
+ "\[CloseCurlyQuote]s and ",
+ StyleBox["n/2", "Input"],
+ " occurrences of ",
+ StyleBox["-1", "Input"],
+ "\[CloseCurlyQuote]s such that every partial sum is nonnegative (this means \
+that ",
+ StyleBox["Cata[n]", "Input"],
+ " should be empty if ",
+ StyleBox["n", "Input"],
+ " is odd)."
+}], "Text",
+ CellChangeTimes->{{3.924557416320458*^9, 3.924557493361888*^9}, {
+  3.924557553255653*^9, 3.924557652623907*^9}, {3.92461061261031*^9, 
+  3.9246106135587254`*^9}, {3.924610698145647*^9, 
+  3.924610698952735*^9}},ExpressionUUID->"62131fe0-30d7-4db3-80be-\
+c1919450c6d9"],
+
+Cell[TextData[{
+ "b. How many sequences in ",
+ StyleBox["Cata[20]", "Input"],
+ " feature four consecutive  ",
+ StyleBox["1", "Input"],
+ "\[CloseCurlyQuote]s? "
+}], "Text",
+ CellChangeTimes->{{3.924610701758852*^9, 3.924610723813128*^9}, {
+  3.924610771916856*^9, 
+  3.924610776339655*^9}},ExpressionUUID->"0ff9319e-641e-4f3d-a08e-\
+3608a8b981dc"]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Generating functions", "Section",
+ CellChangeTimes->{{3.923511911101522*^9, 3.9235119163007402`*^9}, {
+  3.9236750028049707`*^9, 3.923675037070533*^9}, {3.92376109691994*^9, 
+  3.923761098856876*^9}, {3.92394971034903*^9, 3.923949716585335*^9}, {
+  3.924279426504402*^9, 3.9242794437710657`*^9}, {3.9242863385828876`*^9, 
+  3.924286339595612*^9}, {3.924519021495878*^9, 3.9245190239954844`*^9}, {
+  3.92461377564571*^9, 3.924613778342867*^9}, {3.924615740273096*^9, 
+  3.924615741895438*^9}, {3.9246479931114798`*^9, 
+  3.9246479971597033`*^9}},ExpressionUUID->"720e8071-2173-4070-85ac-\
+b680341a5b01"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+   3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+   3.921336187166984*^9}, 
+   3.924615735909684*^9},ExpressionUUID->"a941bd1b-a255-4f72-9895-\
+5a550815129e"],
+
+Cell[TextData[{
+ "An integer partition of ",
+ StyleBox["n", "Input"],
+ " is a weakly decreasing list of positive integers that sum to ",
+ StyleBox["n", "Input"],
+ ".  For example, the next cell gives all integer partitions of ",
+ StyleBox["5", "Input"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.924709063515277*^9, 3.924709098324945*^9}, {
+  3.924709165325976*^9, 
+  3.92470918480365*^9}},ExpressionUUID->"d9f41b8d-cb7c-4314-924f-\
+3bcb0336a147"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"IntegerPartitions", "@", "5"}]], "Input",
+ CellChangeTimes->{{3.924709156265942*^9, 3.924709162905005*^9}},
+ CellLabel->"In[68]:=",ExpressionUUID->"a99b124b-599a-4ba3-8f78-ceb35f6d326f"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "5", "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "2", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "1", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1", ",", "1", ",", "1"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.924709163321228*^9},
+ CellLabel->"Out[68]=",ExpressionUUID->"bfb65836-1d5a-46ae-a850-432a04655500"]
+}, Open  ]],
+
+Cell[TextData[{
+ "a. The generating function for the number of integer partitions of ",
+ StyleBox["n", "Input"],
+ " is in the next cell.  Use it to find the number of integer partitions of \
+",
+ StyleBox["100", "Input"],
+ ". "
+}], "Text",
+ CellChangeTimes->{{3.924709230640134*^9, 3.924709263577565*^9}, {
+  3.9247093172335157`*^9, 
+  3.924709330335697*^9}},ExpressionUUID->"e3742f33-5cb7-40ef-adb3-\
+e682eeb75cdb"],
+
+Cell[BoxData[
+ RowBox[{"1", "/", 
+  RowBox[{"Product", "[", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      RowBox[{"x", "^", "i"}]}], ")"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "Infinity"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.924709274012149*^9, 
+  3.924709308267705*^9}},ExpressionUUID->"40c9f26f-42bc-4e18-9afa-\
+a11a91bf87e3"],
+
+Cell[TextData[{
+ "b. Write a function named ",
+ StyleBox["OddPartitions[n]", "Input"],
+ " that has input an integer ",
+ StyleBox["n", "Input"],
+ " and output the number of integer partitions of ",
+ StyleBox["n", "Input"],
+ " with only odd sized parts. Then create a list of ",
+ StyleBox["OddPartitions", "Input"],
+ " for the first ",
+ StyleBox["20", "Input"],
+ " positive integers. "
+}], "Text",
+ CellChangeTimes->{{3.924709332051354*^9, 3.924709365167089*^9}, {
+  3.924709912708942*^9, 
+  3.9247099753171387`*^9}},ExpressionUUID->"5f052ef0-572c-4429-b4a8-\
+eedc39c9fa83"],
+
+Cell[TextData[{
+ "c. The generating function for ",
+ StyleBox["OddPartitions[n]", "Input"],
+ " is in the next cell.  Use it to find the value of ",
+ StyleBox["OddPartitions[1000]", "Input"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.924709977448852*^9, 
+  3.9247100096118727`*^9}},ExpressionUUID->"682b170a-6875-478b-9a58-\
+a3d758862a7e"],
+
+Cell[BoxData[
+ RowBox[{"Series", "[", 
+  RowBox[{
+   RowBox[{"Product", "[", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"1", "+", 
+       RowBox[{"x", "^", "i"}]}], ")"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "Infinity"}], "}"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "100"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.9247103289576406`*^9, 3.924710352463819*^9}},
+ CellLabel->"In[88]:=",ExpressionUUID->"5fcbab4b-898e-49a1-9be9-539521ee01da"],
+
+Cell[TextData[{
+ "d. How many integer partitions of ",
+ StyleBox["32", "Input"],
+ " have a repeated part? "
+}], "Text",
+ CellChangeTimes->{{3.924710384019705*^9, 3.9247104029983397`*^9}, {
+  3.924710443178442*^9, 
+  3.924710455627108*^9}},ExpressionUUID->"8c50e0d2-f0ca-44d2-a666-\
+4c9b43928d56"],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{
+  3.924713374642028*^9},ExpressionUUID->"29d60206-493f-4c65-aa09-\
+ecd44767326e"]
+}, Closed]]
+}, Open  ]]
+},
+WindowSize->{720, 864},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.1 for Linux x86 (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"68190419-1e14-4113-9833-f1ccc6b1ebf1"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1834, 29, 72, "Input",ExpressionUUID->"11d9fb26-6bbf-4f5c-8404-615a168c1c58"],
+Cell[CellGroupData[{
+Cell[2417, 53, 540, 8, 68, "Section",ExpressionUUID->"a43f6413-a025-4464-a786-273b6d00f6fc"],
+Cell[CellGroupData[{
+Cell[2982, 65, 298, 8, 54, "Subsection",ExpressionUUID->"c1a67481-cf94-44f0-aba4-a2770195a67c"],
+Cell[3283, 75, 348, 11, 58, "Text",ExpressionUUID->"2e9b25a2-295a-4513-b186-7e14a3657c77"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[3668, 91, 298, 8, 38, "Subsection",ExpressionUUID->"2cf9e6e0-a0fe-4e56-add3-54b81cc28bf0"],
+Cell[3969, 101, 370, 8, 58, "Text",ExpressionUUID->"f4e96d95-f734-46f1-a165-3948c6993e70"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[4376, 114, 298, 8, 38, "Subsection",ExpressionUUID->"5a80f6c3-6892-43d4-846a-58c8fe7d19b9"],
+Cell[4677, 124, 647, 26, 35, "Text",ExpressionUUID->"d7949805-31db-4be2-8ad9-85158ffcffa4"]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5373, 156, 501, 8, 68, "Section",ExpressionUUID->"a2a10c1c-ba25-4359-984f-ca496940d7c8"],
+Cell[CellGroupData[{
+Cell[5899, 168, 298, 8, 54, "Subsection",ExpressionUUID->"bcac0a37-6db7-4f6d-80ee-dc7398045945"],
+Cell[6200, 178, 853, 27, 104, "Text",ExpressionUUID->"f51e1182-491a-4a29-9ee5-efe899842e2f"],
+Cell[7056, 207, 396, 11, 58, "Text",ExpressionUUID->"bba8f944-da48-439f-b969-1697c4689884"],
+Cell[7455, 220, 683, 17, 81, "Text",ExpressionUUID->"fed707c1-2cbd-46af-9cf5-1810a9ce920a"],
+Cell[8141, 239, 634, 20, 81, "Text",ExpressionUUID->"1695b67d-0b38-4ccc-ac68-f25d8a7d0eef"],
+Cell[8778, 261, 727, 23, 81, "Text",ExpressionUUID->"46088fc8-871d-41c8-a2ed-529c22f54417"],
+Cell[9508, 286, 257, 7, 35, "Text",ExpressionUUID->"6a9a5c58-929a-493d-b126-66fe668b98e3"],
+Cell[9768, 295, 391, 13, 33, "Input",ExpressionUUID->"743b2b77-d45f-46ee-9aa4-d79d3174f216"],
+Cell[10162, 310, 979, 30, 104, "Text",ExpressionUUID->"762bc748-f755-4da6-8fad-9a4eeb66180c"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[11178, 345, 298, 8, 38, "Subsection",ExpressionUUID->"5e71de95-d2bf-40f5-86f0-03ea028ff28a"],
+Cell[11479, 355, 1420, 46, 196, "Text",ExpressionUUID->"a92c81d4-a976-4310-b8ea-199a6180634c"],
+Cell[12902, 403, 1314, 28, 173, "Text",ExpressionUUID->"c84bff65-1e1c-4d82-be5f-23fc7ceb4911"],
+Cell[CellGroupData[{
+Cell[14241, 435, 553, 15, 33, "Input",ExpressionUUID->"014db069-f115-4436-a559-572ff95a50a6"],
+Cell[14797, 452, 716, 18, 65, "Output",ExpressionUUID->"ade1ce6c-0794-4667-a018-5cb192b46dd7"]
+}, Open  ]],
+Cell[15528, 473, 366, 8, 58, "Text",ExpressionUUID->"725586be-4231-4306-ad1e-d3edb353557b"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[15931, 486, 298, 8, 38, "Subsection",ExpressionUUID->"4a0a8d1b-c492-4ba9-b256-89b6e59c8210"],
+Cell[16232, 496, 267, 6, 35, "Text",ExpressionUUID->"960ea670-11f1-4ea5-aa89-cafcc608c640"],
+Cell[16502, 504, 1339, 37, 92, "Input",ExpressionUUID->"40952842-4d72-4cbc-b200-c0bf32598702"],
+Cell[17844, 543, 829, 24, 81, "Text",ExpressionUUID->"62131fe0-30d7-4db3-80be-c1919450c6d9"],
+Cell[18676, 569, 346, 10, 35, "Text",ExpressionUUID->"0ff9319e-641e-4f3d-a08e-3608a8b981dc"]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19071, 585, 608, 9, 68, "Section",ExpressionUUID->"720e8071-2173-4070-85ac-b680341a5b01"],
+Cell[CellGroupData[{
+Cell[19704, 598, 326, 9, 54, "Subsection",ExpressionUUID->"a941bd1b-a255-4f72-9895-5a550815129e"],
+Cell[20033, 609, 444, 12, 58, "Text",ExpressionUUID->"d9f41b8d-cb7c-4314-924f-3bcb0336a147"],
+Cell[CellGroupData[{
+Cell[20502, 625, 210, 3, 29, "Input",ExpressionUUID->"a99b124b-599a-4ba3-8f78-ceb35f6d326f"],
+Cell[20715, 630, 635, 18, 33, "Output",ExpressionUUID->"bfb65836-1d5a-46ae-a850-432a04655500"]
+}, Open  ]],
+Cell[21365, 651, 415, 11, 58, "Text",ExpressionUUID->"e3742f33-5cb7-40ef-adb3-e682eeb75cdb"],
+Cell[21783, 664, 369, 11, 31, "Input",ExpressionUUID->"40c9f26f-42bc-4e18-9afa-a11a91bf87e3"],
+Cell[22155, 677, 572, 16, 81, "Text",ExpressionUUID->"5f052ef0-572c-4429-b4a8-eedc39c9fa83"],
+Cell[22730, 695, 335, 9, 58, "Text",ExpressionUUID->"682b170a-6875-478b-9a58-a3d758862a7e"],
+Cell[23068, 706, 491, 13, 29, "Input",ExpressionUUID->"5fcbab4b-898e-49a1-9be9-539521ee01da"],
+Cell[23562, 721, 296, 8, 35, "Text",ExpressionUUID->"8c50e0d2-f0ca-44d2-a666-4c9b43928d56"],
+Cell[23861, 731, 147, 3, 51, "Input",ExpressionUUID->"29d60206-493f-4c65-aa09-ecd44767326e"]
+}, Closed]]
+}, Open  ]]
+}
+]
+*)
+
