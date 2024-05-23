@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      9855,        283]
-NotebookOptionsPosition[      8167,        246]
-NotebookOutlinePosition[      8597,        263]
-CellTagsIndexPosition[      8554,        260]
+NotebookDataLength[      9909,        284]
+NotebookOptionsPosition[      8222,        247]
+NotebookOutlinePosition[      8653,        264]
+CellTagsIndexPosition[      8610,        261]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -182,7 +182,7 @@ Cell[TextData[{
  "Use ",
  StyleBox["RegionPlot3D", "Input"],
  " to plot the coordinates that satisfy ",
- StyleBox["0 < x < x y + z", "Input"],
+ StyleBox["0 < x < x y + z < 1", "Input"],
  "  and ",
  StyleBox["0 < y < 1", "Input"],
  " and ",
@@ -191,7 +191,8 @@ Cell[TextData[{
 }], "Text",
  CellChangeTimes->{{3.925219935041746*^9, 3.925219967973774*^9}, {
   3.925220053421013*^9, 3.925220082937293*^9}, {3.92522014215184*^9, 
-  3.9252201474827547`*^9}},ExpressionUUID->"838955c7-3378-4fb6-b67a-\
+  3.9252201474827547`*^9}, {3.9254818307257357`*^9, 
+  3.925481831896925*^9}},ExpressionUUID->"838955c7-3378-4fb6-b67a-\
 77a4d5a7e327"]
 }, Open  ]],
 
@@ -244,8 +245,8 @@ permutation ",
 a9edb6c140e9"]
 }, Open  ]]
 },
-WindowSize->{720, 864},
-WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+WindowSize->{1440, 864},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 TaggingRules-><|"TryRealOnly" -> False|>,
 FrontEndVersion->"13.1 for Linux x86 (64-bit) (June 16, 2022)",
 StyleDefinitions->"Default.nb",
@@ -265,12 +266,12 @@ Notebook[{
 Cell[558, 20, 1205, 18, 72, "Input",ExpressionUUID->"3f7eec7e-abba-4c8a-af1c-feed854edf26"],
 Cell[CellGroupData[{
 Cell[1788, 42, 298, 8, 54, "Subsection",ExpressionUUID->"50d73330-f88d-4cbb-80ce-307a595a2757"],
-Cell[2089, 52, 654, 17, 58, "Text",ExpressionUUID->"779c5cf2-a78d-4f29-b198-0b9caef9ee2b"],
-Cell[2746, 71, 673, 17, 58, "Text",ExpressionUUID->"70b7aea6-6e95-4e34-b9ae-d07ad5f67fdc"]
+Cell[2089, 52, 654, 17, 35, "Text",ExpressionUUID->"779c5cf2-a78d-4f29-b198-0b9caef9ee2b"],
+Cell[2746, 71, 673, 17, 35, "Text",ExpressionUUID->"70b7aea6-6e95-4e34-b9ae-d07ad5f67fdc"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[3456, 93, 298, 8, 54, "Subsection",ExpressionUUID->"7724628b-b61e-46c7-8708-d2bcd797889e"],
-Cell[3757, 103, 556, 12, 104, "Text",ExpressionUUID->"4724e4d5-8c2c-4e21-bd58-fb7ffa963ff1"],
+Cell[3757, 103, 556, 12, 58, "Text",ExpressionUUID->"4724e4d5-8c2c-4e21-bd58-fb7ffa963ff1"],
 Cell[4316, 117, 743, 23, 54, "Input",ExpressionUUID->"30479fe1-b79d-4154-b9a3-568eaf6ee147"]
 }, Open  ]],
 Cell[CellGroupData[{
@@ -279,11 +280,11 @@ Cell[5397, 155, 353, 10, 35, "Text",ExpressionUUID->"f5492ecc-4a43-4ca5-9b66-06f
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[5787, 170, 298, 8, 54, "Subsection",ExpressionUUID->"c20bca93-2f73-4e0f-9f2e-9a30b6d1b68d"],
-Cell[6088, 180, 506, 14, 58, "Text",ExpressionUUID->"838955c7-3378-4fb6-b67a-77a4d5a7e327"]
+Cell[6088, 180, 561, 15, 35, "Text",ExpressionUUID->"838955c7-3378-4fb6-b67a-77a4d5a7e327"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6631, 199, 298, 8, 54, "Subsection",ExpressionUUID->"7d2e48c4-6d33-48d6-b2ca-8c9b31ac615b"],
-Cell[6932, 209, 1219, 34, 127, "Text",ExpressionUUID->"65a17d8b-5a35-4d72-802f-a9edb6c140e9"]
+Cell[6686, 200, 298, 8, 54, "Subsection",ExpressionUUID->"7d2e48c4-6d33-48d6-b2ca-8c9b31ac615b"],
+Cell[6987, 210, 1219, 34, 81, "Text",ExpressionUUID->"65a17d8b-5a35-4d72-802f-a9edb6c140e9"]
 }, Open  ]]
 }
 ]
