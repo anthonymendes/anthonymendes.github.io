@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    195271,       3819]
-NotebookOptionsPosition[    190747,       3737]
-NotebookOutlinePosition[    191135,       3753]
-CellTagsIndexPosition[    191092,       3750]
+NotebookDataLength[    195316,       3819]
+NotebookOptionsPosition[    190792,       3737]
+NotebookOutlinePosition[    191180,       3753]
+CellTagsIndexPosition[    191137,       3750]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -3252,7 +3252,7 @@ eigenvectors ",
   CellAutoOverwrite->False,
   CellChangeTimes->{3.925217312799675*^9},ExpressionUUID->
   "c60d6ea1-2f9a-44d4-873c-c3affb97887d"],
- " that correspond to the smallest nonzero eigenvectors for ",
+ " that correspond to the smallest nonzero eigenvalues for ",
  StyleBox["KirchhoffMatrix", "Input"],
  ".\n2. Display the graph with vertex coordinates ",
  Cell[BoxData[
@@ -3281,8 +3281,8 @@ eigenvectors ",
  CellChangeTimes->{{3.925216831272443*^9, 3.925216854039851*^9}, {
   3.9252169517942543`*^9, 3.9252169663755503`*^9}, {3.9252171043447866`*^9, 
   3.9252171876631413`*^9}, {3.925217277889392*^9, 3.925217446051696*^9}, {
-  3.925217848092041*^9, 
-  3.9252178482142763`*^9}},ExpressionUUID->"b47185e2-705f-4ad3-a3ed-\
+  3.925217848092041*^9, 3.9252178482142763`*^9}, {3.925481919997129*^9, 
+  3.925481924024498*^9}},ExpressionUUID->"b47185e2-705f-4ad3-a3ed-\
 9ad5a99fcdab"],
 
 Cell[BoxData[
@@ -3732,8 +3732,8 @@ Ix6xSo4uXywD8/GkGL8/Gci0W1vEN6Xjf2iCNEU=
   3.9252179310672483`*^9}},
  CellLabel->
   "In[984]:=",ExpressionUUID->"3fbd0d66-a615-46c5-8da1-d6854b8ba932"]
-}, Closed]]
-}, Closed]]
+}, Open  ]]
+}, Open  ]]
 },
 WindowSize->{720, 864},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
@@ -3814,13 +3814,13 @@ Cell[CellGroupData[{
 Cell[157017, 3076, 298, 8, 54, "Subsection",ExpressionUUID->"e9ef7af9-aaf1-458d-ae8e-531e3b2409b7"],
 Cell[157318, 3086, 450, 10, 35, "Text",ExpressionUUID->"0a280407-63de-4bc1-8b14-32e25c1e7c3a"],
 Cell[CellGroupData[{
-Cell[157793, 3100, 2757, 63, 121, "Input",ExpressionUUID->"c9c7c7fe-93a4-4142-ae59-fd99210f35ed"],
+Cell[157793, 3100, 2757, 63, 163, "Input",ExpressionUUID->"c9c7c7fe-93a4-4142-ae59-fd99210f35ed"],
 Cell[160553, 3165, 2189, 47, 321, "Output",ExpressionUUID->"fbee1737-3ae0-4d2e-9cca-6db53e32e02c"]
 }, Open  ]],
-Cell[162757, 3215, 2496, 70, 128, "Text",ExpressionUUID->"b47185e2-705f-4ad3-a3ed-9ad5a99fcdab"],
-Cell[165256, 3287, 25463, 446, 104, "Input",ExpressionUUID->"3fbd0d66-a615-46c5-8da1-d6854b8ba932"]
-}, Closed]]
-}, Closed]]
+Cell[162757, 3215, 2541, 70, 174, "Text",ExpressionUUID->"b47185e2-705f-4ad3-a3ed-9ad5a99fcdab"],
+Cell[165301, 3287, 25463, 446, 104, "Input",ExpressionUUID->"3fbd0d66-a615-46c5-8da1-d6854b8ba932"]
+}, Open  ]]
+}, Open  ]]
 }
 ]
 *)
