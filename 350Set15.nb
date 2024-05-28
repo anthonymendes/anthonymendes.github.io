@@ -1,0 +1,765 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     31774,        757]
+NotebookOptionsPosition[     29535,        710]
+NotebookOutlinePosition[     29923,        726]
+CellTagsIndexPosition[     29880,        723]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ StyleBox[
+  RowBox[{
+   RowBox[{"Set", " ", "15"}], ":", " ", 
+   RowBox[{"Game", " ", "Theory"}]}], "Title"]], "Input",
+ CellChangeTimes->{{3.919807936189116*^9, 3.919807953895212*^9}, {
+   3.919808208848558*^9, 3.9198082318120193`*^9}, {3.919809333380814*^9, 
+   3.919809336570117*^9}, {3.92024054647309*^9, 3.9202405477719917`*^9}, {
+   3.920302506608282*^9, 3.9203025169780607`*^9}, 3.920306369934359*^9, {
+   3.920306712763356*^9, 3.920306727132897*^9}, {3.9210746546570387`*^9, 
+   3.9210746580834618`*^9}, {3.921075196084837*^9, 3.921075207080585*^9}, {
+   3.921076386745256*^9, 3.921076386849423*^9}, {3.92116580248526*^9, 
+   3.921165812071307*^9}, {3.921182556628333*^9, 3.92118257012987*^9}, {
+   3.921413143772915*^9, 3.921413144157531*^9}, {3.921499154499137*^9, 
+   3.921499182060101*^9}, {3.9218533916685*^9, 3.921853396060192*^9}, {
+   3.921869112243034*^9, 3.921869113241489*^9}, {3.921869182203751*^9, 
+   3.921869184628964*^9}, {3.921878236116894*^9, 3.921878240250746*^9}, {
+   3.922196356449726*^9, 3.922196357749195*^9}, 3.9221964015295563`*^9, {
+   3.92271765166505*^9, 3.922717653875639*^9}, {3.922834029116836*^9, 
+   3.922834032614249*^9}, {3.922835625522875*^9, 3.922835637722274*^9}, {
+   3.92283608335926*^9, 3.922836085173115*^9}, {3.92314642656995*^9, 
+   3.923146427546648*^9}, 3.923146468643402*^9, {3.9234020748606367`*^9, 
+   3.9234021020736647`*^9}, {3.923405041346549*^9, 3.923405044482031*^9}, {
+   3.923405135885439*^9, 3.923405135994376*^9}, {3.923668778727644*^9, 
+   3.923668786005205*^9}, {3.924279393098461*^9, 3.924279399553339*^9}, {
+   3.9244633087401114`*^9, 3.924463309002322*^9}, {3.924519001067925*^9, 
+   3.924519003146964*^9}, {3.924519051254304*^9, 3.924519055035244*^9}, {
+   3.924716364714221*^9, 3.9247163679997873`*^9}, {3.925252126718052*^9, 
+   3.9252521582163563`*^9}, {3.925904257043405*^9, 
+   3.925904257307538*^9}},ExpressionUUID->"06b7202f-d7ce-42a6-849f-\
+321defeeb14e"],
+
+Cell[CellGroupData[{
+
+Cell["Matrix Games", "Section",
+ CellChangeTimes->{{3.923511911101522*^9, 3.9235119163007402`*^9}, {
+  3.9236750028049707`*^9, 3.923675037070533*^9}, {3.92376109691994*^9, 
+  3.923761098856876*^9}, {3.92394971034903*^9, 3.923949716585335*^9}, {
+  3.924279426504402*^9, 3.9242794437710657`*^9}, {3.9242863385828876`*^9, 
+  3.924286339595612*^9}, {3.924519021495878*^9, 3.9245190239954844`*^9}, {
+  3.92461377564571*^9, 3.924613778342867*^9}, {3.924615710751094*^9, 
+  3.924615711285304*^9}, {3.924787690335435*^9, 3.92478769540059*^9}, {
+  3.9247894099799*^9, 3.9247894129230328`*^9}, {3.9252521939737167`*^9, 
+  3.925252227755069*^9}, {3.925392907729418*^9, 
+  3.925392911898128*^9}},ExpressionUUID->"9a9ab44f-98d1-4ff9-8f25-\
+a108dea67c81"],
+
+Cell["\<\
+The functions that give optimal row and column strategies for a matrix game \
+are below: \
+\>", "Text",
+ CellChangeTimes->{{3.9259042953290653`*^9, 
+  3.925904312379273*^9}},ExpressionUUID->"1686deda-e398-4e04-bca7-\
+f94b2d30c552"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"RowStrategy", "[", "P_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"d", "=", 
+       RowBox[{"Dimensions", "@", "P"}]}], ",", "L"}], "}"}], ",", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"L", "=", 
+       RowBox[{"LinearProgramming", "[", 
+        RowBox[{
+         RowBox[{"Table", "[", 
+          RowBox[{"1", ",", 
+           RowBox[{"d", "[", 
+            RowBox[{"[", "1", "]"}], "]"}]}], "]"}], ",", 
+         RowBox[{
+          RowBox[{"Transpose", "@", "P"}], "+", "1", "-", 
+          RowBox[{"Min", "@", "P"}]}], ",", 
+         RowBox[{"Table", "[", 
+          RowBox[{"1", ",", 
+           RowBox[{"d", "[", 
+            RowBox[{"[", "2", "]"}], "]"}]}], "]"}]}], "]"}]}], ")"}], "/", 
+     RowBox[{"Total", "@", "L"}]}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ColStrategy", "[", "P_", "]"}], ":=", 
+  RowBox[{"RowStrategy", "@", 
+   RowBox[{"Transpose", "[", 
+    RowBox[{"-", "P"}], "]"}]}]}]}], "Input",ExpressionUUID->"9d5a323e-02e2-\
+4ed0-a4d8-a16e9a277eb1"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"f4d0a15c-2ffc-4fd7-844e-\
+301edbf7a2da"],
+
+Cell[TextData[{
+ "Morra is a rock-paper-scissors like hand game played between two players \
+(see https://en.wikipedia.org/wiki/Morra_(game) ).  Here is one variant: each \
+player shows 0,1,2,3,4, or 5 fingers on a hand and simultaneously guesses the \
+total number of fingers shown between both players (a number between 0 and \
+10).  If exactly one player correctly guesses the total number of fingers, \
+that player earns 1 from the loser.  \n\nTherefore the strategies for each \
+player are pairs {f,g} where f is the number of fingers shown and g is the \
+number of fingers guessed.  Do the following to solve the game:\n1. Create a \
+list named ",
+ StyleBox["strategies", "Input"],
+ " containing all pairs ",
+ StyleBox["{f,g}", "Input"],
+ " where ",
+ StyleBox["f", "Input"],
+ " is any number ",
+ StyleBox["0,...,5", "Input"],
+ " and ",
+ StyleBox["g", "Input"],
+ " is any number ",
+ StyleBox["0,...,10", "Input"],
+ ".\n2. Define a function ",
+ StyleBox["Payoff", "Input"],
+ " with input strategies ",
+ StyleBox["s1", "Input"],
+ " and ",
+ StyleBox["s2", "Input"],
+ " in strategies and output ",
+ StyleBox["1", "Input"],
+ " if ",
+ StyleBox["s1", "Input"],
+ " wins, ",
+ StyleBox["-1", "Input"],
+ " if ",
+ StyleBox["s2", "Input"],
+ " wins, and ",
+ StyleBox["0", "Input"],
+ " otherwise.\n3. Create a payoff matrix ",
+ StyleBox["s1", "Input"],
+ ", ",
+ StyleBox["s2", "Input"],
+ " entry given by ",
+ StyleBox["Payoff[s1,s2]", "Input"],
+ " where ",
+ StyleBox["s1", "Input"],
+ " and ",
+ StyleBox["s2", "Input"],
+ " range over all ",
+ StyleBox["strategies", "Input"],
+ ".\n4. Apply ",
+ StyleBox["RowStrategy", "Input"],
+ " (as defined in Lecture15) to solve the matrix game."
+}], "Text",
+ CellChangeTimes->{{3.925295670765003*^9, 3.9252956766149178`*^9}, {
+  3.9255678035252333`*^9, 3.925567863206255*^9}, {3.9255679054195747`*^9, 
+  3.9255679231454277`*^9}, {3.925567962027725*^9, 3.92556797057656*^9}, {
+  3.92556800145497*^9, 3.925568031101832*^9}, {3.925582652521194*^9, 
+  3.925582888307972*^9}, {3.92558304899279*^9, 
+  3.92558305943641*^9}},ExpressionUUID->"0942d1f5-2692-47e5-bcc9-\
+90507e715ac8"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"7805c003-d593-49cd-a2c8-\
+a8b1b0478edd"],
+
+Cell[TextData[{
+ "A two player game can be played on a graph ",
+ StyleBox["G", "Input"],
+ " in this way:  Both players select vertices in ",
+ StyleBox["G", "Input"],
+ ".  If the vertices are connected, then the first player earns ",
+ StyleBox["1", "Input"],
+ " from the second player, otherwise the payoff is ",
+ StyleBox["0", "Input"],
+ ".  This is a matrix game with payoff matrix equal to ",
+ StyleBox["AdjacencyMatrix@G", "Input"],
+ ".  Find optimal strategies for the row and column players when playing this \
+game on each of the graphs in the list below: "
+}], "Text",
+ CellChangeTimes->{{3.92557874970761*^9, 
+  3.925578906788253*^9}},ExpressionUUID->"8a2722ab-fb72-455f-8aee-\
+17d27d1cdfea"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"L", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     GraphicsBox[
+      NamespaceBox["NetworkGraphics",
+       DynamicModuleBox[{Typeset`graph = HoldComplete[
+         Graph[{1, 2, 3, 4, 5}, {Null, 
+           SparseArray[
+           Automatic, {5, 5}, 0, {
+            1, {{0, 4, 6, 8, 10, 12}, {{2}, {3}, {4}, {5}, {1}, {3}, {1}, {
+              2}, {1}, {5}, {1}, {4}}}, Pattern}]}, {
+          GraphLayout -> {"Dimension" -> 2}, 
+           VertexCoordinates -> {{0, 0}, {Rational[-1, 2] 3^Rational[1, 2], 
+              Rational[-1, 2]}, {Rational[-1, 2] 3^Rational[1, 2], 
+              Rational[1, 2]}, {Rational[1, 2] 3^Rational[1, 2], 
+              Rational[-1, 2]}, {Rational[1, 2] 3^Rational[1, 2], 
+              Rational[1, 2]}}, VertexLabels -> {Automatic}}]]}, 
+        TagBox[GraphicsGroupBox[{
+           {Hue[0.6, 0.7, 0.5], Opacity[0.7], Arrowheads[0.], 
+            ArrowBox[{{{0., 0.}, {-0.8660254037844386, -0.5}}, {{0., 
+             0.}, {-0.8660254037844386, 0.5}}, {{0., 0.}, {
+             0.8660254037844386, -0.5}}, {{0., 0.}, {0.8660254037844386, 
+             0.5}}, {{-0.8660254037844386, -0.5}, {-0.8660254037844386, 
+             0.5}}, {{0.8660254037844386, -0.5}, {0.8660254037844386, 0.5}}}, 
+             0.020399597244776385`]}, 
+           {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[
+            0.7]}], {DiskBox[{0., 0.}, 0.020399597244776385], 
+             InsetBox["1", 
+              Offset[{2, 2}, {0.020399597244776385, 0.020399597244776385}], 
+              ImageScaled[{0, 0}],
+              BaseStyle->"Graphics"]}, {
+             DiskBox[{-0.8660254037844386, -0.5}, 0.020399597244776385], 
+             InsetBox["2", 
+              Offset[{2, 2}, {-0.8456258065396622, -0.47960040275522364}], 
+              ImageScaled[{0, 0}],
+              BaseStyle->"Graphics"]}, {
+             DiskBox[{-0.8660254037844386, 0.5}, 0.020399597244776385], 
+             InsetBox["3", 
+              Offset[{2, 2}, {-0.8456258065396622, 0.5203995972447764}], 
+              ImageScaled[{0, 0}],
+              BaseStyle->"Graphics"]}, {
+             DiskBox[{0.8660254037844386, -0.5}, 0.020399597244776385], 
+             InsetBox["4", 
+              Offset[{2, 2}, {0.886425001029215, -0.47960040275522364}], 
+              ImageScaled[{0, 0}],
+              BaseStyle->"Graphics"]}, {
+             DiskBox[{0.8660254037844386, 0.5}, 0.020399597244776385], 
+             InsetBox["5", 
+              Offset[{2, 2}, {0.886425001029215, 0.5203995972447764}], 
+              ImageScaled[{0, 0}],
+              BaseStyle->"Graphics"]}}}],
+         MouseAppearanceTag["NetworkGraphics"]],
+        AllowKernelInitialization->False]],
+      DefaultBaseStyle->{
+       "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> 
+        Hue[0.8, 1., 0.6]},
+      FormatType->TraditionalForm,
+      FrameTicks->None], ",", 
+     GraphicsBox[
+      NamespaceBox["NetworkGraphics",
+       DynamicModuleBox[{Typeset`graph = HoldComplete[
+         Graph[{1, 2, 3, 4, 5}, {Null, 
+           SparseArray[
+           Automatic, {5, 5}, 0, {
+            1, {{0, 1, 3, 5, 7, 8}, {{2}, {1}, {3}, {2}, {4}, {3}, {5}, {4}}},
+              Pattern}]}, {
+          GraphLayout -> {"Dimension" -> 2}, 
+           VertexCoordinates -> {{1, 0}, {2, 0}, {3, 0}, {4, 0}, {5, 0}}, 
+           VertexLabels -> {Automatic}}]]}, 
+        TagBox[GraphicsGroupBox[{
+           {Hue[0.6, 0.7, 0.5], Opacity[0.7], Arrowheads[0.], 
+            ArrowBox[{{{1., 0.}, {2., 0.}}, {{2., 0.}, {3., 0.}}, {{3., 0.}, {
+             4., 0.}}, {{4., 0.}, {5., 0.}}}, 0.03700564971751412]}, 
+           {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[
+            0.7]}], {DiskBox[{1., 0.}, 0.03700564971751412], 
+             InsetBox["1", 
+              Offset[{2, 2}, {1.0370056497175142, 0.03700564971751412}], 
+              ImageScaled[{0, 0}],
+              BaseStyle->"Graphics"]}, {
+             DiskBox[{2., 0.}, 0.03700564971751412], 
+             InsetBox["2", 
+              Offset[{2, 2}, {2.037005649717514, 0.03700564971751412}], 
+              ImageScaled[{0, 0}],
+              BaseStyle->"Graphics"]}, {
+             DiskBox[{3., 0.}, 0.03700564971751412], 
+             InsetBox["3", 
+              Offset[{2, 2}, {3.037005649717514, 0.03700564971751412}], 
+              ImageScaled[{0, 0}],
+              BaseStyle->"Graphics"]}, {
+             DiskBox[{4., 0.}, 0.03700564971751412], 
+             InsetBox["4", 
+              Offset[{2, 2}, {4.037005649717514, 0.03700564971751412}], 
+              ImageScaled[{0, 0}],
+              BaseStyle->"Graphics"]}, {
+             DiskBox[{5., 0.}, 0.03700564971751412], 
+             InsetBox["5", 
+              Offset[{2, 2}, {5.037005649717514, 0.03700564971751412}], 
+              ImageScaled[{0, 0}],
+              BaseStyle->"Graphics"]}}}],
+         MouseAppearanceTag["NetworkGraphics"]],
+        AllowKernelInitialization->False]],
+      DefaultBaseStyle->{
+       "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> 
+        Hue[0.8, 1., 0.6]},
+      FormatType->TraditionalForm,
+      FrameTicks->None], ",", 
+     GraphicsBox[
+      NamespaceBox["NetworkGraphics",
+       DynamicModuleBox[{Typeset`graph = HoldComplete[
+         Graph[{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {Null, 
+           SparseArray[
+           Automatic, {10, 10}, 0, {
+            1, {{0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30}, {{2}, {3}, {4}, {
+              1}, {3}, {5}, {1}, {2}, {4}, {1}, {3}, {5}, {2}, {4}, {6}, {
+              5}, {7}, {9}, {6}, {8}, {10}, {7}, {9}, {10}, {6}, {8}, {10}, {
+              7}, {8}, {9}}}, Pattern}]}, {
+          FormatType -> TraditionalForm, GraphLayout -> {"Dimension" -> 2}, 
+           VertexCoordinates -> {{0.9578, -0.7741}, {1.2677, -1.0842}, {
+            1.2677, -0.7741}, {1.2677, -0.4639}, {1.5775, -0.7741}, {
+            1.8874, -0.7741}, {2.1973, -1.0842}, {2.1973, -0.7741}, {
+            2.1973, -0.4639}, {2.5071, -0.7741}}, 
+           VertexLabels -> {Automatic}}]]}, 
+        TagBox[GraphicsGroupBox[{
+           {Hue[0.6, 0.7, 0.5], Opacity[0.7], Arrowheads[0.], 
+            ArrowBox[CompressedData["
+1:eJxTTMoPSmVmYGDgB2ImKPaqbtb3WfbO/taaXzG5R1/s17KadLre44v9Fe1U
+yUcRH/fjkofxccmHBKkv6NxwF8M8dP3o8rZc1xcX2P7EaR8u82F8dP3o/ENt
+y8NPGf3DyV/MuIdVaAqjA8w9uORh9qGrh/Fxmbc2815hFx8Lhjwh82HyuPTD
+1KPLAwDz3/+j
+             "], 0.01884643885293094]}, 
+           {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[
+            0.7]}], {DiskBox[{0.9578, -0.7741}, 0.01884643885293094], 
+             InsetBox["1", 
+              Offset[{2, 2}, {0.9766464388529309, -0.7552535611470691}], 
+              ImageScaled[{0, 0}],
+              BaseStyle->"Graphics"]}, {
+             DiskBox[{1.2677, -1.0842}, 0.01884643885293094], 
+             InsetBox["2", 
+              Offset[{2, 2}, {1.286546438852931, -1.065353561147069}], 
+              ImageScaled[{0, 0}],
+              BaseStyle->"Graphics"]}, {
+             DiskBox[{1.2677, -0.7741}, 0.01884643885293094], 
+             InsetBox["3", 
+              Offset[{2, 2}, {1.286546438852931, -0.7552535611470691}], 
+              ImageScaled[{0, 0}],
+              BaseStyle->"Graphics"]}, {
+             DiskBox[{1.2677, -0.4639}, 0.01884643885293094], 
+             InsetBox["4", 
+              Offset[{2, 2}, {1.286546438852931, -0.44505356114706907}], 
+              ImageScaled[{0, 0}],
+              BaseStyle->"Graphics"]}, {
+             DiskBox[{1.5775, -0.7741}, 0.01884643885293094], 
+             InsetBox["5", 
+              Offset[{2, 2}, {1.596346438852931, -0.7552535611470691}], 
+              ImageScaled[{0, 0}],
+              BaseStyle->"Graphics"]}, {
+             DiskBox[{1.8874, -0.7741}, 0.01884643885293094], 
+             InsetBox["6", 
+              Offset[{2, 2}, {1.906246438852931, -0.7552535611470691}], 
+              ImageScaled[{0, 0}],
+              BaseStyle->"Graphics"]}, {
+             DiskBox[{2.1973, -1.0842}, 0.01884643885293094], 
+             InsetBox["7", 
+              Offset[{2, 2}, {2.2161464388529306, -1.065353561147069}], 
+              ImageScaled[{0, 0}],
+              BaseStyle->"Graphics"]}, {
+             DiskBox[{2.1973, -0.7741}, 0.01884643885293094], 
+             InsetBox["8", 
+              Offset[{2, 2}, {2.2161464388529306, -0.7552535611470691}], 
+              ImageScaled[{0, 0}],
+              BaseStyle->"Graphics"]}, {
+             DiskBox[{2.1973, -0.4639}, 0.01884643885293094], 
+             InsetBox["9", 
+              Offset[{2, 2}, {2.2161464388529306, -0.44505356114706907}], 
+              ImageScaled[{0, 0}],
+              BaseStyle->"Graphics"]}, {
+             DiskBox[{2.5071, -0.7741}, 0.01884643885293094], 
+             InsetBox["10", 
+              Offset[{2, 2}, {2.5259464388529307, -0.7552535611470691}], 
+              ImageScaled[{0, 0}],
+              BaseStyle->"Graphics"]}}}],
+         MouseAppearanceTag["NetworkGraphics"]],
+        AllowKernelInitialization->False]],
+      DefaultBaseStyle->{
+       "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> 
+        Hue[0.8, 1., 0.6]},
+      FormatType->TraditionalForm,
+      FrameTicks->None,
+      ImageSize->{104.25, Automatic}], ",", 
+     GraphicsBox[
+      NamespaceBox["NetworkGraphics",
+       DynamicModuleBox[{Typeset`graph = HoldComplete[
+         Graph[{1, 2, 3, 4, 5, 6}, {Null, 
+           SparseArray[
+           Automatic, {6, 6}, 0, {
+            1, {{0, 3, 4, 6, 9, 11, 14}, {{4}, {5}, {6}, {4}, {5}, {6}, {1}, {
+              2}, {6}, {1}, {3}, {1}, {3}, {4}}}, Pattern}]}, {
+          GraphLayout -> {"Dimension" -> 2}, VertexCoordinates -> {{0, 1}, {
+              Rational[1, 2], 2 + Rational[1, 2] 3^Rational[1, 2]}, {1, 0}, {
+              Rational[1, 2], 1 + Rational[1, 2] 3^Rational[1, 2]}, {0, 0}, {
+             1, 1}}, VertexLabels -> {Automatic}}]]}, 
+        TagBox[GraphicsGroupBox[{
+           {Hue[0.6, 0.7, 0.5], Opacity[0.7], Arrowheads[0.], 
+            ArrowBox[{{{0., 1.}, {0.5, 1.8660254037844386`}}, {{0., 1.}, {0., 
+             0.}}, {{0., 1.}, {1., 1.}}, {{0.5, 2.8660254037844384`}, {0.5, 
+             1.8660254037844386`}}, {{1., 0.}, {0., 0.}}, {{1., 0.}, {1., 
+             1.}}, {{0.5, 1.8660254037844386`}, {1., 1.}}}, 
+             0.02927098074212124]}, 
+           {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[
+            0.7]}], {DiskBox[{0., 1.}, 0.02927098074212124], 
+             InsetBox["1", 
+              Offset[{2, 2}, {0.02927098074212124, 1.0292709807421212}], 
+              ImageScaled[{0, 0}],
+              BaseStyle->"Graphics"]}, {
+             DiskBox[{0.5, 2.8660254037844384}, 0.02927098074212124], 
+             InsetBox["2", 
+              Offset[{2, 2}, {0.5292709807421212, 2.8952963845265596}], 
+              ImageScaled[{0, 0}],
+              BaseStyle->"Graphics"]}, {
+             DiskBox[{1., 0.}, 0.02927098074212124], 
+             InsetBox["3", 
+              Offset[{2, 2}, {1.0292709807421212, 0.02927098074212124}], 
+              ImageScaled[{0, 0}],
+              BaseStyle->"Graphics"]}, {
+             DiskBox[{0.5, 1.8660254037844386}, 0.02927098074212124], 
+             InsetBox["4", 
+              Offset[{2, 2}, {0.5292709807421212, 1.8952963845265598}], 
+              ImageScaled[{0, 0}],
+              BaseStyle->"Graphics"]}, {
+             DiskBox[{0., 0.}, 0.02927098074212124], 
+             InsetBox["5", 
+              Offset[{2, 2}, {0.02927098074212124, 0.02927098074212124}], 
+              ImageScaled[{0, 0}],
+              BaseStyle->"Graphics"]}, {
+             DiskBox[{1., 1.}, 0.02927098074212124], 
+             InsetBox["6", 
+              Offset[{2, 2}, {1.0292709807421212, 1.0292709807421212}], 
+              ImageScaled[{0, 0}],
+              BaseStyle->"Graphics"]}}}],
+         MouseAppearanceTag["NetworkGraphics"]],
+        AllowKernelInitialization->False]],
+      DefaultBaseStyle->{
+       "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> 
+        Hue[0.8, 1., 0.6]},
+      FormatType->TraditionalForm,
+      FrameTicks->None]}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.925578975387033*^9, 3.925579018516692*^9}, {
+  3.9255790785302153`*^9, 3.925579079582985*^9}, {3.9255791119558363`*^9, 
+  3.9255791204090757`*^9}, {3.925579201946316*^9, 3.925579202589266*^9}, {
+  3.9255792947904177`*^9, 
+  3.925579376538618*^9}},ExpressionUUID->"c296ff77-d222-4964-978f-\
+ecdb64bc32f0"]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Nonzero sum games", "Section",
+ CellChangeTimes->{{3.923511911101522*^9, 3.9235119163007402`*^9}, {
+  3.9236750028049707`*^9, 3.923675037070533*^9}, {3.92376109691994*^9, 
+  3.923761098856876*^9}, {3.92394971034903*^9, 3.923949716585335*^9}, {
+  3.924279426504402*^9, 3.9242794437710657`*^9}, {3.9242863385828876`*^9, 
+  3.924286339595612*^9}, {3.924519021495878*^9, 3.9245190239954844`*^9}, {
+  3.92461377564571*^9, 3.924613778342867*^9}, {3.924615710751094*^9, 
+  3.924615711285304*^9}, {3.924787690335435*^9, 3.92478769540059*^9}, {
+  3.9247894099799*^9, 3.9247894129230328`*^9}, {3.9252521939737167`*^9, 
+  3.925252227755069*^9}, {3.925392907729418*^9, 
+  3.925392924687035*^9}},ExpressionUUID->"8ed8fad8-c4de-43d3-b40b-\
+26d4798633b6"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+   3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+   3.921336187166984*^9}, 
+   3.925646186416602*^9},ExpressionUUID->"9f438981-65b5-4ee7-93b3-\
+6caf82f62797"],
+
+Cell["\<\
+Chicken is a two player game where each player tries to intimidate the other \
+into yielding. Imaging two cars driving towards one another, with each driver \
+hoping the other will swerve first.  The payoffs to player are given in the \
+table below, with the entries giving the payoff to the row and column player, \
+respectively.\
+\>", "Text",
+ CellChangeTimes->{{3.925393418397091*^9, 3.9253934252462473`*^9}, {
+  3.925769416352841*^9, 
+  3.925769509968292*^9}},ExpressionUUID->"e6677ea7-40d6-4f63-a9c5-\
+77376e88ec76"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"chicken", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", "2"}], "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", 
+         RowBox[{"-", "1"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "100"}], ",", 
+         RowBox[{"-", "100"}]}], "}"}]}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"TableForm", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"ToString", "/@", "#"}], "&"}], "/@", "chicken"}], ",", 
+   RowBox[{"TableHeadings", "->", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"\"\<Row 1: Swerve\>\"", ",", "\"\<Row 2: Drive\>\""}], "}"}], 
+      ",", 
+      RowBox[{"{", 
+       RowBox[{"\"\<Col 1: Swerve\>\"", ",", "\"\<Col 2: Drive\>\""}], 
+       "}"}]}], "}"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.925769521708653*^9, 3.925769617622751*^9}},
+ CellLabel->
+  "In[3662]:=",ExpressionUUID->"5fa00899-1ee9-448f-b491-964c3d2f3e33"],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {
+      StyleBox["\[Null]",
+       ShowStringCharacters->False], 
+      TagBox["\<\"Col 1: Swerve\"\>",
+       HoldForm], 
+      TagBox["\<\"Col 2: Drive\"\>",
+       HoldForm]},
+     {
+      TagBox["\<\"Row 1: Swerve\"\>",
+       HoldForm], "\<\"{0, 0}\"\>", "\<\"{-1, 2}\"\>"},
+     {
+      TagBox["\<\"Row 2: Drive\"\>",
+       HoldForm], "\<\"{2, -1}\"\>", "\<\"{-100, -100}\"\>"}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+    GridBoxDividers->{
+     "Columns" -> {False, True, {False}, False}, 
+      "Rows" -> {False, True, {False}, False}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[2.0999999999999996`]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}],
+   {OutputFormsDump`HeadedRows, OutputFormsDump`HeadedColumns}],
+  Function[BoxForm`e$, 
+   TableForm[
+   BoxForm`e$, 
+    TableHeadings -> {{"Row 1: Swerve", "Row 2: Drive"}, {
+      "Col 1: Swerve", "Col 2: Drive"}}]]]], "Output",
+ CellChangeTimes->{{3.925769604940928*^9, 3.925769617792725*^9}},
+ CellLabel->
+  "Out[3663]//TableForm=",ExpressionUUID->"06e15fd1-e054-439c-8546-\
+9a93338c9de9"]
+}, Open  ]],
+
+Cell[TextData[{
+ "We are having a chicken contest! \n\nDefine a function ",
+ StyleBox["Strategy[H_]", "Input"],
+ " with input ",
+ StyleBox["H", "Input"],
+ " a sequence of ",
+ StyleBox["1", "Input"],
+ "\[CloseCurlyQuote]s and ",
+ StyleBox["2", "Input"],
+ "\[CloseCurlyQuote]s giving your opponent\[CloseCurlyQuote]s history of play \
+and with output either 1 (swerve) or 2 (drive).  Change the name ",
+ StyleBox["Strategy", "Input"],
+ " to another name (which will be seen by everyone else in class).  \n\nEach \
+submitted strategy will compete against every other submitted program a \
+large, but undisclosed, number of rounds.  The tournament will be run in the \
+same way as the prisoner\[CloseCurlyQuote]s dilemma example in Lecture 15, \
+with the exception that the payoffs will change from the ",
+ StyleBox["dilemma", "Input"],
+ " to ",
+ StyleBox["chicken", "Input"],
+ ".\n\nGood luck!"
+}], "Text",
+ CellChangeTimes->{{3.925769671837491*^9, 
+  3.925769966522842*^9}},ExpressionUUID->"05649e4e-7f4f-4d95-95b1-\
+406ec055a6ad"]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Learning from experience", "Section",
+ CellChangeTimes->{{3.923511911101522*^9, 3.9235119163007402`*^9}, {
+  3.9236750028049707`*^9, 3.923675037070533*^9}, {3.92376109691994*^9, 
+  3.923761098856876*^9}, {3.92394971034903*^9, 3.923949716585335*^9}, {
+  3.924279426504402*^9, 3.9242794437710657`*^9}, {3.9242863385828876`*^9, 
+  3.924286339595612*^9}, {3.924519021495878*^9, 3.9245190239954844`*^9}, {
+  3.92461377564571*^9, 3.924613778342867*^9}, {3.924615710751094*^9, 
+  3.924615711285304*^9}, {3.924787690335435*^9, 3.92478769540059*^9}, {
+  3.9247894099799*^9, 3.9247894129230328`*^9}, {3.9252521939737167`*^9, 
+  3.925252227755069*^9}, {3.9253929624857607`*^9, 3.925392969329521*^9}, {
+  3.92540722722257*^9, 
+  3.925407259863469*^9}},ExpressionUUID->"bd2e515d-9c26-4ff6-820d-\
+4bb7306768b1"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"2e139d62-c8e0-4b73-9e78-\
+78e7ddb8ee4f"],
+
+Cell[TextData[{
+ "The integers in a random permutation of ",
+ StyleBox["1", "Input"],
+ ",",
+ StyleBox["2", "Input"],
+ ",...,",
+ StyleBox["100", "Input"],
+ " are announced one at a time.  A player wins if they choose to \
+\[OpenCurlyDoubleQuote]stop\[CloseCurlyDoubleQuote] after the integer ",
+ StyleBox["100", "Input"],
+ " is announced.  However, the following strategy must be used:\n\n1. An \
+integer ",
+ StyleBox["R", "Input"],
+ " is chosen before any numbers are announced. \n2. The first ",
+ StyleBox["R", "Input"],
+ " integers announced are automatically rejected.\n3. After that, \
+\[OpenCurlyDoubleQuote]stop\[CloseCurlyDoubleQuote] is said if an integer is \
+announced that is the largest integer announced so far.\n\nThe goal is to \
+find the optimal value of ",
+ StyleBox["R", "Input"],
+ ".  Approximate this value of ",
+ StyleBox["R", "Input"],
+ " using the following steps:\n\n1. Define a function ",
+ StyleBox["GoodRValues[L_]", "Input"],
+ " that has input a permutation ",
+ StyleBox["L", "Input"],
+ " of ",
+ StyleBox["1,...,100", "Input"],
+ " and output the list integers ",
+ StyleBox["R", "Input"],
+ " that will identify ",
+ StyleBox["100", "Input"],
+ " using the above scheme.\n2. Run ",
+ StyleBox["GoodRValues", "Input"],
+ " many times on ",
+ StyleBox["RandomSample@Range@100", "Input"],
+ " to find the integer ",
+ StyleBox["R", "Input"],
+ " that is most likely to identify ",
+ StyleBox["100", "Input"],
+ ". "
+}], "Text",
+ CellChangeTimes->{{3.925320710809825*^9, 3.925320761344597*^9}, {
+   3.925320901163663*^9, 3.925320903897338*^9}, {3.925321500283098*^9, 
+   3.925321510807172*^9}, {3.925322269435196*^9, 3.925322294899851*^9}, {
+   3.925592115272222*^9, 3.92559215498135*^9}, {3.9255922155024157`*^9, 
+   3.925592359906708*^9}, {3.9255925101208553`*^9, 3.92559259263971*^9}, {
+   3.925592626599655*^9, 3.9255927843568573`*^9}, {3.925592831890553*^9, 
+   3.925592909113266*^9}, {3.925592997360422*^9, 3.925593014748651*^9}, {
+   3.925593607919579*^9, 3.925593640409215*^9}, {3.925593684676895*^9, 
+   3.925593690537771*^9}, {3.92559374638396*^9, 3.925593765857643*^9}, {
+   3.925593813289185*^9, 3.925593816763133*^9}, {3.9255959355575933`*^9, 
+   3.925595954713705*^9}, {3.925639101113318*^9, 3.9256391189425287`*^9}, {
+   3.925639154823613*^9, 3.9256392399019537`*^9}, 3.925639370762138*^9, {
+   3.925639408032247*^9, 3.925639424806382*^9}, 3.925639500027823*^9, {
+   3.925640996935616*^9, 3.925641028285511*^9}, {3.925641294206554*^9, 
+   3.925641298136085*^9}, {3.925641704144927*^9, 3.92564173050564*^9}, {
+   3.925641840812737*^9, 3.9256418761613903`*^9}, {3.925904469774706*^9, 
+   3.92590447998379*^9}},ExpressionUUID->"ec352fd7-87e6-4222-bdb8-\
+8fdd321840db"]
+}, Closed]]
+}, Closed]]
+},
+WindowSize->{720, 864},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.1 for Linux x86 (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"fa54b072-2b44-48d4-8cc0-0b009dfe8be5"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1952, 30, 72, "Input",ExpressionUUID->"06b7202f-d7ce-42a6-849f-321defeeb14e"],
+Cell[CellGroupData[{
+Cell[2535, 54, 741, 11, 68, "Section",ExpressionUUID->"9a9ab44f-98d1-4ff9-8f25-a108dea67c81"],
+Cell[3279, 67, 241, 6, 35, "Text",ExpressionUUID->"1686deda-e398-4e04-bca7-f94b2d30c552"],
+Cell[3523, 75, 1088, 31, 96, "Input",ExpressionUUID->"9d5a323e-02e2-4ed0-a4d8-a16e9a277eb1"],
+Cell[CellGroupData[{
+Cell[4636, 110, 298, 8, 54, "Subsection",ExpressionUUID->"f4d0a15c-2ffc-4fd7-844e-301edbf7a2da"],
+Cell[4937, 120, 2100, 59, 357, "Text",ExpressionUUID->"0942d1f5-2692-47e5-bcc9-90507e715ac8"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[7074, 184, 298, 8, 38, "Subsection",ExpressionUUID->"7805c003-d593-49cd-a2c8-a8b1b0478edd"],
+Cell[7375, 194, 700, 16, 127, "Text",ExpressionUUID->"8a2722ab-fb72-455f-8aee-17d27d1cdfea"],
+Cell[8078, 212, 12365, 253, 123, "Input",ExpressionUUID->"c296ff77-d222-4964-978f-ecdb64bc32f0"]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[20492, 471, 746, 11, 54, "Section",ExpressionUUID->"8ed8fad8-c4de-43d3-b40b-26d4798633b6"],
+Cell[CellGroupData[{
+Cell[21263, 486, 326, 9, 54, "Subsection",ExpressionUUID->"9f438981-65b5-4ee7-93b3-6caf82f62797"],
+Cell[21592, 497, 531, 10, 104, "Text",ExpressionUUID->"e6677ea7-40d6-4f63-a9c5-77376e88ec76"],
+Cell[CellGroupData[{
+Cell[22148, 511, 1177, 38, 98, "Input",ExpressionUUID->"5fa00899-1ee9-448f-b491-964c3d2f3e33"],
+Cell[23328, 551, 1265, 37, 81, "Output",ExpressionUUID->"06e15fd1-e054-439c-8546-9a93338c9de9"]
+}, Open  ]],
+Cell[24608, 591, 1029, 24, 288, "Text",ExpressionUUID->"05649e4e-7f4f-4d95-95b1-406ec055a6ad"]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[25686, 621, 803, 12, 54, "Section",ExpressionUUID->"bd2e515d-9c26-4ff6-820d-4bb7306768b1"],
+Cell[CellGroupData[{
+Cell[26514, 637, 298, 8, 54, "Subsection",ExpressionUUID->"2e139d62-c8e0-4b73-9e78-78e7ddb8ee4f"],
+Cell[26815, 647, 2692, 59, 334, "Text",ExpressionUUID->"ec352fd7-87e6-4222-bdb8-8fdd321840db"]
+}, Closed]]
+}, Closed]]
+}
+]
+*)
+
