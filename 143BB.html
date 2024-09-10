@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2023-03-16 Thu 09:40 -->
+<!-- 2024-09-09 Mon 17:43 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Blue Book Exercises</title>
@@ -213,85 +213,53 @@
 </script>
 <script type="text/javascript"
 	src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML"></script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
-
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 </head>
 <body>
 <div id="content" class="content">
 <h1 class="title">Blue Book Exercises</h1>
 
-<div id="outline-container-org12d15ee" class="outline-2">
-<h2 id="org12d15ee">Blue Book Exercises</h2>
-<div class="outline-text-2" id="text-org12d15ee">
+<div id="outline-container-org8906dec" class="outline-2">
+<h2 id="org8906dec">Blue Book Exercises</h2>
+<div class="outline-text-2" id="text-org8906dec">
 <p>
-Blue book exercises will be updated here after they are given in class.  These
-exercises will be collected at the final exam.
+Blue book exercises will be updated here after they are given in class.  These exercises
+will be collected at the final exam.
 </p>
 
 <ol style="line-height:3em" class="org-ol">
 <li>Find the degree \(2\) Taylor polynomial for \(\ln (1 + x)\) at \(x = 0\).</li>
-<li>Find the degree \(n\) Taylor polynomial for \(1/(1- x)\) at \(x = 0\).</li>
-<li>a. Find the degree \(3\) Taylor polynomial for \(1/(2+x)\) at \(x = 0\).
-b. Find the error when using this polynomial to approximate \(1 = 1/(2+(-1))\).</li>
-<li>The degree \(2\) Taylor polynomial for \(\cos (2 x)\) is \(1 - 2 x^2\). Find a bound on the
-error when using this to approximate \(\cos (1/2)\) by evaluating at \(x = 1/4\).</li>
-<li>Find the degree \(3\) Taylor polynomial for \(\sqrt{x}\) at \(x = 1\).</li>
-<li>Use the formula for the geometric series to simplify these sums:
-<ul class="org-ul">
-<li>\(\displaystyle \sum_{n = 1}^\infty (-1)^n \left( \frac{1}{2} \right)^{n+1}\)</li>
-<li>\(\displaystyle \sum_{n = 1}^\infty \frac{2^{n+2}}{4^n}\)</li>
-<li>\(\displaystyle \sum_{n = 0}^\infty (-1)^n\)</li>
-</ul></li>
-<li>Do these converge?
-<ul class="org-ul">
-<li>\(\displaystyle \sum_{n = 1}^\infty \frac{\sqrt{n+1}}{n^3}\)</li>
-<li>\(\displaystyle \sum_{n = 1}^\infty \frac{n^2 + 3 n}{n^3 + 2}\)</li>
-</ul></li>
-<li>Find the interval and radius of convergence for \(\sum_{n=0}^\infty n^2 (x + 1)^n\).</li>
-<li>Find the series for \((\cos x - 1)/x\).</li>
-<li>Find up to the \(x^4\) term in the series for \(e^{-x} \sin x\).</li>
-<li>Plot \(\begin{cases} x = \sqrt{t} + 1 \\ y = t + 1 \end{cases}\) for \(t \in [0,1]\).</li>
-<li>Where is the parametric equation \(\begin{cases} x = 1/t \\ y = t^2 + 1 \end{cases}\)
-for \(t \in (0,5)\) concave up?</li>
-<li>Find the slope of the line tangent to the polar curve
-\(r(\theta) = 1 - \sin \theta\) at \(\theta = \pi/4\).</li>
-<li>Find the area in one "petal" of the polar curve \(r(\theta) = \cos(2 \theta)\).</li>
-<li>Find a vector of length \(2\) in the opposite direction of \(\langle 3,4 \rangle\).</li>
-<li>Find the length of the projection of the vector \(\langle 1,1 \rangle\) onto the vector
-\(\langle 2,1 \rangle\).</li>
-<li>Find two unit vectors orthogonal to \(\langle 1,1,1 \rangle\) and \(\langle 2,1,0
-    \rangle\).</li>
-<li>Find the line containing \((2,0,1)\) and perpendicular to both \(\langle 1,1,0 \rangle\)
-and \(\langle 0,0,2 \rangle\).</li>
-<li>Find the plane containing the lines \(\begin{cases} x = 4 + t \\ y = -t \\ z = 1 - t\end{cases}\) and \(\begin{cases} x = 4 \\ y = -3t \\ z = 1 + 2t\end{cases}\).</li>
-<li>Find a vector valued function which traces a curve which lies on the intersection of \(y = x^2\) and \(x^2 + y^2 + z^2 = 4\).</li>
-<li>Find the parametric equations for the line tangent to \(\mathbf{r}(t) = \langle \cos t, \sin t, t/\pi \rangle\) at the point \((1,0,0)\).</li>
-<li>Find the arclength of \(\mathbf{r}(t) = \langle 2 \cos t , 2 \sin t, t \rangle\) from \((2,0,0)\) to \((2,0,2 \pi)\).</li>
-<li>Parameterize \(\mathbf{r}(t) = \langle \cos t , \sin t, t \rangle\) by arclength.</li>
-<li>Find the vectors \(\mathbf{T}\), \(\mathbf{N}\), and \(\mathbf{B}\) for the vector valued function \(\mathbf{r}(t) = \langle \cos t , \sin t, t \rangle\).</li>
-<li>Find the curvature of the helix \(\mathbf{r}(t) = \langle \cos t , \sin t, t \rangle\).</li>
-<li>Write the acceleration of \(\mathbf{r}(t) = \langle t-1, t+1, t^2 \rangle\) as a
-combination of \(\mathbf{T}\) and \(\mathbf{N}\).</li>
-<li>Determine if \(\displaystyle \sum_{n = 0}^\infty \frac{(n+1)! (n-1)!}{(2n)!}\) converges.</li>
 </ol>
 </div>
 </div>
