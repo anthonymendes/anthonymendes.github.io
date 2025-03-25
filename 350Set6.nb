@@ -1,0 +1,498 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17881,        490]
+NotebookOptionsPosition[     15257,        434]
+NotebookOutlinePosition[     15645,        450]
+CellTagsIndexPosition[     15602,        447]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ StyleBox[
+  RowBox[{
+   RowBox[{"Set", " ", "6"}], ":", " ", "Recursion"}], "Title"]], "Input",
+ CellChangeTimes->{{3.919807936189116*^9, 3.919807953895212*^9}, {
+   3.919808208848558*^9, 3.9198082318120193`*^9}, {3.919809333380814*^9, 
+   3.919809336570117*^9}, {3.92024054647309*^9, 3.9202405477719917`*^9}, {
+   3.920302506608282*^9, 3.9203025169780607`*^9}, 3.920306369934359*^9, {
+   3.920306712763356*^9, 3.920306727132897*^9}, {3.9210746494841633`*^9, 
+   3.921074664356082*^9}, {3.921077141851111*^9, 3.921077147147793*^9}, 
+   3.921249311007926*^9, {3.921249902145979*^9, 3.9212499052452097`*^9}, {
+   3.921249953487451*^9, 3.921249954051772*^9}, {3.921250806366598*^9, 
+   3.9212508154574957`*^9}, {3.921674311686713*^9, 3.921674313315612*^9}, {
+   3.9216775934050617`*^9, 3.921677596207581*^9}, {3.921678032673489*^9, 
+   3.9216780535002937`*^9}, {3.921846675839086*^9, 3.92184667935646*^9}, {
+   3.921853383955565*^9, 3.921853388456332*^9}, {3.9222222814089823`*^9, 
+   3.922222293740183*^9}},ExpressionUUID->"4c432c03-a1d3-4acb-afb9-\
+34168f462ca5"],
+
+Cell[CellGroupData[{
+
+Cell["Recursions", "Section",
+ CellChangeTimes->{{3.9198104003845463`*^9, 3.919810448327971*^9}, 
+   3.91985472520175*^9, {3.920306736292746*^9, 3.9203067381339493`*^9}, {
+   3.921182579157118*^9, 3.921182579907123*^9}, {3.921356393763701*^9, 
+   3.921356396053357*^9}, {3.921360867913472*^9, 3.9213608689356413`*^9}, {
+   3.921361605407935*^9, 3.921361620705611*^9}, {3.921933641803233*^9, 
+   3.921933646457343*^9}, 3.9219388265472813`*^9, 3.9219393693860693`*^9, {
+   3.922222368185796*^9, 
+   3.922222368329624*^9}},ExpressionUUID->"1f5a08ab-1802-4609-84b7-\
+4df8b4561fe5"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"8ff1f428-6be0-4961-b375-\
+df9a1120b6b9"],
+
+Cell[TextData[{
+ "Using a recursive definition, define f",
+ StyleBox["[n_]", "Input"],
+ " to be the sum ",
+ StyleBox["1 + 1/1! + 1/2! + ... + 1/n!", "Input"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.922187591763904*^9, 3.9221876279429073`*^9}, {
+  3.9221876858918047`*^9, 3.922187747020934*^9}, {3.922187802225374*^9, 
+  3.922187803818994*^9}},ExpressionUUID->"5cdc49c9-e033-4e9d-b34c-\
+f71ea01bc193"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"141d1153-e2db-46fb-83ce-\
+71aa58bb7117"],
+
+Cell[TextData[{
+ "Define a recursive function ",
+ StyleBox["Zip", "Input"],
+ " that takes as input two lists ",
+ StyleBox["L1 = {x1,x2,x3,...,xn}", "Input"],
+ " and ",
+ StyleBox["L2 = {y1,y2,y3,...,yn}", "Input"],
+ " of lists of equal length and outputs the list \n",
+ StyleBox["{{x1,y1}, {x2,y2}, ..., {xn, yn}}", "Input"],
+ ". "
+}], "Text",
+ CellChangeTimes->{{3.922220138727159*^9, 3.922220269453618*^9}, {
+  3.922220319141027*^9, 
+  3.92222043800137*^9}},ExpressionUUID->"e2507f6d-c149-4cad-aba3-\
+2e938f097521"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"711871e3-bfba-48a4-b561-\
+7a89a7413e4b"],
+
+Cell[TextData[{
+ "Quicksort (see https://en.wikipedia.org/wiki/Quicksort ) is a divide and \
+conquer algorithm for sorting a list of numbers.  It works by dividing a \
+large list into two smaller sublists, the \"small\" elements and the \"big\" \
+elements, and then recursively sorts the sublists.   Here are the steps \
+involved in the quicksort algorithm: \n\n1. Pick an element, called a pivot, \
+randomly from the list . \n2. Of the remaining non-pivot elements, create two \
+new sublists, a list of numbers smaller than the pivot element and a list of \
+numbers greater than the pivot element. \n3. ",
+ StyleBox["Join", "Input"],
+ " the Quicksorted list of the small elements, the list containing the pivot \
+element repeated the number of times it appears in the list, and the \
+Quicksorted list of the big elements.\n\nCreate a recursive function called \
+",
+ StyleBox["Quicksort[L_List]", "Input"],
+ " using ",
+ StyleBox["Module", "Input"],
+ " that takes a list ",
+ StyleBox["L", "Input"],
+ " as an input and returns the list in nondecreasing order.  You may not use \
+any built-in sorting operations."
+}], "Text",
+ CellChangeTimes->{{3.921939374991914*^9, 3.921939374992222*^9}, 
+   3.92193941200939*^9, {3.9219395786824503`*^9, 3.92193967472368*^9}, {
+   3.9219397084359617`*^9, 3.921939727795681*^9}, {3.921939786255602*^9, 
+   3.9219397865483923`*^9}, {3.921940578264155*^9, 3.9219405799129467`*^9}, {
+   3.9219483950840397`*^9, 3.921948408897677*^9}, 3.92194855312766*^9, {
+   3.9219486335163517`*^9, 3.921948666024378*^9}, {3.922582982087594*^9, 
+   3.9225831736286793`*^9}},ExpressionUUID->"03f1c9fb-d9fb-4547-bf98-\
+56937181c5b9"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"2a647d65-d7e2-4ccf-bb6a-\
+7921440f0be9"],
+
+Cell[TextData[{
+ "The Legendre polynomials (see \
+https://en.wikipedia.org/wiki/Legendre_polynomials ) are defined by ",
+ StyleBox["p[x,0]=1", "Input"],
+ ", ",
+ StyleBox["p[x,1]=x", "Input"],
+ ", and ",
+ StyleBox["p[x,n]", "Input"],
+ " is equal to \n\n",
+ StyleBox["((2n-1)x p[x,n-1]-(n-1)p[x,n-2])/n", "Input"],
+ " \n\notherwise.  Find the ",
+ StyleBox["20th", "Input"],
+ " Legendre polynomial, and ",
+ StyleBox["Simplify", "Input"],
+ " the result.  "
+}], "Text",
+ CellChangeTimes->{{3.922204231956718*^9, 3.9222044845738487`*^9}, {
+  3.9222046195248957`*^9, 3.92220463216476*^9}, {3.92220477729163*^9, 
+  3.922204786763445*^9}, {3.922204873432526*^9, 3.9222049268137407`*^9}, {
+  3.922215837290409*^9, 
+  3.922215841598036*^9}},ExpressionUUID->"d5f0cf82-5f9a-4848-a46d-\
+3da280ae32dd"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"c3f16a0d-7bf8-49a4-8298-\
+b59eb44b2ab8"],
+
+Cell[TextData[{
+ "a. Let ",
+ StyleBox["L", "Input"],
+ " be a list of ",
+ StyleBox["0", "Input"],
+ "\[CloseCurlyQuote]s and ",
+ StyleBox["1", "Input"],
+ "\[CloseCurlyQuote]s.  Define a function called ",
+ StyleBox["Post", "Input"],
+ " that follows these steps: \n\n1. If ",
+ StyleBox["L", "Input"],
+ " begins with a ",
+ StyleBox["0", "Input"],
+ ", then append ",
+ StyleBox["0,0", "Input"],
+ " to the end of ",
+ StyleBox["L", "Input"],
+ ".  If ",
+ StyleBox["L", "Input"],
+ " begins with a ",
+ StyleBox["1", "Input"],
+ ", then append ",
+ StyleBox["1,1,0,1", "Input"],
+ " to the end of ",
+ StyleBox["L", "Input"],
+ ".\n\n2. Delete the first three elements in ",
+ StyleBox["L", "Input"],
+ ".\n\nb. When ",
+ StyleBox["Post", "Input"],
+ " is iterated, eventually one of three things will happen: either ",
+ StyleBox["L", "Input"],
+ " will reach the empty word, ",
+ StyleBox["L", "Input"],
+ " will enter a loop (keep repeating the same sequence of lists), or ",
+ StyleBox["L", "Input"],
+ " will keep growing forever.  This is an example of a \
+\[OpenCurlyDoubleQuote]Tag system\[CloseCurlyDoubleQuote], to learn more see \
+(https://en.wikipedia.org/wiki/Tag_system ). \n\nShow that {1,0,0,0} reaches \
+the empty word and show that {1,0,0,1,0,0} enters a loop.  How many distinct \
+lists are created by iterating ",
+ StyleBox["Post", "Input"],
+ " on {1,0,0,1,0,0}? \n\n(It is okay to not define a recursive function for \
+this problem if you use ",
+ StyleBox["NestList", "Input"],
+ ".)"
+}], "Text",
+ CellChangeTimes->{{3.922195406939384*^9, 3.922195718937017*^9}, {
+  3.922196037414588*^9, 3.922196066571554*^9}, {3.922196129361408*^9, 
+  3.922196191864193*^9}, {3.9221962308755074`*^9, 3.92219631381671*^9}, {
+  3.922196527680345*^9, 3.922196553634368*^9}, {3.922196659186878*^9, 
+  3.9221966633784027`*^9}, {3.922205145203817*^9, 3.9222051678362217`*^9}, {
+  3.9222225171518908`*^9, 3.922222549572981*^9}, {3.922285810682289*^9, 
+  3.922285815475996*^9}},ExpressionUUID->"48779dfd-8d79-4a9a-9856-\
+46e3b6476a5e"]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Memoization", "Section",
+ CellChangeTimes->{{3.9198104003845463`*^9, 3.919810448327971*^9}, 
+   3.91985472520175*^9, {3.920306736292746*^9, 3.9203067381339493`*^9}, {
+   3.921182579157118*^9, 3.921182579907123*^9}, {3.921356393763701*^9, 
+   3.921356396053357*^9}, {3.921360867913472*^9, 3.9213608689356413`*^9}, {
+   3.921361605407935*^9, 3.921361620705611*^9}, {3.921933641803233*^9, 
+   3.921933675260646*^9}},ExpressionUUID->"10ce8cd1-d617-47cb-936c-\
+5eed4c405b41"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"a4aea993-1605-4ad7-b0e6-\
+eaa06462d8b6"],
+
+Cell[TextData[{
+ "The Motzkin sequence (see https://en.wikipedia.org/wiki/Motzkin_number ) is \
+defined such that m",
+ StyleBox["[0] = 1", "Input"],
+ " and m",
+ StyleBox["[n]", "Input"],
+ " is equal to the sum \n\n",
+ StyleBox["m[n-1] + (m[0] m[n-2] + m[1] m[n-3] + ... + m[n-2] m[0])", "Input"],
+ "\n\na. Using ",
+ StyleBox["Timing", "Input"],
+ " to find the ",
+ StyleBox["18th", "Input"],
+ " Motzkin number ",
+ StyleBox["m[18]", "Input"],
+ " without using memoization and then compare ",
+ StyleBox["Timing", "Input"],
+ " to find ",
+ StyleBox["m[18]", "Input"],
+ " when implementing memoization.  \n\nb. Find the first four terms of the \
+Motkzin sequence that are also prime numbers.  (It is an open problem to \
+decide if there is another Motzkin numbers that is prime.)"
+}], "Text",
+ CellChangeTimes->{{3.9221878533428373`*^9, 3.9221879576661463`*^9}, {
+  3.922187989126588*^9, 3.92218798930683*^9}, {3.922188075575959*^9, 
+  3.922188093306535*^9}, {3.922188556539419*^9, 3.9221886237498837`*^9}, {
+  3.92218886371636*^9, 3.922188868222373*^9}, {3.9221889318881807`*^9, 
+  3.922188952910409*^9}, {3.9222026398724318`*^9, 3.92220284449187*^9}, {
+  3.9222029149315023`*^9, 3.9222029194869432`*^9}, {3.922202973750764*^9, 
+  3.922203012091559*^9}, {3.9222030601037617`*^9, 
+  3.9222030788875523`*^9}},ExpressionUUID->"c35b6e5b-0ca2-4e67-aeb9-\
+4563de5b2ad1"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"8644f81b-a4ce-46bd-a77b-\
+f1c21f06fef9"],
+
+Cell[TextData[{
+ "The Recam\[AAcute]n sequence ",
+ StyleBox["r[n]", "Input"],
+ " is defined by ",
+ StyleBox["r[0]=0", "Input"],
+ " and then ",
+ StyleBox["r[n]=r[n-1]-n", "Input"],
+ " if this results in a positive integer that has not already appeared in the \
+sequence and ",
+ StyleBox["r[n]=r[n-1]+n", "Input"],
+ " otherwise.  An open problem is to decide if this sequence ",
+ StyleBox["r[n]", "Input"],
+ " contains the integer 852655.  See \
+https://www.youtube.com/watch?v=FGC5TdIiT9U for more information about this \
+sequence.\n\na. Define ",
+ StyleBox["r[n]", "Input"],
+ ", taking advantage of memoization. \nb. What is the first integer ",
+ StyleBox["k", "Input"],
+ " that is repeated in the sequence? \nc. Find the first value of ",
+ StyleBox["n", "Input"],
+ " for which ",
+ StyleBox["r[n] = 100", "Input"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.922198783234913*^9, 3.922199021879353*^9}, {
+  3.9221990639203*^9, 3.922199147140266*^9}, {3.922199954156747*^9, 
+  3.922199960465027*^9}, {3.922200659309078*^9, 
+  3.922200681088331*^9}},ExpressionUUID->"0b5eb134-4bbd-4c5c-87e3-\
+a1a2fd6c1e11"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"35ded0af-32a6-4e87-8b27-\
+0893b7f56d2a"],
+
+Cell[TextData[{
+ "Using memoization, define a sequence ",
+ StyleBox["a[n]", "Input"],
+ " such that ",
+ StyleBox["a[1]=7", "Input"],
+ " and then ",
+ StyleBox["a[n] = a[n-1] + GCD[n,a[n-1]]", "Input"],
+ ".  It has been proved that numbers of the form ",
+ StyleBox["a[n]-a[n-1]", "Input"],
+ " are either ",
+ StyleBox["1", "Input"],
+ " or prime for ",
+ StyleBox["n >= 2", "Input"],
+ ".  Test this out for the first ",
+ StyleBox["100", "Input"],
+ " values of ",
+ StyleBox["n", "Input"],
+ ". "
+}], "Text",
+ CellChangeTimes->{{3.9222063343641567`*^9, 3.9222063821302137`*^9}, {
+  3.9222064170235357`*^9, 
+  3.922206533100122*^9}},ExpressionUUID->"b7a11978-0099-481b-9806-\
+9af3671c564c"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"d0925c9a-7edd-4d06-a8bc-\
+7f22e8a83bc4"],
+
+Cell[TextData[{
+ "The Duffing map, see (https://en.wikipedia.org/wiki/Duffing_map ) is a pair \
+of sequences ",
+ StyleBox["x[n]", "Input"],
+ " and ",
+ StyleBox["y[n]", "Input"],
+ " defined by ",
+ StyleBox["x[0]=1", "Input"],
+ ", ",
+ StyleBox["y[0]=1", "Input"],
+ ", ",
+ StyleBox["x[n]=y[n-1]", "Input"],
+ ", and ",
+ StyleBox["y[n] = -0.2 x[n-1] + 2.75 y[n-1] - y[n-1]^3", "Input"],
+ ".\n\nFind the list of pairs ",
+ StyleBox["{x[n],y[n]}", "Input"],
+ " for ",
+ StyleBox["n = 0, 1,...,10000", "Input"],
+ ", and then use the command ",
+ StyleBox["ListPlot", "Input"],
+ " on this set of pairs to visualize them in the plane."
+}], "Text",
+ CellChangeTimes->{{3.922217717778199*^9, 3.9222177591605062`*^9}, {
+  3.92221784828444*^9, 3.9222178721164713`*^9}, {3.922217968940309*^9, 
+  3.922218093565098*^9}, {3.9222183838524446`*^9, 3.9222184503588*^9}, {
+  3.922219793255909*^9, 
+  3.922219848621669*^9}},ExpressionUUID->"286878f7-ea79-49b5-b394-\
+f7f47b435b88"]
+}, Closed]]
+}, Open  ]]
+},
+WindowSize->{720, 864},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"13.1 for Linux x86 (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"9963ee81-f8f6-4f47-aa95-7ff83ad56c4d"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1077, 17, 72, "Input",ExpressionUUID->"4c432c03-a1d3-4acb-afb9-34168f462ca5"],
+Cell[CellGroupData[{
+Cell[1660, 41, 577, 9, 68, "Section",ExpressionUUID->"1f5a08ab-1802-4609-84b7-4df8b4561fe5"],
+Cell[CellGroupData[{
+Cell[2262, 54, 298, 8, 54, "Subsection",ExpressionUUID->"8ff1f428-6be0-4961-b375-df9a1120b6b9"],
+Cell[2563, 64, 400, 10, 35, "Text",ExpressionUUID->"5cdc49c9-e033-4e9d-b34c-f71ea01bc193"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[3000, 79, 298, 8, 38, "Subsection",ExpressionUUID->"141d1153-e2db-46fb-83ce-71aa58bb7117"],
+Cell[3301, 89, 516, 14, 81, "Text",ExpressionUUID->"e2507f6d-c149-4cad-aba3-2e938f097521"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[3854, 108, 298, 8, 38, "Subsection",ExpressionUUID->"711871e3-bfba-48a4-b561-7a89a7413e4b"],
+Cell[4155, 118, 1646, 29, 334, "Text",ExpressionUUID->"03f1c9fb-d9fb-4547-bf98-56937181c5b9"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[5838, 152, 298, 8, 38, "Subsection",ExpressionUUID->"2a647d65-d7e2-4ccf-bb6a-7921440f0be9"],
+Cell[6139, 162, 787, 21, 150, "Text",ExpressionUUID->"d5f0cf82-5f9a-4848-a46d-3da280ae32dd"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[6963, 188, 298, 8, 38, "Subsection",ExpressionUUID->"c3f16a0d-7bf8-49a4-8298-b59eb44b2ab8"],
+Cell[7264, 198, 2005, 53, 380, "Text",ExpressionUUID->"48779dfd-8d79-4a9a-9856-46e3b6476a5e"]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9318, 257, 476, 7, 68, "Section",ExpressionUUID->"10ce8cd1-d617-47cb-936c-5eed4c405b41"],
+Cell[CellGroupData[{
+Cell[9819, 268, 298, 8, 54, "Subsection",ExpressionUUID->"a4aea993-1605-4ad7-b0e6-eaa06462d8b6"],
+Cell[10120, 278, 1359, 30, 239, "Text",ExpressionUUID->"c35b6e5b-0ca2-4e67-aeb9-4563de5b2ad1"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[11516, 313, 298, 8, 38, "Subsection",ExpressionUUID->"8644f81b-a4ce-46bd-a77b-f1c21f06fef9"],
+Cell[11817, 323, 1100, 28, 196, "Text",ExpressionUUID->"0b5eb134-4bbd-4c5c-87e3-a1a2fd6c1e11"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[12954, 356, 298, 8, 38, "Subsection",ExpressionUUID->"35ded0af-32a6-4e87-8b27-0893b7f56d2a"],
+Cell[13255, 366, 680, 22, 81, "Text",ExpressionUUID->"b7a11978-0099-481b-9806-9af3671c564c"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[13972, 393, 298, 8, 38, "Subsection",ExpressionUUID->"d0925c9a-7edd-4d06-a8bc-7f22e8a83bc4"],
+Cell[14273, 403, 956, 27, 150, "Text",ExpressionUUID->"286878f7-ea79-49b5-b394-f7f47b435b88"]
+}, Closed]]
+}, Open  ]]
+}
+]
+*)
+

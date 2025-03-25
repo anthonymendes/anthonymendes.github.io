@@ -1,0 +1,662 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     22850,        654]
+NotebookOptionsPosition[     18904,        579]
+NotebookOutlinePosition[     19292,        595]
+CellTagsIndexPosition[     19249,        592]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ StyleBox[
+  RowBox[{
+   RowBox[{"Set", " ", "12"}], ":", " ", 
+   RowBox[{"Number", " ", "Theory"}]}], "Title"]], "Input",
+ CellChangeTimes->{{3.919807936189116*^9, 3.919807953895212*^9}, {
+   3.919808208848558*^9, 3.9198082318120193`*^9}, {3.919809333380814*^9, 
+   3.919809336570117*^9}, {3.92024054647309*^9, 3.9202405477719917`*^9}, {
+   3.920302506608282*^9, 3.9203025169780607`*^9}, 3.920306369934359*^9, {
+   3.920306712763356*^9, 3.920306727132897*^9}, {3.9210746546570387`*^9, 
+   3.9210746580834618`*^9}, {3.921075196084837*^9, 3.921075207080585*^9}, {
+   3.921076386745256*^9, 3.921076386849423*^9}, {3.92116580248526*^9, 
+   3.921165812071307*^9}, {3.921182556628333*^9, 3.92118257012987*^9}, {
+   3.921413143772915*^9, 3.921413144157531*^9}, {3.921499154499137*^9, 
+   3.921499182060101*^9}, {3.9218533916685*^9, 3.921853396060192*^9}, {
+   3.921869112243034*^9, 3.921869113241489*^9}, {3.921869182203751*^9, 
+   3.921869184628964*^9}, {3.921878236116894*^9, 3.921878240250746*^9}, {
+   3.922196356449726*^9, 3.922196357749195*^9}, 3.9221964015295563`*^9, {
+   3.92271765166505*^9, 3.922717653875639*^9}, {3.922834029116836*^9, 
+   3.922834032614249*^9}, {3.922835625522875*^9, 3.922835637722274*^9}, {
+   3.92283608335926*^9, 3.922836085173115*^9}, {3.92314642656995*^9, 
+   3.923146427546648*^9}, 3.923146468643402*^9, {3.9234020748606367`*^9, 
+   3.9234021020736647`*^9}, {3.923405041346549*^9, 3.923405044482031*^9}, {
+   3.923405135885439*^9, 3.923405135994376*^9}, {3.923668778727644*^9, 
+   3.923668786005205*^9}, {3.924279393098461*^9, 3.924279399553339*^9}, {
+   3.9244633087401114`*^9, 
+   3.924463309002322*^9}},ExpressionUUID->"5213b6c5-d59c-4f2b-aec8-\
+b4359703caf8"],
+
+Cell[CellGroupData[{
+
+Cell["Divisors", "Section",
+ CellChangeTimes->{{3.923511911101522*^9, 3.9235119163007402`*^9}, {
+  3.9236750028049707`*^9, 3.923675037070533*^9}, {3.92376109691994*^9, 
+  3.923761098856876*^9}, {3.92394971034903*^9, 3.923949716585335*^9}, {
+  3.924279426504402*^9, 3.9242794437710657`*^9}, {3.9242863385828876`*^9, 
+  3.924286339595612*^9}},ExpressionUUID->"3965aac7-051b-4bfc-87fc-\
+f1d188d96faa"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"598e7885-a794-4789-a43f-\
+336cb36508fa"],
+
+Cell[TextData[{
+ "Define a function ",
+ StyleBox["ExponentOdd[n_]", "Input"],
+ " that takes as input an integer ",
+ StyleBox["n", "Input"],
+ " and outputs ",
+ StyleBox["{exponent, odd}", "Input"],
+ " such that ",
+ StyleBox["exponent", "Input"],
+ " is a nonnegative integer and ",
+ StyleBox["odd", "Input"],
+ " is an odd integer such that ",
+ StyleBox["n = 2^(exponent) odd", "Input"],
+ ".  (Consider ",
+ StyleBox["IntegerExponent", "Input"],
+ ".)"
+}], "Text",
+ CellChangeTimes->{{3.9242854780543623`*^9, 3.924285487383297*^9}, {
+  3.924285549063582*^9, 3.924285653690711*^9}, {3.9242856906643457`*^9, 
+  3.924285705790986*^9}, {3.924285766893612*^9, 
+  3.92428577506222*^9}},ExpressionUUID->"48e4750d-49cb-416d-82ea-\
+d3df9fa423cf"]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Primes", "Section",
+ CellChangeTimes->{{3.923511911101522*^9, 3.9235119163007402`*^9}, {
+  3.9236750028049707`*^9, 3.923675037070533*^9}, {3.92376109691994*^9, 
+  3.923761098856876*^9}, {3.92394971034903*^9, 3.923949716585335*^9}, {
+  3.924279426504402*^9, 3.9242794437710657`*^9}, {3.9242863385828876`*^9, 
+  3.924286355670575*^9}},ExpressionUUID->"318fa8b8-f09d-4781-94e3-\
+549c07847e0d"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"089a65ad-bbe2-4d31-a7aa-\
+36927d6146a2"],
+
+Cell[TextData[{
+ "The Goldbach conjecture says that every even integer larger than ",
+ StyleBox["2", "Input"],
+ " is the sum of two primes.  For example, ",
+ StyleBox["4=2+2", "Input"],
+ ", ",
+ StyleBox["6=3+3", "Input"],
+ ", ",
+ StyleBox["8=5+3", "Input"],
+ ", ",
+ StyleBox["10=7+3", "Input"],
+ ", and so on. Prove the Goldbach conjecture is true for even integers less \
+than ",
+ StyleBox["1000", "Input"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.924288738947301*^9, 3.92428885578999*^9}, {
+  3.9242899375675783`*^9, 
+  3.924289946549988*^9}},ExpressionUUID->"d34bfaa9-2863-4d71-a946-\
+b37996f067fc"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"86ad1bae-1725-4ebf-91bd-\
+90dd4b8e59d1"],
+
+Cell[TextData[{
+ "Recall that ",
+ StyleBox["PrimePi[x]", "Input"],
+ " gives the number of primes less than or equal to ",
+ StyleBox["x", "Input"],
+ ".  An open problem is to verify that "
+}], "Text",
+ CellChangeTimes->{{3.924290027424595*^9, 
+  3.9242900527659187`*^9}},ExpressionUUID->"27b64ced-8943-4c3e-b3bd-\
+a39f2680e4e7"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PrimePi", "[", 
+   RowBox[{"x", "+", "y"}], "]"}], " ", "<=", " ", 
+  RowBox[{
+   RowBox[{"PrimePi", "[", "x", "]"}], "+", 
+   RowBox[{"PrimePi", "[", "y", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.924290038021933*^9, 3.924290039546496*^9}, {
+  3.9242900803447104`*^9, 
+  3.924290094402244*^9}},ExpressionUUID->"6e397ed3-94a0-45f0-b2ca-\
+0adb18d2cc10"],
+
+Cell[TextData[{
+ "for all ",
+ StyleBox["x, y >= 2", "Input"],
+ ".  Verify this conjecture is true for all pairs of ",
+ StyleBox["x", "Input"],
+ ", ",
+ StyleBox["y", "Input"],
+ " larger than ",
+ StyleBox["2", "Input"],
+ " but less than ",
+ StyleBox["200", "Input"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.924290095241938*^9, 3.924290143990486*^9}, {
+  3.9242903094666643`*^9, 3.92429030971209*^9}, {3.92429042821196*^9, 
+  3.924290428783723*^9}},ExpressionUUID->"31d9cde5-4ab5-4a43-863a-\
+e72d86a0cffe"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"26bafbb9-2a74-4b87-8d39-\
+20f34b9217f6"],
+
+Cell[TextData[{
+ "The probability that two randomly selected positive integers in ",
+ StyleBox["Range[n]", "Input"],
+ " have greatest common divisor ",
+ StyleBox["1", "Input"],
+ " is approximately ",
+ StyleBox["6/\[Pi]^2", "Input"],
+ " for large ",
+ StyleBox["n", "Input"],
+ ".  Test this theorem using the Monte-Carlo method: Randomly select integers \
+between ",
+ StyleBox["1", "Input"],
+ " and ",
+ StyleBox["10^6", "Input"],
+ ", see if their ",
+ StyleBox["GCD", "Input"],
+ " is ",
+ StyleBox["1", "Input"],
+ ", and then repeat this experiment many times over to estimate the desired \
+result, which should be close to ",
+ StyleBox["6/\[Pi]^2", "Input"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.924450967875703*^9, 3.924451136631283*^9}, {
+  3.924451269809504*^9, 
+  3.924451283226617*^9}},ExpressionUUID->"edbc59b5-d498-4880-a8dc-\
+6ecdb8819ede"]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Congruence equations", "Section",
+ CellChangeTimes->{{3.923511911101522*^9, 3.9235119163007402`*^9}, {
+  3.9236750028049707`*^9, 3.923675037070533*^9}, {3.92376109691994*^9, 
+  3.923761098856876*^9}, {3.92394971034903*^9, 3.923949716585335*^9}, {
+  3.924279426504402*^9, 3.9242794437710657`*^9}, {3.9242863385828876`*^9, 
+  3.924286355670575*^9}, {3.9242953437477417`*^9, 
+  3.924295356145081*^9}},ExpressionUUID->"4bb2296b-c07e-4309-a69d-\
+741c63f62065"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"d9efb8a9-dcb3-442b-87cf-\
+ed3dc825a20d"],
+
+Cell[TextData[{
+ "Three farmers divided the rice they raised into three equal parts. They \
+went to different markets where different units of measurement were used. One \
+market weighed in multiples of ",
+ StyleBox["83", "Input"],
+ " pounds, the next in multiples of ",
+ StyleBox["110", "Input"],
+ " pounds, and the last in multiples of ",
+ StyleBox["135", "Input"],
+ " pounds . Each sold as much as possible in full measures. After selling the \
+rice in the three markets, there were ",
+ StyleBox["32", "Input"],
+ " pounds, ",
+ StyleBox["70", "Input"],
+ " pounds, and ",
+ StyleBox["30", "Input"],
+ " pounds left over, respectively. What is the minimum amount of rice they \
+grew together?  (Look up and use the function ",
+ StyleBox["ChineseRemainder", "Input"],
+ " to solve this exercise.)"
+}], "Text",
+ CellChangeTimes->{{3.9242956594009447`*^9, 3.924295689691414*^9}, {
+  3.9242957289259*^9, 3.924295741072357*^9}, {3.924295781153232*^9, 
+  3.924295783089346*^9}, {3.9242963771881123`*^9, 3.92429637761779*^9}, {
+  3.924876894313727*^9, 
+  3.924876910285981*^9}},ExpressionUUID->"2814fc94-cbcc-45df-9e8e-\
+2bbb75658b16"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"dd289590-4e9f-48c6-b069-\
+6b109900c16f"],
+
+Cell[TextData[{
+ "Suppose ",
+ StyleBox["a", "Input"],
+ " and ",
+ StyleBox["m", "Input"],
+ " are relatively prime (meaning that ",
+ StyleBox["GCD[a,m] == 1", "Input"],
+ ").  The order of ",
+ StyleBox["a", "Input"],
+ " modulo ",
+ StyleBox["m", "Input"],
+ " is the least positive integer ",
+ StyleBox["k", "Input"],
+ " such that ",
+ StyleBox["a^k == 1", "Input"],
+ " modulo ",
+ StyleBox["m", "Input"],
+ ".  Define a function ",
+ StyleBox["OrderMod[{a_,m_}/;GCD[a,m]==1]", "Input"],
+ " that has input the integers ",
+ StyleBox["a", "Input"],
+ " and ",
+ StyleBox["m", "Input"],
+ " and output the order of ",
+ StyleBox["a", "Input"],
+ " modulo ",
+ StyleBox["m", "Input"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.9242965466173353`*^9, 3.92429667692488*^9}, {
+  3.9242990505150747`*^9, 3.924299057325766*^9}, {3.9242991534815073`*^9, 
+  3.924299160689451*^9}, {3.924341320411098*^9, 
+  3.92434132138888*^9}},ExpressionUUID->"b4fca0cf-d57c-4860-8420-\
+9651ba011e91"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"dddefbde-d9a4-454e-a0d9-\
+004348f8f770"],
+
+Cell[TextData[{
+ "A Pythagorean triple is a triple of positive integers ",
+ StyleBox["{a,b,c}", "Input"],
+ " such that ",
+ StyleBox["1 <= a <= b", "Input"],
+ " and such that ",
+ StyleBox["a^2 + b^2 == c^2", "Input"],
+ ".  Find all Pythagorean triples with ",
+ StyleBox["c <= 100", "Input"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.9243680854728117`*^9, 3.924368113075226*^9}, {
+  3.924369939695601*^9, 3.924370102942101*^9}, {3.92437041539056*^9, 
+  3.924370457672078*^9}, {3.924370667694824*^9, 3.924370681611196*^9}, {
+  3.924370761978055*^9, 3.924370764004307*^9}, {3.9243708300563927`*^9, 
+  3.9243708313957043`*^9}},ExpressionUUID->"fa65d264-9ca5-4d5e-ab1f-\
+8507254b05d2"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Number theoretic functions", "Section",
+ CellChangeTimes->{{3.923511911101522*^9, 3.9235119163007402`*^9}, {
+  3.9236750028049707`*^9, 3.923675037070533*^9}, {3.92376109691994*^9, 
+  3.923761098856876*^9}, {3.92394971034903*^9, 3.923949716585335*^9}, {
+  3.924279426504402*^9, 3.9242794437710657`*^9}, {3.9242863385828876`*^9, 
+  3.924286355670575*^9}, {3.9242953437477417`*^9, 3.924295356145081*^9}, {
+  3.924301913448004*^9, 3.924301921510141*^9}, {3.9243485439082947`*^9, 
+  3.924348551999773*^9}},ExpressionUUID->"81e598f9-5e3f-48fb-b24c-\
+fadf96584788"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"33f8b365-167b-41e5-beba-\
+72af99936ce8"],
+
+Cell[TextData[{
+ StyleBox["DivisorSigma[1,n]", "Input"],
+ " is a function that has input a positive integer ",
+ StyleBox["n", "Input"],
+ " and output the sum of the divisors of ",
+ StyleBox["n", "Input"],
+ ".  \na. Make a ",
+ StyleBox["ListPlot", "Input"],
+ " of the first ",
+ StyleBox["1000", "Input"],
+ " values of ",
+ StyleBox["DivisorSigma[1,n]", "Input"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.924375345394576*^9, 3.92437537808532*^9}, {
+   3.924375410049268*^9, 3.924375410990004*^9}, {3.924375461349103*^9, 
+   3.924375472059588*^9}, 
+   3.924429849975161*^9},ExpressionUUID->"8d21d1aa-1b80-463c-b88e-\
+0b64354bc2af"],
+
+Cell[TextData[{
+ "b. An equivalent statement to the Riemann Hypothesis is that the following \
+inequality is true for all positive integers ",
+ StyleBox["n", "Input"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.924375479174274*^9, 3.924375532896954*^9}, {
+  3.9243756237385693`*^9, 3.924375632133008*^9}, {3.9244298571527863`*^9, 
+  3.924429900169207*^9}},ExpressionUUID->"9b9d8dc6-3429-4dc4-acf4-\
+f427d9c797f4"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Test", "[", "n_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"DivisorSigma", "[", 
+    RowBox[{"1", ",", "n"}], "]"}], "<=", 
+   RowBox[{
+    RowBox[{"HarmonicNumber", "[", "n", "]"}], "+", 
+    RowBox[{
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"HarmonicNumber", "[", "n", "]"}]], " ", 
+     RowBox[{"Log", "[", 
+      RowBox[{"HarmonicNumber", "[", "n", "]"}], "]"}]}]}]}]}]], "Input",
+ CellChangeTimes->{{3.924375817830566*^9, 3.9243758265038557`*^9}, {
+  3.9243759691714993`*^9, 3.9243759715185223`*^9}, {3.9244299048038893`*^9, 
+  3.924429910663301*^9}},
+ CellLabel->
+  "In[757]:=",ExpressionUUID->"5690afb6-fd8b-412d-98ce-2ebf48aafb87"],
+
+Cell[TextData[{
+ "Show this ",
+ StyleBox["Test", "Input"],
+ " returns true for many values of ",
+ StyleBox["n", "Input"],
+ ".  If you can find a large random number ",
+ StyleBox["n", "Input"],
+ " for which ",
+ StyleBox["Test", "Input"],
+ " returns ",
+ StyleBox["False", "Input"],
+ ", then you will have resolved the Riemann hypothesis in the negative and \
+will earn $1,000,000."
+}], "Text",
+ CellChangeTimes->{{3.924375691503574*^9, 3.924375716897188*^9}, {
+  3.924375851216406*^9, 3.924375889264654*^9}, {3.924429874573471*^9, 
+  3.924429880901129*^9}, {3.924429929026209*^9, 
+  3.924430021888554*^9}},ExpressionUUID->"d3620e29-0e99-414d-b36a-\
+816e95550e61"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"19735184-0d21-4419-af2f-\
+c150bfdf24c4"],
+
+Cell[TextData[{
+ "The ",
+ StyleBox["MoebiusMu", "Input"],
+ " function has input an integer n and output equal to ",
+ StyleBox["(-1)^k", "Input"],
+ " if ",
+ StyleBox["n", "Input"],
+ " is the product of ",
+ StyleBox["k", "Input"],
+ " distinct primes and ",
+ StyleBox["0", "Input"],
+ " otherwise.  "
+}], "Text",
+ CellChangeTimes->{{3.9244612733936853`*^9, 
+  3.924461311100214*^9}},ExpressionUUID->"0046769b-44c5-4b03-b6a5-\
+318d9abae3c3"],
+
+Cell[TextData[{
+ "a. Simplify the infinite sum of terms of the form ",
+ StyleBox["MoebiusMu[n]/n^s", "Input"],
+ " as n ranges from 1 to ",
+ StyleBox["Infinity", "Input"],
+ " to find an expression involving the ",
+ StyleBox["Zeta", "Input"],
+ " function. "
+}], "Text",
+ CellChangeTimes->{{3.924453396726717*^9, 3.9244534231730213`*^9}, {
+  3.924453461307452*^9, 3.924453467095986*^9}, {3.924461244924552*^9, 
+  3.92446124517446*^9}, {3.924461461790371*^9, 
+  3.924461464853568*^9}},ExpressionUUID->"f161e2d9-c38e-446b-a394-\
+374e0c878879"],
+
+Cell[TextData[{
+ "b. Simplify the infinite sum of terms of the form ",
+ StyleBox["MoebiusMu[n] x^n/(1-x^n)", "Input"],
+ " as ",
+ StyleBox["n", "Input"],
+ " ranges from ",
+ StyleBox["1", "Input"],
+ " to ",
+ StyleBox["Infinity", "Input"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.924461467417778*^9, 3.9244614730891733`*^9}, {
+  3.924461527969729*^9, 
+  3.92446158696209*^9}},ExpressionUUID->"ae6ce69f-43ed-4afb-b113-\
+46afec865f41"],
+
+Cell["\<\
+c. Make a conjecture about the value of the sum below as M gets large.\
+\>", "Text",
+ CellChangeTimes->{{3.924461467417778*^9, 3.9244614730891733`*^9}, {
+   3.924461527969729*^9, 3.9244616191390533`*^9}, {3.924461740535294*^9, 
+   3.924461821676029*^9}, {3.924462274897065*^9, 3.924462305621187*^9}, 
+   3.924462506642849*^9},ExpressionUUID->"a75e5730-8f14-46cc-a6cb-\
+23b7d5b33c6c"],
+
+Cell[BoxData[
+ RowBox[{
+  UnderoverscriptBox["\[Sum]", 
+   RowBox[{"n", "=", "1"}], "M"], 
+  FractionBox[
+   RowBox[{
+    RowBox[{"Log", "[", 
+     FractionBox["1", 
+      RowBox[{"1", "-", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         FractionBox["2", "3"], ")"}], "n"]}]], "]"}], " ", 
+    RowBox[{"MoebiusMu", "[", "n", "]"}]}], "n"]}]], "Input",
+ CellChangeTimes->{{3.9244625181785393`*^9, 3.924462526728052*^9}},
+ CellLabel->
+  "In[1026]:=",ExpressionUUID->"bfa4b2e1-f894-42e3-88a1-e3f70a375fee"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"72d63324-6497-43f0-be65-\
+0124a4a57d0e"],
+
+Cell[TextData[{
+ "Define a function that inputs a positive integer n and then outputs a pair ",
+ StyleBox["{p,q}", "Input"],
+ " such that ",
+ StyleBox["p", "Input"],
+ " and ",
+ StyleBox["q", "Input"],
+ " are prime and ",
+ StyleBox["EulerPhi[p] + EulerPhi[q] == 2 n", "Input"],
+ ". "
+}], "Text",
+ CellChangeTimes->{{3.9244525022164793`*^9, 
+  3.924452558139348*^9}},ExpressionUUID->"da65940c-5913-4fb9-a9a1-\
+cdc121d4f082"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{720, 864},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.1 for Linux x86 (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"17771197-a167-4aa8-968e-07dfd5d54512"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1708, 27, 72, "Input",ExpressionUUID->"5213b6c5-d59c-4f2b-aec8-b4359703caf8"],
+Cell[CellGroupData[{
+Cell[2291, 51, 398, 6, 68, "Section",ExpressionUUID->"3965aac7-051b-4bfc-87fc-f1d188d96faa"],
+Cell[CellGroupData[{
+Cell[2714, 61, 298, 8, 54, "Subsection",ExpressionUUID->"598e7885-a794-4789-a43f-336cb36508fa"],
+Cell[3015, 71, 732, 21, 81, "Text",ExpressionUUID->"48e4750d-49cb-416d-82ea-d3df9fa423cf"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[3796, 98, 396, 6, 54, "Section",ExpressionUUID->"318fa8b8-f09d-4781-94e3-549c07847e0d"],
+Cell[CellGroupData[{
+Cell[4217, 108, 298, 8, 54, "Subsection",ExpressionUUID->"089a65ad-bbe2-4d31-a7aa-36927d6146a2"],
+Cell[4518, 118, 601, 19, 81, "Text",ExpressionUUID->"d34bfaa9-2863-4d71-a946-b37996f067fc"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5156, 142, 298, 8, 54, "Subsection",ExpressionUUID->"86ad1bae-1725-4ebf-91bd-90dd4b8e59d1"],
+Cell[5457, 152, 327, 9, 58, "Text",ExpressionUUID->"27b64ced-8943-4c3e-b3bd-a39f2680e4e7"],
+Cell[5787, 163, 388, 10, 32, "Input",ExpressionUUID->"6e397ed3-94a0-45f0-b2ca-0adb18d2cc10"],
+Cell[6178, 175, 502, 16, 35, "Text",ExpressionUUID->"31d9cde5-4ab5-4a43-863a-e72d86a0cffe"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6717, 196, 298, 8, 54, "Subsection",ExpressionUUID->"26bafbb9-2a74-4b87-8d39-20f34b9217f6"],
+Cell[7018, 206, 847, 26, 104, "Text",ExpressionUUID->"edbc59b5-d498-4880-a8dc-6ecdb8819ede"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[7914, 238, 461, 7, 54, "Section",ExpressionUUID->"4bb2296b-c07e-4309-a69d-741c63f62065"],
+Cell[CellGroupData[{
+Cell[8400, 249, 298, 8, 54, "Subsection",ExpressionUUID->"d9efb8a9-dcb3-442b-87cf-ed3dc825a20d"],
+Cell[8701, 259, 1125, 26, 150, "Text",ExpressionUUID->"2814fc94-cbcc-45df-9e8e-2bbb75658b16"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9863, 290, 298, 8, 54, "Subsection",ExpressionUUID->"dd289590-4e9f-48c6-b069-6b109900c16f"],
+Cell[10164, 300, 956, 33, 104, "Text",ExpressionUUID->"b4fca0cf-d57c-4860-8420-9651ba011e91"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11157, 338, 298, 8, 54, "Subsection",ExpressionUUID->"dddefbde-d9a4-454e-a0d9-004348f8f770"],
+Cell[11458, 348, 677, 16, 58, "Text",ExpressionUUID->"fa65d264-9ca5-4d5e-ab1f-8507254b05d2"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12184, 370, 564, 8, 68, "Section",ExpressionUUID->"81e598f9-5e3f-48fb-b24c-fadf96584788"],
+Cell[CellGroupData[{
+Cell[12773, 382, 298, 8, 54, "Subsection",ExpressionUUID->"33f8b365-167b-41e5-beba-72af99936ce8"],
+Cell[13074, 392, 625, 18, 81, "Text",ExpressionUUID->"8d21d1aa-1b80-463c-b88e-0b64354bc2af"],
+Cell[13702, 412, 409, 9, 58, "Text",ExpressionUUID->"9b9d8dc6-3429-4dc4-acf4-f427d9c797f4"],
+Cell[14114, 423, 682, 17, 51, "Input",ExpressionUUID->"5690afb6-fd8b-412d-98ce-2ebf48aafb87"],
+Cell[14799, 442, 661, 18, 81, "Text",ExpressionUUID->"d3620e29-0e99-414d-b36a-816e95550e61"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15497, 465, 298, 8, 54, "Subsection",ExpressionUUID->"19735184-0d21-4419-af2f-c150bfdf24c4"],
+Cell[15798, 475, 436, 15, 58, "Text",ExpressionUUID->"0046769b-44c5-4b03-b6a5-318d9abae3c3"],
+Cell[16237, 492, 538, 13, 58, "Text",ExpressionUUID->"f161e2d9-c38e-446b-a394-374e0c878879"],
+Cell[16778, 507, 429, 14, 81, "Text",ExpressionUUID->"ae6ce69f-43ed-4afb-b113-46afec865f41"],
+Cell[17210, 523, 393, 7, 58, "Text",ExpressionUUID->"a75e5730-8f14-46cc-a6cb-23b7d5b33c6c"],
+Cell[17606, 532, 510, 15, 67, "Input",ExpressionUUID->"bfa4b2e1-f894-42e3-88a1-e3f70a375fee"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18153, 552, 298, 8, 54, "Subsection",ExpressionUUID->"72d63324-6497-43f0-be65-0124a4a57d0e"],
+Cell[18454, 562, 422, 13, 81, "Text",ExpressionUUID->"da65940c-5913-4fb9-a9a1-cdc121d4f082"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

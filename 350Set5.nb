@@ -1,0 +1,520 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     19766,        512]
+NotebookOptionsPosition[     16934,        452]
+NotebookOutlinePosition[     17322,        468]
+CellTagsIndexPosition[     17279,        465]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ StyleBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"Set", " ", "5"}], ":", " ", "Substitutions"}], ",", " ", 
+   "Patterns"}], "Title"]], "Input",
+ CellChangeTimes->{{3.919807936189116*^9, 3.919807953895212*^9}, {
+   3.919808208848558*^9, 3.9198082318120193`*^9}, {3.919809333380814*^9, 
+   3.919809336570117*^9}, {3.92024054647309*^9, 3.9202405477719917`*^9}, {
+   3.920302506608282*^9, 3.9203025169780607`*^9}, 3.920306369934359*^9, {
+   3.920306712763356*^9, 3.920306727132897*^9}, {3.9210746494841633`*^9, 
+   3.921074664356082*^9}, {3.921077141851111*^9, 3.921077147147793*^9}, 
+   3.921249311007926*^9, {3.921249902145979*^9, 3.9212499052452097`*^9}, {
+   3.921249953487451*^9, 3.921249954051772*^9}, {3.921250806366598*^9, 
+   3.9212508154574957`*^9}, {3.921674311686713*^9, 3.921674313315612*^9}, {
+   3.9216775934050617`*^9, 3.921677596207581*^9}, {3.921678032673489*^9, 
+   3.9216780535002937`*^9}, {3.921846675839086*^9, 3.92184667935646*^9}, {
+   3.921853383955565*^9, 
+   3.921853388456332*^9}},ExpressionUUID->"4c432c03-a1d3-4acb-afb9-\
+34168f462ca5"],
+
+Cell[CellGroupData[{
+
+Cell["Substitutions and Rules", "Section",
+ CellChangeTimes->{{3.9198104003845463`*^9, 3.919810448327971*^9}, 
+   3.91985472520175*^9, {3.920306736292746*^9, 3.9203067381339493`*^9}, {
+   3.921182579157118*^9, 3.921182579907123*^9}, {3.921356393763701*^9, 
+   3.921356396053357*^9}, {3.921360867913472*^9, 3.9213608689356413`*^9}, {
+   3.921361605407935*^9, 
+   3.921361620705611*^9}},ExpressionUUID->"356aced8-2386-48ed-9f22-\
+af747db9db5c"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"a5bacfbe-b4cd-4470-8965-\
+0cb02892f857"],
+
+Cell[TextData[{
+ "The Thue-Morse sequence is a sequence of lists that begins with the list ",
+ StyleBox["{0}", "Input"],
+ " and then subsequent terms in the sequence are found by replacing each ",
+ StyleBox["0", "Input"],
+ " in the previous list with ",
+ StyleBox["0,1", "Input"],
+ " and each ",
+ StyleBox["1", "Input"],
+ " with ",
+ StyleBox["1,0", "Input"],
+ ".  Use ",
+ StyleBox["Nest", "Input"],
+ " and ",
+ StyleBox["ReplaceAll", "Input"],
+ " to find the 10th term in the Thue-Morse sequence."
+}], "Text",
+ CellChangeTimes->{{3.9214099385723333`*^9, 3.921409961402977*^9}, {
+  3.921410001882532*^9, 3.921410051655164*^9}, {3.921410302118504*^9, 
+  3.921410331420492*^9}},ExpressionUUID->"58ae763c-749a-4f46-ba6c-\
+248796dc453f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"c0aa4d79-b069-454a-a81d-\
+2604ead28f72"],
+
+Cell["\<\
+The following code creates a word guessing game.  Describe the game and play \
+it a few times, it is kinda fun!\
+\>", "Text",
+ CellChangeTimes->{{3.921425775453226*^9, 3.9214258045794363`*^9}, {
+  3.9214259996464453`*^9, 3.921426001804422*^9}, {3.921426283926413*^9, 
+  3.9214262903101273`*^9}},ExpressionUUID->"14d5a053-6cbd-401a-8e2c-\
+be6fc4d3125f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"rules", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"#", "->", "\"\<_\>\""}], "&"}], "/@", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<a\>\"", ",", "\"\<e\>\"", ",", "\"\<i\>\"", ",", "\"\<o\>\"", ",", 
+      "\"\<u\>\""}], "}"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"word", "=", 
+   RowBox[{"RandomChoice", "[", 
+    RowBox[{"WordList", "[", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"StringReplace", "[", 
+  RowBox[{"word", ",", "rules"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.921425426285379*^9, 3.92142573077932*^9}, {
+  3.921426096973055*^9, 3.921426098638938*^9}, {3.921426176099469*^9, 
+  3.921426180819643*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"79709dd2-f935-4ed9-961c-57765f7bafb0"],
+
+Cell[BoxData["\<\"_nd_sp_s_t__n\"\>"], "Output",
+ CellChangeTimes->{{3.921425451790731*^9, 3.9214255262668324`*^9}, {
+   3.9214255723751583`*^9, 3.921425665616469*^9}, {3.92142570991602*^9, 
+   3.921425761101927*^9}, {3.921425815694446*^9, 3.921425843388996*^9}, {
+   3.92142590657425*^9, 3.921425946307033*^9}, {3.9214260992973137`*^9, 
+   3.921426180967373*^9}, {3.9214262978215227`*^9, 3.921426307358841*^9}, {
+   3.9214341709187098`*^9, 3.9214342541956863`*^9}, {3.92144375584448*^9, 
+   3.921443799396023*^9}, {3.921852962007697*^9, 3.921852995711029*^9}, 
+   3.921869066880368*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"94c87c7f-18e5-43d7-bdbb-c7f91621d2fe"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["word"], "Input",
+ CellChangeTimes->{{3.921853011198227*^9, 3.9218530123708563`*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"e8ffe27d-a096-4d5b-954e-4b52a6697230"],
+
+Cell[BoxData["\<\"indisposition\"\>"], "Output",
+ CellChangeTimes->{3.9218530124772053`*^9, 3.921869068660329*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"950bedba-90bd-4452-b2f3-8b8aa35e6e44"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Patterns", "Section",
+ CellChangeTimes->{{3.9198104003845463`*^9, 3.919810448327971*^9}, 
+   3.91985472520175*^9, {3.920306736292746*^9, 3.9203067381339493`*^9}, {
+   3.921182579157118*^9, 3.921182579907123*^9}, {3.921499185774168*^9, 
+   3.921499186664373*^9}},ExpressionUUID->"a9692a52-2148-4ebc-8f91-\
+5719f74ad302"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"4fa288f1-d6e9-4f85-b9b5-\
+38776f66ccef"],
+
+Cell["What does the following cell do when evaluated?", "Text",
+ CellChangeTimes->{{3.921693093532021*^9, 
+  3.9216931293593903`*^9}},ExpressionUUID->"bfc4c2f8-b812-4f2b-865d-\
+70887112412c"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Range", "@", "100"}], "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x_", "/;", 
+      RowBox[{"EvenQ", "@", "x"}]}], "->", 
+     RowBox[{"x", "^", "2"}]}], ",", 
+    RowBox[{
+     RowBox[{"y_", "/;", 
+      RowBox[{"OddQ", "@", "y"}]}], "->", "0"}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.9216162508915367`*^9, 3.9216162717063026`*^9}, {
+  3.9216163068279343`*^9, 3.92161632625187*^9}, {3.921693079832011*^9, 
+  3.921693080116549*^9}, {3.921693158496719*^9, 3.921693171277547*^9}},
+ CellLabel->
+  "In[697]:=",ExpressionUUID->"092eb1b1-f8fd-42d6-95dd-2d48539d0015"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"3603687e-478f-45d4-a341-\
+e46d696f383f"],
+
+Cell[TextData[{
+ "Use ",
+ StyleBox["Count", "Input"],
+ " and patterns to find the number of primes less than 10^6 that have a \
+consecutive sequence of digits equal to  \[OpenCurlyDoubleQuote]350\
+\[CloseCurlyDoubleQuote]."
+}], "Text",
+ CellChangeTimes->{{3.9217631349006777`*^9, 3.921763176101062*^9}, {
+  3.921763237494729*^9, 3.921763240880912*^9}, {3.921763419514711*^9, 
+  3.92176342169069*^9}},ExpressionUUID->"9339f3de-bfcb-49fd-81b0-\
+dbdad87aec42"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"3d232297-03fe-4c99-87d2-\
+e7a056997910"],
+
+Cell[TextData[{
+ "When a human is asked to generate a truly random list of ",
+ StyleBox["0", "Input"],
+ "\[CloseCurlyQuote]s and ",
+ StyleBox["1", "Input"],
+ "\[CloseCurlyQuote]s of length ",
+ StyleBox["n", "Input"],
+ ", it is common for the human to avoid long consecutive runs of ",
+ StyleBox["0", "Input"],
+ "\[CloseCurlyQuote]s or ",
+ StyleBox["1", "Input"],
+ "\[CloseCurlyQuote]s, thinking erroneously that too many ",
+ StyleBox["1", "Input"],
+ "\[CloseCurlyQuote]s or ",
+ StyleBox["0", "Input"],
+ "\[CloseCurlyQuote]s in a row cannot be random.  (This is related to the \
+gambler\[CloseCurlyQuote]s fallacy).\n\nEstimate the probability that a \
+random list of ",
+ StyleBox["0", "Input"],
+ "\[CloseCurlyQuote]s and ",
+ StyleBox["1", "Input"],
+ "\[CloseCurlyQuote]s of length ",
+ StyleBox["1000", "Input"],
+ " will have at least ",
+ StyleBox["10", "Input"],
+ " consecutive ",
+ StyleBox["0", "Input"],
+ "\[CloseCurlyQuote]s or ",
+ StyleBox["10", "Input"],
+ " consecutive ",
+ StyleBox["1", "Input"],
+ "\[CloseCurlyQuote]s by doing the following:\n1. Write a function with input \
+a list of ",
+ StyleBox["0", "Input"],
+ "\[CloseCurlyQuote]s and ",
+ StyleBox["1", "Input"],
+ "\[CloseCurlyQuote]s and output ",
+ StyleBox["True", "Input"],
+ " if the list contains ",
+ StyleBox["10", "Input"],
+ " consecutive ",
+ StyleBox["0", "Input"],
+ "\[CloseCurlyQuote]s or ",
+ StyleBox["10", "Input"],
+ " consecutive ",
+ StyleBox["1", "Input"],
+ "\[CloseCurlyQuote]s and ",
+ StyleBox["False", "Input"],
+ " otherwise. \n2. For some large ",
+ StyleBox["k", "Input"],
+ " (where ",
+ StyleBox["k", "Input"],
+ " is selected at your discretion after some trial and error to best estimate \
+the probability), generate ",
+ StyleBox["k", "Input"],
+ " random lists of ",
+ StyleBox["0", "Input"],
+ "\[CloseCurlyQuote]s and ",
+ StyleBox["1", "Input"],
+ "\[CloseCurlyQuote]s of length ",
+ StyleBox["1000", "Input"],
+ " and then give the proportion of lists for which your function outputs ",
+ StyleBox["True", "Input"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.9216041896825933`*^9, 3.921604485828992*^9}, {
+   3.921604516976156*^9, 3.9216046737770767`*^9}, {3.921604731523217*^9, 
+   3.921604754440671*^9}, {3.921604838516819*^9, 3.9216049932152967`*^9}, {
+   3.921605153231207*^9, 3.921605160409171*^9}, {3.9216055573314533`*^9, 
+   3.9216055866331387`*^9}, {3.921605617275218*^9, 3.9216056332488613`*^9}, {
+   3.921605737178657*^9, 3.9216057674175386`*^9}, 
+   3.921853170144392*^9},ExpressionUUID->"b2e5490e-0a6d-47f2-986b-\
+59892542ea71"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"d2e1ba8e-421e-4236-87ac-\
+3cbba8c01e28"],
+
+Cell[TextData[{
+ "The function ",
+ StyleBox["Permutations[L]", "Input"],
+ " gives all possible permutations of the list ",
+ StyleBox["L", "Input"],
+ ", meaning all possible rearrangements of the elements of ",
+ StyleBox["L", "Input"],
+ ".  A permutation ",
+ StyleBox["p", "Input"],
+ " of the integers ",
+ StyleBox["1,2,...,n", "Input"],
+ " is defined to \[OpenCurlyDoubleQuote]contain the pattern 132\
+\[CloseCurlyDoubleQuote] if there is a subsequence ",
+ StyleBox["a,b,c", "Input"],
+ " in ",
+ StyleBox["p", "Input"],
+ " such that ",
+ StyleBox["a<c<b", "Input"],
+ ".  In other words, the integers ",
+ StyleBox["a,b,c", "Input"],
+ " have the same relative order as 132.\n\nFor example, the permutation ",
+ StyleBox["p={1,4,8,2,5,6,3,7,9}", "Input"],
+ " contains the pattern 132 many times; for instance 142, 263, and 187.\n\n\
+How many permutations of ",
+ StyleBox["{1,2,...,9}", "Input"],
+ " contain the pattern 132?"
+}], "Text",
+ CellChangeTimes->{{3.921587341922003*^9, 3.921587831869541*^9}, 
+   3.92158788617833*^9, 3.9215887124421577`*^9, {3.921588788547488*^9, 
+   3.921588804433361*^9}, {3.921853454223785*^9, 
+   3.921853480679874*^9}},ExpressionUUID->"294a5546-1785-4dc8-bd8a-\
+213672e001a1"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Regular Expressions", "Section",
+ CellChangeTimes->{{3.9198104003845463`*^9, 3.919810448327971*^9}, 
+   3.91985472520175*^9, {3.920306736292746*^9, 3.9203067381339493`*^9}, {
+   3.921182579157118*^9, 3.921182579907123*^9}, {3.921499185774168*^9, 
+   3.921499186664373*^9}, {3.921585543384675*^9, 
+   3.921585546535494*^9}},ExpressionUUID->"5f552ada-100e-4d88-8b47-\
+3510903246cf"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"5f68185f-5b61-47ff-9047-\
+c5cf624806ab"],
+
+Cell[TextData[{
+ "The New York Times spelling bee (see \
+https://en.wikipedia.org/wiki/The_New_York_Times_Spelling_Bee ) is a word \
+puzzle.  The goal is to find all words that use only letters in a given set \
+of 7 letters, use a special gold letter at least once, and use at least 4 \
+letters. \n\nWrite a function ",
+ StyleBox["SpellingBee", "Input"],
+ " that inputs one gold letter (entered as a string), six other letters \
+(entered as a string), and then outputs all words in ",
+ StyleBox["WordList[]", "Input"],
+ " that satisfy the needed conditions as in the spelling bee.  \n\nFor \
+example, ",
+ StyleBox["SpellingBee[\[OpenCurlyDoubleQuote]r\[CloseCurlyDoubleQuote],\
+\[OpenCurlyDoubleQuote]thymic\[CloseCurlyDoubleQuote]]", "Input"],
+ " should output \n\n",
+ StyleBox["{citric,critic,mimicry,mirth,miry,myrrh,rhythm,rhythmic,rich,\
+thirty,trim}", "Output"],
+ StyleBox["\n", "Input"],
+ "\nFunctions to consider using may include ",
+ StyleBox["StringLength", "Input"],
+ ", ",
+ StyleBox["StringMatchQ", "Input"],
+ ", ",
+ StyleBox["RegularExpression", "Input"],
+ ", ",
+ StyleBox["StringContainsQ", "Input"],
+ ", ",
+ StyleBox["StringJoin", "Input"],
+ ".\n\nBonus!:  After defining ",
+ StyleBox["SpellingBee", "Input"],
+ ", find a SpellingBee puzzle (give the gold letter and the remaining 6 \
+letters) such that ",
+ StyleBox["SpellingBee", "Input"],
+ " outputs a list containing exactly one word. "
+}], "Text",
+ CellChangeTimes->{{3.919808721590767*^9, 3.919808733777801*^9}, {
+   3.919808791801993*^9, 3.91980888330548*^9}, {3.919809090661933*^9, 
+   3.9198091328040323`*^9}, 3.9198091649153147`*^9, {3.919809255859177*^9, 
+   3.919809293962283*^9}, 3.9198094359152184`*^9, {3.919809468969964*^9, 
+   3.919809523147334*^9}, {3.9198101668573227`*^9, 3.919810171372246*^9}, {
+   3.919810574516059*^9, 3.919810579933567*^9}, {3.919812235356718*^9, 
+   3.9198122452348137`*^9}, {3.919854268155861*^9, 3.919854268332006*^9}, {
+   3.919855050266562*^9, 3.9198550515141068`*^9}, {3.919860744455106*^9, 
+   3.9198607654392633`*^9}, {3.9198927973092527`*^9, 3.919892819101973*^9}, {
+   3.919935876993389*^9, 3.919935910998695*^9}, 3.9199360017258253`*^9, {
+   3.920119402104672*^9, 3.9201194022453747`*^9}, {3.920306752272614*^9, 
+   3.920306781256558*^9}, {3.920307520202693*^9, 3.920307556460114*^9}, {
+   3.920307595604802*^9, 3.920307641194128*^9}, {3.920307676321941*^9, 
+   3.92030776382712*^9}, {3.920307810549748*^9, 3.920307858911579*^9}, {
+   3.920307994639933*^9, 3.920308123897748*^9}, 3.920308352631123*^9, {
+   3.920308398720592*^9, 3.920308414268189*^9}, {3.920936383302339*^9, 
+   3.920936391194852*^9}, {3.920937095797265*^9, 3.9209371135104017`*^9}, {
+   3.920937166030294*^9, 3.92093724435513*^9}, {3.920971147032483*^9, 
+   3.92097115361455*^9}, {3.9209767722902*^9, 3.920976775118188*^9}, {
+   3.9209770395354567`*^9, 3.9209770950825377`*^9}, {3.920977136586862*^9, 
+   3.9209771445866947`*^9}, {3.920977212330701*^9, 3.920977216322209*^9}, {
+   3.9209773691027946`*^9, 3.92097742118864*^9}, {3.92097750872269*^9, 
+   3.920977556975173*^9}, {3.920977593505073*^9, 3.920977594322953*^9}, {
+   3.920977638386095*^9, 3.920977670537081*^9}, {3.920980417960285*^9, 
+   3.920980449035356*^9}, {3.920980519959621*^9, 3.920980521443418*^9}, {
+   3.920980611813369*^9, 3.920980632342868*^9}, {3.9209842258294563`*^9, 
+   3.9209842317249727`*^9}, {3.9209843846051407`*^9, 3.920984389207417*^9}, {
+   3.921585604932291*^9, 3.921585782362253*^9}, {3.92158582379027*^9, 
+   3.921586187172736*^9}, {3.921586277195122*^9, 3.921586319546914*^9}, {
+   3.921586373972213*^9, 3.921586546153534*^9}, {3.921586731378426*^9, 
+   3.9215867388225937`*^9}},ExpressionUUID->"eacd5f3a-6830-46b1-b9d5-\
+604691982fb3"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{720, 864},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"13.1 for Linux x86 (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"64ffb58e-0541-4f2c-90fc-b03f514e375c"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1074, 19, 72, "Input",ExpressionUUID->"4c432c03-a1d3-4acb-afb9-34168f462ca5"],
+Cell[CellGroupData[{
+Cell[1657, 43, 442, 7, 68, "Section",ExpressionUUID->"356aced8-2386-48ed-9f22-af747db9db5c"],
+Cell[CellGroupData[{
+Cell[2124, 54, 298, 8, 54, "Subsection",ExpressionUUID->"a5bacfbe-b4cd-4470-8965-0cb02892f857"],
+Cell[2425, 64, 731, 20, 104, "Text",ExpressionUUID->"58ae763c-749a-4f46-ba6c-248796dc453f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3193, 89, 298, 8, 54, "Subsection",ExpressionUUID->"c0aa4d79-b069-454a-a81d-2604ead28f72"],
+Cell[3494, 99, 362, 7, 58, "Text",ExpressionUUID->"14d5a053-6cbd-401a-8e2c-be6fc4d3125f"],
+Cell[CellGroupData[{
+Cell[3881, 110, 768, 19, 71, "Input",ExpressionUUID->"79709dd2-f935-4ed9-961c-57765f7bafb0"],
+Cell[4652, 131, 665, 9, 33, "Output",ExpressionUUID->"94c87c7f-18e5-43d7-bdbb-c7f91621d2fe"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5354, 145, 176, 2, 29, "Input",ExpressionUUID->"e8ffe27d-a096-4d5b-954e-4b52a6697230"],
+Cell[5533, 149, 192, 2, 33, "Output",ExpressionUUID->"950bedba-90bd-4452-b2f3-8b8aa35e6e44"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5786, 158, 325, 5, 68, "Section",ExpressionUUID->"a9692a52-2148-4ebc-8f91-5719f74ad302"],
+Cell[CellGroupData[{
+Cell[6136, 167, 298, 8, 54, "Subsection",ExpressionUUID->"4fa288f1-d6e9-4f85-b9b5-38776f66ccef"],
+Cell[6437, 177, 191, 3, 35, "Text",ExpressionUUID->"bfc4c2f8-b812-4f2b-865d-70887112412c"],
+Cell[6631, 182, 619, 16, 29, "Input",ExpressionUUID->"092eb1b1-f8fd-42d6-95dd-2d48539d0015"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7287, 203, 298, 8, 54, "Subsection",ExpressionUUID->"3603687e-478f-45d4-a341-e46d696f383f"],
+Cell[7588, 213, 457, 10, 58, "Text",ExpressionUUID->"9339f3de-bfcb-49fd-81b0-dbdad87aec42"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8082, 228, 298, 8, 54, "Subsection",ExpressionUUID->"3d232297-03fe-4c99-87d2-e7a056997910"],
+Cell[8383, 238, 2514, 72, 265, "Text",ExpressionUUID->"b2e5490e-0a6d-47f2-986b-59892542ea71"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10934, 315, 298, 8, 54, "Subsection",ExpressionUUID->"d2e1ba8e-421e-4236-87ac-3cbba8c01e28"],
+Cell[11235, 325, 1202, 31, 219, "Text",ExpressionUUID->"294a5546-1785-4dc8-bd8a-213672e001a1"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12486, 362, 386, 6, 68, "Section",ExpressionUUID->"5f552ada-100e-4d88-8b47-3510903246cf"],
+Cell[CellGroupData[{
+Cell[12897, 372, 298, 8, 54, "Subsection",ExpressionUUID->"5f68185f-5b61-47ff-9047-c5cf624806ab"],
+Cell[13198, 382, 3708, 66, 423, "Text",ExpressionUUID->"eacd5f3a-6830-46b1-b9d5-604691982fb3"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
