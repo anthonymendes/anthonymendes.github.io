@@ -420,7 +420,7 @@ b. Create a list of all Gaussian integers with complex magnitude bigger than \
    3.9211677556668167`*^9, {3.921336840503228*^9, 
    3.9213368408763103`*^9}},ExpressionUUID->"d483ef91-8345-406f-8afe-\
 edd849c5edc7"]
-}, Open  ]]
+}, Closed]]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -935,7 +935,7 @@ Cell[15543, 348, 1819, 30, 58, "Text",ExpressionUUID->"b8fb4f3f-748d-4388-987b-e
 Cell[CellGroupData[{
 Cell[17399, 383, 298, 8, 38, "Subsection",ExpressionUUID->"8777f527-1da8-4e17-9c07-0a466635dc7d"],
 Cell[17700, 393, 1818, 28, 81, "Text",ExpressionUUID->"d483ef91-8345-406f-8afe-edd849c5edc7"]
-}, Open  ]]
+}, Closed]]
 }, Closed]],
 Cell[CellGroupData[{
 Cell[19567, 427, 487, 8, 54, "Section",ExpressionUUID->"73ea89ad-8cde-4a71-b731-0df093872231"],
