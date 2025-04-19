@@ -53,14 +53,6 @@ const courses = {
     'MATH 4982': {title: 'Advanced Topics in Applied Mathematics', units: 3},
     'MATH 4991': {title: 'Senior Project Seminar', units: 3},
     'MATH 4992': {title: 'Senior Project Applied Seminar', units: 3},
-    'MATH 5053': {title: 'Discrete Mathematics', units: 3},
-    'MATH 5203': {title: 'Algebra I', units: 3},
-    'MATH 5204': {title: 'Algebra II', units: 3},
-    'MATH 5266': {title: 'Real Analysis', units: 3},
-    'MATH 5302': {title: 'Applied Complex Analysis', units: 3},
-    'MATH 5371': {title: 'Methods of Applied Mathematics', units: 3},
-    'MATH 5542': {title: 'Topology II', units: 3},
-    'MATH 5651': {title: 'Numerical Analysis', units: 3},
     'ME 3302': {title: "Thermodynamics", units: 3},
     'ME 3318': {title: "Mechanical Vibrations", units: 4},
     'ME 3341': {title: "Fluid Mechanics", units: 3},
@@ -81,6 +73,7 @@ const courses = {
     'STAT 3530': {title: "Statistics III", units: 4},
     'STAT 4610': {title: "Mathematical Statistics I", units: 3},
     'STAT 4620': {title: "Mathematical Statistics II", units: 3},
+    'STAT 4750': {title: "Bayesian Reasoning and Methods", units: 3},
     'STAT 4770': {title: "Survival Analysis Methods", units: 3},
     'STAT 4790': {title: "Applied Multivariate Statistics", units: 3}
 };
@@ -96,12 +89,12 @@ const listA = ['MATH 3011', 'MATH 3051', 'MATH 3055', 'MATH 3111', 'MATH 3301', 
 	       'MATH 3511', 'MATH 3622', 'MATH 3651', 'MATH 3681', 'MATH 4052', 'MATH 4202',
 	       'MATH 4265', 'MATH 4342', 'MATH 4352', 'MATH 4461/4462', 'MATH 4512',
 	       'MATH 4531', 'MATH 4541', 'MATH 4652', 'MATH 4653', 'MATH 4911', 'MATH 4981',
-	       'MATH 4982', 'MATH 5053', 'MATH 5203', 'MATH 5204', 'MATH 5266', 'MATH 5302',
-	       'MATH 5371', 'MATH 5542', 'MATH 5651', 'CSC 3449', 'CSC 3665', 'DATA 4610',
+	       'MATH 4982', 'CSC 3449', 'CSC 3665', 'DATA 4610',
 	       'DATA 4620', 'ECON 3030', 'ECON 4010', 'ECON 4012', 'ENGR 2211', 'ME 3302',
 	       'ME 3318', 'ME 3341', 'PHYS 1143', 'PHYS 3301', 'PHYS 3305', 'PHYS 3306',
 	       'PHYS 3314', 'PHYS 3323', 'PHYS/CPE 3345', 'PHYS 4408', 'PHYS 4425',
-	       'STAT 3520', 'STAT 3530', 'STAT 4770', 'STAT 4790', 'STAT 4610', 'STAT 4620'
+	       'STAT 3520', 'STAT 3530', 'STAT 4610', 'STAT 4620', 'STAT 4750', 'STAT 4770',
+	       'STAT 4790'
 	      ];
 const listB = ['MATH 3055', 'MATH 4342', 'MATH 4352', 'MATH 4652', 'MATH 4653', 'MATH 4911'];
 const listC = ['MATH 3971', 'MATH 3511', 'MATH 4512', 'MATH 4972'];
