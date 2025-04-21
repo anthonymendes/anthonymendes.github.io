@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     17881,        490]
-NotebookOptionsPosition[     15257,        434]
-NotebookOutlinePosition[     15646,        450]
-CellTagsIndexPosition[     15603,        447]
+NotebookDataLength[     17965,        490]
+NotebookOptionsPosition[     15312,        434]
+NotebookOutlinePosition[     15730,        450]
+CellTagsIndexPosition[     15687,        447]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -296,16 +296,16 @@ defined such that m",
  StyleBox["m[18]", "Input"],
  " when implementing memoization.  \n\nb. Find the first four terms of the \
 Motkzin sequence that are also prime numbers.  (It is an open problem to \
-decide if there is another Motzkin numbers that is prime.)"
+decide if there is another Motzkin number that is prime.)"
 }], "Text",
  CellChangeTimes->{{3.9221878533428373`*^9, 3.9221879576661463`*^9}, {
-  3.922187989126588*^9, 3.92218798930683*^9}, {3.922188075575959*^9, 
-  3.922188093306535*^9}, {3.922188556539419*^9, 3.9221886237498837`*^9}, {
-  3.92218886371636*^9, 3.922188868222373*^9}, {3.9221889318881807`*^9, 
-  3.922188952910409*^9}, {3.9222026398724318`*^9, 3.92220284449187*^9}, {
-  3.9222029149315023`*^9, 3.9222029194869432`*^9}, {3.922202973750764*^9, 
-  3.922203012091559*^9}, {3.9222030601037617`*^9, 
-  3.9222030788875523`*^9}},ExpressionUUID->"c35b6e5b-0ca2-4e67-aeb9-\
+   3.922187989126588*^9, 3.92218798930683*^9}, {3.922188075575959*^9, 
+   3.922188093306535*^9}, {3.922188556539419*^9, 3.9221886237498837`*^9}, {
+   3.92218886371636*^9, 3.922188868222373*^9}, {3.9221889318881807`*^9, 
+   3.922188952910409*^9}, {3.9222026398724318`*^9, 3.92220284449187*^9}, {
+   3.9222029149315023`*^9, 3.9222029194869432`*^9}, {3.922202973750764*^9, 
+   3.922203012091559*^9}, {3.9222030601037617`*^9, 3.9222030788875523`*^9}, 
+   3.9542672325016403`*^9},ExpressionUUID->"c35b6e5b-0ca2-4e67-aeb9-\
 4563de5b2ad1"]
 }, Closed]],
 
@@ -346,9 +346,9 @@ sequence.\n\na. Define ",
  "."
 }], "Text",
  CellChangeTimes->{{3.922198783234913*^9, 3.922199021879353*^9}, {
-  3.9221990639203*^9, 3.922199147140266*^9}, {3.922199954156747*^9, 
-  3.922199960465027*^9}, {3.922200659309078*^9, 
-  3.922200681088331*^9}},ExpressionUUID->"0b5eb134-4bbd-4c5c-87e3-\
+   3.9221990639203*^9, 3.922199147140266*^9}, {3.922199954156747*^9, 
+   3.922199960465027*^9}, {3.922200659309078*^9, 3.922200681088331*^9}, 
+   3.954267566118661*^9},ExpressionUUID->"0b5eb134-4bbd-4c5c-87e3-\
 a1a2fd6c1e11"]
 }, Closed]],
 
@@ -432,7 +432,7 @@ f7f47b435b88"]
 }, Closed]]
 }, Closed]]
 },
-WindowSize->{1440, 864},
+WindowSize->{1425.1546391752577`, 855.0927835051546},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"13.1 for Linux x86 (64-bit) (June 16, 2022)",
 StyleDefinitions->"Default.nb",
@@ -449,7 +449,7 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 1077, 17, 72, "Input",ExpressionUUID->"4c432c03-a1d3-4acb-afb9-34168f462ca5"],
+Cell[558, 20, 1077, 17, 73, "Input",ExpressionUUID->"4c432c03-a1d3-4acb-afb9-34168f462ca5"],
 Cell[CellGroupData[{
 Cell[1660, 41, 577, 9, 68, "Section",ExpressionUUID->"1f5a08ab-1802-4609-84b7-4df8b4561fe5"],
 Cell[CellGroupData[{
@@ -477,19 +477,19 @@ Cell[CellGroupData[{
 Cell[9318, 257, 476, 7, 54, "Section",ExpressionUUID->"10ce8cd1-d617-47cb-936c-5eed4c405b41"],
 Cell[CellGroupData[{
 Cell[9819, 268, 298, 8, 54, "Subsection",ExpressionUUID->"a4aea993-1605-4ad7-b0e6-eaa06462d8b6"],
-Cell[10120, 278, 1359, 30, 170, "Text",ExpressionUUID->"c35b6e5b-0ca2-4e67-aeb9-4563de5b2ad1"]
+Cell[10120, 278, 1389, 30, 170, "Text",ExpressionUUID->"c35b6e5b-0ca2-4e67-aeb9-4563de5b2ad1"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[11516, 313, 298, 8, 38, "Subsection",ExpressionUUID->"8644f81b-a4ce-46bd-a77b-f1c21f06fef9"],
-Cell[11817, 323, 1100, 28, 150, "Text",ExpressionUUID->"0b5eb134-4bbd-4c5c-87e3-a1a2fd6c1e11"]
+Cell[11546, 313, 298, 8, 38, "Subsection",ExpressionUUID->"8644f81b-a4ce-46bd-a77b-f1c21f06fef9"],
+Cell[11847, 323, 1125, 28, 150, "Text",ExpressionUUID->"0b5eb134-4bbd-4c5c-87e3-a1a2fd6c1e11"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[12954, 356, 298, 8, 38, "Subsection",ExpressionUUID->"35ded0af-32a6-4e87-8b27-0893b7f56d2a"],
-Cell[13255, 366, 680, 22, 58, "Text",ExpressionUUID->"b7a11978-0099-481b-9806-9af3671c564c"]
+Cell[13009, 356, 298, 8, 38, "Subsection",ExpressionUUID->"35ded0af-32a6-4e87-8b27-0893b7f56d2a"],
+Cell[13310, 366, 680, 22, 58, "Text",ExpressionUUID->"b7a11978-0099-481b-9806-9af3671c564c"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[13972, 393, 298, 8, 38, "Subsection",ExpressionUUID->"d0925c9a-7edd-4d06-a8bc-7f22e8a83bc4"],
-Cell[14273, 403, 956, 27, 81, "Text",ExpressionUUID->"286878f7-ea79-49b5-b394-f7f47b435b88"]
+Cell[14027, 393, 298, 8, 38, "Subsection",ExpressionUUID->"d0925c9a-7edd-4d06-a8bc-7f22e8a83bc4"],
+Cell[14328, 403, 956, 27, 81, "Text",ExpressionUUID->"286878f7-ea79-49b5-b394-f7f47b435b88"]
 }, Closed]]
 }, Closed]]
 }
