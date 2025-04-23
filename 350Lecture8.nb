@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     26510,        677]
-NotebookOptionsPosition[     23801,        628]
-NotebookOutlinePosition[     24261,        645]
-CellTagsIndexPosition[     24218,        642]
+NotebookDataLength[     30180,        764]
+NotebookOptionsPosition[     26866,        707]
+NotebookOutlinePosition[     27326,        724]
+CellTagsIndexPosition[     27283,        721]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -624,6 +624,85 @@ Cell[BoxData[
   3.9234875793078337`*^9}, {3.9234880041144876`*^9, 3.9234880048426723`*^9}},
  CellLabel->
   "In[430]:=",ExpressionUUID->"0bdc5d72-45ea-4707-b8e8-df2d9769c79a"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Exercise ",
+ 
+ CounterBox["Subsection"]
+}], "Subsection",
+ CellChangeTimes->{{3.921335942127119*^9, 3.9213359560974007`*^9}, {
+  3.921336036159416*^9, 3.921336086871976*^9}, {3.921336144630742*^9, 
+  3.921336187166984*^9}},ExpressionUUID->"ba8abd7b-cf38-4b09-8cc3-\
+e3bb21a5ac97"],
+
+Cell["\<\
+a. The singular value decomposition (SVD) can be used to find low rank \
+approximations of a matrix. 
+
+The SVD is way to write a matrix A as U.S.V where U and V are matrices equal \
+to their own conjugate transpose and S is a rectangular diagonal matrix.  The \
+number of nonzero entries in S is the rank of the matrix A.  Experiment with \
+Mathematica\[CloseCurlyQuote]s SingularValueDecomposition command for various \
+matrices.\
+\>", "Text",
+ CellChangeTimes->{{3.922895724609818*^9, 3.9228958321183853`*^9}, {
+  3.92290904446728*^9, 3.922909052681795*^9}, {3.922915760986495*^9, 
+  3.922915770763547*^9}, {3.922965969474801*^9, 3.922965995925453*^9}, {
+  3.9543688878532333`*^9, 3.954368992656768*^9}, {3.954369158811636*^9, 
+  3.954369209534398*^9}, {3.9543696156521797`*^9, 
+  3.954369615794807*^9}},ExpressionUUID->"66ed4bec-f6cf-48f0-803e-\
+f3bcf85d9c7a"],
+
+Cell["b. Consider the image loaded in the next cell: ", "Text",
+ CellChangeTimes->{{3.954369002811413*^9, 3.9543690156023607`*^9}, {
+  3.954369613703952*^9, 
+  3.954369613815114*^9}},ExpressionUUID->"48cb8f48-8905-41c2-8022-\
+abcaa791c41f"],
+
+Cell[BoxData[
+ RowBox[{"dali", "=", 
+  RowBox[{
+  "Import", "[", "\"\<https://anthonymendes.github.io/Dali.jpg\>\"", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.954369136452283*^9, 3.954369138792901*^9}},
+ CellLabel->
+  "In[447]:=",ExpressionUUID->"2f392488-33c4-464a-b7d3-5299041e3d17"],
+
+Cell["\<\
+The command \[OpenCurlyDoubleQuote]ImageData\[CloseCurlyDoubleQuote] will \
+convert this to a matrix with entries the darkness of the pixel on a scale of \
+0 to 1.  Change the image using the SVD to a lower rank matrix to see the \
+effect of low rank approximations, see the next cell:\
+\>", "Text",
+ CellChangeTimes->{{3.9543691452766867`*^9, 3.954369153816782*^9}, {
+  3.954369283054719*^9, 3.954369301123629*^9}, {3.9543693455300627`*^9, 
+  3.9543693532678337`*^9}, {3.954369562786293*^9, 
+  3.9543696014907618`*^9}},ExpressionUUID->"952bc9a0-f7e4-4255-a31a-\
+89409067fc36"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"LowRankApproximation", "[", 
+   RowBox[{"image_", ",", "r_"}], "]"}], ":=", "\[IndentingNewLine]", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"U", ",", "S", ",", "V"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"U", ",", "S", ",", "V"}], "}"}], "=", 
+      RowBox[{"SingularValueDecomposition", "[", 
+       RowBox[{
+        RowBox[{"ImageData", "@", "image"}], ",", "r"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Image", "[", 
+      RowBox[{"U", ".", "S", ".", 
+       RowBox[{"Transpose", "@", "V"}]}], "]"}]}]}], "]"}]}]], "Input",Express\
+ionUUID->"b790b28a-1330-401c-896a-1cd98cc0d586"]
 }, Closed]]
 },
 WindowSize->{1425.1546391752577`, 855.0927835051546},
@@ -649,9 +728,9 @@ Cell[1904, 44, 230, 4, 35, "Text",ExpressionUUID->"0075cb26-17f7-43c2-9159-af551
 Cell[2137, 50, 1216, 20, 50, "Input",ExpressionUUID->"786a5e90-afb9-4c32-8d8a-7e04366619c8"],
 Cell[CellGroupData[{
 Cell[3378, 74, 298, 8, 54, "Subsection",ExpressionUUID->"4dc30c52-7bd2-40f8-b070-9e05c9243ef0"],
-Cell[3679, 84, 1350, 34, 35, "Text",ExpressionUUID->"abfc16ca-5f17-46f4-a414-7861cdc374fe"],
-Cell[5032, 120, 1408, 32, 35, "Text",ExpressionUUID->"4a7cb65d-eb38-4e49-98ae-c9c5844cd698"],
-Cell[6443, 154, 1557, 37, 58, "Text",ExpressionUUID->"9f27728b-8acf-43b5-baa5-9e81f665b4de"]
+Cell[3679, 84, 1350, 34, 58, "Text",ExpressionUUID->"abfc16ca-5f17-46f4-a414-7861cdc374fe"],
+Cell[5032, 120, 1408, 32, 58, "Text",ExpressionUUID->"4a7cb65d-eb38-4e49-98ae-c9c5844cd698"],
+Cell[6443, 154, 1557, 37, 81, "Text",ExpressionUUID->"9f27728b-8acf-43b5-baa5-9e81f665b4de"]
 }, Closed]],
 Cell[CellGroupData[{
 Cell[8037, 196, 298, 8, 38, "Subsection",ExpressionUUID->"fc0f3d67-f6a1-48b0-904d-496258370b3c"],
@@ -666,18 +745,26 @@ Cell[14762, 371, 1232, 36, 150, "Text",ExpressionUUID->"b0abdace-ba99-4c17-a647-
 }, Closed]],
 Cell[CellGroupData[{
 Cell[16031, 412, 298, 8, 38, "Subsection",ExpressionUUID->"c458fcbf-7e5e-4c96-bf34-e57ef20213b4"],
-Cell[16332, 422, 894, 20, 35, "Text",ExpressionUUID->"e6e9e6bb-7cfd-4dad-b8e6-09ad08f30668"],
-Cell[17229, 444, 1372, 33, 81, "Text",ExpressionUUID->"10081ec1-f0d7-4d6d-9b4e-3bf62e436331"],
-Cell[18604, 479, 1084, 27, 58, "Text",ExpressionUUID->"3dfe818e-3cbe-4b3d-acce-af6ef912d443"]
+Cell[16332, 422, 894, 20, 58, "Text",ExpressionUUID->"e6e9e6bb-7cfd-4dad-b8e6-09ad08f30668"],
+Cell[17229, 444, 1372, 33, 127, "Text",ExpressionUUID->"10081ec1-f0d7-4d6d-9b4e-3bf62e436331"],
+Cell[18604, 479, 1084, 27, 81, "Text",ExpressionUUID->"3dfe818e-3cbe-4b3d-acce-af6ef912d443"]
 }, Closed]],
 Cell[CellGroupData[{
 Cell[19725, 511, 298, 8, 38, "Subsection",ExpressionUUID->"24af1729-cfa1-4a66-aaa8-d18946b7c838"],
-Cell[20026, 521, 994, 20, 58, "Text",ExpressionUUID->"1b1f7dfe-6e59-4036-9ef5-49085901a77f"]
+Cell[20026, 521, 994, 20, 104, "Text",ExpressionUUID->"1b1f7dfe-6e59-4036-9ef5-49085901a77f"]
 }, Closed]],
 Cell[CellGroupData[{
 Cell[21057, 546, 298, 8, 38, "Subsection",ExpressionUUID->"bbe2ee74-3db6-441d-a6bb-6734a6e64d08"],
-Cell[21358, 556, 687, 18, 58, "Text",ExpressionUUID->"8e943a2e-de8e-4bbe-a254-9b84dcad8e1e"],
-Cell[22048, 576, 1737, 49, 76, "Input",ExpressionUUID->"0bdc5d72-45ea-4707-b8e8-df2d9769c79a"]
+Cell[21358, 556, 687, 18, 81, "Text",ExpressionUUID->"8e943a2e-de8e-4bbe-a254-9b84dcad8e1e"],
+Cell[22048, 576, 1737, 49, 95, "Input",ExpressionUUID->"0bdc5d72-45ea-4707-b8e8-df2d9769c79a"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[23822, 630, 298, 8, 38, "Subsection",ExpressionUUID->"ba8abd7b-cf38-4b09-8cc3-e3bb21a5ac97"],
+Cell[24123, 640, 873, 16, 104, "Text",ExpressionUUID->"66ed4bec-f6cf-48f0-803e-f3bcf85d9c7a"],
+Cell[24999, 658, 240, 4, 35, "Text",ExpressionUUID->"48cb8f48-8905-41c2-8022-abcaa791c41f"],
+Cell[25242, 664, 288, 7, 29, "Input",ExpressionUUID->"2f392488-33c4-464a-b7d3-5299041e3d17"],
+Cell[25533, 673, 587, 10, 58, "Text",ExpressionUUID->"952bc9a0-f7e4-4255-a31a-89409067fc36"],
+Cell[26123, 685, 727, 19, 91, "Input",ExpressionUUID->"b790b28a-1330-401c-896a-1cd98cc0d586"]
 }, Closed]]
 }
 ]
