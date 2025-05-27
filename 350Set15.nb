@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     31774,        757]
+NotebookDataLength[     31775,        757]
 NotebookOptionsPosition[     29535,        710]
-NotebookOutlinePosition[     29923,        726]
-CellTagsIndexPosition[     29880,        723]
+NotebookOutlinePosition[     29924,        726]
+CellTagsIndexPosition[     29881,        723]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -708,7 +708,7 @@ find the optimal value of ",
 }, Closed]]
 }, Closed]]
 },
-WindowSize->{720, 864},
+WindowSize->{1440, 864},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"13.1 for Linux x86 (64-bit) (June 16, 2022)",
 StyleDefinitions->"Default.nb",
