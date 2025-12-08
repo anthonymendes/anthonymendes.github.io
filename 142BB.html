@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-11-29 Tue 12:48 -->
+<!-- 2025-12-08 Mon 12:21 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Blue Book Exercises</title>
 <meta name="generator" content="Org Mode" />
-<style>
+<style type="text/css">
   #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
@@ -193,47 +193,58 @@
 <link rel="stylesheet" type="text/css" href="https://anthonymendes.github.io/mendes.css" />
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
-	displayAlign: "center",
-	displayIndent: "0em",
-	"HTML-CSS": { scale: 100,
-			linebreaks: { automatic: "false" },
-			availableFonts: [],
-			webFont: "TeX"
-		       },
-	SVG: {scale: 100,
-	      linebreaks: { automatic: "false" },
-	      font: "TeX"},
-	NativeMML: {scale: 100},
-	TeX: { equationNumbers: {autoNumber: "AMS"},
-	       MultLineWidth: "85%",
-	       TagSide: "right",
-	       TagIndent: ".8em"
-	     }
+	  displayAlign: "center",
+	  displayIndent: "0em",
+	  "HTML-CSS": { scale: 100,
+			  linebreaks: { automatic: "false" },
+			  availableFonts: [],
+			  webFont: "TeX"
+			 },
+	  SVG: {scale: 100,
+		linebreaks: { automatic: "false" },
+		font: "TeX"},
+	  NativeMML: {scale: 100},
+	  TeX: { equationNumbers: {autoNumber: "AMS"},
+		 MultLineWidth: "85%",
+		 TagSide: "right",
+		 TagIndent: ".8em"
+	       }
 });
 </script>
 <script type="text/javascript"
-	src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML"></script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
-
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
+	  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 </head>
 <body>
 <div id="content" class="content">
@@ -245,56 +256,6 @@ blue books will be collected at the final exam.
 
 <ol class="org-ol">
 <li>Evaluate \(\displaystyle \int \cos^2 x \sin x \, dx\).</li>
-<li>Evaluate \(\displaystyle \int_1^2 \dfrac{x}{\sqrt{1+x^2}} \, dx\).</li>
-<li>Find the area of a pyramid with side length \(1-x\) on \([0,1]\).</li>
-<li>Find the volume of the solid created by spinning the region between \(x^2\)
-and \(\sqrt{x}\) on \([0,1]\) around the \(x\) axis.</li>
-<li>Find the volume of the solid created by spinning the graph of \(y =
-   1/(1+x^2)^2\) around the \(y\) axis.</li>
-<li>Find the arclength of \(y = x^{3/2}\) on \([0,1]\).</li>
-<li>Find the surface area of the solid when \(x^3\) on \([0,1]\) is spun around the
-\(x\) axis.</li>
-<li>Find the volume of the solid when \(1/x\) on \([0,1]\) is spun around the
-\(x\) axis.</li>
-<li>Find the work needed to pump gasoline (with density about \(720kg/m^3\)) out
-of a cylindrical tank oriented horizontally with radius \(1/2m\) and length
-\(4m\)?</li>
-<li>Let \(f(x) = \displaystyle \int_0^x \frac{1}{1 + t^2} \, dt\).  Why does the
-inverse fuction exist?  Show that \(g'(x) = 1 + g(x)^2\).</li>
-<li>Evaluate \(\displaystyle\frac{d}{dx} \sqrt{\ln (2 x + 1)}\).</li>
-<li>Find \(\displaystyle \lim_{x \rightarrow \infty} \ln (1 + \frac{1}{x})\).</li>
-<li>Evaluate \(\displaystyle \int (x^2 + 2 x + 1)/x \, dx\).</li>
-<li>Solve \(\ln (x - 1) = 4 - \ln (x + 1)\).</li>
-<li>Differentiate \(1/(1-e^{-x})\).</li>
-<li>Find the volume of the solid created by rotating \(e^x\) on \([0,\ln 3]\)
-around the \(x\) axis.</li>
-<li>Find the value of \(x > 0\) that maximizes \(x^{-x}\).</li>
-<li>If \(P'(t) = k P(t)\), \(P(0) = 1000\), and \(P(1) = 1050\), find when \(P(t) =
-    2000\).</li>
-<li>Differentiate \(\arcsin \sqrt{x}\) and integrate \(\int 2/\sqrt{1-4x^2} \, dx\).</li>
-<li>Differentiate \(x^{\arctan x}\) and integrate \(\int 2 x/(1+x^4) \, dx\).</li>
-<li>Integrate \(\int 2 e^x \cosh x \, dx\).</li>
-<li>Integrate \(\int (x+1)^2 e^{-2 x} \, dx\).</li>
-<li>Integrate \(\int e^{2 x} \sin (3 x) \, dx\).</li>
-<li>Integrate \(\int \arcsin x \, dx\).</li>
-<li>Integrate \(\int \sin^3 x \cos^6 x \, dx\).</li>
-<li>Integrate \(\int \sin^4 (x/4) \, dx\).</li>
-<li>Integrate \(\int x^3/\sqrt{1 - x^2} \, dx\).</li>
-<li>Integrate \(\int \frac{2 x + 1}{x (3 x + 1)} \, dx\).</li>
-<li>Integrate \(\int \frac{2x^2}{x^2-1} \, dx\).</li>
-<li>Approximate \(\int_0^1 \sqrt{1 + x^3} \, dx\) with Simpson's rule with \(n =
-    8\).</li>
-<li>Evaluate \(\lim_{x \to 0} \frac{\ln(x^2 + 1)}{x}\) and \(\lim_{x \to 0}
-    \frac{\arctan x}{\arcsin x}\).</li>
-<li>Evaluate \(\lim_{x \to 0} \frac{(1 + 2 x)}{1/x}\).</li>
-<li>Integrate \(\int_{-\infty}^{\infty} 1/(1+9x^2) \, dx\).</li>
-<li>Integrate \(\int_{1}^{2} 1/\sqrt{4-x^2} \, dx\).</li>
-<li>Find the center of mass of a quarter circle of radius \(r\).</li>
-<li>Suppose a random variable \(X\) has probability density function given by
-\(f(t) = c e^{-c t}\) if \(t > 0\).  Find the value of \(m\) such that the
-probability that \(X \leq m\) is \(1/2\).</li>
-<li>Solve \(y' = \sqrt{1-y^2} x\) and \(y' = \cos y \cos x/(\sin y)\).</li>
-<li>Solve \(x y' + 3 y = x^4\).</li>
 </ol>
 </div>
 </body>
