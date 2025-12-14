@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2025-12-13 Sat 16:19 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Methods of Proof</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="https://anthonymendes.github.io/mendes.css" />
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+	  displayAlign: "center",
+	  displayIndent: "0em",
+	  "HTML-CSS": { scale: 100,
+			  linebreaks: { automatic: "false" },
+			  availableFonts: [],
+			  webFont: "TeX"
+			 },
+	  SVG: {scale: 100,
+		linebreaks: { automatic: "false" },
+		font: "TeX"},
+	  NativeMML: {scale: 100},
+	  TeX: { equationNumbers: {autoNumber: "AMS"},
+		 MultLineWidth: "85%",
+		 TagSide: "right",
+		 TagIndent: ".8em"
+	       }
+});
+</script>
+<script type="text/javascript"
+	  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Methods of Proof</h1>
+<p>
+Welcome to Cal Poly Math 248 in Summer 2021!  This is not only a fun class with interesting ideas, it is also fundamental to every future mathematics course you will take.
+</p>
+<div id="outline-container-org8c6a1ce" class="outline-2">
+<h2 id="org8c6a1ce">Files</h2>
+<div class="outline-text-2" id="text-org8c6a1ce">
+<ul class="org-ul">
+<li><a href="./248Syllabus.html">Syllabus</a></li>
+<li><a href="BookOfProofHammack.pdf">Textbook</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6666998" class="outline-2">
+<h2 id="org6666998">Calendar</h2>
+<div class="outline-text-2" id="text-org6666998">
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+
+<th>Date</th>
+<th>Assessment</th>
+<th>Topic</th>
+<th>Text</th>
+<th>Exercises</th>
+</tr>
+</thead>
+<tbody>
+
+<td class="org-left">January  5</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">First class!</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">January  6</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Substitution</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">January  8</td>
+<td class="org-left">Quiz 1</td>
+<td class="org-left">Areas between curves</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">January  9</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Volumes</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">January 12</td>
+<td class="org-left">Quiz 2</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">January 13</td>
+<td class="org-left">Group Quiz 1</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">January 15</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">January 16</td>
+<td class="org-left">Quiz 3</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">January 20</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">January 22</td>
+<td class="org-left">Quiz 4</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">January 23</td>
+<td class="org-left">Group Quiz 2</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">January 26</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">January 27</td>
+<td class="org-left">Quiz 5</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">January 29</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">January 30</td>
+<td class="org-left"><b>Midterm 1</b></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">February  2</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">February  3</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">February  5</td>
+<td class="org-left">Quiz 6</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">February  6</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">February  9</td>
+<td class="org-left">Quiz 7</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">February 10</td>
+<td class="org-left">Group Quiz 3</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">February 12</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">February 13</td>
+<td class="org-left">Quiz 8</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">February 17</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">February 19</td>
+<td class="org-left">Quiz 9</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">February 20</td>
+<td class="org-left">Group Quiz 4</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">February 23</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">February 24</td>
+<td class="org-left">Quiz 10</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">February 26</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">February 27</td>
+<td class="org-left"><b>Midterm 2</b></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">March  2</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">March  3</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">March  5</td>
+<td class="org-left">Quiz 11</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">March  6</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">March  9</td>
+<td class="org-left">Quiz 12</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">March 10</td>
+<td class="org-left">Group Quiz 5</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">March 12</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+
+<td class="org-left">March 13</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Last class!</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The final exam for the 1pm class is at March 18&nbsp;at 1pm.
+The final exam for the 2pm class is at March 20&nbsp;at 1pm
+</p>
+
+<table align="center">
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+
+<th>Topics</th>
+<th>Videos</th>
+<th>Text</th>
+<th>Exercises</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+
+<td class="org-left">Sets, cartesian products, subsets, power sets</td>
+<td class="org-left"><a href="https://www.youtube.com/watch?v=vYhMlZhqOXs&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">1</a>, <a href="https://www.youtube.com/watch?v=dUdFwWpmNAY&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">2</a>, <a href="https://www.youtube.com/watch?v=GCgEP3IZF-g&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">3</a>, <a href="https://www.youtube.com/watch?v=PZ8BrxEV8ck&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">4</a>, <a href="https://www.youtube.com/watch?v=DrQMm4Gaxfo&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">5</a></td>
+<td class="org-left"><a href="BookOfProofHammack.pdf#section.1.1">1.1&#x2013;1.4</a></td>
+<td class="org-left"><a href="248Sets.html">Set 1</a></td>
+<td class="org-left">June 22</td>
+</tr>
+
+
+<td class="org-left">\(\cap\), \(\cup\), \(\setminus\), Venn diagrams, indexed sets</td>
+<td class="org-left"><a href="https://www.youtube.com/watch?v=FBKWj4B5vNg&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">6</a>, <a href="https://www.youtube.com/watch?v=9hP4vhVHKVQ&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">7</a>, <a href="https://www.youtube.com/watch?v=GRf7MLdd_M4&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">8</a>, <a href="https://www.youtube.com/watch?v=Zgr5PGQt1eo&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">9</a></td>
+<td class="org-left"><a href="BookOfProofHammack.pdf#section.1.5">1.5&#x2013;1.8</a></td>
+<td class="org-left"><a href="248Sets.html">Set 2</a></td>
+<td class="org-left">June 25</td>
+</tr>
+
+
+<td class="org-left">Statements, or/and/not/implies, truth tables</td>
+<td class="org-left"><a href="https://www.youtube.com/watch?v=ODUG44zwnxc&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">10</a>, <a href="https://www.youtube.com/watch?v=bh1jPyPzCAw&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">11</a>, <a href="https://www.youtube.com/watch?v=ItOkpMx_Vjo&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">12</a>, <a href="https://www.youtube.com/watch?v=EdsC38foHPw&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">13</a>, <a href="https://www.youtube.com/watch?v=ehCyVR1UrgM&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">14</a></td>
+<td class="org-left"><a href="BookOfProofHammack.pdf#section.2.1">2.1&#x2013;2.5</a></td>
+<td class="org-left"><a href="248Sets.html">Set 3</a></td>
+<td class="org-left">June 29</td>
+</tr>
+
+
+<td class="org-left">Equivalence, quantifiers, negation</td>
+<td class="org-left"><a href="https://www.youtube.com/watch?v=OTaFuplkFqc&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">15</a>, <a href="https://www.youtube.com/watch?v=rG2OVkr9lP4&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">16</a>, <a href="https://www.youtube.com/watch?v=-bXFwkp-fZc&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">17</a>, <a href="https://www.youtube.com/watch?v=XpZbRMGdtvU&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">18</a></td>
+<td class="org-left"><a href="BookOfProofHammack.pdf#section.2.6">2.6&#x2013;2.10</a></td>
+<td class="org-left"><a href="248Sets.html">Set 4</a></td>
+<td class="org-left">July  2</td>
+</tr>
+
+
+<td class="org-left">Theorems, definitions, proofs</td>
+<td class="org-left"><a href="https://www.youtube.com/watch?v=dDa4CL1UAhc&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">19</a>, <a href="https://www.youtube.com/watch?v=84I1hNo2sT8&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">20</a>, <a href="https://www.youtube.com/watch?v=jfxsgzf077M&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">21</a>, <a href="https://www.youtube.com/watch?v=dI1_NXlGRTs&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">22</a>, <a href="https://www.youtube.com/watch?v=Q_CzcsYtFz8&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">23</a>, <a href="https://www.youtube.com/watch?v=zt8pfqtA-BU&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">24</a></td>
+<td class="org-left"><a href="BookOfProofHammack.pdf#chapter.4">4</a></td>
+<td class="org-left"><a href="248Sets.html">Set 5</a></td>
+<td class="org-left">July  6</td>
+</tr>
+
+
+<td class="org-left"><b>Midterm 1</b></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><a href="248SampleM1.pdf">Sample M1</a></td>
+<td class="org-left">July  9</td>
+</tr>
+
+
+<td class="org-left">Contrapositive, contradiction</td>
+<td class="org-left"><a href="https://www.youtube.com/watch?v=RiQM-Rl3moo&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">25</a>, <a href="https://www.youtube.com/watch?v=9HHBuUP-zO4&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">26</a>, <a href="https://www.youtube.com/watch?v=EaFAhx_M_hs&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">27</a>, <a href="https://www.youtube.com/watch?v=I8jd5D6Gug0&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">28</a>, <a href="https://www.youtube.com/watch?v=F3Of-Q4Dgl0&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">29</a>, <a href="https://www.youtube.com/watch?v=6pvwNPxGikk&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">30</a></td>
+<td class="org-left"><a href="BookOfProofHammack.pdf#chapter.5">5&#x2013;6</a></td>
+<td class="org-left"><a href="248Sets.html">Set 6</a></td>
+<td class="org-left">July 13</td>
+</tr>
+
+
+<td class="org-left">If and only if, existence</td>
+<td class="org-left"><a href="https://www.youtube.com/watch?v=o9_R07gdXuI&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">31</a>, <a href="https://www.youtube.com/watch?v=QUs14HiwOTk&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">32</a>, <a href="https://www.youtube.com/watch?v=xWBDR8vG958&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">33</a>, <a href="https://www.youtube.com/watch?v=cZS85gdgROM&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">34</a></td>
+<td class="org-left"><a href="BookOfProofHammack.pdf#chapter.7">7</a></td>
+<td class="org-left"><a href="248Sets.html">Set 7</a></td>
+<td class="org-left">July 16</td>
+</tr>
+
+
+<td class="org-left">\(A \subseteq B, A = B\), disproof</td>
+<td class="org-left"><a href="https://www.youtube.com/watch?v=M1xPADFoPcc&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">35</a>, <a href="https://www.youtube.com/watch?v=-gcgsOYyCk0&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">36</a>, <a href="https://www.youtube.com/watch?v=zewFD7EWWSU&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">37</a>, <a href="https://www.youtube.com/watch?v=PTk-m0La0nY&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">38</a>, <a href="https://www.youtube.com/watch?v=_qvs89sISZY&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">39</a>, <a href="https://www.youtube.com/watch?v=iTg69mNzKR8&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">40</a></td>
+<td class="org-left"><a href="BookOfProofHammack.pdf#chapter.8">8&#x2013;9</a></td>
+<td class="org-left"><a href="248Sets.html">Set 8</a></td>
+<td class="org-left">July 20</td>
+</tr>
+
+
+<td class="org-left">Induction</td>
+<td class="org-left"><a href="https://www.youtube.com/watch?v=zqkQ4tzssXY&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">41</a>, <a href="https://www.youtube.com/watch?v=hQ0_o03jl6Y&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">42</a>, <a href="https://www.youtube.com/watch?v=kyG0A-DJOpk&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">43</a>, <a href="https://www.youtube.com/watch?v=chi7m3fYgfg&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">44</a>, <a href="https://www.youtube.com/watch?v=wyh2bA93ZxA&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">45</a>, <a href="https://www.youtube.com/watch?v=w2Avfd9n01E&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">46</a></td>
+<td class="org-left"><a href="BookOfProofHammack.pdf#chapter.10">10</a></td>
+<td class="org-left"><a href="248Sets.html">Set 9</a></td>
+<td class="org-left">July 23</td>
+</tr>
+
+
+<td class="org-left">Relations, equivalence relations/classes</td>
+<td class="org-left"><a href="https://www.youtube.com/watch?v=gk7ktDB1ETs&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">47</a>, <a href="https://www.youtube.com/watch?v=RzItQGJx0II&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">48</a>, <a href="https://www.youtube.com/watch?v=VXE1y9d0hVw&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">49</a>, <a href="https://www.youtube.com/watch?v=D4a5IjYdezU&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">50</a>, <a href="https://www.youtube.com/watch?v=5-jddxaOxFc&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">51</a>, <a href="https://www.youtube.com/watch?v=I4e-ofJonIY&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">52</a></td>
+<td class="org-left"><a href="BookOfProofHammack.pdf#section.11.1">11.1&#x2013;11.4</a></td>
+<td class="org-left"><a href="248Sets.html">Set 10</a></td>
+<td class="org-left">July 27</td>
+</tr>
+
+
+<td class="org-left"><b>Midterm 2</b></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><a href="248SampleM2.pdf">Sample M2</a></td>
+<td class="org-left">July 30</td>
+</tr>
+
+
+<td class="org-left">Functions, 1-1, onto, composition</td>
+<td class="org-left"><a href="https://www.youtube.com/watch?v=j4b9LpeyS2s&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">53</a>, <a href="https://www.youtube.com/watch?v=bX2xU_D3Eq0&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">54</a>, <a href="https://www.youtube.com/watch?v=H14lmkDPcKM&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">55</a>, <a href="https://www.youtube.com/watch?v=IE_lh7YO1bc&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">56</a>, <a href="https://www.youtube.com/watch?v=NKhwG_TM0dw&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">57</a></td>
+<td class="org-left"><a href="BookOfProofHammack.pdf#section.12.1">12.1&#x2013;12.4</a></td>
+<td class="org-left"><a href="248Sets.html">Set 11</a></td>
+<td class="org-left">August  3</td>
+</tr>
+
+
+<td class="org-left">Inverse functions, images, preimages</td>
+<td class="org-left"><a href="https://www.youtube.com/watch?v=gj1aWiLKkqA&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">58</a>, <a href="https://www.youtube.com/watch?v=DPu3zkYsuI0&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">59</a>, <a href="https://www.youtube.com/watch?v=UH7yR8YJ7uw&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">60</a>, <a href="https://www.youtube.com/watch?v=b63JzOP0q74&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">61</a></td>
+<td class="org-left"><a href="BookOfProofHammack.pdf#section.12.5">12.5&#x2013;12.6</a></td>
+<td class="org-left"><a href="248Sets.html">Set 12</a></td>
+<td class="org-left">August  6</td>
+</tr>
+
+
+<td class="org-left">Cardinality, countable sets</td>
+<td class="org-left"><a href="https://www.youtube.com/watch?v=fWe7r7CqKhQ&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">62</a>, <a href="https://www.youtube.com/watch?v=e6CxQYh1EM4&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">63</a>, <a href="https://www.youtube.com/watch?v=eEFe0tPHe58&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">64</a>, <a href="https://www.youtube.com/watch?v=G_oKRbAWfDc&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">65</a>, <a href="https://www.youtube.com/watch?v=0Mr0qnJWDdQ&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">66</a>, <a href="https://www.youtube.com/watch?v=FctKnTiWcg8&amp;list=PLyWmJUyugW-mEG_qATOIFxOWeytG41E_-">67</a></td>
+<td class="org-left"><a href="BookOfProofHammack.pdf#section.14.1">14.1&#x2013;14.3</a></td>
+<td class="org-left"><a href="248Sets.html">Set 13</a></td>
+<td class="org-left">August 10</td>
+</tr>
+
+
+<td class="org-left"><b>Final</b></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><a href="248SampleF.pdf">Sample F</a></td>
+<td class="org-left">August 13</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</body>
+</html>
